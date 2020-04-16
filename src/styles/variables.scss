@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+}
+
+.tool {
+    padding: 8px;
+}
+
+input {
+    border: transparent;
+    background: #ddd;
+    padding: 6px;
+    font-family: inherit;
+    outline: none;
+}
+
+@mixin mobile {
+    @media only screen
+    and (max-width: 767px) {
+        @content;
+    }
+}
+

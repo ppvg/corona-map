@@ -1,1 +1,1 @@
-# corona-map
+# corona
