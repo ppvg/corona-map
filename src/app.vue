@@ -27,6 +27,13 @@
                 //     cn.postcodes = [c.postcodes[0]];
                 //     return cn;
                 // });
+                let wh, ratio;
+                wh = window.innerHeight - 100;
+                ratio = wh / 500;
+                this.$store.commit('settings/updateProperty', {key: 'canvasHeight', value: wh});
+                this.$store.commit('settings/updateProperty', {key: 'canvasWidth', value: ratio * 400});
+                this.$store.commit('settings/updateProperty', {key: 'zoom', value: ratio * 145});
+
                 this.$store.commit('cities/init', cities);
                 this.loadCsv();
             },
@@ -41,6 +48,7 @@
                                 this.$store.commit('cities/addHospitalAdmissions', {item, city})
                             }
                         }
+                        this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
                     })
                     .catch((error) => {});
             },
@@ -76,7 +84,8 @@
             Ziekenhuisopnames Covid-19 per gemeente
         </h2>
         <div class="content">
-            <map-netherlands/>
+            <map-netherlands
+                v-if="dataLoaded"/>
             <tools/>
         </div>
     </div>

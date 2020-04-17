@@ -15,8 +15,16 @@
         },
         methods: {
             play() {
-                this.$store.commit('settings/updateProperty', {key: 'playing', value: true});
-                this.start();
+                if (this.$store.state.settings.currentDateOffset >= this.$store.getters['settings/getMax']) {
+                    this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: 0});
+                    setTimeout(() =>{
+                        this.$store.commit('settings/updateProperty', {key: 'playing', value: true});
+                        this.start();
+                    }, 1000)
+                } else {
+                    this.$store.commit('settings/updateProperty', {key: 'playing', value: true});
+                    this.start();
+                }
             },
             pause() {
                 this.$store.commit('settings/updateProperty', {key: 'playing', value: false});
@@ -31,7 +39,7 @@
                 clearInterval(this.interval);
             },
             tick() {
-                if (this.$store.state.settings.currentDateOffset === this.$store.getters['settings/getMax']) {
+                if (this.$store.state.settings.currentDateOffset >= this.$store.getters['settings/getMax']) {
                     this.pause();
                 } else {
                     this.$store.commit('settings/next');

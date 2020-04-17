@@ -24,6 +24,21 @@ class City {
     getRandomLong() {
         return this.getRandomPostcode().getRandomLong();
     }
+
+    get relativeAdmissions() {
+        let admissions, lastN;
+        admissions = [];
+        lastN = 0;
+        for (let admission of this.hospitalAdmissions) {
+            admissions.push({
+                n: admission.n - lastN,
+                date: admission.date,
+                original: admission
+            });
+            lastN = admission.n;
+        }
+        return admissions;
+    }
 }
 
 export default City;

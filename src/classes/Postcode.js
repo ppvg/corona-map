@@ -1,4 +1,4 @@
-let variation = 0.01;
+let variation = 0.08;
 
 class Postcode {
     constructor({

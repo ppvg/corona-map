@@ -33,7 +33,8 @@
             :min="0"
             :max="max"
             :interval="1"
-            :tooltip="'none'"/>
+            :tooltip="'none'"
+            :duration="0"/>
     </div>
 </template>
 
