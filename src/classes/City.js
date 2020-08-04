@@ -22,6 +22,41 @@ class City {
         return stringTool.titleForSorting(this.title);
     }
 
+    get newestSet() {
+        let n, setN, setTotal;
+        setTotal = 0;
+        n = this.report.history.length;
+        setN = Math.floor(n / 2);
+        for (let i = setN, l = setN * 2; i < l; i++) {
+            setTotal += this.report.history[i];
+        }
+        return setTotal;
+    }
+
+    get oldestSet() {
+        let n, setN, setTotal;
+        setTotal = 0;
+        n = this.report.history.length;
+        setN = Math.floor(n / 2);
+        for (let i = 0, l = setN ; i < l; i++) {
+            setTotal += this.report.history[i];
+        }
+        return setTotal;
+    }
+
+    get trend() {
+        let difference = this.newestSet - this.oldestSet;
+        if (Math.abs(difference) < this.oldestSet / 20 || difference < 5) {
+            return 'gelijk';
+        } else {
+            if (this.newestSet > this.oldestSet) {
+                return 'stijgend';
+            } else {
+                return 'dalend';
+            }
+        }
+    }
+
     get color() {
         if (!this.report) {
             return '#888';

@@ -1,9 +1,10 @@
 <script>
     import City from "@/classes/City";
+    import TrendLine from "./trend-line";
 
     export default {
         name: 'city-card',
-        components: {},
+        components: {TrendLine},
         props: {
             city: {
                 type: City,
@@ -33,26 +34,44 @@
 
 <template>
     <div class="city-card">
-        <div class="city-card__title">
-            {{city.title}}
+        <div class="city-card__header">
+            <div
+                :style="{'background': city.color}"
+                class="dot"></div>
+            <div class="city-card__title">
+                {{city.title}}
+            </div>
         </div>
         <div
             v-if="city.report"
             class="city-card__info">
-            <div class="city-card__row">
-                <div class="city-card__label">
-                    Toename vandaag
+            <div class="city-card__section">
+                <div class="city-card__row">
+                    <div class="city-card__label">
+                        Toename vandaag
+                    </div>
+                    <div class="city-card__value">
+                        {{increaseDay}}
+                    </div>
                 </div>
-                <div class="city-card__value">
-                    {{increaseDay}}
+                <div class="city-card__row">
+                    <div class="city-card__label">
+                        Toename week
+                    </div>
+                    <div class="city-card__value">
+                        {{increaseWeek}}
+                    </div>
                 </div>
             </div>
-            <div class="city-card__row">
-                <div class="city-card__label">
-                    Toename week
-                </div>
-                <div class="city-card__value">
-                    {{increaseWeek}}
+            <div class="city-card__section">
+                <div class="city-card__row">
+                    <div class="city-card__label">
+                        Trendlijn
+                    </div>
+                    <div class="city-card__value">
+                        <trend-line
+                            :city="city"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,16 +88,30 @@
         padding: 20px;
         font-size: 15px;
 
-        .city-card__title {
+        .city-card__header {
             font-weight: 700;
             font-size: 20px;
             margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+
+            .dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
         }
 
         .city-card__info {
 
+            .city-card__section {
+                margin-bottom: 20px;
+            }
+
             .city-card__row {
                 display: flex;
+                //align-items: center;
 
                 .city-card__label {
                     width: 200px;
