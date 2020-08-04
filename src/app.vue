@@ -1,13 +1,13 @@
 <script>
-    import cities from '@/data/cities-postcodes';
     import mapNetherlands from "./components/map/map";
-    import Postcode from "@/classes/Postcode";
-    import * as d3 from 'd3';
     import tools from "./components/tools/tools";
+    import cities from '@/data/areas.json';
+    import CitiesPanel from "./components/cities/cities-panel";
 
     export default {
         name: 'app',
         components: {
+            CitiesPanel,
             tools,
             mapNetherlands
         },
@@ -18,15 +18,7 @@
             }
         },
         methods: {
-            getCity(cityName) {
-                return this.$store.getters['cities/getItemByProperty']('title', cityName, false)
-            },
             init() {
-                // let cns = cities.map(c => {
-                //     let cn = {...c};
-                //     cn.postcodes = [c.postcodes[0]];
-                //     return cn;
-                // });
                 let wh, ratio;
                 wh = window.innerHeight - 100;
                 ratio = wh / 500;
@@ -34,42 +26,13 @@
                 this.$store.commit('settings/updateProperty', {key: 'canvasWidth', value: ratio * 400});
                 this.$store.commit('settings/updateProperty', {key: 'zoom', value: ratio * 145});
 
-                this.$store.commit('cities/init', cities);
                 this.loadCsv();
             },
             loadCsv() {
-                let cases, fatalities;
-
-                d3.csv('data/hospital-admissions.csv')
-                    .then((response) => {
-                        for (let item of response) {
-                            let city = this.getCity(item.Gemeentenaam);
-                            if (city) {
-                                this.$store.commit('cities/addHospitalAdmissions', {item, city})
-                            }
-                        }
-                        this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
-                    })
-                    .catch((error) => {});
+                this.$store.commit('cities/init', cities.features);
+                this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
             },
-            print() {
-                for (let postcode of postcodes) {
-                    let city = this.getCity(postcode.gemeente);
-                    if (!city) {
-                        this.$store.commit('cities/create', {id: (this.$store.state.cities.all.length + 1), title: postcode.gemeente});
-                        city = this.$store.getters['cities/getLastItem'];
-                    }
-                    this.$store.commit('cities/addPostcode', {postcode: new Postcode(postcode), city})
-                }
-                let print = this.$store.state.cities.all.map(city => {
-                    let c = {...city};
-                    c.postcodes = city.postcodes.map(postcode => {
-                        return {...postcode};
-                    });
-                    return c;
-                });
-                console.log(JSON.stringify(print));
-            }
+
         },
         mounted() {
             this.init();
@@ -80,14 +43,8 @@
 
 <template>
     <div class="app">
-        <h2>
-            Ziekenhuisopnames Covid-19 per gemeente
-        </h2>
-        <div class="content">
-            <map-netherlands
-                v-if="dataLoaded"/>
-            <tools/>
-        </div>
+        <map-netherlands v-if="dataLoaded"/>
+        <cities-panel v-if="dataLoaded"/>
     </div>
 </template>
 
@@ -96,14 +53,6 @@
     @import '@/styles/variables.scss';
 
     .app {
-
-        .content {
-            position: relative;
-            display: flex;
-
-            .map {
-                margin-right: 10px;
-            }
-        }
+        display: flex;
     }
 </style>

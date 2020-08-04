@@ -1,17 +1,19 @@
+import store from '@/store/store';
+
 const nl = {
     latitude: 52.1,
     longitude: 5.34
 };
 
-const getBottom = function(latitude, zoom, canvasHeight) {
-    return (latitude - nl.latitude) * zoom + (0.5 * canvasHeight);
+const getLeft = function(longitude) {
+    return (longitude - nl.longitude) * store.state.settings.mapRatio * store.state.settings.zoom + (0.5 * store.state.settings.canvasWidth);
 };
 
-const getLeft = function(longitude, zoom, canvasWidth, mapRatio) {
-    return (longitude - nl.longitude) * mapRatio * zoom + (0.5 * canvasWidth);
+const getTop = function(latitude) {
+    return (0.5 * store.state.settings.canvasHeight) - (latitude - nl.latitude) * store.state.settings.zoom;
 };
 
 export default {
-    getBottom,
-    getLeft
+    getLeft,
+    getTop
 }

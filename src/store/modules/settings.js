@@ -1,9 +1,9 @@
 import _base from './_base-module';
 
 const state = {
-    zoom: 145,
+    zoom: 500,
     canvasWidth: 400,
-    canvasHeight: 500,
+    canvasHeight: 800,
     mapRatio: 0.62,
     currentDateOffset: 0,
     dateStart: '2020-03-30',
@@ -13,13 +13,7 @@ const state = {
 };
 
 const getters = {
-    ..._base.getters,
-    getMax(state) {
-        let start, end;
-        start = new Date(state.dateStart).getTime();
-        end = new Date(state.dateEnd).getTime();
-        return (end - start) / (24 * 3600 * 1000)
-    }
+    ..._base.getters
 };
 
 const actions = {};
@@ -27,12 +21,6 @@ const actions = {};
 const mutations = {
     updateProperty(state, payload) {
         state[payload.key] = payload.value;
-    },
-    next(state) {
-        state.currentDateOffset++;
-    },
-    previous(state) {
-        state.currentDateOffset--;
     }
 };
 

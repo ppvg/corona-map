@@ -1,43 +1,22 @@
-import Postcode from './Postcode';
+import Path from './Path';
 
 class City {
     constructor({
         id = null,
-        title = '',
-        postcodes = [],
-        hospitalAdmissions = []
+        attributes = {},
+        geometry = {}
     }) {
         this.id = id;
-        this.title = title;
-        this.postcodes = postcodes.map(p => new Postcode(p));
-        this.hospitalAdmissions = hospitalAdmissions;
+        this.title = attributes.Gemeentenaam;
+        this.paths = geometry.rings.map(ring => new Path(ring));
     }
 
-    getRandomPostcode() {
-        return this.postcodes[Math.floor(Math.random() * this.postcodes.length)];
-    }
-
-    getRandomLat() {
-        return this.getRandomPostcode().getRandomLat();
-    }
-
-    getRandomLong() {
-        return this.getRandomPostcode().getRandomLong();
-    }
-
-    get relativeAdmissions() {
-        let admissions, lastN;
-        admissions = [];
-        lastN = 0;
-        for (let admission of this.hospitalAdmissions) {
-            admissions.push({
-                n: admission.n - lastN,
-                date: admission.date,
-                original: admission
-            });
-            lastN = admission.n;
+    get titleForSorting() {
+        if (this.title[0] === "'") {
+            return this.title.substring(3).toLowerCase();
+        } else {
+            return this.title.toLowerCase();
         }
-        return admissions;
     }
 }
 
