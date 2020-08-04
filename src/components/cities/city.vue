@@ -11,13 +11,20 @@
             }
         },
         computed: {},
-        methods: {}
+        methods: {
+            selectCity() {
+                this.$store.commit('ui/updateProperty', {key: 'currentCity', value: this.city});
+                this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
+            }
+        }
     }
 </script>
 
 
 <template>
-    <div class="city">
+    <div
+        @click="selectCity()"
+        class="city">
         {{city.title}}
     </div>
 </template>
@@ -28,7 +35,7 @@
 
     .city {
         border-bottom: 1px solid $grey-1;
-        padding: 2px;
+        padding: 6px 10px;
         cursor: pointer;
 
         &:hover {

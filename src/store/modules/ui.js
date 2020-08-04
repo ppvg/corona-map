@@ -1,7 +1,8 @@
 import _base from './_base-module';
 
 const state = {
-
+    searchValue: '',
+    currentCity: null
 };
 
 const getters = {

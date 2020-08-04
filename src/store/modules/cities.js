@@ -5,6 +5,7 @@ const Model = City;
 
 const state = {
     all: [],
+    dict: {},
     current: null
 };
 
@@ -16,7 +17,17 @@ const actions = {};
 
 const mutations = {
     init(state, set) {
-        return _base.mutations.init(state, set, Model);
+        state.all = [];
+        for (let item of set) {
+            if (item) {
+                let c = new City(item);
+                state.all.push(c);
+                state.dict[c.titleForSorting] = c;
+            }
+        }
+    },
+    updatePropertyOfItem(state, payload) {
+        _base.mutations.updatePropertyOfItem(state, payload.item, payload.property, payload.value);
     }
 };
 

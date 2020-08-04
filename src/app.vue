@@ -1,37 +1,79 @@
 <script>
     import mapNetherlands from "./components/map/map";
-    import tools from "./components/tools/tools";
     import cities from '@/data/areas.json';
-    import CitiesPanel from "./components/cities/cities-panel";
+    import citiesPanel from "./components/cities/cities-panel";
+    import cityCard from "./components/cities/city-card";
+    import * as d3 from 'd3';
+    import stringTool from '@/tools/string';
 
     export default {
         name: 'app',
         components: {
-            CitiesPanel,
-            tools,
+            cityCard,
+            citiesPanel,
             mapNetherlands
         },
         props: {},
         computed: {
             dataLoaded() {
                 return this.$store.state.dataLoaded;
+            },
+            currentCity() {
+                return this.$store.state.ui.currentCity;
             }
         },
         methods: {
             init() {
                 let wh, ratio;
-                wh = window.innerHeight - 100;
+                wh = window.innerHeight;
                 ratio = wh / 500;
                 this.$store.commit('settings/updateProperty', {key: 'canvasHeight', value: wh});
                 this.$store.commit('settings/updateProperty', {key: 'canvasWidth', value: ratio * 400});
                 this.$store.commit('settings/updateProperty', {key: 'zoom', value: ratio * 145});
 
-                this.loadCsv();
+                this.loadData();
             },
-            loadCsv() {
+            loadData() {
+                //let url = 'https://github.com/mzelst/covid-19/blob/master/data/municipality-today.csv';
+                let url = 'data/municipality-today.csv';
                 this.$store.commit('cities/init', cities.features);
-                this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
+                d3.csv(url)
+                    .then((data) => {
+                        for (let item of data) {
+                            this.addReport(item);
+                        }
+                        this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
             },
+            addReport(data) {
+                let key, city, report;
+
+                const convertToNumber = function(value) {
+                    let numb = Number(value);
+                    if (!isNaN(numb)) {
+                        return numb;
+                    } else {
+                        return 0;
+                    }
+                };
+                report = {
+                    increaseDay: convertToNumber(data['increase']),
+                    increaseWeek: convertToNumber(data['increase.week']),
+                    relativeIncreaseDay: convertToNumber(data['rel.increase']),
+                    relativeIncreaseWeek: convertToNumber(data['rel.increase.week']),
+                };
+                key = stringTool.titleForSorting(data.Municipality_name);
+                if (this.$store.state.cities.dict[key]) {
+                    city = this.$store.state.cities.dict[key];
+                    this.$store.commit('cities/updatePropertyOfItem', {item: city, property: 'report', value: report});
+                    this.$store.commit('cities/updatePropertyOfItem', {item: city, property: 'population', value: Number(data.population)})
+                } else {
+                    console.log('not found ' + key);
+                }
+            }
 
         },
         mounted() {
@@ -44,7 +86,13 @@
 <template>
     <div class="app">
         <map-netherlands v-if="dataLoaded"/>
-        <cities-panel v-if="dataLoaded"/>
+
+        <div class="info-panel">
+            <cities-panel v-if="dataLoaded"/>
+            <city-card
+                    v-if="currentCity"
+                    :city="currentCity"/>
+        </div>
     </div>
 </template>
 
@@ -54,5 +102,10 @@
 
     .app {
         display: flex;
+        align-items: center;
+
+        .info-panel {
+            width: 300px;
+        }
     }
 </style>

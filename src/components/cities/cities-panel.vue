@@ -7,14 +7,26 @@
             cities
         },
         props: {},
-        computed: {},
-        methods: {}
+        computed: {
+            searchValue() {
+                return this.$store.state.ui.searchValue;
+            }
+        },
+        methods: {
+            updateSearchValue(ev) {
+                this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ev.target.value});
+            }
+        }
     }
 </script>
 
 
 <template>
     <div class="cities-panel">
+        <input
+            :value="searchValue"
+            @keyup="updateSearchValue"
+            placeholder="Zoek gemeente of klik op de kaart">
         <cities/>
     </div>
 </template>
@@ -24,6 +36,10 @@
     @import '@/styles/variables.scss';
 
     .cities-panel {
-        padding: 12px;
+        margin-bottom: 20px;
+
+        input {
+            width: 100%;
+        }
     }
 </style>

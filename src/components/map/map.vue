@@ -30,6 +30,29 @@
                 this.canvas.width = this.width;
                 this.canvas.height = this.height;
                 this.draw();
+                this.addClickEvent();
+            },
+            addClickEvent() {
+                this.canvas.addEventListener('click', (event) => {
+                    let x, y, city;
+                    x = event.offsetX;
+                    y = event.offsetY;
+                    city = this.getCityForPoint(x, y);
+                    if (city) {
+                        this.$store.commit('ui/updateProperty', {key: 'currentCity', value: city});
+                        this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
+                    }
+                }, false);
+            },
+            getCityForPoint(x, y) {
+                for (let city of this.cities) {
+                    for (let path of city.paths) {
+                        if (this.ctx.isPointInPath(path.ctxPath, x, y)) {
+                            return city;
+                        }
+                    }
+                }
+                return null;
             },
             draw() {
                 for (let city of this.cities) {
@@ -38,19 +61,12 @@
             },
             drawCity(city) {
                 for (let path of city.paths) {
-                    this.drawPath(path.path);
+                    this.ctx.fillStyle = city.color;
+                    this.drawPath(path);
                 }
             },
             drawPath(path) {
-                let ctx, pathWithoutStart;
-                ctx = this.ctx;
-                ctx.beginPath();
-                ctx.moveTo(...path[0].translated);
-                pathWithoutStart = path.slice(1);
-                for (let point of pathWithoutStart) {
-                    ctx.lineTo(...point.translated);
-                }
-                ctx.fill();
+                this.ctx.fill(path.ctxPath);
             }
         },
         mounted() {
