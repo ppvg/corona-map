@@ -11,14 +11,7 @@
                 required: true
             }
         },
-        computed: {
-            increaseDay() {
-                return this.format(this.city.report.increaseDay);
-            },
-            increaseWeek() {
-                return this.format(this.city.report.increaseWeek);
-            }
-        },
+        computed: { },
         methods: {
             format(value) {
                 if (value > 0) {
@@ -51,27 +44,21 @@
                         Toename vandaag
                     </div>
                     <div class="city-card__value">
-                        {{increaseDay}}
+                        {{format(city.increaseDay)}}
                     </div>
                 </div>
                 <div class="city-card__row">
                     <div class="city-card__label">
-                        Toename week
+                        Toename laatste 7 dagen
                     </div>
                     <div class="city-card__value">
-                        {{increaseWeek}}
+                        {{format(city.increaseWeek)}}
                     </div>
                 </div>
             </div>
             <div class="city-card__section">
                 <div class="city-card__row">
-                    <div class="city-card__label">
-                        Trendlijn
-                    </div>
-                    <div class="city-card__value">
-                        <trend-line
-                            :city="city"/>
-                    </div>
+                    <trend-line :city="city"/>
                 </div>
             </div>
         </div>
@@ -115,13 +102,16 @@
                 padding: 2px 0;
 
                 .city-card__label {
-                    width: 200px;
+                    width: 220px;
                 }
 
                 .city-card__value {
                     font-weight: 700;
                     font-family: Courier;
                     font-size: 20px;
+                    text-align: right;
+                    width: calc(100% - 220px);
+                    position: relative;
                 }
             }
         }
