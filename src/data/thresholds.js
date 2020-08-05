@@ -1,9 +1,24 @@
 const perPopulation = 100000;
 
-// cases per week per 100.000 (perPopulation) inhabitants
-const thresholdYellow = 5;
-const thresholdOrange = 16;
-const thresholdRed = 30;
+// n is per week per 100.000 (perPopulation) inhabitants
+const thresholds = [
+    {
+        n: 0,
+        color: '#90fa05'
+    }, {
+        n: 10,
+        color: '#dbf752'
+    }, {
+        n: 30,
+        color: '#fadd05'
+    }, {
+        n: 50,
+        color: '#faac05'
+    }, {
+        n: Infinity,
+        color: '#fa4205'
+    }
+];
 
 
 
@@ -14,26 +29,15 @@ const getColor = function(cases, population, days) {
     } else {
         let relativeCasesInWeek = perPopulation * cases / population * (7 / days);
 
-        if (relativeCasesInWeek === 0) {
-            return '#90fa05';
-        }
-        if (relativeCasesInWeek < thresholdYellow) {
-            return '#dbf752';
-        }
-        if (relativeCasesInWeek < thresholdOrange) {
-            return '#fadd05';
-        }
-        if (relativeCasesInWeek < thresholdRed) {
-            return '#faac05';
-        } else {
-            return '#fa4205';
+        for (let threshold of thresholds) {
+            if (relativeCasesInWeek <= threshold.n) {
+                return threshold.color;
+            }
         }
     }
 };
 
 export default {
-    thresholdYellow,
-    thresholdOrange,
-    thresholdRed,
+    thresholds,
     getColor
 }

@@ -3,7 +3,8 @@ import _base from './_base-module';
 const state = {
     searchValue: '',
     currentCity: null,
-    historyLength: 14
+    historyLength: 14,
+    today: null
 };
 
 const getters = {

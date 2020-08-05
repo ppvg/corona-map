@@ -1,3 +1,4 @@
 window.config = {
-    updatetAt: 'Thu Apr 2 - 21:15'
+    //dataUrl: 'https://raw.githubusercontent.com/mzelst/covid-19/master/',
+    dataUrl: ''
 };

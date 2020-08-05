@@ -1,6 +1,4 @@
 <script>
-    import coordinatesTool from "@/tools/coordinates";
-
     export default {
         name: 'map-netherlands',
         components: {},
@@ -55,6 +53,9 @@
                 return null;
             },
             draw() {
+                this.drawCities();
+            },
+            drawCities() {
                 for (let city of this.cities) {
                     this.drawCity(city);
                 }

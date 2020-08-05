@@ -6,6 +6,7 @@
     import * as d3 from 'd3';
     import stringTool from '@/tools/string';
     import {format, sub } from 'date-fns'
+    import { nl } from 'date-fns/locale'
 
 
     export default {
@@ -30,7 +31,7 @@
                 let n, dates, today;
                 n = this.$store.state.ui.historyLength + 1;
                 dates = [];
-                today = new Date();
+                today = this.$store.state.ui.today;
                 for (let i = 0; i < n; i++) {
                     let date, formatted;
                     date = sub(today, {days: (i + 1)}) ;
@@ -38,6 +39,9 @@
                     dates.unshift(formatted);
                 }
                 return dates;
+            },
+            todayString() {
+                return this.$store.state.ui.today ? format(this.$store.state.ui.today, 'EEEE d MMMM', {locale: nl} ) : '';
             }
         },
         methods: {
@@ -53,10 +57,11 @@
             },
             loadData() {
                 //let url = 'https://github.com/mzelst/covid-19/blob/master/data/municipality-today.csv';
-                let url = 'data/municipality-today.csv';
+                let url = window.config.dataUrl + 'data/municipality-today.csv';
                 this.$store.commit('cities/init', cities.features);
                 d3.csv(url)
                     .then((data) => {
+                        this.getDate(data);
                         for (let item of data) {
                             this.addReport(item);
                         }
@@ -65,6 +70,19 @@
                     .catch((error) => {
                         console.error(error);
                     });
+            },
+            getDate(data) {
+                let key, dateString, set, today;
+                if (data.columns) {
+                    key = data.columns[data.columns.length - 5];
+                    set = key.split('Total_reported.');
+                    if (set.length > 0) {
+                        dateString = set[1];
+                        today = new Date(dateString);
+                        this.$store.commit('ui/updateProperty', {key: 'today', value: today});
+                    }
+                }
+
             },
             addReport(data) {
                 let key, city, report, absoluteNumbers;
@@ -120,8 +138,7 @@
     <div class="app">
 
         <h1>
-            Corona status
-            per gemeente
+            Corona status {{todayString}}
         </h1>
 
         <div class="content">
@@ -162,7 +179,7 @@
             font-size: 28px;
             font-weight: 900;
             line-height: 1.1;
-            border-bottom: 4px solid #000;
+            //border-bottom: 4px solid #000;
             padding-bottom: 4px;
             display: inline-block;
         }

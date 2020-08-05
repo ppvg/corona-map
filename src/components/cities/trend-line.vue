@@ -1,5 +1,6 @@
 <script>
     import City from "@/classes/City";
+    import thresholds from "@/data/thresholds";
 
     export default {
         name: 'trend-line',
@@ -34,19 +35,51 @@
             },
             difference() {
                 return this.max - this.min;
+            },
+            zoom() {
+                return 2;
             }
         },
         methods: {
             redraw() {
+                this.clear();
+                this.drawThresholds();
+                this.drawTrendLine();
+            },
+            clear() {
+                this.ctx.clearRect(0, 0, this.width, this.height);
+            },
+            drawThresholds() {
+                let base, ctx;
+                base = 0;
+                ctx = this.ctx;
+                ctx.globalAlpha = 0.5;
+                for (let threshold of thresholds.thresholds) {
+                    if (threshold.n > 0) {
+                        let height = this.zoom * threshold.n / 7;
+                        ctx.beginPath();
+                        if (threshold.n !== Infinity) {
+                            ctx.rect(0, (this.height - base - height), this.width, height);
+                        } else {
+                            ctx.rect(0, 0, this.width, (this.height - base));
+                        }
+                        ctx.fillStyle = threshold.color;
+                        ctx.closePath();
+                        ctx.fill();
+                        base += height;
+                    }
+                }
+                ctx.globalAlpha = 1;
+            },
+            drawTrendLine() {
                 let ctx, step, history;
                 ctx = this.ctx;
-                ctx.clearRect(0, 0, this.width, this.height);
                 step = this.step;
                 history = this.city.report.history;
 
                 const getValue = (value) => {
                     let relativeValue = 300000 * value / this.city.population;
-                    return this.height - (relativeValue);
+                    return this.height - (relativeValue * this.zoom);
                 };
 
                 ctx.beginPath();
