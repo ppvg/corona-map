@@ -34,9 +34,16 @@
                 });
             },
             measure() {
-                let height, ratio;
+                let height, ratio, windowWidth;
                 height = this.$el.clientHeight;
                 ratio = this.$store.state.settings.mapRatio;
+                windowWidth = window.innerWidth - 20;
+                // mobile
+                if (windowWidth < 767) {
+                    if (ratio * height > windowWidth) {
+                        height = windowWidth / ratio;
+                    }
+                }
                 this.$store.commit('settings/updateProperty', {key: 'canvasHeight', value: height});
                 this.$store.commit('settings/updateProperty', {key: 'canvasWidth', value: ratio * height});
                 this.$store.commit('settings/updateProperty', {key: 'zoom', value: (height / 2.9)});
@@ -105,10 +112,11 @@
     @import '@/styles/variables.scss';
 
     .map {
+        display: flex;
+        align-items: center;
 
         canvas {
-            width: 100%;
-            height: 100%;
+
         }
     }
 </style>

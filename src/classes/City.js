@@ -6,12 +6,14 @@ import thresholds from "@/data/thresholds";
 class City {
     constructor({
         id = null,
+        code = '',
         attributes = {},
         geometry = {},
         report = null,
         population = 0
     }) {
         this.id = (store.state.cities.all.length + 1);
+        this.code = 'GM' + attributes.Code;
         this.title = attributes.Gemeentenaam;
         this.paths = geometry.rings.map(ring => new Path(ring));
         this.report = report;

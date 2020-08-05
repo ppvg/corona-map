@@ -107,8 +107,7 @@
                         report.history.push(value);
                     }
                 }
-                let titleKey = 'Municipality_name.y';
-                key = stringTool.titleForSorting(data[titleKey]);
+                key = data.Municipality_code;
                 if (this.$store.state.cities.dict[key]) {
                     city = this.$store.state.cities.dict[key];
                     this.$store.commit('cities/updatePropertyOfItem', {item: city, property: 'report', value: report});
@@ -225,6 +224,7 @@
                     z-index: 1;
                     transition: all 0.5s ease;
                     padding: 20px;
+                    pointer-events: none;
 
                     h1 {
                         display: none;
@@ -232,6 +232,10 @@
 
                     &.right--active {
                         left: 0;
+                    }
+
+                    .city-card {
+                        pointer-events: all;
                     }
                 }
             }

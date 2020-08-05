@@ -37,7 +37,7 @@
                 :style="{'background': city.color}"
                 class="dot"></div>
             <div class="city-card__title">
-                {{city.title}}
+                {{city.title}} {{city.code}}
             </div>
         </div>
         <div
@@ -127,6 +127,7 @@
         }
 
         @include mobile() {
+            font-size: 12px;
 
             .city-card__close {
                 position: absolute;
@@ -152,6 +153,7 @@
                 &:before {
                     transform: rotate(45deg);
                 }
+
                 &:after {
                     transform: rotate(-45deg);
                 }
@@ -159,6 +161,22 @@
 
             .city-card__header {
                 margin-top: 16px;
+            }
+
+            .city-card__info {
+
+                .city-card__row {
+
+                    .city-card__label {
+                        width: 160px;
+                    }
+
+                    .city-card__value {
+                        font-size: 18px;
+                        width: calc(100% - 160px);
+                    }
+
+                }
             }
         }
     }
