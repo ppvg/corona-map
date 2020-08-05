@@ -25,7 +25,6 @@ class City {
     get increaseWeek() {
         let total = 0;
         for (let i = this.report.history.length - 1, l = this.report.history.length - 8; i > l; i--) {
-            console.log(i);
             total += this.report.history[i];
         }
         return total;
