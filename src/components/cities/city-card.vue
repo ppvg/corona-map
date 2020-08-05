@@ -112,6 +112,7 @@
             .city-card__row {
                 display: flex;
                 //align-items: center;
+                padding: 2px 0;
 
                 .city-card__label {
                     width: 200px;
@@ -120,6 +121,7 @@
                 .city-card__value {
                     font-weight: 700;
                     font-family: Courier;
+                    font-size: 20px;
                 }
             }
         }
