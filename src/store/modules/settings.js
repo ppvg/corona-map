@@ -1,15 +1,10 @@
 import _base from './_base-module';
 
 const state = {
-    zoom: 500,
-    canvasWidth: 400,
-    canvasHeight: 800,
-    mapRatio: 0.62,
-    currentDateOffset: 0,
-    dateStart: '2020-03-30',
-    dateEnd: '2020-04-15',
-    playing: false,
-    mode: 'bubbles'
+    zoom: 0,
+    canvasWidth: 0,
+    canvasHeight: 0,
+    mapRatio: 0.89,
 };
 
 const getters = {

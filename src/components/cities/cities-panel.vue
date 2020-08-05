@@ -36,7 +36,6 @@
     @import '@/styles/variables.scss';
 
     .cities-panel {
-        margin-bottom: 20px;
 
         input {
             width: 100%;

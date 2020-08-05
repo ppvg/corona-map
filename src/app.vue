@@ -25,7 +25,7 @@
                 return this.$store.state.ui.currentCity;
             },
             width() {
-                return this.$store.state.settings.canvasWidth;
+                return this.$store.state.settings.canvasWidth + 20;
             },
             lastDates() {
                 let n, dates, today;
@@ -46,13 +46,6 @@
         },
         methods: {
             init() {
-                let wh, ratio;
-                wh = window.innerHeight - 50;
-                ratio = wh / 500;
-                this.$store.commit('settings/updateProperty', {key: 'canvasHeight', value: wh});
-                this.$store.commit('settings/updateProperty', {key: 'canvasWidth', value: ratio * 400});
-                this.$store.commit('settings/updateProperty', {key: 'zoom', value: ratio * 145});
-
                 this.loadData();
             },
             loadData() {
@@ -82,7 +75,6 @@
                         this.$store.commit('ui/updateProperty', {key: 'today', value: today});
                     }
                 }
-
             },
             addReport(data) {
                 let key, city, report, absoluteNumbers;
@@ -115,8 +107,8 @@
                         report.history.push(value);
                     }
                 }
-
-                key = stringTool.titleForSorting(data.Municipality_name);
+                let titleKey = 'Municipality_name.y';
+                key = stringTool.titleForSorting(data[titleKey]);
                 if (this.$store.state.cities.dict[key]) {
                     city = this.$store.state.cities.dict[key];
                     this.$store.commit('cities/updatePropertyOfItem', {item: city, property: 'report', value: report});
@@ -136,28 +128,24 @@
 
 <template>
     <div class="app">
-
-        <h1>
-            Corona status {{todayString}}
-        </h1>
-
         <div class="content">
             <div
-                    :style="{'width': width + 'px'}"
-                    class="map__container">
-
+                :style="{'width': width + 'px'}"
+                class="left">
+                <cities-panel v-if="dataLoaded"/>
                 <map-netherlands v-if="dataLoaded"/>
             </div>
 
 
-            <div class="info-panel">
-                <cities-panel v-if="dataLoaded"/>
-                <city-card
-                        v-if="currentCity"
-                        :city="currentCity"/>
+            <div
+                :class="{'right--active': currentCity}"
+                class="right">
+                <h1>
+                    Corona status {{todayString}}
+                </h1>
+                <city-card :city="currentCity"/>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -166,7 +154,6 @@
     @import '@/styles/variables.scss';
 
     .app {
-        padding: 10px;
         overflow: hidden;
         position: absolute;
         left: 0;
@@ -174,27 +161,79 @@
         width: 100%;
         height: 100%;
 
-        h1 {
-            margin: 0;
-            font-size: 28px;
-            font-weight: 900;
-            line-height: 1.1;
-            //border-bottom: 4px solid #000;
-            padding-bottom: 4px;
-            display: inline-block;
-        }
-
         .content {
             display: flex;
-            align-items: center;
+            height: 100%;
 
-            .map__container {
+            .left {
                 padding: 10px;
+                height: 100%;
+
+                .cities-panel {
+                    height: 40px;
+                }
+
+                .map {
+                    height: calc(100% - 40px);
+                }
             }
 
-            .info-panel {
-                width: 300px;
-                //padding: 20px 10px 10px 10px;
+            .right {
+                width: 350px;
+                height: 100%;
+                padding: 10px;
+
+                .city-card {
+                    display: none;
+                }
+
+                &.right--active {
+
+                    .city-card {
+                        display: block;
+                    }
+                }
+
+                h1 {
+                    margin: 0;
+                    font-size: 28px;
+                    font-weight: 900;
+                    line-height: 1.1;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        @include mobile() {
+
+            .content {
+                display: block;
+                position: relative;
+
+                .left {
+                    width: 100%;
+                }
+
+                .right {
+                    position: absolute;
+                    left: 100%;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: auto;
+                    display: block;
+                    z-index: 1;
+                    transition: all 0.5s ease;
+                    padding: 20px;
+
+                    h1 {
+                        display: none;
+                    }
+
+                    &.right--active {
+                        left: 0;
+                    }
+                }
             }
         }
     }

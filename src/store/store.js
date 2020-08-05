@@ -15,7 +15,7 @@ const mutations = {
     }
 };
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
     state,
     mutations,
     actions: {},
@@ -24,4 +24,8 @@ export default new Vuex.Store({
         settings, ui
     }
 
-})
+});
+
+window.store = store;
+
+export default store

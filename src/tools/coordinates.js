@@ -6,7 +6,7 @@ const nl = {
 };
 
 const getLeft = function(longitude) {
-    return (longitude - nl.longitude) * store.state.settings.mapRatio * store.state.settings.zoom + (0.5 * store.state.settings.canvasWidth);
+    return (longitude - nl.longitude) * 0.62 * store.state.settings.zoom + (0.5 * store.state.settings.canvasWidth);
 };
 
 const getTop = function(latitude) {

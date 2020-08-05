@@ -1,17 +1,13 @@
 <script>
     import City from "@/classes/City";
-    import TrendLine from "./trend-line";
-    import thresholds from "@/data/thresholds";
+    import trendLine from "./trend-line";
 
     export default {
         name: 'city-card',
-        components: {TrendLine},
-        props: {
-            city: {
-                type: City,
-                required: true
-            }
+        components: {
+            trendLine
         },
+        props: ['city'],
         computed: {},
         methods: {
             format(value) {
@@ -21,7 +17,9 @@
                     return value;
                 }
             },
-
+            close() {
+                this.$store.commit('ui/updateProperty', {key: 'currentCity', value: null});
+            }
         }
     }
 </script>
@@ -29,7 +27,12 @@
 
 <template>
     <div class="city-card">
-        <div class="city-card__header">
+        <div
+            @click="close()"
+            class="city-card__close"></div>
+        <div
+            v-if="city"
+            class="city-card__header">
             <div
                 :style="{'background': city.color}"
                 class="dot"></div>
@@ -38,7 +41,7 @@
             </div>
         </div>
         <div
-            v-if="city.report"
+            v-if="city && city.report"
             class="city-card__info">
             <div class="city-card__section">
                 <div class="city-card__row">
@@ -76,6 +79,11 @@
         box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
         padding: 20px;
         font-size: 15px;
+        position: relative;
+
+        .city-card__close {
+            display: none;
+        }
 
         .city-card__header {
             font-weight: 700;
@@ -115,6 +123,42 @@
                     width: calc(100% - 220px);
                     position: relative;
                 }
+            }
+        }
+
+        @include mobile() {
+
+            .city-card__close {
+                position: absolute;
+                right: 12px;
+                top: 12px;
+                cursor: pointer;
+                width: 24px;
+                height: 24px;
+                text-align: center;
+                border-radius: 3px;
+                display: block;
+
+                &:before, &:after {
+                    position: absolute;
+                    left: 11px;
+                    top: 2px;
+                    content: ' ';
+                    height: 18px;
+                    width: 2px;
+                    background-color: #000;
+                }
+
+                &:before {
+                    transform: rotate(45deg);
+                }
+                &:after {
+                    transform: rotate(-45deg);
+                }
+            }
+
+            .city-card__header {
+                margin-top: 16px;
             }
         }
     }

@@ -4,7 +4,6 @@ class Path {
     constructor(path) {
         this.path = path.map(point => new Point(point));
         this.ctxPath = null;
-        this.init();
     }
 
     init() {

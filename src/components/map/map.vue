@@ -25,10 +25,22 @@
         },
         methods: {
             init() {
-                this.canvas.width = this.width;
-                this.canvas.height = this.height;
-                this.draw();
-                this.addClickEvent();
+                this.measure();
+                setTimeout(() => {
+                    this.canvas.width = this.width;
+                    this.canvas.height = this.height;
+                    this.draw();
+                    this.addClickEvent();
+                });
+            },
+            measure() {
+                let height, ratio;
+                height = this.$el.clientHeight;
+                ratio = this.$store.state.settings.mapRatio;
+                this.$store.commit('settings/updateProperty', {key: 'canvasHeight', value: height});
+                this.$store.commit('settings/updateProperty', {key: 'canvasWidth', value: ratio * height});
+                this.$store.commit('settings/updateProperty', {key: 'zoom', value: (height / 2.9)});
+
             },
             addClickEvent() {
                 this.canvas.addEventListener('click', (event) => {
@@ -67,6 +79,9 @@
                 }
             },
             drawPath(path) {
+                if (!path.ctxPath) {
+                    path.init();
+                }
                 this.ctx.fill(path.ctxPath);
             }
         },
@@ -79,7 +94,7 @@
 
 <template>
     <div
-        :style="{'width': width + 'px', 'height': height + 'px'}"
+        :style="{'width': width + 'px'}"
         class="map">
         <canvas id="canvas"></canvas>
     </div>
