@@ -1,6 +1,7 @@
 <script>
     import City from "@/classes/City";
     import TrendLine from "./trend-line";
+    import thresholds from "@/data/thresholds";
 
     export default {
         name: 'city-card',
@@ -11,7 +12,7 @@
                 required: true
             }
         },
-        computed: { },
+        computed: {},
         methods: {
             format(value) {
                 if (value > 0) {
@@ -19,7 +20,8 @@
                 } else {
                     return value;
                 }
-            }
+            },
+
         }
     }
 </script>

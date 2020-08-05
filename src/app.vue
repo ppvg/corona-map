@@ -74,7 +74,7 @@
                     if (!isNaN(numb)) {
                         return numb;
                     } else {
-                        return 0;
+                        return null;
                     }
                 };
 
@@ -102,7 +102,7 @@
                 if (this.$store.state.cities.dict[key]) {
                     city = this.$store.state.cities.dict[key];
                     this.$store.commit('cities/updatePropertyOfItem', {item: city, property: 'report', value: report});
-                    this.$store.commit('cities/updatePropertyOfItem', {item: city, property: 'population', value: Number(data.population)})
+                    this.$store.commit('cities/updatePropertyOfItem', {item: city, property: 'population', value: convertToNumber(data.population)})
                 } else {
                     console.log('not found ' + key);
                 }
