@@ -45,6 +45,7 @@
                 this.clear();
                 this.drawThresholds();
                 this.drawTrendLine();
+                this.drawPeriodBorder();
             },
             clear() {
                 this.ctx.clearRect(0, 0, this.width, this.height);
@@ -92,6 +93,21 @@
                 }
                 ctx.stroke();
                 ctx.closePath();
+            },
+            drawPeriodBorder() {
+                let ctx, x1, x2;
+                ctx = this.ctx;
+                ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+                x1 = this.step * 6;
+                x2 = this.step * 13;
+                ctx.beginPath();
+                ctx.moveTo(x1, 0);
+                ctx.lineTo(x1, this.height);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(x2, 0);
+                ctx.lineTo(x2, this.height);
+                ctx.stroke();
             }
         },
         mounted() {
