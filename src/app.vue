@@ -39,7 +39,7 @@
                 today = this.$store.state.ui.today;
                 for (let i = 0; i < n; i++) {
                     let date, formatted;
-                    date = sub(today, {days: (i + 1)}) ;
+                    date = sub(today, {days: i}) ;
                     formatted = format(date, 'yyyy-MM-dd');
                     dates.unshift(formatted);
                 }
