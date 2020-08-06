@@ -31,7 +31,7 @@
 <template>
     <div class="section red-cities">
         <div class="section__header">
-            Gemeentes met meer dan {{n}} besmetting per 100.000 duizend inwoners
+            Gemeentes met meer dan {{n}} besmettingen per 100.000 duizend inwoners
             in de laatste 7 dagen:
         </div>
         <div class="section__body">
