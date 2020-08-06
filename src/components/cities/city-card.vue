@@ -8,7 +8,26 @@
             trendLine
         },
         props: ['city'],
-        computed: {},
+        computed: {
+            period1() {
+                let start, end, total;
+                total = 0;
+                start = 0; end = 7;
+                for (let i = start, l = end; i < l; i++){
+                    total += this.city.report.history[i];
+                }
+                return total;
+            },
+            period2() {
+                let start, end, total;
+                total = 0;
+                start = 7; end = 14;
+                for (let i = start, l = end; i < l; i++){
+                    total += this.city.report.history[i];
+                }
+                return total;
+            }
+        },
         methods: {
             format(value) {
                 if (value > 0) {
