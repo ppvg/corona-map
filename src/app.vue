@@ -4,14 +4,19 @@
     import citiesPanel from "./components/cities/cities-panel";
     import cityCard from "./components/cities/city-card";
     import * as d3 from 'd3';
-    import stringTool from '@/tools/string';
     import {format, sub } from 'date-fns'
     import { nl } from 'date-fns/locale'
+    import redCities from "./components/cities/red-cities";
+    import newInfectionCities from "./components/cities/new-infection-cities";
+    import credits from "./components/credits";
 
 
     export default {
         name: 'app',
         components: {
+            credits,
+            newInfectionCities,
+            redCities,
             cityCard,
             citiesPanel,
             mapNetherlands
@@ -42,6 +47,9 @@
             },
             todayString() {
                 return this.$store.state.ui.today ? format(this.$store.state.ui.today, 'EEEE d MMMM', {locale: nl} ) : '';
+            },
+            showCredits() {
+                return this.$store.state.ui.credits;
             }
         },
         methods: {
@@ -115,8 +123,10 @@
                 } else {
                     console.log('not found ' + key);
                 }
+            },
+            openCredits() {
+                this.$store.commit('ui/updateProperty', {key: 'credits', value: true});
             }
-
         },
         mounted() {
             this.init();
@@ -127,7 +137,9 @@
 
 <template>
     <div class="app">
-        <div class="content">
+        <div
+            v-if="dataLoaded"
+            class="content">
             <div
                 :style="{'width': width + 'px'}"
                 class="left">
@@ -143,7 +155,18 @@
                     Corona status {{todayString}}
                 </h1>
                 <city-card :city="currentCity"/>
+                <div class="general-info">
+                    <red-cities/>
+                    <new-infection-cities/>
+
+                </div>
             </div>
+        </div>
+        <credits v-if="showCredits"/>
+        <div
+            @click="openCredits();"
+            class="open-credits">
+            Credits
         </div>
     </div>
 </template>
@@ -181,6 +204,7 @@
                 width: 350px;
                 height: 100%;
                 padding: 10px;
+                overflow: auto;
 
                 .city-card {
                     display: none;
@@ -203,6 +227,14 @@
             }
         }
 
+        .open-credits {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
         @include mobile() {
 
             .content {
@@ -219,7 +251,6 @@
                     top: 0;
                     width: 100%;
                     height: 100%;
-                    overflow: auto;
                     display: block;
                     z-index: 1;
                     transition: all 0.5s ease;
@@ -236,6 +267,10 @@
 
                     .city-card {
                         pointer-events: all;
+                    }
+
+                    .general-info {
+                        display: none;
                     }
                 }
             }

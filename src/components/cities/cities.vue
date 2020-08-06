@@ -1,10 +1,10 @@
 <script>
-    import city from "./city";
+    import cityResult from "./city-result";
 
     export default {
         name: 'cities',
         components: {
-            city
+            cityResult
         },
         props: {},
         computed: {
@@ -27,9 +27,9 @@
         <div
             v-if="cities.length > 0"
             class="cities__results">
-            <city
-                    v-for="city in cities"
-                    :city="city"/>
+            <city-result
+                v-for="city in cities"
+                :city="city"/>
         </div>
     </div>
 </template>
@@ -50,6 +50,7 @@
             overflow: auto;
             background: #fff;
             box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            z-index: 2;
         }
     }
 </style>

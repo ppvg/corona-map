@@ -2,9 +2,11 @@ import _base from './_base-module';
 
 const state = {
     searchValue: '',
+    hoverValue: '',
     currentCity: null,
     historyLength: 14,
-    today: null
+    today: null,
+    credits: false
 };
 
 const getters = {

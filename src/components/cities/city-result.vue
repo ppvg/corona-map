@@ -2,7 +2,7 @@
     import City from "@/classes/City";
 
     export default {
-        name: 'city',
+        name: 'city-result',
         components: {},
         props: {
             city: {
@@ -24,13 +24,8 @@
 <template>
     <div
         @click="selectCity()"
-        class="city">
-        <div
-            :style="{'background-color': city.threshold.color}"
-            class="city__swatch"></div>
-        <div class="city__title">
-            {{city.title}}
-        </div>
+        class="city-result">
+        {{city.title}}
     </div>
 </template>
 
@@ -38,23 +33,13 @@
 <style lang="scss">
     @import '@/styles/variables.scss';
 
-    .cities__list {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .city {
-        display: flex;
-        align-items: center;
-        margin-right: 4px;
+    .city-result {
+        border-bottom: 1px solid $grey-1;
+        padding: 14px 10px;
         cursor: pointer;
 
-
-        .city__swatch {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            margin-right: 2px;
+        &:hover {
+            background: $grey-1;
         }
     }
 </style>

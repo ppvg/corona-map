@@ -6,10 +6,7 @@ const thresholds = [
         n: 0,
         color: '#90fa05'
     }, {
-        n: 10,
-        color: '#dbf752'
-    }, {
-        n: 30,
+        n: 5,
         color: '#fadd05'
     }, {
         n: 50,
@@ -21,17 +18,15 @@ const thresholds = [
 ];
 
 
-
-
-const getColor = function(cases, population, days) {
+const getThreshold = function(cases, population, days) {
     if (cases === null || population === null) {
-        return '#888';
+        return null;
     } else {
         let relativeCasesInWeek = perPopulation * cases / population * (7 / days);
 
         for (let threshold of thresholds) {
             if (relativeCasesInWeek <= threshold.n) {
-                return threshold.color;
+                return threshold;
             }
         }
     }
@@ -39,5 +34,5 @@ const getColor = function(cases, population, days) {
 
 export default {
     thresholds,
-    getColor
+    getThreshold
 }

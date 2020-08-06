@@ -1,7 +1,11 @@
 <script>
+    import mapLegend from "./map-legend";
+
     export default {
         name: 'map-netherlands',
-        components: {},
+        components: {
+            mapLegend
+        },
         props: {},
         computed: {
             width() {
@@ -30,7 +34,7 @@
                     this.canvas.width = this.width;
                     this.canvas.height = this.height;
                     this.draw();
-                    this.addClickEvent();
+                    this.addEvents();
                 });
             },
             measure() {
@@ -49,6 +53,10 @@
                 this.$store.commit('settings/updateProperty', {key: 'zoom', value: (height / 2.9)});
 
             },
+            addEvents() {
+                this.addClickEvent();
+                this.addHoverEvent();
+            },
             addClickEvent() {
                 this.canvas.addEventListener('click', (event) => {
                     let x, y, city;
@@ -58,6 +66,19 @@
                     if (city) {
                         this.$store.commit('ui/updateProperty', {key: 'currentCity', value: city});
                         this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
+                    }
+                }, false);
+            },
+            addHoverEvent() {
+                this.canvas.addEventListener('mousemove', (event) => {
+                    let x, y, city;
+                    x = event.offsetX;
+                    y = event.offsetY;
+                    city = this.getCityForPoint(x, y);
+                    if (city) {
+                        this.$store.commit('ui/updateProperty', {key: 'hoverValue', value: city.title});
+                    } else {
+                        this.$store.commit('ui/updateProperty', {key: 'hoverValue', value: ''});
                     }
                 }, false);
             },
@@ -75,6 +96,8 @@
                 this.drawCities();
             },
             drawCities() {
+                this.ctx.lineWidth = 0.5;
+                this.ctx.strokeStyle = '#555';
                 for (let city of this.cities) {
                     this.drawCity(city);
                 }
@@ -90,6 +113,7 @@
                     path.init();
                 }
                 this.ctx.fill(path.ctxPath);
+                this.ctx.stroke(path.ctxPath);
             }
         },
         mounted() {
@@ -104,6 +128,7 @@
         :style="{'width': width + 'px'}"
         class="map">
         <canvas id="canvas"></canvas>
+        <map-legend/>
     </div>
 </template>
 
@@ -114,9 +139,18 @@
     .map {
         display: flex;
         align-items: center;
+        position: relative;
 
         canvas {
+            position: relative;
+            z-index: 0;
+        }
 
+        .map-legend {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            z-index: 1;
         }
     }
 </style>

@@ -36,27 +36,27 @@ class City {
         return stringTool.titleForSorting(this.title);
     }
 
-    // get newestSet() {
-    //     let n, setN, setTotal;
-    //     setTotal = 0;
-    //     n = this.report.history.length;
-    //     setN = Math.floor(n / 2);
-    //     for (let i = setN, l = setN * 2; i < l; i++) {
-    //         setTotal += this.report.history[i];
-    //     }
-    //     return setTotal;
-    // }
-    //
-    // get oldestSet() {
-    //     let n, setN, setTotal;
-    //     setTotal = 0;
-    //     n = this.report.history.length;
-    //     setN = Math.floor(n / 2);
-    //     for (let i = 0, l = setN ; i < l; i++) {
-    //         setTotal += this.report.history[i];
-    //     }
-    //     return setTotal;
-    // }
+    get newestSet() {
+        let n, setN, setTotal;
+        setTotal = 0;
+        n = this.report.history.length;
+        setN = Math.floor(n / 2);
+        for (let i = setN, l = setN * 2; i < l; i++) {
+            setTotal += this.report.history[i];
+        }
+        return setTotal;
+    }
+
+    get oldestSet() {
+        let n, setN, setTotal;
+        setTotal = 0;
+        n = this.report.history.length;
+        setN = Math.floor(n / 2);
+        for (let i = 0, l = setN ; i < l; i++) {
+            setTotal += this.report.history[i];
+        }
+        return setTotal;
+    }
     //
     // get trend() {
     //     let difference = this.newestSet - this.oldestSet;
@@ -71,8 +71,16 @@ class City {
     //     }
     // }
 
+    get threshold() {
+        return thresholds.getThreshold(this.increaseWeek, this.population, 7);
+    }
+
     get color() {
-        return thresholds.getColor(this.increaseWeek, this.population, 7);
+        return this.threshold ? this.threshold.color : '#888';
+    }
+
+    get hasNewInfection() {
+        return this.oldestSet === 0 && this.newestSet > 0;
     }
 }
 

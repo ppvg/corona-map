@@ -29,7 +29,7 @@
     <div class="city-card">
         <div
             @click="close()"
-            class="city-card__close"></div>
+            class="close-button"></div>
         <div
             v-if="city"
             class="city-card__header">
@@ -37,7 +37,7 @@
                 :style="{'background': city.color}"
                 class="dot"></div>
             <div class="city-card__title">
-                {{city.title}} {{city.code}}
+                {{city.title}}
             </div>
         </div>
         <div
@@ -80,10 +80,8 @@
         padding: 20px;
         font-size: 15px;
         position: relative;
+        margin-bottom: 20px;
 
-        .city-card__close {
-            display: none;
-        }
 
         .city-card__header {
             font-weight: 700;
@@ -128,36 +126,6 @@
 
         @include mobile() {
             font-size: 12px;
-
-            .city-card__close {
-                position: absolute;
-                right: 12px;
-                top: 12px;
-                cursor: pointer;
-                width: 24px;
-                height: 24px;
-                text-align: center;
-                border-radius: 3px;
-                display: block;
-
-                &:before, &:after {
-                    position: absolute;
-                    left: 11px;
-                    top: 2px;
-                    content: ' ';
-                    height: 18px;
-                    width: 2px;
-                    background-color: #000;
-                }
-
-                &:before {
-                    transform: rotate(45deg);
-                }
-
-                &:after {
-                    transform: rotate(-45deg);
-                }
-            }
 
             .city-card__header {
                 margin-top: 16px;
