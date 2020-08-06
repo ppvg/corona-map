@@ -66,6 +66,7 @@
                     if (city) {
                         this.$store.commit('ui/updateProperty', {key: 'currentCity', value: city});
                         this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
+                        this.$store.commit('ui/updateProperty', {key: 'hoverValue', value: ''});
                     }
                 }, false);
             },
