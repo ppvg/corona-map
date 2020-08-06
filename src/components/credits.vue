@@ -32,7 +32,7 @@
                 Grenswaardes voor kleurindeling overgenomen van <a href="https://twitter.com/edwinveldhuizen" target="_blank">@edwinveldhuizen</a>
             </li>
             <li>
-                Bron van deze applicatie: <a href="https://twitter.com/edwinveldhuizen" target="_blank">@edwinveldhuizen</a>
+                Bron van deze applicatie: <a href="https://github.com/innouveau/corona-map" target="_blank">github repo</a>
             </li>
         </ul>
         Volg of feedback: <a href="https://twitter.com/innouveau" target="_blank">@innouveau</a><br><br>
