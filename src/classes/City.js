@@ -71,6 +71,10 @@ class City {
     //     }
     // }
 
+    get relativeIncreaseWeek() {
+        return 100000 * this.increaseWeek /  this.population;
+    }
+
     get threshold() {
         return thresholds.getThreshold(this.increaseWeek, this.population, 7);
     }

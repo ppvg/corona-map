@@ -34,5 +34,6 @@ const getThreshold = function(cases, population, days) {
 
 export default {
     thresholds,
-    getThreshold
+    getThreshold,
+    perPopulation
 }

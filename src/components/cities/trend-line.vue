@@ -37,7 +37,7 @@
                 return this.max - this.min;
             },
             zoom() {
-                return 2;
+                return 6;
             }
         },
         methods: {
@@ -79,7 +79,7 @@
                 history = this.city.report.history;
 
                 const getValue = (value) => {
-                    let relativeValue = 300000 * value / this.city.population;
+                    let relativeValue = thresholds.perPopulation * value / this.city.population;
                     return this.height - (relativeValue * this.zoom);
                 };
 
