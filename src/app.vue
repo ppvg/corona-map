@@ -9,6 +9,7 @@
     import newInfectionCities from "./components/cities/new-infection-cities";
     import credits from "./components/credits";
     import dateString from "./components/elements/date-string";
+    import query from '@/components/elements/query';
 
 
     export default {
@@ -23,6 +24,7 @@
             mapNetherlands
         },
         props: {},
+        mixins: [query],
         computed: {
             dataLoaded() {
                 return this.$store.state.dataLoaded;
@@ -64,11 +66,22 @@
                         for (let item of data) {
                             this.addReport(item);
                         }
+                        this.readQuery();
                         this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
                     })
                     .catch((error) => {
                         console.error(error);
                     });
+            },
+            readQuery() {
+                let city, cityString;
+                if (this.$route.query.city) {
+                    cityString = decodeURI(this.$route.query.city);
+                    city = this.$store.getters['cities/getItemByProperty']('title', cityString, true);
+                    if (city) {
+                        this.$store.commit('ui/updateProperty', {key: 'currentCity', value: city});
+                    }
+                }
             },
             getDate(data) {
                 let key, dateString, set, today;
