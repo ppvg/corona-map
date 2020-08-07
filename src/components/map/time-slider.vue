@@ -8,6 +8,12 @@
             VueSlider
         },
         props: {},
+        data() {
+            return {
+                playing: false,
+                timer: null
+            }
+        },
         computed: {
             currentDateOffset: {
                 get() {
@@ -19,24 +25,70 @@
             },
             max() {
                 return this.$store.state.settings.historyLength;
+            },
+            isAtEnd() {
+                return this.$store.state.settings.currentDateOffset === 0;
             }
         },
-        methods: {}
+        methods: {
+            rewind() {
+                this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: this.max});
+            },
+            play() {
+                this.playing = true;
+                this.timer = setInterval(() => {
+                    if (this.$store.state.settings.currentDateOffset > 0) {
+                        this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: (this.$store.state.settings.currentDateOffset -1)});
+                    } else {
+                        this.stop();
+                    }
+                }, 500)
+            },
+            stop() {
+                this.playing = false;
+                clearInterval(this.timer);
+            }
+        }
     }
 </script>
 
 
 <template>
-    <div
-        :style="{'width': (max * 10) + 'px'}"
-        class="time-slider">
-        <vue-slider
-            v-model="currentDateOffset"
-            :min="0"
-            :max="max"
-            :interval="1"
-            :tooltip="'none'"
-            :duration="0"/>
+    <div class="time-slider">
+
+        <div
+            :style="{'width': (max * 10) + 'px'}"
+            class="vue-slider__container">
+            <vue-slider
+                    v-model="currentDateOffset"
+                    :min="0"
+                    :max="max"
+                    :interval="1"
+                    :tooltip="'none'"
+                    :duration="0"/>
+        </div>
+
+
+        <div
+            v-if="isAtEnd"
+            @click="rewind()"
+            class="time-button">
+            <img src="assets/img/tools/redo.svg">
+        </div>
+
+        <div
+            v-if="!playing && !isAtEnd"
+            @click="play()"
+            class="time-button">
+            <img src="assets/img/tools/play.svg">
+        </div>
+
+        <div
+            v-if="playing"
+            @click="stop()"
+            class="time-button">
+            <img src="assets/img/tools/stop.svg">
+        </div>
     </div>
 </template>
 
@@ -45,10 +97,31 @@
     @import '@/styles/variables.scss';
 
     .time-slider {
+        display: flex;
+        align-items: center;
 
+        .vue-slider {
+            margin-right: 20px;
 
-        .vue-slider-rail {
-            border-radius: 0;
+            .vue-slider-rail {
+                border-radius: 0;
+            }
+        }
+
+        .time-button {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            border: 1px solid #555;
+            cursor: pointer;
+            padding: 6px;
+
+            img {
+                width: 100%;
+            }
         }
     }
 </style>
