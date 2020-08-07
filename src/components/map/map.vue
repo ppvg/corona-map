@@ -1,9 +1,11 @@
 <script>
     import mapLegend from "./map-legend";
+    import TimeSlider from "./time-slider";
 
     export default {
         name: 'map-netherlands',
         components: {
+            TimeSlider,
             mapLegend
         },
         props: {},
@@ -130,6 +132,7 @@
         class="map">
         <canvas id="canvas"></canvas>
         <map-legend/>
+        <time-slider/>
     </div>
 </template>
 
