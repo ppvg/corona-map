@@ -92,7 +92,7 @@
                 ctx.beginPath();
                 ctx.lineWidth = 1;
                 ctx.strokeStyle = 'black';
-                start = history.length - (2 * this.periodOfFocusLength);
+                start = history.length - (2 * this.periodOfFocusLength) - this.offset;
                 ctx.moveTo(0, getValue(history[start]));
                 for (let i = (start + 1), l = (history.length - this.offset); i < l; i++) {
                     let value = getValue(history[i]);
