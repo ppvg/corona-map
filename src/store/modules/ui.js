@@ -4,7 +4,6 @@ const state = {
     searchValue: '',
     hoverValue: '',
     currentCity: null,
-    historyLength: 14,
     today: null,
     credits: false
 };

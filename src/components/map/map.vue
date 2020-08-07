@@ -27,6 +27,9 @@
             },
             ctx() {
                 return this.canvas.getContext('2d');
+            },
+            offset() {
+                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {
@@ -96,7 +99,11 @@
                 return null;
             },
             draw() {
+                this.clear();
                 this.drawCities();
+            },
+            clear() {
+                this.ctx.clearRect(0, 0, this.width, this.height);
             },
             drawCities() {
                 this.ctx.lineWidth = 0.5;
@@ -121,6 +128,13 @@
         },
         mounted() {
             this.init();
+        },
+        watch: {
+            offset: {
+                handler: function(newValue) {
+                    this.draw();
+                }
+            }
         }
     }
 </script>
@@ -154,6 +168,13 @@
             position: absolute;
             left: 0;
             top: 10px;
+            z-index: 1;
+        }
+
+        .time-slider {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
             z-index: 1;
         }
     }

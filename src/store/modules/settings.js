@@ -5,6 +5,9 @@ const state = {
     canvasWidth: 0,
     canvasHeight: 0,
     mapRatio: 0.89,
+    periodOfFocusLength: 7,
+    historyLength: 12,
+    currentDateOffset: 0
 };
 
 const getters = {

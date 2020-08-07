@@ -21,12 +21,15 @@ class City {
     }
 
     get increaseDay() {
-        return this.report.history[this.report.history.length - 1];
+        let offset = store.state.settings.currentDateOffset;
+        return this.report.history[this.report.history.length - 1 - offset];
     }
 
     get increaseWeek() {
-        let total = 0;
-        for (let i = this.report.history.length - 1, l = this.report.history.length - 8; i > l; i--) {
+        let total, offset;
+        total = 0;
+        offset = store.state.settings.currentDateOffset;
+        for (let i = (this.report.history.length - 1 - offset), l = (this.report.history.length - 8 - offset); i > l; i--) {
             total += this.report.history[i];
         }
         return total;
@@ -36,27 +39,27 @@ class City {
         return stringTool.titleForSorting(this.title);
     }
 
-    get newestSet() {
-        let n, setN, setTotal;
-        setTotal = 0;
-        n = this.report.history.length;
-        setN = Math.floor(n / 2);
-        for (let i = setN, l = setN * 2; i < l; i++) {
-            setTotal += this.report.history[i];
-        }
-        return setTotal;
-    }
-
-    get oldestSet() {
-        let n, setN, setTotal;
-        setTotal = 0;
-        n = this.report.history.length;
-        setN = Math.floor(n / 2);
-        for (let i = 0, l = setN ; i < l; i++) {
-            setTotal += this.report.history[i];
-        }
-        return setTotal;
-    }
+    // get newestSet() {
+    //     let n, setN, setTotal;
+    //     setTotal = 0;
+    //     n = this.report.history.length;
+    //     setN = Math.floor(n / 2);
+    //     for (let i = setN, l = setN * 2; i < l; i++) {
+    //         setTotal += this.report.history[i];
+    //     }
+    //     return setTotal;
+    // }
+    //
+    // get oldestSet() {
+    //     let n, setN, setTotal;
+    //     setTotal = 0;
+    //     n = this.report.history.length;
+    //     setN = Math.floor(n / 2);
+    //     for (let i = 0, l = setN ; i < l; i++) {
+    //         setTotal += this.report.history[i];
+    //     }
+    //     return setTotal;
+    // }
     //
     // get trend() {
     //     let difference = this.newestSet - this.oldestSet;

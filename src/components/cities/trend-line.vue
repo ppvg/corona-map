@@ -38,6 +38,12 @@
             },
             zoom() {
                 return 6;
+            },
+            periodOfFocusLength() {
+                return this.$store.state.settings.periodOfFocusLength;
+            },
+            offset() {
+                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {
@@ -73,7 +79,7 @@
                 ctx.globalAlpha = 1;
             },
             drawTrendLine() {
-                let ctx, step, history;
+                let ctx, step, history, start;
                 ctx = this.ctx;
                 step = this.step;
                 history = this.city.report.history;
@@ -86,10 +92,11 @@
                 ctx.beginPath();
                 ctx.lineWidth = 1;
                 ctx.strokeStyle = 'black';
-                ctx.moveTo(0, getValue(history[0]));
-                for (let i = 1, l = history.length; i < l; i++) {
+                start = history.length - (2 * this.periodOfFocusLength);
+                ctx.moveTo(0, getValue(history[start]));
+                for (let i = (start + 1), l = (history.length - this.offset); i < l; i++) {
                     let value = getValue(history[i]);
-                    ctx.lineTo((step * i), value);
+                    ctx.lineTo((step * (i - start)), value);
                 }
                 ctx.stroke();
                 ctx.closePath();
@@ -98,8 +105,8 @@
                 let ctx, x1, x2;
                 ctx = this.ctx;
                 ctx.strokeStyle = 'rgba(255,255,255,0.3)';
-                x1 = this.step * 6;
-                x2 = this.step * 13;
+                x1 = this.step * (this.periodOfFocusLength - 1);
+                x2 = this.step * (2 * this.periodOfFocusLength - 1);
                 ctx.beginPath();
                 ctx.moveTo(x1, 0);
                 ctx.lineTo(x1, this.height);
@@ -116,6 +123,13 @@
         watch: {
             city: function (newValue, oldValue) {
                 if (this.city) {
+                    setTimeout(() => {
+                        this.redraw();
+                    })
+                }
+            },
+            offset: {
+                handler: function(newValue) {
                     setTimeout(() => {
                         this.redraw();
                     })

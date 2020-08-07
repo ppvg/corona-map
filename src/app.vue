@@ -4,16 +4,17 @@
     import citiesPanel from "./components/cities/cities-panel";
     import cityCard from "./components/cities/city-card";
     import * as d3 from 'd3';
-    import {format, sub } from 'date-fns'
-    import { nl } from 'date-fns/locale'
+    import {format, sub } from 'date-fns';
     import redCities from "./components/cities/red-cities";
     import newInfectionCities from "./components/cities/new-infection-cities";
     import credits from "./components/credits";
+    import dateString from "./components/elements/date-string";
 
 
     export default {
         name: 'app',
         components: {
+            dateString,
             credits,
             newInfectionCities,
             redCities,
@@ -34,7 +35,7 @@
             },
             lastDates() {
                 let n, dates, today;
-                n = this.$store.state.ui.historyLength + 1;
+                n = (this.$store.state.settings.periodOfFocusLength * 2) + this.$store.state.settings.historyLength + 1;
                 dates = [];
                 today = this.$store.state.ui.today;
                 for (let i = 0; i < n; i++) {
@@ -44,9 +45,6 @@
                     dates.unshift(formatted);
                 }
                 return dates;
-            },
-            todayString() {
-                return this.$store.state.ui.today ? format(this.$store.state.ui.today, 'EEEE d MMMM', {locale: nl} ) : '';
             },
             showCredits() {
                 return this.$store.state.ui.credits;
@@ -152,12 +150,12 @@
                 :class="{'right--active': currentCity}"
                 class="right">
                 <h1>
-                    Corona status {{todayString}}
+                    Corona status <date-string/>
                 </h1>
                 <city-card :city="currentCity"/>
                 <div class="general-info">
                     <red-cities/>
-                    <new-infection-cities/>
+<!--                    <new-infection-cities/>-->
 
                 </div>
             </div>
@@ -201,7 +199,7 @@
             }
 
             .right {
-                width: 350px;
+                width: 370px;
                 height: 100%;
                 padding: 10px;
                 overflow: auto;
