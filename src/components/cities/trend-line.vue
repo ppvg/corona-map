@@ -19,7 +19,7 @@
                 return this.canvas.getContext('2d');
             },
             height() {
-                return 150;
+                return 200;
             },
             step() {
                 return 10;
@@ -37,7 +37,7 @@
                 return this.max - this.min;
             },
             zoom() {
-                return 6;
+                return 3;
             },
             periodOfFocusLength() {
                 return this.$store.state.settings.periodOfFocusLength;

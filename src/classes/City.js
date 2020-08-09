@@ -35,6 +35,20 @@ class City {
         return total;
     }
 
+    dynamicIncreaseWeek(delta) {
+        let total, offset;
+        total = 0;
+        offset = store.state.settings.currentDateOffset + delta;
+        for (let i = (this.report.history.length - 1 - offset), l = (this.report.history.length - 8 - offset); i > l; i--) {
+            total += this.report.history[i];
+        }
+        return total;
+    }
+
+    get changedStatus(){
+        return this.dynamicThreshold(1) !== this.threshold;
+    }
+
     get titleForSorting() {
         return stringTool.titleForSorting(this.title);
     }
@@ -80,6 +94,10 @@ class City {
 
     get threshold() {
         return thresholds.getThreshold(this.increaseWeek, this.population, 7);
+    }
+
+    dynamicThreshold(delta) {
+        return thresholds.getThreshold(this.dynamicIncreaseWeek(delta), this.population, 7);
     }
 
     get color() {

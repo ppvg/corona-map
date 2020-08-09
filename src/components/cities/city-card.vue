@@ -55,7 +55,9 @@
             <div
                 :style="{'background': city.color}"
                 class="dot"></div>
-            <div class="city-card__title">
+            <div
+                :title="city.population"
+                class="city-card__title">
                 {{city.title}}
             </div>
         </div>
@@ -77,6 +79,14 @@
                     </div>
                     <div class="city-card__value">
                         {{format(city.increaseWeek)}}
+                    </div>
+                </div>
+                <div class="city-card__row">
+                    <div class="city-card__label">
+                        Relatieve toename laatste 7 dagen (per 100 dzd inw)
+                    </div>
+                    <div class="city-card__value">
+                        {{format(Math.round(city.relativeIncreaseWeek))}}
                     </div>
                 </div>
             </div>

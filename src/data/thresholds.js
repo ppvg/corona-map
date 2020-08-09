@@ -25,7 +25,7 @@ const getThreshold = function(cases, population, days) {
         let relativeCasesInWeek = perPopulation * cases / population * (7 / days);
 
         for (let threshold of thresholds) {
-            if (relativeCasesInWeek <= threshold.n) {
+            if ((relativeCasesInWeek < threshold.n) || (relativeCasesInWeek === 0 && threshold.n === 0)) {
                 return threshold;
             }
         }

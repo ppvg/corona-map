@@ -41,6 +41,21 @@
     .cities__list {
         display: flex;
         flex-wrap: wrap;
+        margin-bottom: 20px;
+
+        &:last-child {
+        margin-bottom: 0;
+        }
+
+        .city__container {
+            display: flex;
+            align-items: center;
+            margin-right: 4px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
     }
 
     .city {
@@ -55,6 +70,10 @@
             height: 6px;
             border-radius: 50%;
             margin-right: 2px;
+        }
+
+        &:last-child {
+            margin-right: 0;
         }
     }
 </style>

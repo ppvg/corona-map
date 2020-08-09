@@ -10,11 +10,13 @@
     import credits from "./components/credits";
     import dateString from "./components/elements/date-string";
     import query from '@/components/elements/query';
+    import changedStatusCities from "./components/cities/changed-status-cities";
 
 
     export default {
         name: 'app',
         components: {
+            changedStatusCities,
             dateString,
             credits,
             newInfectionCities,
@@ -168,6 +170,7 @@
                 <city-card :city="currentCity"/>
                 <div class="general-info">
                     <red-cities/>
+                    <changed-status-cities/>
 <!--                    <new-infection-cities/>-->
 
                 </div>

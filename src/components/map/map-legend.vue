@@ -13,12 +13,14 @@
         computed: {},
         methods: {
             getNumber(threshold) {
+                let index = this.thresholds.indexOf(threshold);
                 if (threshold.n === 0) {
                     return 0;
                 } else if (threshold.n !== Infinity) {
-                    return '< ' + threshold.n;
+                    let prev = this.thresholds[index - 1];
+                    return prev.n + ' - ' + threshold.n;
                 } else {
-                    return '> ' + this.thresholds[this.thresholds.length - 2].n;
+                    return this.thresholds[this.thresholds.length - 2].n + ' of meer ';
                 }
             }
         }
