@@ -72,21 +72,21 @@
         <div
             v-if="isAtEnd"
             @click="rewind()"
-            class="time-button">
+            class="icon-button">
             <img src="assets/img/tools/redo.svg">
         </div>
 
         <div
             v-if="!playing && !isAtEnd"
             @click="play()"
-            class="time-button">
+            class="icon-button">
             <img src="assets/img/tools/play.svg">
         </div>
 
         <div
             v-if="playing"
             @click="stop()"
-            class="time-button">
+            class="icon-button">
             <img src="assets/img/tools/stop.svg">
         </div>
     </div>
@@ -105,22 +105,6 @@
 
             .vue-slider-rail {
                 border-radius: 0;
-            }
-        }
-
-        .time-button {
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 5px;
-            border: 1px solid #555;
-            cursor: pointer;
-            padding: 6px;
-
-            img {
-                width: 100%;
             }
         }
     }

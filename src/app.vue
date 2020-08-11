@@ -171,14 +171,13 @@
                 <div class="general-info">
                     <red-cities/>
                     <changed-status-cities/>
-<!--                    <new-infection-cities/>-->
 
                 </div>
             </div>
         </div>
         <credits v-if="showCredits"/>
         <div
-            @click="openCredits();"
+            @click="openCredits()"
             class="open-credits">
             Credits
         </div>
@@ -187,6 +186,7 @@
 
 
 <style lang="scss">
+    @import '@/styles/index.scss';
     @import '@/styles/variables.scss';
 
     .app {

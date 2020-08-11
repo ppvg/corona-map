@@ -7,7 +7,8 @@ const state = {
     mapRatio: 0.89,
     periodOfFocusLength: 7,
     historyLength: 20,
-    currentDateOffset: 0
+    currentDateOffset: 0,
+    gradient: false
 };
 
 const getters = {

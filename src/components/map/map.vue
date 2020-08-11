@@ -1,10 +1,13 @@
 <script>
     import mapLegend from "./map-legend";
     import TimeSlider from "./time-slider";
+    import downloadImage from "./download-image";
+    import canvasTools from '@/tools/canvas';
 
     export default {
         name: 'map-netherlands',
         components: {
+            downloadImage,
             TimeSlider,
             mapLegend
         },
@@ -100,31 +103,11 @@
             },
             draw() {
                 this.clear();
-                this.drawCities();
+                canvasTools.draw(this.ctx, this.cities);
             },
             clear() {
                 this.ctx.clearRect(0, 0, this.width, this.height);
             },
-            drawCities() {
-                this.ctx.lineWidth = 0.5;
-                this.ctx.strokeStyle = '#555';
-                for (let city of this.cities) {
-                    this.drawCity(city);
-                }
-            },
-            drawCity(city) {
-                for (let path of city.paths) {
-                    this.ctx.fillStyle = city.color;
-                    this.drawPath(path);
-                }
-            },
-            drawPath(path) {
-                if (!path.ctxPath) {
-                    path.init();
-                }
-                this.ctx.fill(path.ctxPath);
-                this.ctx.stroke(path.ctxPath);
-            }
         },
         mounted() {
             this.init();
@@ -147,6 +130,7 @@
         <canvas id="canvas"></canvas>
         <map-legend/>
         <time-slider/>
+        <download-image/>
     </div>
 </template>
 
@@ -174,6 +158,13 @@
         .time-slider {
             position: absolute;
             left: 10px;
+            bottom: 10px;
+            z-index: 1;
+        }
+
+        .download-image {
+            position: absolute;
+            right: 10px;
             bottom: 10px;
             z-index: 1;
         }

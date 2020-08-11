@@ -2,6 +2,7 @@ import Path from './Path';
 import store from '@/store/store';
 import stringTool from '@/tools/string';
 import thresholds from "@/data/thresholds";
+import interpolate from'color-interpolate';
 
 class City {
     constructor({
@@ -100,8 +101,48 @@ class City {
         return thresholds.getThreshold(this.dynamicIncreaseWeek(delta), this.population, 7);
     }
 
+    get prev() {
+        let threshold, index;
+        threshold = this.threshold;
+        index = thresholds.thresholds.indexOf(threshold);
+        if (index > 0) {
+            return thresholds.thresholds[index - 1];
+        } else {
+            return null;
+        }
+    }
+
+    get next() {
+        let threshold, index;
+        threshold = this.threshold;
+        index = thresholds.thresholds.indexOf(threshold);
+        if (index < thresholds.thresholds.length - 1) {
+            return thresholds.thresholds[index + 1];
+        } else {
+            return null;
+        }
+    }
+
+    get ratio() {
+        return (this.relativeIncreaseWeek - this.prev.n) / (this.threshold.n - this.prev.n);
+    }
+
     get color() {
-        return this.threshold ? this.threshold.color : '#888';
+        if (!this.threshold) {
+            return '#888';
+        } else {
+            if (!store.state.settings.gradient) {
+                return this.threshold.color;
+            } else {
+                if (!this.prev || !this.next) {
+                    return this.threshold.color;
+                } else {
+                    let colormap;
+                    colormap = interpolate([this.threshold.color, this.next.color]);
+                    return colormap(this.ratio);
+                }
+            }
+        }
     }
 
     get hasNewInfection() {

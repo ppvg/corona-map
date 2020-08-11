@@ -1,7 +1,7 @@
 import store from '@/store/store';
 
 const nl = {
-    latitude: 52.1,
+    latitude: 52.15,
     longitude: 5.34
 };
 
