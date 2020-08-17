@@ -7,13 +7,13 @@ const thresholds = [
         color: 'rgb(144,250,5)'
     }, {
         n: 5,
-        color: 'rgb(250,221,5)'
+        color: 'rgb(255,255,0)'
     }, {
         n: 50,
         color: 'rgb(250,172,5)'
     }, {
         n: Infinity,
-        color: 'rgb(250,66,5)'
+        color: 'rgb(255,0,0)'
     }
 ];
 
@@ -32,8 +32,23 @@ const getThreshold = function(cases, population, days) {
     }
 };
 
+const getNumber = function(threshold) {
+    let index, pre;
+    index = thresholds.indexOf(threshold);
+    if (threshold.n === 0) {
+        pre = 0;
+    } else if (threshold.n !== Infinity) {
+        let prev = this.thresholds[index - 1];
+        pre = prev.n + ' - ' + threshold.n;
+    } else {
+        pre = thresholds[thresholds.length - 2].n + ' of meer ';
+    }
+    return pre + ' besm. per 100k inw. per week';
+};
+
 export default {
     thresholds,
     getThreshold,
-    perPopulation
+    perPopulation,
+    getNumber
 }
