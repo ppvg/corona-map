@@ -124,7 +124,8 @@ class City {
     }
 
     get ratio() {
-        return (this.relativeIncreaseWeek - this.prev.n) / (this.threshold.n - this.prev.n);
+        let maxOfNextColor = 0.65;
+        return maxOfNextColor * (this.relativeIncreaseWeek - this.prev.n) / (this.threshold.n - this.prev.n);
     }
 
     get color() {
