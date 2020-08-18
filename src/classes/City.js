@@ -44,7 +44,6 @@ class City {
         return thresholds.getThreshold(this.getIncreaseWeek(delta), this.population, 7);
     }
 
-
     get changedStatus(){
         return this.getThreshold(1) !== this.getThreshold(0);
     }
@@ -86,6 +85,10 @@ class City {
     //             return 'dalend';
     //         }
     //     }
+    // }
+    //
+    // get hasNewInfection() {
+    //     return this.oldestSet === 0 && this.newestSet > 0;
     // }
 
 
@@ -132,10 +135,6 @@ class City {
                 }
             }
         }
-    }
-
-    get hasNewInfection() {
-        return this.oldestSet === 0 && this.newestSet > 0;
     }
 }
 
