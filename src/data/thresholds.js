@@ -43,7 +43,7 @@ const getNumber = function(threshold) {
     } else {
         pre = thresholds[thresholds.length - 2].n + ' of meer ';
     }
-    return pre + ' besm. per 100k inw. per week';
+    return pre + ' besm. per 100 dzd inw. per week';
 };
 
 export default {

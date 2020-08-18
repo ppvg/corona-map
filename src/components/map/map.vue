@@ -107,6 +107,8 @@
                     key: 'map',
                     width: this.$store.state.settings.canvasWidth,
                     height: this.$store.state.settings.canvasHeight,
+                    shiftX: 0,
+                    shiftY: 0,
                     zoom: this.$store.state.settings.zoom
                 };
                 canvasTools.draw(this.ctx, this.cities, settings);

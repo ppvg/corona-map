@@ -10,24 +10,22 @@
             cities() {
                 return this.$store.state.cities.all;
             },
-            width() {
-                return this.$store.state.settings.canvasWidth;
-            },
-            height() {
-                return this.$store.state.settings.canvasHeight;
-            },
             dateString() {
                 return this.$store.getters['ui/dateString'];
             },
             dateStringdashes() {
                 return this.dateString.replace(/\s/g , "-");
             },
+            imageScale() {
+                return 1;
+            }
         },
         methods: {
             download() {
-                let canvas, body, ctx, image, width, height, downloadLink;
-                width = this.width;
-                height = this.height + 30;
+                let canvas, body, ctx, width, height, downloadLink;
+                // twitter dimensions
+                width = 1014 * this.imageScale;
+                height = 570 * this.imageScale;
                 body = document.getElementsByTagName("body")[0];
                 downloadLink = document.createElement('a');
                 canvas = document.createElement('canvas');
@@ -40,9 +38,18 @@
                 canvasTools.addBackground(ctx, width, height);
                 this.addHead(ctx).then(() => {
 
+                    let settings = {
+                        width,
+                        height,
+                        shiftX: 220 * this.imageScale,
+                        shiftY: 0,
+                        zoom: 190 * this.imageScale,
+                        key: 'download'
+                    };
                     this.addDate(ctx);
                     this.addLegend(ctx);
-                    canvasTools.draw(ctx, this.cities, width, height);
+                    this.addRedCities(ctx);
+                    canvasTools.draw(ctx, this.cities, settings);
                     this.addCreator(ctx, width, height);
 
                     downloadLink.setAttribute('download', 'corona-status-' + this.dateStringdashes + '.png');
@@ -54,47 +61,61 @@
                 });
             },
             addHead(ctx) {
-                let width, height, scale;
-                width = 276;
-                height = 46;
-                scale = 0.75;
+                let width, height;
+                width = 430 * this.imageScale;
+                height = 42 * this.imageScale;
                 return new Promise((resolve, reject) => {
                     let img = new Image();
-                    img.src = 'assets/img/corona-status.png';
-                    img.onload = function () {
-                        ctx.drawImage(img, 6, 12, (width * scale), (height * scale));
+                    img.src = 'assets/img/corona-status-new.png';
+                    img.onload = () => {
+                        ctx.drawImage(img, (30 * this.imageScale), (36 * this.imageScale), width, height);
                         resolve();
                     }
                 });
             },
             addDate(ctx) {
-                ctx.font = 'bold 12px Arial';
+                ctx.font = 'bold ' + (32 * this.imageScale) + 'px Arial';
                 ctx.fillStyle = 'black';
                 ctx.textAlign = 'left';
-                ctx.fillText(this.dateString, 11, 55);
+                ctx.fillText(this.dateString, 30 * this.imageScale, 110 * this.imageScale);
+                ctx.beginPath();
+                ctx.moveTo(30 * this.imageScale, 130 * this.imageScale);
+                ctx.lineTo(465 * this.imageScale, 130 * this.imageScale);
+                ctx.stroke();
             },
             addLegend(ctx) {
                 let baseY, baseX;
-                baseY = 80;
-                baseX = 16;
+                baseY = 160 * this.imageScale;
+                baseX = 38 * this.imageScale;
                 ctx.strokeStyle = '#555';
-                ctx.font = '7px Arial';
+                ctx.font = (20 * this.imageScale) + 'px Arial';
                 for (let threshold of thresholds.thresholds) {
                     ctx.fillStyle = threshold.color;
                     ctx.beginPath();
-                    ctx.arc(baseX, baseY, 6, 0, (Math.PI * 2), false);
+                    ctx.arc(baseX, baseY, (9 * this.imageScale), 0, (Math.PI * 2), false);
                     ctx.stroke();
                     ctx.fill();
                     ctx.fillStyle = 'black';
-                    ctx.fillText(thresholds.getNumber(threshold), baseX + 12, (baseY + 2));
-                    baseY += 16;
+                    ctx.fillText(thresholds.getNumber(threshold), baseX + (24 * this.imageScale), (baseY + (7 * this.imageScale)));
+                    baseY += (33 * this.imageScale);
                 }
+                ctx.beginPath();
+                ctx.moveTo(30 * this.imageScale, 290 * this.imageScale);
+                ctx.lineTo(465 * this.imageScale, 290 * this.imageScale);
+                ctx.stroke();
+            },
+            addRedCities(ctx) {
+                //let redCities = this.$store.getters['cities/redCities'];
             },
             addCreator(ctx, width, height) {
-                ctx.font = '10px Arial';
+                ctx.beginPath();
+                ctx.moveTo(30 * this.imageScale, 510 * this.imageScale);
+                ctx.lineTo(465 * this.imageScale, 510 * this.imageScale);
+                ctx.stroke();
+
+                ctx.font = (20 * this.imageScale) + 'px Arial';
                 ctx.fillStyle = 'black';
-                ctx.textAlign = 'right';
-                ctx.fillText('Kaart door: @innouveau', (width - 10), (height - 10));
+                ctx.fillText('Kaart door: @innouveau', (30 * this.imageScale),  (545 * this.imageScale));
             }
         }
     }

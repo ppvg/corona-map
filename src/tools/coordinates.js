@@ -6,11 +6,11 @@ const nl = {
 };
 
 const getLeft = function(longitude, settings) {
-    return (longitude - nl.longitude) * 0.62 * settings.zoom + (0.5 * settings.width);
+    return (longitude - nl.longitude) * 0.62 * settings.zoom + (0.5 * settings.width) + settings.shiftX;
 };
 
 const getTop = function(latitude, settings) {
-    return (0.5 * settings.height) - (latitude - nl.latitude) * settings.zoom;
+    return (0.5 * settings.height) - (latitude - nl.latitude) * settings.zoom + settings.shiftY;
 };
 
 export default {

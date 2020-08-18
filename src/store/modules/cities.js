@@ -1,7 +1,8 @@
 import _base from './_base-module';
 import City from '@/classes/City';
+import thresholds from '@/data/thresholds';
 
-const Model = City;
+
 
 const state = {
     all: [],
@@ -10,7 +11,12 @@ const state = {
 };
 
 const getters = {
-    ..._base.getters
+    ..._base.getters,
+    redCities(state) {
+        return state.all.filter(city => {
+            return city.getThreshold() === thresholds.thresholds[thresholds.thresholds.length - 1];
+        }).sort((a,b) => (a.getRelativeIncreaseWeek() < b.getRelativeIncreaseWeek()) ? 1 : ((b.getRelativeIncreaseWeek() < a.getRelativeIncreaseWeek()) ? -1 : 0));
+    },
 };
 
 const actions = {};
