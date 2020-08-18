@@ -16,8 +16,8 @@
         computed: {
             redCities() {
                 return this.$store.state.cities.all.filter(city => {
-                    return city.threshold === this.thresholds[this.thresholds.length - 1];
-                }).sort((a,b) => (a.relativeIncreaseWeek < b.relativeIncreaseWeek) ? 1 : ((b.relativeIncreaseWeek < a.relativeIncreaseWeek) ? -1 : 0));
+                    return city.getThreshold() === this.thresholds[this.thresholds.length - 1];
+                }).sort((a,b) => (a.getRelativeIncreaseWeek() < b.getRelativeIncreaseWeek()) ? 1 : ((b.getRelativeIncreaseWeek() < a.getRelativeIncreaseWeek()) ? -1 : 0));
             },
             n() {
                 return this.thresholds[this.thresholds.length - 2].n
@@ -41,7 +41,7 @@
                     class="city__container">
                     <city :city="city"/>
                     <div class="city__info">
-                        ({{Math.round(city.relativeIncreaseWeek)}})
+                        ({{Math.round(city.getRelativeIncreaseWeek())}})
                     </div>
                 </div>
 

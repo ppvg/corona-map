@@ -17,10 +17,10 @@
             sets(){
                 return this.thresholds.slice().reverse().map(threshold => {
                     return this.$store.state.cities.all.filter(city => {
-                        return city.changedStatus && city.threshold === threshold
+                        return city.changedStatus && city.getThreshold() === threshold
                     }).map(city => {
                         let previousThreshold, mutation;
-                        previousThreshold = city.dynamicThreshold(1);
+                        previousThreshold = city.getThreshold(1);
                         if (threshold.n > previousThreshold.n) {
                             mutation = '↑';
                         } else {

@@ -78,7 +78,7 @@
                         Toename laatste 7 dagen
                     </div>
                     <div class="city-card__value">
-                        {{format(city.increaseWeek)}}
+                        {{format(city.getIncreaseWeek())}}
                     </div>
                 </div>
                 <div class="city-card__row">
@@ -86,7 +86,7 @@
                         Relatieve toename laatste 7 dagen (per 100 dzd inw)
                     </div>
                     <div class="city-card__value">
-                        {{format(Math.round(city.relativeIncreaseWeek))}}
+                        {{format(Math.round(city.getRelativeIncreaseWeek()))}}
                     </div>
                 </div>
             </div>

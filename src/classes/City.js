@@ -26,17 +26,7 @@ class City {
         return this.report.history[this.report.history.length - 1 - offset];
     }
 
-    get increaseWeek() {
-        let total, offset;
-        total = 0;
-        offset = store.state.settings.currentDateOffset;
-        for (let i = (this.report.history.length - 1 - offset), l = (this.report.history.length - 8 - offset); i > l; i--) {
-            total += this.report.history[i];
-        }
-        return total;
-    }
-
-    dynamicIncreaseWeek(delta) {
+    getIncreaseWeek(delta = 0) {
         let total, offset;
         total = 0;
         offset = store.state.settings.currentDateOffset + delta;
@@ -46,8 +36,17 @@ class City {
         return total;
     }
 
+    getRelativeIncreaseWeek() {
+        return 100000 * this.getIncreaseWeek() /  this.population;
+    }
+
+    getThreshold(delta = 0) {
+        return thresholds.getThreshold(this.getIncreaseWeek(delta), this.population, 7);
+    }
+
+
     get changedStatus(){
-        return this.dynamicThreshold(1) !== this.threshold;
+        return this.getThreshold(1) !== this.getThreshold(0);
     }
 
     get titleForSorting() {
@@ -89,21 +88,11 @@ class City {
     //     }
     // }
 
-    get relativeIncreaseWeek() {
-        return 100000 * this.increaseWeek /  this.population;
-    }
 
-    get threshold() {
-        return thresholds.getThreshold(this.increaseWeek, this.population, 7);
-    }
-
-    dynamicThreshold(delta) {
-        return thresholds.getThreshold(this.dynamicIncreaseWeek(delta), this.population, 7);
-    }
 
     get prev() {
         let threshold, index;
-        threshold = this.threshold;
+        threshold = this.getThreshold();
         index = thresholds.thresholds.indexOf(threshold);
         if (index > 0) {
             return thresholds.thresholds[index - 1];
@@ -114,7 +103,7 @@ class City {
 
     get next() {
         let threshold, index;
-        threshold = this.threshold;
+        threshold = this.getThreshold();
         index = thresholds.thresholds.indexOf(threshold);
         if (index < thresholds.thresholds.length - 1) {
             return thresholds.thresholds[index + 1];
@@ -125,19 +114,20 @@ class City {
 
 
     get color() {
-        if (!this.threshold) {
+        let threshold = this.getThreshold();
+        if (!threshold) {
             return '#888';
         } else {
             if (!store.state.settings.gradient) {
-                return this.threshold.color;
+                return threshold.color;
             } else {
                 if (!this.prev || !this.next) {
-                    return this.threshold.color;
+                    return threshold.color;
                 } else {
                     let colormap, maxOfNextColor, ratio;
                     maxOfNextColor = 0.65;
-                    ratio = maxOfNextColor * (this.relativeIncreaseWeek - this.prev.n) / (this.threshold.n - this.prev.n);
-                    colormap = interpolate([this.threshold.color, this.next.color]);
+                    ratio = maxOfNextColor * (this.getRelativeIncreaseWeek() - this.prev.n) / (threshold.n - this.prev.n);
+                    colormap = interpolate([threshold.color, this.next.color]);
                     return colormap(ratio);
                 }
             }

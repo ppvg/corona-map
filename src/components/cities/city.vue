@@ -26,7 +26,7 @@
         @click="selectCity()"
         class="city">
         <div
-            :style="{'background-color': city.threshold.color}"
+            :style="{'background-color': city.getThreshold().color}"
             class="city__swatch"></div>
         <div class="city__title">
             {{city.title}}
