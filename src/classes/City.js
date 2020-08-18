@@ -123,10 +123,6 @@ class City {
         }
     }
 
-    get ratio() {
-        let maxOfNextColor = 0.65;
-        return maxOfNextColor * (this.relativeIncreaseWeek - this.prev.n) / (this.threshold.n - this.prev.n);
-    }
 
     get color() {
         if (!this.threshold) {
@@ -138,9 +134,11 @@ class City {
                 if (!this.prev || !this.next) {
                     return this.threshold.color;
                 } else {
-                    let colormap;
+                    let colormap, maxOfNextColor, ratio;
+                    maxOfNextColor = 0.65;
+                    ratio = maxOfNextColor * (this.relativeIncreaseWeek - this.prev.n) / (this.threshold.n - this.prev.n);
                     colormap = interpolate([this.threshold.color, this.next.color]);
-                    return colormap(this.ratio);
+                    return colormap(ratio);
                 }
             }
         }
