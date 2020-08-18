@@ -94,7 +94,7 @@
             getCityForPoint(x, y) {
                 for (let city of this.cities) {
                     for (let path of city.paths) {
-                        if (this.ctx.isPointInPath(path.ctxPath, x, y)) {
+                        if (this.ctx.isPointInPath(path.storedPaths['map'], x, y)) {
                             return city;
                         }
                     }
@@ -103,7 +103,13 @@
             },
             draw() {
                 this.clear();
-                canvasTools.draw(this.ctx, this.cities);
+                let settings = {
+                    key: 'map',
+                    width: this.$store.state.settings.canvasWidth,
+                    height: this.$store.state.settings.canvasHeight,
+                    zoom: this.$store.state.settings.zoom
+                };
+                canvasTools.draw(this.ctx, this.cities, settings);
             },
             clear() {
                 this.ctx.clearRect(0, 0, this.width, this.height);

@@ -5,12 +5,12 @@ const nl = {
     longitude: 5.34
 };
 
-const getLeft = function(longitude) {
-    return (longitude - nl.longitude) * 0.62 * store.state.settings.zoom + (0.5 * store.state.settings.canvasWidth);
+const getLeft = function(longitude, settings) {
+    return (longitude - nl.longitude) * 0.62 * settings.zoom + (0.5 * settings.width);
 };
 
-const getTop = function(latitude) {
-    return (0.5 * store.state.settings.canvasHeight) - (latitude - nl.latitude) * store.state.settings.zoom;
+const getTop = function(latitude, settings) {
+    return (0.5 * settings.height) - (latitude - nl.latitude) * settings.zoom;
 };
 
 export default {

@@ -3,22 +3,23 @@ import Point from "./Point";
 class Path {
     constructor(path) {
         this.path = path.map(point => new Point(point));
-        this.ctxPath = null;
+        this.storedPaths = {};
     }
 
-    init() {
-        let path, pathWithoutStart;
+    create(settings) {
+        let path, pathWithoutStart, translatedPath;
         path = new Path2D();
-        path.moveTo(...this.translatedPath[0]);
-        pathWithoutStart = this.translatedPath.slice(1);
+        translatedPath = this.getTranslatedPath(settings);
+        path.moveTo(...translatedPath[0]);
+        pathWithoutStart = translatedPath.slice(1);
         for (let point of pathWithoutStart) {
             path.lineTo(...point);
         }
-        this.ctxPath = path;
+        this.storedPaths[settings.key] = path;
     }
 
-    get translatedPath() {
-        return this.path.map(point => point.translated);
+    getTranslatedPath(settings) {
+        return this.path.map(point => point.getTranslated(settings));
     }
 }
 
