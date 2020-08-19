@@ -1,9 +1,10 @@
 <script>
     import City from "@/classes/City";
+    import Swatch from "./swatch";
 
     export default {
         name: 'city',
-        components: {},
+        components: {Swatch},
         props: {
             city: {
                 type: City,
@@ -25,9 +26,8 @@
     <div
         @click="selectCity()"
         class="city">
-        <div
-            :style="{'background-color': city.getThreshold().color}"
-            class="city__swatch"></div>
+        <swatch :threshold="city.getThreshold()"/>
+
         <div class="city__title">
             {{city.title}}
         </div>
@@ -63,14 +63,6 @@
         align-items: center;
         margin-right: 4px;
         cursor: pointer;
-
-
-        .city__swatch {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            margin-right: 2px;
-        }
 
         &:last-child {
             margin-right: 0;
