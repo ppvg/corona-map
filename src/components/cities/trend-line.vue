@@ -1,5 +1,6 @@
 <script>
     import City from "@/classes/City";
+    import SewerageArea from "@/classes/SewerageArea";
     import thresholds from "@/data/thresholds";
 
     export default {
@@ -7,11 +8,14 @@
         components: {},
         props: {
             city: {
-                type: City,
+                type: City | SewerageArea,
                 required: true
             }
         },
         computed: {
+            report() {
+                return this.city.getReport();
+            },
             canvas() {
                 return document.getElementById('trend-line-' + this.city.id);
             },
@@ -25,13 +29,13 @@
                 return 10;
             },
             width() {
-                return this.city.report.history.length * this.step;
+                return this.periodOfFocusLength * 2 * this.step;
             },
             min() {
-                return Math.min( ...this.city.report.history );
+                return Math.min( ...this.report.history );
             },
             max() {
-                return Math.max( ...this.city.report.history );
+                return Math.max( ...this.report.history );
             },
             difference() {
                 return this.max - this.min;
@@ -82,10 +86,10 @@
                 let ctx, step, history, start;
                 ctx = this.ctx;
                 step = this.step;
-                history = this.city.report.history;
+                history = this.report.history;
 
                 const getValue = (value) => {
-                    let relativeValue = thresholds.perPopulation * value / this.city.population;
+                    let relativeValue = thresholds.perPopulation * value / this.city.getPopulation();
                     return this.height - (relativeValue * this.zoom);
                 };
 
@@ -142,6 +146,7 @@
 
 <template>
     <div class="trend-line">
+        <i>Trendlijn positieve testen</i>
         <canvas
             :id="'trend-line-' + city.id"
             :width="width"

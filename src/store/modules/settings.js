@@ -8,7 +8,9 @@ const state = {
     periodOfFocusLength: 7,
     historyLength: 20,
     currentDateOffset: 0,
-    gradient: true
+    gradient: true,
+    //areas: 'cities'
+    areas: 'sewerage-areas'
 };
 
 const getters = {

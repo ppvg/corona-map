@@ -1,13 +1,16 @@
 <script>
     import City from "@/classes/City";
-    import Swatch from "./swatch";
+    import SewerageArea from "@/classes/SewerageArea";
+    import swatch from "./swatch";
 
     export default {
         name: 'city',
-        components: {Swatch},
+        components: {
+            swatch
+        },
         props: {
             city: {
-                type: City,
+                type: City | SewerageArea,
                 required: true
             }
         },

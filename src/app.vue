@@ -1,6 +1,7 @@
 <script>
     import mapNetherlands from "./components/map/map";
     import cities from '@/data/areas.json';
+    import sewerageAreas from '@/data/sewerage-areas';
     import citiesPanel from "./components/cities/cities-panel";
     import * as d3 from 'd3';
     import {format, sub } from 'date-fns';
@@ -55,6 +56,9 @@
             },
             currentCity() {
                 return this.$store.state.ui.currentCity;
+            },
+            testSewerageArea() {
+                return this.$store.state.sewerageAreas.all[1];
             }
         },
         methods: {
@@ -65,6 +69,7 @@
                 //let url = 'https://github.com/mzelst/covid-19/blob/master/data/municipality-today.csv';
                 let url = window.config.dataUrl + 'data/municipality-today.csv';
                 this.$store.commit('cities/init', cities.features);
+                this.$store.commit('sewerageAreas/init', sewerageAreas);
                 d3.csv(url)
                     .then((data) => {
                         this.getDate(data);
@@ -210,6 +215,7 @@
 
                 .cities-panel {
                     height: 40px;
+                    min-width: 300px;
                 }
 
                 .map {

@@ -1,21 +1,25 @@
+import store from '@/store/store';
+
 const addBackground = function(ctx, width, height) {
     ctx.rect(0, 0, width, height);
     ctx.fillStyle = '#fff';
     ctx.fill();
 };
 
-const draw = function(ctx, cities, settings) {
+const draw = function(ctx, settings) {
+    let areas = store.getters['areas'];
     ctx.lineWidth = 0.5;
     ctx.strokeStyle = '#555';
 
-    for (let city of cities) {
-        drawCity(ctx, city, settings);
+    for (let area of areas) {
+        drawArea(ctx, area, settings);
     }
 };
 
-const drawCity = function(ctx, city, settings) {
-    for (let path of city.paths) {
-        ctx.fillStyle = city.color;
+const drawArea = function(ctx, area, settings) {
+    let paths = area.getPaths();
+    for (let path of paths) {
+        ctx.fillStyle = area.color;
         drawPath(ctx, path, settings);
     }
 };
@@ -33,5 +37,5 @@ const drawPath = function(ctx, path, settings) {
 export default {
     addBackground,
     draw,
-    drawCity
+    drawArea
 }

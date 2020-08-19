@@ -1,5 +1,5 @@
 import _base from './_base-module';
-import City from '@/classes/City';
+import SewerageArea from '@/classes/SewerageArea';
 
 
 
@@ -20,9 +20,9 @@ const mutations = {
         state.all = [];
         for (let item of set) {
             if (item) {
-                let c = new City(item);
-                state.all.push(c);
-                state.dict[c.code] = c;
+                let s = new SewerageArea(item);
+                state.all.push(s);
+                state.dict[s.rwzi_awzi_code] = s;
             }
         }
     },

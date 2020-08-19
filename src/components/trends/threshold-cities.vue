@@ -17,11 +17,17 @@
         computed: {
             n() {
                 return this.thresholds[this.thresholds.length - 2].n
+            },
+            areaName() {
+                return this.$store.getters['areaName']
+            },
+            areas() {
+                return this.$store.getters['areas']
             }
         },
         methods: {
-            getCities(threshold) {
-                return this.$store.state.cities.all.filter(city => {
+            getAreas(threshold) {
+                return this.areas.filter(city => {
                     return city.getThreshold() === threshold;
                 }).sort((a,b) => (a.getRelativeIncreaseWeek() < b.getRelativeIncreaseWeek()) ? 1 : ((b.getRelativeIncreaseWeek() < a.getRelativeIncreaseWeek()) ? -1 : 0));
             },
@@ -33,7 +39,7 @@
 <template>
     <div class="section threshold-cities">
         <div class="section__header">
-            Aantal gemeentes per signaalwaarde
+            Aantal {{areaName}} per signaalwaarde
         </div>
         <div class="section__body">
             <div
@@ -43,7 +49,7 @@
                     <swatch :threshold="threshold"/>
                 </div>
                 <div class="threshold-cities__label">
-                    {{getCities(threshold).length}}
+                    {{getAreas(threshold).length}}
                 </div>
             </div>
         </div>

@@ -14,20 +14,26 @@
             }
         },
         computed: {
+            areaName() {
+                return this.$store.getters['areaName']
+            },
+            areas() {
+                return this.$store.getters['areas']
+            },
             sets(){
                 return this.thresholds.slice().reverse().map(threshold => {
-                    return this.$store.state.cities.all.filter(city => {
-                        return city.changedStatus && city.getThreshold() === threshold
-                    }).map(city => {
+                    return this.areas.filter(area => {
+                        return area.changedStatus && area.getThreshold() === threshold
+                    }).map(area => {
                         let previousThreshold, mutation;
-                        previousThreshold = city.getThreshold(1);
+                        previousThreshold = area.getThreshold(1);
                         if (threshold.n > previousThreshold.n) {
                             mutation = '↑';
                         } else {
                             mutation = '↓'
                         }
                         return {
-                            city,
+                            area,
                             mutation
                         }
                     })
@@ -42,23 +48,23 @@
 <template>
     <div class="section changed-status-cities">
         <div class="section__header">
-            Gemeentes die van status veranderd zijn
+            {{areaName}} die van status veranderd zijn
         </div>
         <div class="section__body">
             <div
                 v-for="set in sets"
+                v-if="set.length > 0"
                 class="cities__list">
                 <div
                     v-for="item in set"
                     class="city__container">
-                    <city :city="item.city"/>
+                    <city :city="item.area"/>
                     <div
                         v-if="item.mutation === '↓'"
                         class="city__mutation">
                         ({{item.mutation}})
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

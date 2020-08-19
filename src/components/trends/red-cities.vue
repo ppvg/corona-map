@@ -14,8 +14,16 @@
             }
         },
         computed: {
+            areaName() {
+                return this.$store.getters['areaName'];
+            },
+            areas() {
+                return this.$store.getters['areas'];
+            },
             redCities() {
-                return this.$store.getters['cities/redCities'];
+                return this.areas.filter(area => {
+                    return area.getThreshold() === thresholds.thresholds[thresholds.thresholds.length - 1];
+                }).sort((a,b) => (a.getRelativeIncreaseWeek() < b.getRelativeIncreaseWeek()) ? 1 : ((b.getRelativeIncreaseWeek() < a.getRelativeIncreaseWeek()) ? -1 : 0));
             },
             n() {
                 return this.thresholds[this.thresholds.length - 2].n
@@ -29,11 +37,13 @@
 <template>
     <div class="section red-cities">
         <div class="section__header">
-            Gemeentes met meer dan {{n}} besmettingen per 100.000 inwoners
+            {{areaName}} met meer dan {{n}} besmettingen per 100.000 inwoners
             in de laatste 7 dagen:
         </div>
         <div class="section__body">
-            <div class="cities__list">
+            <div
+                v-if="redCities.length > 0"
+                class="cities__list">
                 <div
                     v-for="city in redCities"
                     class="city__container">
@@ -42,7 +52,9 @@
                         ({{Math.round(city.getRelativeIncreaseWeek())}})
                     </div>
                 </div>
-
+            </div>
+            <div v-else>
+                Geen
             </div>
         </div>
     </div>

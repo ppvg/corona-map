@@ -42,7 +42,7 @@
                 this.clear();
                 if (this.currentCity) {
                     this.ctx.strokeStyle = '#000';
-                    canvasTools.drawCity(this.ctx, this.currentCity, settings);
+                    canvasTools.drawArea(this.ctx, this.currentCity, settings);
                 }
             },
             clear() {

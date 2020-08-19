@@ -1,10 +1,12 @@
 <script>
     import City from "@/classes/City";
     import trendLine from "./trend-line";
+    import sewerageGraph from "../sewerage/sewerage-graph";
 
     export default {
         name: 'city-details',
         components: {
+            sewerageGraph,
             trendLine
         },
         props: ['city'],
@@ -61,7 +63,7 @@
             </div>
         </div>
         <div
-            v-if="city && city.report"
+            v-if="city"
             class="city-details__info">
             <div class="city-details__section">
                 <div class="city-details__row">
@@ -92,6 +94,13 @@
             <div class="city-details__section">
                 <div class="city-details__row">
                     <trend-line :city="city"/>
+                </div>
+            </div>
+            <div class="city-details__section">
+                <div class="city-details__row">
+                    <sewerage-graph
+                        v-if="city.type === 'sewerage-area'"
+                        :sewerage-area="city"/>
                 </div>
             </div>
         </div>

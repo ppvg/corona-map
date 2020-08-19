@@ -21,8 +21,8 @@
             height() {
                 return this.$store.state.settings.canvasHeight;
             },
-            cities() {
-                return this.$store.state.cities.all;
+            areas() {
+                return this.$store.getters['areas'];
             },
             testCity() {
                 return this.cities.find(city => city.title === 'Goeree-Overflakkee')
@@ -97,10 +97,10 @@
                 }, false);
             },
             getCityForPoint(x, y) {
-                for (let city of this.cities) {
-                    for (let path of city.paths) {
+                for (let area of this.areas) {
+                    for (let path of area.getPaths()) {
                         if (this.ctx.isPointInPath(path.storedPaths['map'], x, y)) {
-                            return city;
+                            return area;
                         }
                     }
                 }
@@ -117,7 +117,7 @@
                     zoom: this.$store.state.settings.zoom,
                     fill: true
                 };
-                canvasTools.draw(this.ctx, this.cities, settings);
+                canvasTools.draw(this.ctx, settings);
             },
             clear() {
                 this.ctx.clearRect(0, 0, this.width, this.height);

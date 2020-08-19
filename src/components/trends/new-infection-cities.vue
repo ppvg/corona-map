@@ -8,9 +8,15 @@
         },
         props: {},
         computed: {
+            areaName() {
+                return this.$store.getters['areaName']
+            },
+            areas() {
+                return this.$store.getters['areas']
+            },
             newInfectionCities() {
-                return this.$store.state.cities.all.filter(city => {
-                    return city.hasNewInfection;
+                return this.areas.filter(area => {
+                    return area.hasNewInfection;
                 })
             }
         },
@@ -22,7 +28,7 @@
 <template>
     <div class="section new-infection-cities">
         <div class="section__header">
-            Gemeentes met 0 besmettingen vorige week waar deze week een nieuwe
+            {{areaName}} met 0 besmettingen vorige week waar deze week een nieuwe
             besmetting is geconstateerd:
         </div>
         <div class="section__body">
