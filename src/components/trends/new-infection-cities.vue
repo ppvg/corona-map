@@ -1,5 +1,5 @@
 <script>
-    import city from "./city";
+    import city from "@/components/cities/city";
 
     export default {
         name: 'new-infection-cities',
@@ -22,8 +22,8 @@
 <template>
     <div class="section new-infection-cities">
         <div class="section__header">
-            Gemeentes met 0 besmettingen vorige week waar een nieuwe besmetting
-            is geconstateerd:
+            Gemeentes met 0 besmettingen vorige week waar deze week een nieuwe
+            besmetting is geconstateerd:
         </div>
         <div class="section__body">
             <div class="cities__list">

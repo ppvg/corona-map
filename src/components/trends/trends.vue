@@ -1,7 +1,7 @@
 <script>
-    import newInfectionCities from "../cities/new-infection-cities";
-    import redCities from "../cities/red-cities";
-    import changedStatusCities from "../cities/changed-status-cities";
+    import newInfectionCities from "./new-infection-cities";
+    import redCities from "./red-cities";
+    import changedStatusCities from "./changed-status-cities";
 
     export default {
         name: 'trends',
@@ -27,6 +27,7 @@
         class="trends panel">
         <red-cities/>
         <changed-status-cities/>
+        <new-infection-cities/>
     </div>
 </template>
 
