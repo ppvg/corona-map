@@ -36,7 +36,8 @@
                     height: this.$store.state.settings.canvasHeight,
                     shiftX: 0,
                     shiftY: 0,
-                    zoom: this.$store.state.settings.zoom
+                    zoom: this.$store.state.settings.zoom,
+                    fill: false
                 };
                 this.clear();
                 if (this.currentCity) {

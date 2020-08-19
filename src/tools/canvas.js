@@ -24,7 +24,9 @@ const drawPath = function(ctx, path, settings) {
     if (!path.storedPaths[settings.key]) {
         path.create(settings);
     }
-    ctx.fill(path.storedPaths[settings.key]);
+    if (settings.fill) {
+        ctx.fill(path.storedPaths[settings.key]);
+    }
     ctx.stroke(path.storedPaths[settings.key]);
 };
 

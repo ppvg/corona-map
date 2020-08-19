@@ -44,7 +44,8 @@
                         shiftX: 220 * this.imageScale,
                         shiftY: 0,
                         zoom: 190 * this.imageScale,
-                        key: 'download'
+                        key: 'download',
+                        fill: true
                     };
                     this.addDate(ctx);
                     this.addLegend(ctx);
