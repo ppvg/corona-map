@@ -8,7 +8,8 @@ const state = {
     hoverValue: '',
     currentCity: null,
     today: null,
-    credits: false
+    credits: false,
+    menu: 'map'
 };
 
 const getters = {

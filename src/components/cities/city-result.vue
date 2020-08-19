@@ -15,6 +15,7 @@
             selectCity() {
                 this.$store.commit('ui/updateProperty', {key: 'currentCity', value: this.city});
                 this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
+                this.$store.commit('ui/updateProperty', {key: 'menu', value: 'city'});
             }
         }
     }

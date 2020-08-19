@@ -3,7 +3,7 @@
     import trendLine from "./trend-line";
 
     export default {
-        name: 'city-card',
+        name: 'city-details',
         components: {
             trendLine
         },
@@ -26,6 +26,9 @@
                     total += this.city.report.history[i];
                 }
                 return total;
+            },
+            showDetails() {
+                return this.$store.state.ui.menu === 'city';
             }
         },
         methods: {
@@ -35,9 +38,6 @@
                 } else {
                     return value;
                 }
-            },
-            close() {
-                this.$store.commit('ui/updateProperty', {key: 'currentCity', value: null});
             }
         }
     }
@@ -45,53 +45,52 @@
 
 
 <template>
-    <div class="city-card">
-        <div
-            @click="close()"
-            class="close-button"></div>
+    <div
+        :class="{'panel--active': showDetails}"
+        class="city-details panel">
         <div
             v-if="city"
-            class="city-card__header">
+            class="city-details__header">
             <div
                 :style="{'background': city.color}"
                 class="dot"></div>
             <div
                 :title="city.population"
-                class="city-card__title">
+                class="city-details__title">
                 {{city.title}}
             </div>
         </div>
         <div
             v-if="city && city.report"
-            class="city-card__info">
-            <div class="city-card__section">
-                <div class="city-card__row">
-                    <div class="city-card__label">
+            class="city-details__info">
+            <div class="city-details__section">
+                <div class="city-details__row">
+                    <div class="city-details__label">
                         Toename vandaag
                     </div>
-                    <div class="city-card__value">
+                    <div class="city-details__value">
                         {{format(city.increaseDay)}}
                     </div>
                 </div>
-                <div class="city-card__row">
-                    <div class="city-card__label">
+                <div class="city-details__row">
+                    <div class="city-details__label">
                         Toename laatste 7 dagen
                     </div>
-                    <div class="city-card__value">
+                    <div class="city-details__value">
                         {{format(city.getIncreaseWeek())}}
                     </div>
                 </div>
-                <div class="city-card__row">
-                    <div class="city-card__label">
+                <div class="city-details__row">
+                    <div class="city-details__label">
                         Relatieve toename laatste 7 dagen (per 100 dzd inw)
                     </div>
-                    <div class="city-card__value">
+                    <div class="city-details__value">
                         {{format(Math.round(city.getRelativeIncreaseWeek()))}}
                     </div>
                 </div>
             </div>
-            <div class="city-card__section">
-                <div class="city-card__row">
+            <div class="city-details__section">
+                <div class="city-details__row">
                     <trend-line :city="city"/>
                 </div>
             </div>
@@ -103,16 +102,11 @@
 <style lang="scss">
     @import '@/styles/variables.scss';
 
-    .city-card {
-        background: #fff;
-        box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
-        padding: 20px;
+    .city-details {
         font-size: 15px;
         position: relative;
-        margin-bottom: 20px;
 
-
-        .city-card__header {
+        .city-details__header {
             font-weight: 700;
             font-size: 20px;
             margin-bottom: 12px;
@@ -127,22 +121,22 @@
             }
         }
 
-        .city-card__info {
+        .city-details__info {
 
-            .city-card__section {
+            .city-details__section {
                 margin-bottom: 20px;
             }
 
-            .city-card__row {
+            .city-details__row {
                 display: flex;
                 //align-items: center;
                 padding: 2px 0;
 
-                .city-card__label {
+                .city-details__label {
                     width: 220px;
                 }
 
-                .city-card__value {
+                .city-details__value {
                     font-weight: 700;
                     font-family: Courier;
                     font-size: 20px;
@@ -156,19 +150,19 @@
         @include mobile() {
             font-size: 12px;
 
-            .city-card__header {
+            .city-details__header {
                 margin-top: 16px;
             }
 
-            .city-card__info {
+            .city-details__info {
 
-                .city-card__row {
+                .city-details__row {
 
-                    .city-card__label {
+                    .city-details__label {
                         width: 160px;
                     }
 
-                    .city-card__value {
+                    .city-details__value {
                         font-size: 18px;
                         width: calc(100% - 160px);
                     }

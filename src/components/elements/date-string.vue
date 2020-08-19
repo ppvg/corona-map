@@ -14,9 +14,9 @@
 
 
 <template>
-    <div class="date-string">
+    <span class="date-string">
         {{dateString}}
-    </div>
+    </span>
 </template>
 
 

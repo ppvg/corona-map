@@ -30,5 +30,6 @@ const drawPath = function(ctx, path, settings) {
 
 export default {
     addBackground,
-    draw
+    draw,
+    drawCity
 }

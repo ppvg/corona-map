@@ -3,10 +3,12 @@
     import TimeSlider from "./time-slider";
     import downloadImage from "./download-image";
     import canvasTools from '@/tools/canvas';
+    import PointerCanvas from "./pointer-canvas";
 
     export default {
         name: 'map-netherlands',
         components: {
+            PointerCanvas,
             downloadImage,
             TimeSlider,
             mapLegend
@@ -26,7 +28,7 @@
                 return this.cities.find(city => city.title === 'Goeree-Overflakkee')
             },
             canvas() {
-                return document.getElementById('canvas');
+                return document.getElementById('main-canvas');
             },
             ctx() {
                 return this.canvas.getContext('2d');
@@ -57,7 +59,7 @@
                     }
                 }
                 this.$store.commit('settings/updateProperty', {key: 'canvasHeight', value: height});
-                this.$store.commit('settings/updateProperty', {key: 'canvasWidth', value: ratio * height});
+                this.$store.commit('settings/updateProperty', {key: 'canvasWidth', value: Math.round(ratio * height)});
                 this.$store.commit('settings/updateProperty', {key: 'zoom', value: (height / 2.9)});
 
             },
@@ -73,8 +75,11 @@
                     city = this.getCityForPoint(x, y);
                     if (city) {
                         this.$store.commit('ui/updateProperty', {key: 'currentCity', value: city});
+                        this.$store.commit('ui/updateProperty', {key: 'menu', value: 'city'});
                         this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
                         this.$store.commit('ui/updateProperty', {key: 'hoverValue', value: ''});
+                    } else {
+                        this.$store.commit('ui/updateProperty', {key: 'currentCity', value: false});
                     }
                 }, false);
             },
@@ -135,7 +140,10 @@
     <div
         :style="{'width': width + 'px'}"
         class="map">
-        <canvas id="canvas"></canvas>
+        <canvas id="main-canvas"></canvas>
+        <pointer-canvas
+            :width="width"
+            :height="height"/>
         <map-legend/>
         <time-slider/>
         <download-image/>
@@ -151,7 +159,7 @@
         align-items: center;
         position: relative;
 
-        canvas {
+        #main-canvas {
             position: relative;
             z-index: 0;
         }
@@ -166,14 +174,14 @@
         .time-slider {
             position: absolute;
             left: 10px;
-            bottom: 10px;
+            bottom: 20px;
             z-index: 1;
         }
 
         .download-image {
             position: absolute;
             right: 10px;
-            bottom: 10px;
+            bottom: 20px;
             z-index: 1;
         }
     }

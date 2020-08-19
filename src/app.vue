@@ -2,37 +2,31 @@
     import mapNetherlands from "./components/map/map";
     import cities from '@/data/areas.json';
     import citiesPanel from "./components/cities/cities-panel";
-    import cityCard from "./components/cities/city-card";
     import * as d3 from 'd3';
     import {format, sub } from 'date-fns';
-    import redCities from "./components/cities/red-cities";
-    import newInfectionCities from "./components/cities/new-infection-cities";
+
     import credits from "./components/credits";
-    import dateString from "./components/elements/date-string";
     import query from '@/components/elements/query';
-    import changedStatusCities from "./components/cities/changed-status-cities";
+    import headerMenu from "./components/header-menu";
+    import trends from "./components/trends/trends";
+    import cityDetails from "./components/cities/city-details";
 
 
     export default {
         name: 'app',
         components: {
-            changedStatusCities,
-            dateString,
+            trends,
+            headerMenu,
             credits,
-            newInfectionCities,
-            redCities,
-            cityCard,
             citiesPanel,
-            mapNetherlands
+            mapNetherlands,
+            cityDetails
         },
         props: {},
         mixins: [query],
         computed: {
             dataLoaded() {
                 return this.$store.state.dataLoaded;
-            },
-            currentCity() {
-                return this.$store.state.ui.currentCity;
             },
             width() {
                 return this.$store.state.settings.canvasWidth + 20;
@@ -52,6 +46,15 @@
             },
             showCredits() {
                 return this.$store.state.ui.credits;
+            },
+            showMap() {
+                return this.$store.state.ui.menu === 'map';
+            },
+            showCity() {
+                return this.currentCity;
+            },
+            currentCity() {
+                return this.$store.state.ui.currentCity;
             }
         },
         methods: {
@@ -150,31 +153,29 @@
 
 <template>
     <div class="app">
+        <header-menu/>
+
         <div
             v-if="dataLoaded"
             class="content">
+
             <div
                 :style="{'width': width + 'px'}"
-                class="left">
+                :class="{'panel--active': showMap}"
+                class="map-container panel">
                 <cities-panel v-if="dataLoaded"/>
                 <map-netherlands v-if="dataLoaded"/>
             </div>
 
+            <trends/>
 
-            <div
-                :class="{'right--active': currentCity}"
-                class="right">
-                <h1>
-                    Corona status <date-string/>
-                </h1>
-                <city-card :city="currentCity"/>
-                <div class="general-info">
-                    <red-cities/>
-                    <changed-status-cities/>
-
-                </div>
-            </div>
+            <city-details
+                v-if="showCity"
+                :city="currentCity"/>
         </div>
+
+
+
         <credits v-if="showCredits"/>
         <div
             @click="openCredits()"
@@ -197,13 +198,15 @@
         width: 100%;
         height: 100%;
 
+        .header-menu {
+            height: 48px;
+        }
+
         .content {
             display: flex;
-            height: 100%;
+            height: calc(100% - 48px);
 
-            .left {
-                padding: 10px;
-                height: 100%;
+            .map-container {
 
                 .cities-panel {
                     height: 40px;
@@ -214,46 +217,34 @@
                 }
             }
 
-            .right {
-                width: 370px;
-                height: 100%;
-                padding: 10px;
-                overflow: auto;
+            .trends {
+                width: 300px;
+            }
 
-                .city-card {
-                    display: none;
-                }
-
-                &.right--active {
-
-                    .city-card {
-                        display: block;
-                    }
-                }
-
-                h1 {
-                    margin: 0;
-                    font-size: 28px;
-                    font-weight: 900;
-                    line-height: 1.1;
-                    margin-bottom: 20px;
-                }
+            .city-details {
+                width: 300px;
             }
         }
 
         .open-credits {
             position: fixed;
             right: 10px;
-            bottom: 10px;
+            bottom: 6px;
             cursor: pointer;
             text-decoration: underline;
+            text-align: right;
         }
 
         @include mobile() {
 
+            .header-menu {
+                height: 64px;
+            }
+
             .content {
                 display: block;
                 position: relative;
+                height: calc(100% - 64px);
 
                 .left {
                     width: 100%;
@@ -281,10 +272,6 @@
 
                     .city-card {
                         pointer-events: all;
-                    }
-
-                    .general-info {
-                        display: none;
                     }
                 }
             }
