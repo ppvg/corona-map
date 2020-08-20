@@ -46,7 +46,7 @@ const init = function() {
 
     Promise.all(promises).then((result) => {
         for (let item of result) {
-            rszi_regions = rszi_regions.concat(result);
+            rszi_regions = rszi_regions.concat(item);
         }
         console.log(rszi_regions);
         console.log(JSON.stringify(rszi_regions));
