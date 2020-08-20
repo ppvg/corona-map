@@ -8,7 +8,16 @@ const getCityByPostalCode = function(postalCode) {
     let letters = postalCode.substring(0, 4);
     if (window.postcodes[letters]) {
         // GM is the convention already used in municipality-today.csv
-        return 'GM' + window.postcodes[letters].city_code;
+        let code = window.postcodes[letters].city_code;
+        if (code < 10) {
+            return 'GM000' + code;
+        } else if (code < 100) {
+            return 'GM00' + code;
+        } else if (code < 1000) {
+            return 'GM0' + code;
+        } else  {
+            return 'GM' + code;
+        }
     } else {
         return null;
     }
