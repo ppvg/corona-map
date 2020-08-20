@@ -146,7 +146,6 @@
 
 <template>
     <div class="trend-line">
-        <i>Trendlijn positieve testen</i>
         <canvas
             :id="'trend-line-' + city.id"
             :width="width"

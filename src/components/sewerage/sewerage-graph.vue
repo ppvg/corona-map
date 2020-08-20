@@ -39,7 +39,7 @@
                 return 'sewerage-graph-' + this.sewerageArea.id;
             },
             height() {
-                return 200;
+                return 100;
             },
             step() {
                 return 10;
@@ -60,26 +60,36 @@
                 return this.width * (ms - this.startDateInMs) / (this.endDateInMs - this.startDateInMs)
             },
             drawGraph() {
-                let max, ctx, index;
+                let max, ctx, index, points;
                 index = 0;
                 ctx = this.ctx;
-                max = 10000;
+                max = 30000;
                 ctx.beginPath();
                 ctx.lineWidth = 1;
                 ctx.strokeStyle = 'black';
-                for (let measurement of this.sewerageArea.sewerageMeasurements) {
-                    let x, y;
-                    x = this.getX(measurement.dateMs);
-                    y = this.height - (measurement.rnaLevel / max * this.height);
+                points = this.sewerageArea.sewerageMeasurements.map(measurement => {
+                    return {
+                        x: this.getX(measurement.dateMs),
+                        y: this.height - (measurement.rnaLevel / max * this.height)
+                    }
+                });
+                for (let point of points) {
                     if (index === 0) {
-                        ctx.moveTo(x, y);
+                        ctx.moveTo(point.x, point.y);
                     } else {
-                        ctx.lineTo(x, y);
+                        ctx.lineTo(point.x, point.y);
                     }
                     index++;
                 }
                 ctx.stroke();
                 ctx.closePath();
+
+                for (let point of points) {
+                    ctx.beginPath();
+                    ctx.fillStyle = '#000';
+                    ctx.arc(point.x, point.y, 2, 0, (Math.PI * 2), false);
+                    ctx.fill();
+                }
             }
         },
         mounted() {

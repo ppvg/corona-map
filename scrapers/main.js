@@ -1,8 +1,11 @@
-let url, safetyRegion_id;
+let safetyRegion_id, numberOfSafetyRegions, rszi_regions;
 
+date = '2020-08-19';
+numberOfSafetyRegions = 25;
 // zeeland
 safetyRegion_id = 19;
-url = 'https://raw.githubusercontent.com/boisei0/corona-dashboard-data/master/data/2020-08-19_2/VR' + safetyRegion_id + '.json';
+rszi_regions = [];
+
 
 const sewerageAreasDict = [
     {
@@ -28,20 +31,38 @@ const sewerageAreasDict = [
     }
 ];
 
-$.getJSON(url, function(result) {
-    printSewerageAreas(result.results_per_sewer_installation_per_region.values)
-});
 
-const getCityCodes = function(rwzi_awzi_code) {
-    for (let sewerageArea of sewerageAreasDict) {
-        if (sewerageArea.rwzi_awzi_code === rwzi_awzi_code) {
-            return sewerageArea.city_codes;
+const init = function() {
+    let promises = Array.from(Array(numberOfSafetyRegions), (_, i) => i + 1).map(id => {
+        if (id < 10) {
+            id = '0' + id;
         }
-    }
-    return [];
+        return new Promise((resolve, reject) => {
+            readJson(id).then(result => {
+                resolve(result);
+            })
+        });
+    });
+
+    Promise.all(promises).then((result) => {
+        for (let item of result) {
+            rszi_regions = rszi_regions.concat(result);
+        }
+        console.log(rszi_regions);
+        console.log(JSON.stringify(rszi_regions));
+    });
 };
 
-const printSewerageAreas = function(sewerageAreas) {
+const readJson = function(id) {
+    return new Promise((resolve, reject) => {
+        let url = 'https://raw.githubusercontent.com/boisei0/corona-dashboard-data/master/data/' + date + '_2/VR' + id + '.json';
+        $.getJSON(url, function(result) {
+            resolve(getSewerageAreas(result.results_per_sewer_installation_per_region.values));
+        });
+    });
+};
+
+const getSewerageAreas = function(sewerageAreas) {
     let set = [];
     for (let sewerageArea of sewerageAreas) {
         let item, measurements;
@@ -73,6 +94,16 @@ const printSewerageAreas = function(sewerageAreas) {
         set.push(item);
         //
     }
-    console.log(set);
-    console.log(JSON.stringify(set));
+    return set;
 };
+
+const getCityCodes = function(rwzi_awzi_code) {
+    for (let sewerageArea of sewerageAreasDict) {
+        if (sewerageArea.rwzi_awzi_code === rwzi_awzi_code) {
+            return sewerageArea.city_codes;
+        }
+    }
+    return [];
+};
+
+init();
