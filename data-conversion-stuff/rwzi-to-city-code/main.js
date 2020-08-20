@@ -42,7 +42,7 @@ $.getJSON(url, function(measurementents) {
         let sewerage = sewerageDict[key];
         sewerageAreas.push(sewerage);
     }
-    console.log(sewerageAreas);
+    console.log(JSON.stringify(sewerageAreas));
 });
 
 

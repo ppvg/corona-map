@@ -1,0 +1,5247 @@
+[
+  {
+    "sewerageArea_code": 1008,
+    "city_code": "GM37",
+    "name": "Stadskanaal",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurementents": [
+      {
+        "date": "2020-03-31",
+        "RNA_per_ml": 200,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-07",
+        "RNA_per_ml": 37,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-14",
+        "RNA_per_ml": 146,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-21",
+        "RNA_per_ml": 63,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-28",
+        "RNA_per_ml": 26,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-05",
+        "RNA_per_ml": 334,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-19",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-29",
+        "RNA_per_ml": 50,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-09",
+        "RNA_per_ml": 88,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-17",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-16",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 152,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-06",
+        "RNA_per_ml": 141,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1033,
+    "city_code": "GM14",
+    "name": "Garmerwolde",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurementents": [
+      {
+        "date": "2020-03-31",
+        "RNA_per_ml": 427,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-07",
+        "RNA_per_ml": 951,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-13",
+        "RNA_per_ml": 75,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-22",
+        "RNA_per_ml": 372,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 71,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 385,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-11",
+        "RNA_per_ml": 43,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-22",
+        "RNA_per_ml": 108,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-03",
+        "RNA_per_ml": 110,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-08",
+        "RNA_per_ml": 29,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-14",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-19",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-13",
+        "RNA_per_ml": 78,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 171,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 156,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-06",
+        "RNA_per_ml": 33,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-13",
+        "RNA_per_ml": 354,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1034,
+    "city_code": "GM1969",
+    "name": "Feerwerd",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurementents": [
+      {
+        "date": "2020-07-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1039,
+    "city_code": "GM1895",
+    "name": "Scheemda",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurementents": [
+      {
+        "date": "2020-07-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-06",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2011,
+    "city_code": "GM80",
+    "name": "Leeuwarden",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurementents": [
+      {
+        "date": "2020-03-31",
+        "RNA_per_ml": 424,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-07",
+        "RNA_per_ml": 903,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-14",
+        "RNA_per_ml": 58,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-21",
+        "RNA_per_ml": 114,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-28",
+        "RNA_per_ml": 119,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-05",
+        "RNA_per_ml": 43,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-12",
+        "RNA_per_ml": 53,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-19",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-04",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-17",
+        "RNA_per_ml": 81,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 129,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2012,
+    "city_code": "GM90",
+    "name": "Drachten",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurementents": [
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2015,
+    "city_code": "GM86",
+    "name": "Gorredijk",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurementents": [
+      {
+        "date": "2020-07-17",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-30",
+        "RNA_per_ml": 124,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 116,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2021,
+    "city_code": "GM1891",
+    "name": "Damwoude",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurementents": [
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 1000,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2022,
+    "city_code": "GM1940",
+    "name": "Joure",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurementents": [
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-30",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2032,
+    "city_code": "GM72",
+    "name": "Harlingen",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurementents": [
+      {
+        "date": "2020-03-31",
+        "RNA_per_ml": 869,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-07",
+        "RNA_per_ml": 321,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-14",
+        "RNA_per_ml": 572,
+        "representative_measurement": false
+      },
+      {
+        "date": "2020-04-21",
+        "RNA_per_ml": 1050,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-28",
+        "RNA_per_ml": 93,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-19",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-17",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 315,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-13",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2037,
+    "city_code": "GM1900",
+    "name": "Warns",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurementents": [
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 76,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2038,
+    "city_code": "GM1949",
+    "name": "Franeker",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurementents": [
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-13",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 3010,
+    "city_code": "GM106",
+    "name": "Assen",
+    "security_region_code": "VR03",
+    "security_region_name": "Drenthe",
+    "measurementents": [
+      {
+        "date": "2020-03-31",
+        "RNA_per_ml": 2254,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-07",
+        "RNA_per_ml": 74,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-14",
+        "RNA_per_ml": 18,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-21",
+        "RNA_per_ml": 37,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-28",
+        "RNA_per_ml": 52,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-12",
+        "RNA_per_ml": 16,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-19",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-17",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-16",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-06",
+        "RNA_per_ml": 136,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 3023,
+    "city_code": "GM173",
+    "name": "Tweede Exloermond",
+    "security_region_code": "VR03",
+    "security_region_name": "Drenthe",
+    "measurementents": [
+      {
+        "date": "2020-07-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-06",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 3027,
+    "city_code": "GM1731",
+    "name": "Smilde",
+    "security_region_code": "VR03",
+    "security_region_name": "Drenthe",
+    "measurementents": [
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 3028,
+    "city_code": "GM109",
+    "name": "Sleen",
+    "security_region_code": "VR03",
+    "security_region_name": "Drenthe",
+    "measurementents": [
+      {
+        "date": "2020-04-01",
+        "RNA_per_ml": 721,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-08",
+        "RNA_per_ml": 128,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-15",
+        "RNA_per_ml": 37,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-22",
+        "RNA_per_ml": 4083,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 64,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-13",
+        "RNA_per_ml": 535,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-18",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-30",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-06",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-06",
+        "RNA_per_ml": 58,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 3033,
+    "city_code": "GM118",
+    "name": "Echten",
+    "security_region_code": "VR03",
+    "security_region_name": "Drenthe",
+    "measurementents": [
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 90,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 90,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 210,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 210,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 4019,
+    "city_code": "GM150",
+    "name": "Deventer",
+    "security_region_code": "VR04",
+    "security_region_name": "IJsselland",
+    "measurementents": [
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 345,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 609,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 194,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 4023,
+    "city_code": "GM166",
+    "name": "Kampen",
+    "security_region_code": "VR04",
+    "security_region_name": "IJsselland",
+    "measurementents": [
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 152,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 288,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 4024,
+    "city_code": "GM160",
+    "name": "Hardenberg",
+    "security_region_code": "VR04",
+    "security_region_name": "IJsselland",
+    "measurementents": [
+      {
+        "date": "2020-07-24",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": false
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 4026,
+    "city_code": "GM193",
+    "name": "Zwolle",
+    "security_region_code": "VR04",
+    "security_region_name": "IJsselland",
+    "measurementents": [
+      {
+        "date": "2020-03-31",
+        "RNA_per_ml": 890,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-07",
+        "RNA_per_ml": 1844,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-14",
+        "RNA_per_ml": 757,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-21",
+        "RNA_per_ml": 277,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-28",
+        "RNA_per_ml": 338,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-05",
+        "RNA_per_ml": 113,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-12",
+        "RNA_per_ml": 108,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-19",
+        "RNA_per_ml": 83,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-26",
+        "RNA_per_ml": 21,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-02",
+        "RNA_per_ml": 180,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-15",
+        "RNA_per_ml": 65,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-30",
+        "RNA_per_ml": 23,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 4027,
+    "city_code": "GM171",
+    "name": "Tollebeek",
+    "security_region_code": "VR25",
+    "security_region_name": "Flevoland",
+    "measurementents": [
+      {
+        "date": "2020-04-05",
+        "RNA_per_ml": 1668,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-08",
+        "RNA_per_ml": 1858,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-15",
+        "RNA_per_ml": 1217,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-23",
+        "RNA_per_ml": 9475,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 684,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-05",
+        "RNA_per_ml": 1125,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-11",
+        "RNA_per_ml": 716,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-17",
+        "RNA_per_ml": 160,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-23",
+        "RNA_per_ml": 63,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-29",
+        "RNA_per_ml": 56,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-07",
+        "RNA_per_ml": 35,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-11",
+        "RNA_per_ml": 567,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-17",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-23",
+        "RNA_per_ml": 129,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-29",
+        "RNA_per_ml": 38,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-17",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 186,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 5002,
+    "city_code": "GM153",
+    "name": "Enschede-West",
+    "security_region_code": "VR05",
+    "security_region_name": "Twente",
+    "measurementents": [
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 243,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 78,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 173,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 353,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 5012,
+    "city_code": "GM173",
+    "name": "Oldenzaal",
+    "security_region_code": "VR05",
+    "security_region_name": "Twente",
+    "measurementents": [
+      {
+        "date": "2020-04-01",
+        "RNA_per_ml": 1611,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-08",
+        "RNA_per_ml": 785,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-15",
+        "RNA_per_ml": 394,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-22",
+        "RNA_per_ml": 174,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 18,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 38,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-13",
+        "RNA_per_ml": 165,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-18",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-30",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-14",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 132,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 201,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 5025,
+    "city_code": "GM1700",
+    "name": "Den Ham",
+    "security_region_code": "VR05",
+    "security_region_name": "Twente",
+    "measurementents": [
+      {
+        "date": "2020-07-24",
+        "RNA_per_ml": 349,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 75,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 6004,
+    "city_code": "GM995",
+    "name": "Lelystad",
+    "security_region_code": "VR25",
+    "security_region_name": "Flevoland",
+    "measurementents": [
+      {
+        "date": "2020-04-05",
+        "RNA_per_ml": 729,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-08",
+        "RNA_per_ml": 1658,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-15",
+        "RNA_per_ml": 476,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-21",
+        "RNA_per_ml": 490,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-27",
+        "RNA_per_ml": 439,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 335,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-09",
+        "RNA_per_ml": 222,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-15",
+        "RNA_per_ml": 265,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-21",
+        "RNA_per_ml": 278,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-27",
+        "RNA_per_ml": 267,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-02",
+        "RNA_per_ml": 226,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-08",
+        "RNA_per_ml": 456,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-21",
+        "RNA_per_ml": 90,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-14",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 113,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 825,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 399,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-07",
+        "RNA_per_ml": 119,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-13",
+        "RNA_per_ml": 396,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 6006,
+    "city_code": "GM50",
+    "name": "Zeewolde",
+    "security_region_code": "VR25",
+    "security_region_name": "Flevoland",
+    "measurementents": [
+      {
+        "date": "2020-07-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 407,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-13",
+        "RNA_per_ml": 1645,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 7016,
+    "city_code": "GM294",
+    "name": "Winterswijk",
+    "security_region_code": "VR06",
+    "security_region_name": "Noord- en Oost-Gelderland",
+    "measurementents": [
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 60,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 7022,
+    "city_code": "GM1509",
+    "name": "Etten",
+    "security_region_code": "VR06",
+    "security_region_name": "Noord- en Oost-Gelderland",
+    "measurementents": [
+      {
+        "date": "2020-04-01",
+        "RNA_per_ml": 2493,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-08",
+        "RNA_per_ml": 2199,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-15",
+        "RNA_per_ml": 711,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-22",
+        "RNA_per_ml": 1250,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 244,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 264,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-13",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-21",
+        "RNA_per_ml": 2130,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-03",
+        "RNA_per_ml": 196,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-17",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-24",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 69,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 243,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 8017,
+    "city_code": "GM232",
+    "name": "Epe",
+    "security_region_code": "VR06",
+    "security_region_name": "Noord- en Oost-Gelderland",
+    "measurementents": [
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 387,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-07",
+        "RNA_per_ml": 164,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-13",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 8021,
+    "city_code": "GM228",
+    "name": "Ede",
+    "security_region_code": "VR07",
+    "security_region_name": "Gelderland-Midden",
+    "measurementents": [
+      {
+        "date": "2020-07-18",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-24",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-30",
+        "RNA_per_ml": 379,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 191,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 238,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 8022,
+    "city_code": "GM200",
+    "name": "Apeldoorn",
+    "security_region_code": "VR06",
+    "security_region_name": "Noord- en Oost-Gelderland",
+    "measurementents": [
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 49,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-13",
+        "RNA_per_ml": 479,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9013,
+    "city_code": "GM1960",
+    "name": "Asperen",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurementents": [
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 127,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 770,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 387,
+        "representative_measurement": false
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9016,
+    "city_code": "GM202",
+    "name": "Arnhem",
+    "security_region_code": "VR07",
+    "security_region_name": "Gelderland-Midden",
+    "measurementents": [
+      {
+        "date": "2020-04-01",
+        "RNA_per_ml": 984,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-01",
+        "RNA_per_ml": 984,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-07",
+        "RNA_per_ml": 175,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-07",
+        "RNA_per_ml": 175,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-10",
+        "RNA_per_ml": 892,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-10",
+        "RNA_per_ml": 892,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-17",
+        "RNA_per_ml": 32,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-17",
+        "RNA_per_ml": 32,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-28",
+        "RNA_per_ml": 80,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-28",
+        "RNA_per_ml": 80,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-30",
+        "RNA_per_ml": 428,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-30",
+        "RNA_per_ml": 428,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-03",
+        "RNA_per_ml": 250,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-03",
+        "RNA_per_ml": 250,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-11",
+        "RNA_per_ml": 15,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-11",
+        "RNA_per_ml": 15,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-17",
+        "RNA_per_ml": 89,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-17",
+        "RNA_per_ml": 89,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-25",
+        "RNA_per_ml": 731,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-25",
+        "RNA_per_ml": 731,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-04",
+        "RNA_per_ml": 25,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-04",
+        "RNA_per_ml": 25,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-10",
+        "RNA_per_ml": 40,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-10",
+        "RNA_per_ml": 40,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-16",
+        "RNA_per_ml": 196,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-16",
+        "RNA_per_ml": 196,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 35,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 35,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 189,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 189,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-09",
+        "RNA_per_ml": 96,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-09",
+        "RNA_per_ml": 96,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 76,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 76,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9017,
+    "city_code": "GM296",
+    "name": "Bergharen",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurementents": [
+      {
+        "date": "2020-07-19",
+        "RNA_per_ml": 136,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9024,
+    "city_code": "GM209",
+    "name": "Nijmegen",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurementents": [
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 603,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-09",
+        "RNA_per_ml": 111,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10008,
+    "city_code": "GM1581",
+    "name": "Driebergen",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurementents": [
+      {
+        "date": "2020-07-18",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 75,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10009,
+    "city_code": "GM344",
+    "name": "Utrecht",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurementents": [
+      {
+        "date": "2020-03-31",
+        "RNA_per_ml": 1826,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-07",
+        "RNA_per_ml": 1484,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-14",
+        "RNA_per_ml": 552,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-21",
+        "RNA_per_ml": 347,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-28",
+        "RNA_per_ml": 370,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-05",
+        "RNA_per_ml": 229,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-12",
+        "RNA_per_ml": 258,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-19",
+        "RNA_per_ml": 297,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-26",
+        "RNA_per_ml": 514,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-09",
+        "RNA_per_ml": 128,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-16",
+        "RNA_per_ml": 168,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-23",
+        "RNA_per_ml": 24,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-30",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-07",
+        "RNA_per_ml": 138,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-14",
+        "RNA_per_ml": 98,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 495,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 750,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 980,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10020,
+    "city_code": "GM351",
+    "name": "Woudenberg",
+    "security_region_code": "VR07",
+    "security_region_name": "Gelderland-Midden",
+    "measurementents": [
+      {
+        "date": "2020-07-18",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-18",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-24",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-24",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-30",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-30",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 107,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 107,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10027,
+    "city_code": "GM307",
+    "name": "Amersfoort",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurementents": [
+      {
+        "date": "2020-04-05",
+        "RNA_per_ml": 1344,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-13",
+        "RNA_per_ml": 815,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-19",
+        "RNA_per_ml": 293,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-27",
+        "RNA_per_ml": 526,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-03",
+        "RNA_per_ml": 112,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-17",
+        "RNA_per_ml": 209,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-24",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-07",
+        "RNA_per_ml": 56,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-14",
+        "RNA_per_ml": 369,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-18",
+        "RNA_per_ml": 141,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-24",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-30",
+        "RNA_per_ml": 70,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 296,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 689,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10037,
+    "city_code": "GM1904",
+    "name": "Loenen",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurementents": [
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 55,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 102,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 11008,
+    "city_code": "GM376",
+    "name": "Blaricum Gooiergracht",
+    "security_region_code": "VR14",
+    "security_region_name": "Gooi en Vechtstreek",
+    "measurementents": [
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 188,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 188,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 11014,
+    "city_code": "GM363",
+    "name": "Amsterdam-West",
+    "security_region_code": "VR13",
+    "security_region_name": "Amsterdam-Amstelland",
+    "measurementents": [
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 434,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 434,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 1226,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 1226,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 470,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 470,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 1041,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 1041,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 12006,
+    "city_code": "GM361",
+    "name": "Alkmaar",
+    "security_region_code": "VR10",
+    "security_region_name": "Noord-Holland-Noord",
+    "measurementents": [
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 136,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 894,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 493,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-13",
+        "RNA_per_ml": 499,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 12018,
+    "city_code": "GM1911",
+    "name": "Wieringen",
+    "security_region_code": "VR10",
+    "security_region_name": "Noord-Holland-Noord",
+    "measurementents": [
+      {
+        "date": "2020-07-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 132,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 12021,
+    "city_code": "GM420",
+    "name": "Wervershoof",
+    "security_region_code": "VR10",
+    "security_region_name": "Noord-Holland-Noord",
+    "measurementents": [
+      {
+        "date": "2020-07-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 144,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 396,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 334,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 12022,
+    "city_code": "GM375",
+    "name": "Beverwijk",
+    "security_region_code": "VR12",
+    "security_region_name": "Kennemerland",
+    "measurementents": [
+      {
+        "date": "2020-04-02",
+        "RNA_per_ml": 1041,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-02",
+        "RNA_per_ml": 1041,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-02",
+        "RNA_per_ml": 1041,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-08",
+        "RNA_per_ml": 1093,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-08",
+        "RNA_per_ml": 1093,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-08",
+        "RNA_per_ml": 1093,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-15",
+        "RNA_per_ml": 332,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-15",
+        "RNA_per_ml": 332,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-15",
+        "RNA_per_ml": 332,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-22",
+        "RNA_per_ml": 173,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-22",
+        "RNA_per_ml": 173,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-22",
+        "RNA_per_ml": 173,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 90,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 90,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 90,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 18,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 18,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 18,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-13",
+        "RNA_per_ml": 47,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-13",
+        "RNA_per_ml": 47,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-13",
+        "RNA_per_ml": 47,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-21",
+        "RNA_per_ml": 123,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-21",
+        "RNA_per_ml": 123,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-21",
+        "RNA_per_ml": 123,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-27",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-04",
+        "RNA_per_ml": 417,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-04",
+        "RNA_per_ml": 417,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-04",
+        "RNA_per_ml": 417,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-16",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-16",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-16",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 68,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 68,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 68,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 87,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 87,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 87,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-13",
+        "RNA_per_ml": 243,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-13",
+        "RNA_per_ml": 243,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-13",
+        "RNA_per_ml": 243,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 12023,
+    "city_code": "GM400",
+    "name": "Den Helder",
+    "security_region_code": "VR10",
+    "security_region_name": "Noord-Holland-Noord",
+    "measurementents": [
+      {
+        "date": "2020-07-23",
+        "RNA_per_ml": 472,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 264,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13010,
+    "city_code": "GM392",
+    "name": "Haarlem-Waarderpolder",
+    "security_region_code": "VR12",
+    "security_region_name": "Kennemerland",
+    "measurementents": [
+      {
+        "date": "2020-04-01",
+        "RNA_per_ml": 1606,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-07",
+        "RNA_per_ml": 1546,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-13",
+        "RNA_per_ml": 271,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-20",
+        "RNA_per_ml": 91,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-26",
+        "RNA_per_ml": 135,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-01",
+        "RNA_per_ml": 57,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-07",
+        "RNA_per_ml": 318,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-13",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-19",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-25",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-27",
+        "RNA_per_ml": 142,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-11",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-16",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 167,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 548,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-09",
+        "RNA_per_ml": 526,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13030,
+    "city_code": "GM451",
+    "name": "Leimuiden",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurementents": [
+      {
+        "date": "2020-04-01",
+        "RNA_per_ml": 1642,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-01",
+        "RNA_per_ml": 1642,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-07",
+        "RNA_per_ml": 870,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-07",
+        "RNA_per_ml": 870,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-13",
+        "RNA_per_ml": 485,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-13",
+        "RNA_per_ml": 485,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-19",
+        "RNA_per_ml": 312,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-19",
+        "RNA_per_ml": 312,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-27",
+        "RNA_per_ml": 419,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-27",
+        "RNA_per_ml": 419,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 90,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 90,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-11",
+        "RNA_per_ml": 24,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-11",
+        "RNA_per_ml": 24,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-20",
+        "RNA_per_ml": 68,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-20",
+        "RNA_per_ml": 68,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-25",
+        "RNA_per_ml": 84,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-25",
+        "RNA_per_ml": 84,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-22",
+        "RNA_per_ml": 30,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-22",
+        "RNA_per_ml": 30,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-29",
+        "RNA_per_ml": 137,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-29",
+        "RNA_per_ml": 137,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13033,
+    "city_code": "GM546",
+    "name": "Leiden-Zuidwest",
+    "security_region_code": "VR15",
+    "security_region_name": "Haaglanden",
+    "measurementents": [
+      {
+        "date": "2020-07-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-16",
+        "RNA_per_ml": 260,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-16",
+        "RNA_per_ml": 260,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": false
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": false
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 219,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 219,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 390,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 390,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13038,
+    "city_code": "GM569",
+    "name": "Nieuwveen",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurementents": [
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 571,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 213,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 15005,
+    "city_code": "GM518",
+    "name": "Houtrust",
+    "security_region_code": "VR15",
+    "security_region_name": "Haaglanden",
+    "measurementents": [
+      {
+        "date": "2020-04-01",
+        "RNA_per_ml": 2939,
+        "representative_measurement": false
+      },
+      {
+        "date": "2020-04-13",
+        "RNA_per_ml": 797,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-20",
+        "RNA_per_ml": 245,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-27",
+        "RNA_per_ml": 447,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-30",
+        "RNA_per_ml": 102,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-05",
+        "RNA_per_ml": 293,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-11",
+        "RNA_per_ml": 680,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-17",
+        "RNA_per_ml": 758,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-24",
+        "RNA_per_ml": 662,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-05",
+        "RNA_per_ml": 109,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-10",
+        "RNA_per_ml": 299,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-15",
+        "RNA_per_ml": 153,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-28",
+        "RNA_per_ml": 287,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-06",
+        "RNA_per_ml": 174,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-13",
+        "RNA_per_ml": 199,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 207,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 862,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 1200,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 946,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 15007,
+    "city_code": "GM622",
+    "name": "De Groote Lucht",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurementents": [
+      {
+        "date": "2020-07-18",
+        "RNA_per_ml": 25,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-18",
+        "RNA_per_ml": 25,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 93,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 93,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 406,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 406,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-09",
+        "RNA_per_ml": 594,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-09",
+        "RNA_per_ml": 594,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 15008,
+    "city_code": "GM1842",
+    "name": "Harnaschpolder",
+    "security_region_code": "VR15",
+    "security_region_name": "Haaglanden",
+    "measurementents": [
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 132,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 132,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 132,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 953,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 953,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 953,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 1134,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 1134,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 1134,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 1121,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 1121,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 1121,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 16010,
+    "city_code": "GM502",
+    "name": "Capelle ad IJssel/Kralingseveer",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurementents": [
+      {
+        "date": "2020-07-23",
+        "RNA_per_ml": 1009,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 2644,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 1006,
+        "representative_measurement": false
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 590,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17011,
+    "city_code": "GM597",
+    "name": "Ridderkerk",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurementents": [
+      {
+        "date": "2020-07-19",
+        "RNA_per_ml": 391,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-27",
+        "RNA_per_ml": 211,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 2877,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 628,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17054,
+    "city_code": "GM1963",
+    "name": "Piershil",
+    "security_region_code": "VR18",
+    "security_region_name": "Zuid-Holland-Zuid",
+    "measurementents": [
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 159,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 18006,
+    "city_code": "GM1676",
+    "name": "Westerschouwen",
+    "security_region_code": "VR19",
+    "security_region_name": "Zeeland",
+    "measurementents": [
+      {
+        "date": "2020-07-25",
+        "RNA_per_ml": 232,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-30",
+        "RNA_per_ml": 97,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": false
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 21001,
+    "city_code": "GM718",
+    "name": "Walcheren",
+    "security_region_code": "VR19",
+    "security_region_name": "Zeeland",
+    "measurementents": [
+      {
+        "date": "2020-04-07",
+        "RNA_per_ml": 1053,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-14",
+        "RNA_per_ml": 168,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-22",
+        "RNA_per_ml": 82,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 65,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 105,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-11",
+        "RNA_per_ml": 51,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-16",
+        "RNA_per_ml": 52,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-06",
+        "RNA_per_ml": 19,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-11",
+        "RNA_per_ml": 246,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-18",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-13",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-19",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-30",
+        "RNA_per_ml": 150,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 6582,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 132,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 23002,
+    "city_code": "GM715",
+    "name": "Terneuzen",
+    "security_region_code": "VR19",
+    "security_region_name": "Zeeland",
+    "measurementents": [
+      {
+        "date": "2020-04-01",
+        "RNA_per_ml": 732,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-05",
+        "RNA_per_ml": 1336,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-16",
+        "RNA_per_ml": 86,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-21",
+        "RNA_per_ml": 485,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-28",
+        "RNA_per_ml": 723,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 651,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-13",
+        "RNA_per_ml": 146,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-28",
+        "RNA_per_ml": 45,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-06",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-14",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-18",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-24",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-13",
+        "RNA_per_ml": 172,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 51,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 72,
+        "representative_measurement": false
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25012,
+    "city_code": "GM873",
+    "name": "Putte",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurementents": [
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 32,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25013,
+    "city_code": "GM785",
+    "name": "Riel",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurementents": [
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 970,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 673,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 570,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25017,
+    "city_code": "GM758",
+    "name": "Nieuwveer",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurementents": [
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 195,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 289,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 111,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25020,
+    "city_code": "GM809",
+    "name": "Kaatsheuvel",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurementents": [
+      {
+        "date": "2020-04-01",
+        "RNA_per_ml": 2025,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-08",
+        "RNA_per_ml": 1585,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-16",
+        "RNA_per_ml": 253,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-22",
+        "RNA_per_ml": 420,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 875,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 380,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-13",
+        "RNA_per_ml": 42,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-21",
+        "RNA_per_ml": 428,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-28",
+        "RNA_per_ml": 60,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-03",
+        "RNA_per_ml": 417,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-11",
+        "RNA_per_ml": 157,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-18",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-23",
+        "RNA_per_ml": 135,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-13",
+        "RNA_per_ml": 50,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 2572,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 218,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 169,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25021,
+    "city_code": "GM703",
+    "name": "Bath",
+    "security_region_code": "VR19",
+    "security_region_name": "Zeeland",
+    "measurementents": [
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 172,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 350,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25027,
+    "city_code": "GM1719",
+    "name": "Lage Zwaluwe",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurementents": [
+      {
+        "date": "2020-04-01",
+        "RNA_per_ml": 883,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-08",
+        "RNA_per_ml": 1990,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-16",
+        "RNA_per_ml": 390,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-22",
+        "RNA_per_ml": 233,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 52,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 459,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-13",
+        "RNA_per_ml": 102,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-28",
+        "RNA_per_ml": 44,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-03",
+        "RNA_per_ml": 0,
+        "representative_measurement": false
+      },
+      {
+        "date": "2020-06-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-16",
+        "RNA_per_ml": 73,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-23",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-13",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 385,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 27008,
+    "city_code": "GM796",
+    "name": "Den Bosch",
+    "security_region_code": "VR21",
+    "security_region_name": "Brabant-Noord",
+    "measurementents": [
+      {
+        "date": "2020-04-05",
+        "RNA_per_ml": 1689,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-09",
+        "RNA_per_ml": 820,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-16",
+        "RNA_per_ml": 632,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-23",
+        "RNA_per_ml": 532,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-05",
+        "RNA_per_ml": 273,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-10",
+        "RNA_per_ml": 405,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-13",
+        "RNA_per_ml": 76,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-17",
+        "RNA_per_ml": 188,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-03",
+        "RNA_per_ml": 220,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-09",
+        "RNA_per_ml": 112,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-21",
+        "RNA_per_ml": 80,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-02",
+        "RNA_per_ml": 172,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-08",
+        "RNA_per_ml": 156,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-14",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 47,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 49,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 526,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-07",
+        "RNA_per_ml": 151,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 27010,
+    "city_code": "GM1948",
+    "name": "St Oedenrode",
+    "security_region_code": "VR21",
+    "security_region_name": "Brabant-Noord",
+    "measurementents": [
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 28002,
+    "city_code": "GM743",
+    "name": "Asten",
+    "security_region_code": "VR22",
+    "security_region_name": "Brabant-Zuidoost",
+    "measurementents": [
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 20,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-28",
+        "RNA_per_ml": 20,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-03",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-11",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 28003,
+    "city_code": "GM1659",
+    "name": "Aarle Rixtel",
+    "security_region_code": "VR21",
+    "security_region_name": "Brabant-Noord",
+    "measurementents": [
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 345,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 345,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 177,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 177,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 334,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 334,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-07",
+        "RNA_per_ml": 322,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-07",
+        "RNA_per_ml": 322,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 28005,
+    "city_code": "GM1721",
+    "name": "Dinther",
+    "security_region_code": "VR21",
+    "security_region_name": "Brabant-Noord",
+    "measurementents": [
+      {
+        "date": "2020-04-06",
+        "RNA_per_ml": 3224,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-09",
+        "RNA_per_ml": 1913,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-16",
+        "RNA_per_ml": 808,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-23",
+        "RNA_per_ml": 1698,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 382,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-05",
+        "RNA_per_ml": 581,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-10",
+        "RNA_per_ml": 260,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-17",
+        "RNA_per_ml": 165,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-03",
+        "RNA_per_ml": 263,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-09",
+        "RNA_per_ml": 143,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-21",
+        "RNA_per_ml": 304,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-28",
+        "RNA_per_ml": 66,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-08",
+        "RNA_per_ml": 100,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-14",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-20",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-26",
+        "RNA_per_ml": 729,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-01",
+        "RNA_per_ml": 310,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-07",
+        "RNA_per_ml": 79,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 29003,
+    "city_code": "GM1684",
+    "name": "Land van Cuijk",
+    "security_region_code": "VR21",
+    "security_region_name": "Brabant-Noord",
+    "measurementents": [
+      {
+        "date": "2020-04-05",
+        "RNA_per_ml": 4264,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-13",
+        "RNA_per_ml": 3663,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-15",
+        "RNA_per_ml": 593,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-23",
+        "RNA_per_ml": 751,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-28",
+        "RNA_per_ml": 607,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-03",
+        "RNA_per_ml": 460,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-10",
+        "RNA_per_ml": 92,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-19",
+        "RNA_per_ml": 397,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-25",
+        "RNA_per_ml": 91,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-02",
+        "RNA_per_ml": 487,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-10",
+        "RNA_per_ml": 184,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-17",
+        "RNA_per_ml": 94,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-28",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-13",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-19",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-25",
+        "RNA_per_ml": 144,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-31",
+        "RNA_per_ml": 197,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 69,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30007,
+    "city_code": "GM935",
+    "name": "Maastricht-Bosscherveld",
+    "security_region_code": "VR24",
+    "security_region_name": "Limburg-Zuid",
+    "measurementents": [
+      {
+        "date": "2020-04-02",
+        "RNA_per_ml": 4350,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-08",
+        "RNA_per_ml": 4706,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-15",
+        "RNA_per_ml": 972,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-22",
+        "RNA_per_ml": 861,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 513,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 516,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-13",
+        "RNA_per_ml": 240,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-21",
+        "RNA_per_ml": 968,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-27",
+        "RNA_per_ml": 2332,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-03",
+        "RNA_per_ml": 763,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-10",
+        "RNA_per_ml": 399,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-17",
+        "RNA_per_ml": 46,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-24",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 105,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 36,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 235,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30011,
+    "city_code": "GM965",
+    "name": "Simpelveld",
+    "security_region_code": "VR24",
+    "security_region_name": "Limburg-Zuid",
+    "measurementents": [
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 122,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30017,
+    "city_code": "GM983",
+    "name": "Venlo",
+    "security_region_code": "VR23",
+    "security_region_name": "Limburg-Noord",
+    "measurementents": [
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 30,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 41,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 228,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30020,
+    "city_code": "GM984",
+    "name": "Venraij",
+    "security_region_code": "VR23",
+    "security_region_name": "Limburg-Noord",
+    "measurementents": [
+      {
+        "date": "2020-04-02",
+        "RNA_per_ml": 1802,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-08",
+        "RNA_per_ml": 991,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-15",
+        "RNA_per_ml": 395,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-22",
+        "RNA_per_ml": 564,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-29",
+        "RNA_per_ml": 177,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-06",
+        "RNA_per_ml": 337,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-13",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-21",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-27",
+        "RNA_per_ml": 308,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-03",
+        "RNA_per_ml": 263,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-10",
+        "RNA_per_ml": 29,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-17",
+        "RNA_per_ml": 29,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-24",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-15",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 74,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 149,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30022,
+    "city_code": "GM1711",
+    "name": "Susteren",
+    "security_region_code": "VR23",
+    "security_region_name": "Limburg-Noord",
+    "measurementents": [
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 248,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 248,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 40,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 40,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30023,
+    "city_code": "GM1641",
+    "name": "Panheel",
+    "security_region_code": "VR23",
+    "security_region_name": "Limburg-Noord",
+    "measurementents": [
+      {
+        "date": "2020-07-22",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-12",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 32002,
+    "city_code": "GM855",
+    "name": "Tilburg",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurementents": [
+      {
+        "date": "2020-03-30",
+        "RNA_per_ml": 1837,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-06",
+        "RNA_per_ml": 222,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-13",
+        "RNA_per_ml": 2538,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-20",
+        "RNA_per_ml": 412,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-04-27",
+        "RNA_per_ml": 561,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-05",
+        "RNA_per_ml": 262,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-11",
+        "RNA_per_ml": 283,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-18",
+        "RNA_per_ml": 211,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-05-25",
+        "RNA_per_ml": 173,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-01",
+        "RNA_per_ml": 437,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-15",
+        "RNA_per_ml": 94,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-22",
+        "RNA_per_ml": 50,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-06-29",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-06",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-13",
+        "RNA_per_ml": 120,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-18",
+        "RNA_per_ml": 187,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-07-29",
+        "RNA_per_ml": 347,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-04",
+        "RNA_per_ml": 84,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-08-10",
+        "RNA_per_ml": 310,
+        "representative_measurement": true
+      }
+    ]
+  }
+]
