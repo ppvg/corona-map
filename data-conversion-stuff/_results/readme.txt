@@ -1,0 +1,2 @@
+• postcode-to-city.json retrieved (and converted) from https://download.geonames.org/export/dump/
+• COVID-19_rioolwaterdata.json retrieved from https://data.rivm.nl/covid-19/COVID-19_rioolwaterdata.json
