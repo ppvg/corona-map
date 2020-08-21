@@ -1,3 +1,5 @@
+import Measurement from "./Measurement";
+
 class SewageTreatmentPlant {
     constructor({
         sewageTreatementPlant_id = null,
@@ -12,7 +14,7 @@ class SewageTreatmentPlant {
         this.city_code = city_code;
         this.securityRegion_code = securityRegion_code;
         this.securityRegion_name = securityRegion_name;
-        this.measurements = measurements;
+        this.measurements = measurements.map(m => new Measurement(m));
     }
 }
 

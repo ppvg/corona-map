@@ -25,6 +25,9 @@
         computed: {
             showTrends() {
                 return this.$store.state.ui.menu === 'trends';
+            },
+            isCurrent() {
+                return this.$store.state.settings.currentDateOffset === 0;
             }
         },
         methods: {}
@@ -36,11 +39,14 @@
     <div
         :class="{'panel--active': showTrends}"
         class="trends panel">
-        <threshold-cities/>
-        <red-cities/>
-        <changed-status-cities/>
-        <new-infection-cities/>
-        <cities-with-sewage-treatment-plant/>
+        <div v-if="isCurrent">
+            <threshold-cities/>
+            <red-cities/>
+            <changed-status-cities/>
+            <new-infection-cities/>
+            <cities-with-sewage-treatment-plant/>
+        </div>
+
     </div>
 </template>
 
