@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 import cities from './modules/cities';
+import sewageTreatmentPlants from './modules/sewage-treatment-plants';
 import settings from './modules/settings';
 import ui from './modules/ui';
 
@@ -20,7 +21,7 @@ const store = new Vuex.Store({
     mutations,
     actions: {},
     modules: {
-        cities,
+        cities, sewageTreatmentPlants,
         settings, ui
     }
 

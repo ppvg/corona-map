@@ -22,7 +22,7 @@ const mutations = {
             if (item) {
                 let s = new SewageTreatmentPlant(item);
                 state.all.push(s);
-                state.dict[c.code] = c;
+                state.dict[s.sewageTreatementPlant_id] = s;
             }
         }
     },

@@ -10,6 +10,7 @@
     import headerMenu from "./components/header-menu";
     import trends from "./components/trends/trends";
     import cityDetails from "./components/cities/city-details";
+    import sewageTreatmentPlants from '@/data/sewage-treatment-plants'
 
 
     export default {
@@ -71,12 +72,16 @@
                         for (let item of data) {
                             this.addReport(item);
                         }
+                        this.addSewageTreatmentPlants(sewageTreatmentPlants);
                         this.readQuery();
                         this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
                     })
                     .catch((error) => {
                         console.error(error);
                     });
+            },
+            addSewageTreatmentPlants(sewageTreatmentPlants){
+                this.$store.commit('sewageTreatmentPlants/init', sewageTreatmentPlants)
             },
             readQuery() {
                 let city, cityString;
