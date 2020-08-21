@@ -4,10 +4,13 @@
     import changedStatusCities from "./changed-status-cities";
     import thresholdCities from "./threshold-cities";
     import thresholds from '@/data/thresholds';
+    import CitiesWithSewageTreatmentPlant
+        from "./cities-with-sewage-treatment-plant";
 
     export default {
         name: 'trends',
         components: {
+            CitiesWithSewageTreatmentPlant,
             thresholdCities,
             newInfectionCities,
             redCities,
@@ -37,6 +40,7 @@
         <red-cities/>
         <changed-status-cities/>
         <new-infection-cities/>
+        <cities-with-sewage-treatment-plant/>
     </div>
 </template>
 

@@ -97,8 +97,8 @@
             this.redraw();
         },
         watch: {
-            sewerageArea: function (newValue, oldValue) {
-                if (this.sewerageArea) {
+            sewageTreatmentPlant: function (newValue, oldValue) {
+                if (this.sewageTreatmentPlant) {
                     setTimeout(() => {
                         this.redraw();
                     })
