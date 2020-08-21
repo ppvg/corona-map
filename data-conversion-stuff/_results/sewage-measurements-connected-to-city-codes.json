@@ -5,7 +5,7 @@
     "name": "Stadskanaal",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 200,
@@ -109,7 +109,7 @@
     "name": "Garmerwolde",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 427,
@@ -223,7 +223,7 @@
     "name": "Feerwerd",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-07",
         "RNA_per_ml": 0,
@@ -247,7 +247,7 @@
     "name": "Scheemda",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 0,
@@ -271,7 +271,7 @@
     "name": "Leeuwarden",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 424,
@@ -375,7 +375,7 @@
     "name": "Drachten",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -404,7 +404,7 @@
     "name": "Gorredijk",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-17",
         "RNA_per_ml": 0,
@@ -428,7 +428,7 @@
     "name": "Damwoude",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -457,7 +457,7 @@
     "name": "Joure",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -491,7 +491,7 @@
     "name": "Harlingen",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 869,
@@ -595,7 +595,7 @@
     "name": "Warns",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 76,
@@ -609,7 +609,7 @@
     "name": "Franeker",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -643,7 +643,7 @@
     "name": "Assen",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 2254,
@@ -752,7 +752,7 @@
     "name": "Tweede Exloermond",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 0,
@@ -776,7 +776,7 @@
     "name": "Smilde",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -805,7 +805,7 @@
     "name": "Sleen",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 721,
@@ -909,7 +909,7 @@
     "name": "Echten",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -958,7 +958,7 @@
     "name": "Deventer",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 345,
@@ -987,7 +987,7 @@
     "name": "Kampen",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -1016,7 +1016,7 @@
     "name": "Hardenberg",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-24",
         "RNA_per_ml": 0,
@@ -1045,7 +1045,7 @@
     "name": "Zwolle",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 890,
@@ -1149,7 +1149,7 @@
     "name": "Tollebeek",
     "security_region_code": "VR25",
     "security_region_name": "Flevoland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-05",
         "RNA_per_ml": 1668,
@@ -1268,7 +1268,7 @@
     "name": "Enschede-West",
     "security_region_code": "VR05",
     "security_region_name": "Twente",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -1302,7 +1302,7 @@
     "name": "Oldenzaal",
     "security_region_code": "VR05",
     "security_region_name": "Twente",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 1611,
@@ -1411,7 +1411,7 @@
     "name": "Den Ham",
     "security_region_code": "VR05",
     "security_region_name": "Twente",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-24",
         "RNA_per_ml": 349,
@@ -1435,7 +1435,7 @@
     "name": "Lelystad",
     "security_region_code": "VR25",
     "security_region_name": "Flevoland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-05",
         "RNA_per_ml": 729,
@@ -1549,7 +1549,7 @@
     "name": "Zeewolde",
     "security_region_code": "VR25",
     "security_region_name": "Flevoland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 0,
@@ -1583,7 +1583,7 @@
     "name": "Winterswijk",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -1612,7 +1612,7 @@
     "name": "Etten",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 2493,
@@ -1721,7 +1721,7 @@
     "name": "Epe",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 0,
@@ -1755,7 +1755,7 @@
     "name": "Ede",
     "security_region_code": "VR07",
     "security_region_name": "Gelderland-Midden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-18",
         "RNA_per_ml": 0,
@@ -1789,7 +1789,7 @@
     "name": "Apeldoorn",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 0,
@@ -1818,7 +1818,7 @@
     "name": "Asperen",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 127,
@@ -1847,7 +1847,7 @@
     "name": "Arnhem",
     "security_region_code": "VR07",
     "security_region_name": "Gelderland-Midden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 984,
@@ -2096,7 +2096,7 @@
     "name": "Bergharen",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-19",
         "RNA_per_ml": 136,
@@ -2125,7 +2125,7 @@
     "name": "Nijmegen",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -2154,7 +2154,7 @@
     "name": "Driebergen",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-18",
         "RNA_per_ml": 0,
@@ -2183,7 +2183,7 @@
     "name": "Utrecht",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 1826,
@@ -2292,7 +2292,7 @@
     "name": "Woudenberg",
     "security_region_code": "VR07",
     "security_region_name": "Gelderland-Midden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-18",
         "RNA_per_ml": 0,
@@ -2351,7 +2351,7 @@
     "name": "Amersfoort",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-05",
         "RNA_per_ml": 1344,
@@ -2460,7 +2460,7 @@
     "name": "Loenen",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -2489,7 +2489,7 @@
     "name": "Blaricum Gooiergracht",
     "security_region_code": "VR14",
     "security_region_name": "Gooi en Vechtstreek",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -2538,7 +2538,7 @@
     "name": "Amsterdam-West",
     "security_region_code": "VR13",
     "security_region_name": "Amsterdam-Amstelland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 434,
@@ -2587,7 +2587,7 @@
     "name": "Alkmaar",
     "security_region_code": "VR10",
     "security_region_name": "Noord-Holland-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 136,
@@ -2616,7 +2616,7 @@
     "name": "Wieringen",
     "security_region_code": "VR10",
     "security_region_name": "Noord-Holland-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 0,
@@ -2645,7 +2645,7 @@
     "name": "Wervershoof",
     "security_region_code": "VR10",
     "security_region_name": "Noord-Holland-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 0,
@@ -2674,7 +2674,7 @@
     "name": "Beverwijk",
     "security_region_code": "VR12",
     "security_region_name": "Kennemerland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-02",
         "RNA_per_ml": 1041,
@@ -2998,7 +2998,7 @@
     "name": "Den Helder",
     "security_region_code": "VR10",
     "security_region_name": "Noord-Holland-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 472,
@@ -3027,7 +3027,7 @@
     "name": "Haarlem-Waarderpolder",
     "security_region_code": "VR12",
     "security_region_name": "Kennemerland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 1606,
@@ -3146,7 +3146,7 @@
     "name": "Leimuiden",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 1642,
@@ -3355,7 +3355,7 @@
     "name": "Leiden-Zuidwest",
     "security_region_code": "VR15",
     "security_region_name": "Haaglanden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-07",
         "RNA_per_ml": 0,
@@ -3434,7 +3434,7 @@
     "name": "Nieuwveen",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -3463,7 +3463,7 @@
     "name": "Houtrust",
     "security_region_code": "VR15",
     "security_region_name": "Haaglanden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 2939,
@@ -3572,7 +3572,7 @@
     "name": "De Groote Lucht",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-18",
         "RNA_per_ml": 25,
@@ -3621,7 +3621,7 @@
     "name": "Harnaschpolder",
     "security_region_code": "VR15",
     "security_region_name": "Haaglanden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 132,
@@ -3690,7 +3690,7 @@
     "name": "Capelle ad IJssel/Kralingseveer",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 1009,
@@ -3719,7 +3719,7 @@
     "name": "Ridderkerk",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-19",
         "RNA_per_ml": 391,
@@ -3748,7 +3748,7 @@
     "name": "Piershil",
     "security_region_code": "VR18",
     "security_region_name": "Zuid-Holland-Zuid",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 0,
@@ -3777,7 +3777,7 @@
     "name": "Westerschouwen",
     "security_region_code": "VR19",
     "security_region_name": "Zeeland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-25",
         "RNA_per_ml": 232,
@@ -3801,7 +3801,7 @@
     "name": "Walcheren",
     "security_region_code": "VR19",
     "security_region_name": "Zeeland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-07",
         "RNA_per_ml": 1053,
@@ -3905,7 +3905,7 @@
     "name": "Terneuzen",
     "security_region_code": "VR19",
     "security_region_name": "Zeeland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 732,
@@ -4014,7 +4014,7 @@
     "name": "Putte",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-28",
         "RNA_per_ml": 32,
@@ -4033,7 +4033,7 @@
     "name": "Riel",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 970,
@@ -4062,7 +4062,7 @@
     "name": "Nieuwveer",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 195,
@@ -4091,7 +4091,7 @@
     "name": "Kaatsheuvel",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 2025,
@@ -4200,7 +4200,7 @@
     "name": "Bath",
     "security_region_code": "VR19",
     "security_region_name": "Zeeland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -4224,7 +4224,7 @@
     "name": "Lage Zwaluwe",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 883,
@@ -4333,7 +4333,7 @@
     "name": "Den Bosch",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-05",
         "RNA_per_ml": 1689,
@@ -4442,7 +4442,7 @@
     "name": "St Oedenrode",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 0,
@@ -4491,7 +4491,7 @@
     "name": "Asten",
     "security_region_code": "VR22",
     "security_region_name": "Brabant-Zuidoost",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 20,
@@ -4520,7 +4520,7 @@
     "name": "Aarle Rixtel",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 345,
@@ -4569,7 +4569,7 @@
     "name": "Dinther",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-06",
         "RNA_per_ml": 3224,
@@ -4678,7 +4678,7 @@
     "name": "Land van Cuijk",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-05",
         "RNA_per_ml": 4264,
@@ -4787,7 +4787,7 @@
     "name": "Maastricht-Bosscherveld",
     "security_region_code": "VR24",
     "security_region_name": "Limburg-Zuid",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-02",
         "RNA_per_ml": 4350,
@@ -4896,7 +4896,7 @@
     "name": "Simpelveld",
     "security_region_code": "VR24",
     "security_region_name": "Limburg-Zuid",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -4925,7 +4925,7 @@
     "name": "Venlo",
     "security_region_code": "VR23",
     "security_region_name": "Limburg-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 30,
@@ -4954,7 +4954,7 @@
     "name": "Venraij",
     "security_region_code": "VR23",
     "security_region_name": "Limburg-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-02",
         "RNA_per_ml": 1802,
@@ -5063,7 +5063,7 @@
     "name": "Susteren",
     "security_region_code": "VR23",
     "security_region_name": "Limburg-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -5112,7 +5112,7 @@
     "name": "Panheel",
     "security_region_code": "VR23",
     "security_region_name": "Limburg-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -5141,7 +5141,7 @@
     "name": "Tilburg",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-30",
         "RNA_per_ml": 1837,

@@ -1,13 +1,20 @@
 <script>
     import City from "@/classes/City";
     import trendLine from "./trend-line";
+    import sewageTreatmentPlants from "../sewage-treatment-plants/sewage-treatment-plants";
 
     export default {
         name: 'city-details',
         components: {
+            sewageTreatmentPlants,
             trendLine
         },
-        props: ['city'],
+        props: {
+            city: {
+                type: City,
+                required: true
+            }
+        },
         computed: {
             period1() {
                 let start, end, total;
@@ -66,6 +73,16 @@
             <div class="city-details__section">
                 <div class="city-details__row">
                     <div class="city-details__label">
+                        Inwoners
+                    </div>
+                    <div class="city-details__value">
+                        {{city.population}}
+                    </div>
+                </div>
+            </div>
+            <div class="city-details__section">
+                <div class="city-details__row">
+                    <div class="city-details__label">
                         Toename vandaag
                     </div>
                     <div class="city-details__value">
@@ -90,8 +107,15 @@
                 </div>
             </div>
             <div class="city-details__section">
+                <div class="city-details__section-header">
+                    Testen GGD
+                </div>
+                <trend-line :city="city"/>
+            </div>
+            <div class="city-details__section">
                 <div class="city-details__row">
-                    <trend-line :city="city"/>
+                    <sewage-treatment-plants
+                        :city="city"/>
                 </div>
             </div>
         </div>
@@ -124,7 +148,13 @@
         .city-details__info {
 
             .city-details__section {
-                margin-bottom: 20px;
+                border-bottom: 1px solid #ddd;
+                padding: 10px 0;
+
+                .city-details__section-header {
+                    font-weight: 700;
+                    margin-bottom: 4px;
+                }
             }
 
             .city-details__row {
@@ -133,7 +163,7 @@
                 padding: 2px 0;
 
                 .city-details__label {
-                    width: 220px;
+                    width: 200px;
                 }
 
                 .city-details__value {
@@ -141,7 +171,7 @@
                     font-family: Courier;
                     font-size: 20px;
                     text-align: right;
-                    width: calc(100% - 220px);
+                    width: calc(100% - 200px);
                     position: relative;
                 }
             }

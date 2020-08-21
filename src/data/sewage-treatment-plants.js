@@ -5,7 +5,7 @@ const sewageTreatmentPlants = [
     "name": "Stadskanaal",
     "securityRegion_code": "VR01",
     "securityRegion_name": "Groningen",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 200,
@@ -109,7 +109,7 @@ const sewageTreatmentPlants = [
     "name": "Garmerwolde",
     "securityRegion_code": "VR01",
     "securityRegion_name": "Groningen",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 427,
@@ -223,7 +223,7 @@ const sewageTreatmentPlants = [
     "name": "Feerwerd",
     "securityRegion_code": "VR01",
     "securityRegion_name": "Groningen",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-07",
         "RNA_per_ml": 0,
@@ -247,7 +247,7 @@ const sewageTreatmentPlants = [
     "name": "Scheemda",
     "securityRegion_code": "VR01",
     "securityRegion_name": "Groningen",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 0,
@@ -271,7 +271,7 @@ const sewageTreatmentPlants = [
     "name": "Leeuwarden",
     "securityRegion_code": "VR02",
     "securityRegion_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 424,
@@ -375,7 +375,7 @@ const sewageTreatmentPlants = [
     "name": "Drachten",
     "securityRegion_code": "VR02",
     "securityRegion_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -404,7 +404,7 @@ const sewageTreatmentPlants = [
     "name": "Gorredijk",
     "securityRegion_code": "VR02",
     "securityRegion_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-17",
         "RNA_per_ml": 0,
@@ -428,7 +428,7 @@ const sewageTreatmentPlants = [
     "name": "Damwoude",
     "securityRegion_code": "VR02",
     "securityRegion_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -457,7 +457,7 @@ const sewageTreatmentPlants = [
     "name": "Joure",
     "securityRegion_code": "VR02",
     "securityRegion_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -491,7 +491,7 @@ const sewageTreatmentPlants = [
     "name": "Harlingen",
     "securityRegion_code": "VR02",
     "securityRegion_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 869,
@@ -595,7 +595,7 @@ const sewageTreatmentPlants = [
     "name": "Warns",
     "securityRegion_code": "VR02",
     "securityRegion_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 76,
@@ -609,7 +609,7 @@ const sewageTreatmentPlants = [
     "name": "Franeker",
     "securityRegion_code": "VR02",
     "securityRegion_name": "Friesland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -643,7 +643,7 @@ const sewageTreatmentPlants = [
     "name": "Assen",
     "securityRegion_code": "VR03",
     "securityRegion_name": "Drenthe",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 2254,
@@ -752,7 +752,7 @@ const sewageTreatmentPlants = [
     "name": "Tweede Exloermond",
     "securityRegion_code": "VR03",
     "securityRegion_name": "Drenthe",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 0,
@@ -776,7 +776,7 @@ const sewageTreatmentPlants = [
     "name": "Smilde",
     "securityRegion_code": "VR03",
     "securityRegion_name": "Drenthe",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -805,7 +805,7 @@ const sewageTreatmentPlants = [
     "name": "Sleen",
     "securityRegion_code": "VR03",
     "securityRegion_name": "Drenthe",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 721,
@@ -909,7 +909,7 @@ const sewageTreatmentPlants = [
     "name": "Echten",
     "securityRegion_code": "VR03",
     "securityRegion_name": "Drenthe",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -958,7 +958,7 @@ const sewageTreatmentPlants = [
     "name": "Deventer",
     "securityRegion_code": "VR04",
     "securityRegion_name": "IJsselland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 345,
@@ -987,7 +987,7 @@ const sewageTreatmentPlants = [
     "name": "Kampen",
     "securityRegion_code": "VR04",
     "securityRegion_name": "IJsselland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -1016,7 +1016,7 @@ const sewageTreatmentPlants = [
     "name": "Hardenberg",
     "securityRegion_code": "VR04",
     "securityRegion_name": "IJsselland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-24",
         "RNA_per_ml": 0,
@@ -1045,7 +1045,7 @@ const sewageTreatmentPlants = [
     "name": "Zwolle",
     "securityRegion_code": "VR04",
     "securityRegion_name": "IJsselland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 890,
@@ -1149,7 +1149,7 @@ const sewageTreatmentPlants = [
     "name": "Tollebeek",
     "securityRegion_code": "VR25",
     "securityRegion_name": "Flevoland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-05",
         "RNA_per_ml": 1668,
@@ -1268,7 +1268,7 @@ const sewageTreatmentPlants = [
     "name": "Enschede-West",
     "securityRegion_code": "VR05",
     "securityRegion_name": "Twente",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -1302,7 +1302,7 @@ const sewageTreatmentPlants = [
     "name": "Oldenzaal",
     "securityRegion_code": "VR05",
     "securityRegion_name": "Twente",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 1611,
@@ -1411,7 +1411,7 @@ const sewageTreatmentPlants = [
     "name": "Den Ham",
     "securityRegion_code": "VR05",
     "securityRegion_name": "Twente",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-24",
         "RNA_per_ml": 349,
@@ -1435,7 +1435,7 @@ const sewageTreatmentPlants = [
     "name": "Lelystad",
     "securityRegion_code": "VR25",
     "securityRegion_name": "Flevoland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-05",
         "RNA_per_ml": 729,
@@ -1549,7 +1549,7 @@ const sewageTreatmentPlants = [
     "name": "Zeewolde",
     "securityRegion_code": "VR25",
     "securityRegion_name": "Flevoland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 0,
@@ -1583,7 +1583,7 @@ const sewageTreatmentPlants = [
     "name": "Winterswijk",
     "securityRegion_code": "VR06",
     "securityRegion_name": "Noord- en Oost-Gelderland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -1612,7 +1612,7 @@ const sewageTreatmentPlants = [
     "name": "Etten",
     "securityRegion_code": "VR06",
     "securityRegion_name": "Noord- en Oost-Gelderland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 2493,
@@ -1721,7 +1721,7 @@ const sewageTreatmentPlants = [
     "name": "Epe",
     "securityRegion_code": "VR06",
     "securityRegion_name": "Noord- en Oost-Gelderland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 0,
@@ -1755,7 +1755,7 @@ const sewageTreatmentPlants = [
     "name": "Ede",
     "securityRegion_code": "VR07",
     "securityRegion_name": "Gelderland-Midden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-18",
         "RNA_per_ml": 0,
@@ -1789,7 +1789,7 @@ const sewageTreatmentPlants = [
     "name": "Apeldoorn",
     "securityRegion_code": "VR06",
     "securityRegion_name": "Noord- en Oost-Gelderland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 0,
@@ -1818,7 +1818,7 @@ const sewageTreatmentPlants = [
     "name": "Asperen",
     "securityRegion_code": "VR08",
     "securityRegion_name": "Gelderland-Zuid",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 127,
@@ -1847,7 +1847,7 @@ const sewageTreatmentPlants = [
     "name": "Arnhem",
     "securityRegion_code": "VR07",
     "securityRegion_name": "Gelderland-Midden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 984,
@@ -2096,7 +2096,7 @@ const sewageTreatmentPlants = [
     "name": "Bergharen",
     "securityRegion_code": "VR08",
     "securityRegion_name": "Gelderland-Zuid",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-19",
         "RNA_per_ml": 136,
@@ -2125,7 +2125,7 @@ const sewageTreatmentPlants = [
     "name": "Nijmegen",
     "securityRegion_code": "VR08",
     "securityRegion_name": "Gelderland-Zuid",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -2154,7 +2154,7 @@ const sewageTreatmentPlants = [
     "name": "Driebergen",
     "securityRegion_code": "VR09",
     "securityRegion_name": "Utrecht",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-18",
         "RNA_per_ml": 0,
@@ -2183,7 +2183,7 @@ const sewageTreatmentPlants = [
     "name": "Utrecht",
     "securityRegion_code": "VR09",
     "securityRegion_name": "Utrecht",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-31",
         "RNA_per_ml": 1826,
@@ -2292,7 +2292,7 @@ const sewageTreatmentPlants = [
     "name": "Woudenberg",
     "securityRegion_code": "VR07",
     "securityRegion_name": "Gelderland-Midden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-18",
         "RNA_per_ml": 0,
@@ -2351,7 +2351,7 @@ const sewageTreatmentPlants = [
     "name": "Amersfoort",
     "securityRegion_code": "VR09",
     "securityRegion_name": "Utrecht",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-05",
         "RNA_per_ml": 1344,
@@ -2460,7 +2460,7 @@ const sewageTreatmentPlants = [
     "name": "Loenen",
     "securityRegion_code": "VR09",
     "securityRegion_name": "Utrecht",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -2489,7 +2489,7 @@ const sewageTreatmentPlants = [
     "name": "Blaricum Gooiergracht",
     "securityRegion_code": "VR14",
     "securityRegion_name": "Gooi en Vechtstreek",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -2538,7 +2538,7 @@ const sewageTreatmentPlants = [
     "name": "Amsterdam-West",
     "securityRegion_code": "VR13",
     "securityRegion_name": "Amsterdam-Amstelland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 434,
@@ -2587,7 +2587,7 @@ const sewageTreatmentPlants = [
     "name": "Alkmaar",
     "securityRegion_code": "VR10",
     "securityRegion_name": "Noord-Holland-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 136,
@@ -2616,7 +2616,7 @@ const sewageTreatmentPlants = [
     "name": "Wieringen",
     "securityRegion_code": "VR10",
     "securityRegion_name": "Noord-Holland-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 0,
@@ -2645,7 +2645,7 @@ const sewageTreatmentPlants = [
     "name": "Wervershoof",
     "securityRegion_code": "VR10",
     "securityRegion_name": "Noord-Holland-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 0,
@@ -2674,7 +2674,7 @@ const sewageTreatmentPlants = [
     "name": "Beverwijk",
     "securityRegion_code": "VR12",
     "securityRegion_name": "Kennemerland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-02",
         "RNA_per_ml": 1041,
@@ -2998,7 +2998,7 @@ const sewageTreatmentPlants = [
     "name": "Den Helder",
     "securityRegion_code": "VR10",
     "securityRegion_name": "Noord-Holland-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 472,
@@ -3027,7 +3027,7 @@ const sewageTreatmentPlants = [
     "name": "Haarlem-Waarderpolder",
     "securityRegion_code": "VR12",
     "securityRegion_name": "Kennemerland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 1606,
@@ -3146,7 +3146,7 @@ const sewageTreatmentPlants = [
     "name": "Leimuiden",
     "securityRegion_code": "VR16",
     "securityRegion_name": "Hollands-Midden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 1642,
@@ -3355,7 +3355,7 @@ const sewageTreatmentPlants = [
     "name": "Leiden-Zuidwest",
     "securityRegion_code": "VR15",
     "securityRegion_name": "Haaglanden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-07",
         "RNA_per_ml": 0,
@@ -3434,7 +3434,7 @@ const sewageTreatmentPlants = [
     "name": "Nieuwveen",
     "securityRegion_code": "VR16",
     "securityRegion_name": "Hollands-Midden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -3463,7 +3463,7 @@ const sewageTreatmentPlants = [
     "name": "Houtrust",
     "securityRegion_code": "VR15",
     "securityRegion_name": "Haaglanden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 2939,
@@ -3572,7 +3572,7 @@ const sewageTreatmentPlants = [
     "name": "De Groote Lucht",
     "securityRegion_code": "VR17",
     "securityRegion_name": "Rotterdam-Rijnmond",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-18",
         "RNA_per_ml": 25,
@@ -3621,7 +3621,7 @@ const sewageTreatmentPlants = [
     "name": "Harnaschpolder",
     "securityRegion_code": "VR15",
     "securityRegion_name": "Haaglanden",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 132,
@@ -3690,7 +3690,7 @@ const sewageTreatmentPlants = [
     "name": "Capelle ad IJssel/Kralingseveer",
     "securityRegion_code": "VR17",
     "securityRegion_name": "Rotterdam-Rijnmond",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-23",
         "RNA_per_ml": 1009,
@@ -3719,7 +3719,7 @@ const sewageTreatmentPlants = [
     "name": "Ridderkerk",
     "securityRegion_code": "VR17",
     "securityRegion_name": "Rotterdam-Rijnmond",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-19",
         "RNA_per_ml": 391,
@@ -3748,7 +3748,7 @@ const sewageTreatmentPlants = [
     "name": "Piershil",
     "securityRegion_code": "VR18",
     "securityRegion_name": "Zuid-Holland-Zuid",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 0,
@@ -3777,7 +3777,7 @@ const sewageTreatmentPlants = [
     "name": "Westerschouwen",
     "securityRegion_code": "VR19",
     "securityRegion_name": "Zeeland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-25",
         "RNA_per_ml": 232,
@@ -3801,7 +3801,7 @@ const sewageTreatmentPlants = [
     "name": "Walcheren",
     "securityRegion_code": "VR19",
     "securityRegion_name": "Zeeland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-07",
         "RNA_per_ml": 1053,
@@ -3905,7 +3905,7 @@ const sewageTreatmentPlants = [
     "name": "Terneuzen",
     "securityRegion_code": "VR19",
     "securityRegion_name": "Zeeland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 732,
@@ -4014,7 +4014,7 @@ const sewageTreatmentPlants = [
     "name": "Putte",
     "securityRegion_code": "VR20",
     "securityRegion_name": "Midden- en West-Brabant",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-28",
         "RNA_per_ml": 32,
@@ -4033,7 +4033,7 @@ const sewageTreatmentPlants = [
     "name": "Riel",
     "securityRegion_code": "VR20",
     "securityRegion_name": "Midden- en West-Brabant",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 970,
@@ -4062,7 +4062,7 @@ const sewageTreatmentPlants = [
     "name": "Nieuwveer",
     "securityRegion_code": "VR20",
     "securityRegion_name": "Midden- en West-Brabant",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 195,
@@ -4091,7 +4091,7 @@ const sewageTreatmentPlants = [
     "name": "Kaatsheuvel",
     "securityRegion_code": "VR20",
     "securityRegion_name": "Midden- en West-Brabant",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 2025,
@@ -4200,7 +4200,7 @@ const sewageTreatmentPlants = [
     "name": "Bath",
     "securityRegion_code": "VR19",
     "securityRegion_name": "Zeeland",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-21",
         "RNA_per_ml": 0,
@@ -4224,7 +4224,7 @@ const sewageTreatmentPlants = [
     "name": "Lage Zwaluwe",
     "securityRegion_code": "VR20",
     "securityRegion_name": "Midden- en West-Brabant",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-01",
         "RNA_per_ml": 883,
@@ -4333,7 +4333,7 @@ const sewageTreatmentPlants = [
     "name": "Den Bosch",
     "securityRegion_code": "VR21",
     "securityRegion_name": "Brabant-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-05",
         "RNA_per_ml": 1689,
@@ -4442,7 +4442,7 @@ const sewageTreatmentPlants = [
     "name": "St Oedenrode",
     "securityRegion_code": "VR21",
     "securityRegion_name": "Brabant-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 0,
@@ -4491,7 +4491,7 @@ const sewageTreatmentPlants = [
     "name": "Asten",
     "securityRegion_code": "VR22",
     "securityRegion_name": "Brabant-Zuidoost",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 20,
@@ -4520,7 +4520,7 @@ const sewageTreatmentPlants = [
     "name": "Aarle Rixtel",
     "securityRegion_code": "VR21",
     "securityRegion_name": "Brabant-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-20",
         "RNA_per_ml": 345,
@@ -4569,7 +4569,7 @@ const sewageTreatmentPlants = [
     "name": "Dinther",
     "securityRegion_code": "VR21",
     "securityRegion_name": "Brabant-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-06",
         "RNA_per_ml": 3224,
@@ -4678,7 +4678,7 @@ const sewageTreatmentPlants = [
     "name": "Land van Cuijk",
     "securityRegion_code": "VR21",
     "securityRegion_name": "Brabant-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-05",
         "RNA_per_ml": 4264,
@@ -4787,7 +4787,7 @@ const sewageTreatmentPlants = [
     "name": "Maastricht-Bosscherveld",
     "securityRegion_code": "VR24",
     "securityRegion_name": "Limburg-Zuid",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-02",
         "RNA_per_ml": 4350,
@@ -4896,7 +4896,7 @@ const sewageTreatmentPlants = [
     "name": "Simpelveld",
     "securityRegion_code": "VR24",
     "securityRegion_name": "Limburg-Zuid",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -4925,7 +4925,7 @@ const sewageTreatmentPlants = [
     "name": "Venlo",
     "securityRegion_code": "VR23",
     "securityRegion_name": "Limburg-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 30,
@@ -4954,7 +4954,7 @@ const sewageTreatmentPlants = [
     "name": "Venraij",
     "securityRegion_code": "VR23",
     "securityRegion_name": "Limburg-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-04-02",
         "RNA_per_ml": 1802,
@@ -5063,7 +5063,7 @@ const sewageTreatmentPlants = [
     "name": "Susteren",
     "securityRegion_code": "VR23",
     "securityRegion_name": "Limburg-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -5112,7 +5112,7 @@ const sewageTreatmentPlants = [
     "name": "Panheel",
     "securityRegion_code": "VR23",
     "securityRegion_name": "Limburg-Noord",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-07-22",
         "RNA_per_ml": 0,
@@ -5141,7 +5141,7 @@ const sewageTreatmentPlants = [
     "name": "Tilburg",
     "securityRegion_code": "VR20",
     "securityRegion_name": "Midden- en West-Brabant",
-    "measurementents": [
+    "measurements": [
       {
         "date": "2020-03-30",
         "RNA_per_ml": 1837,

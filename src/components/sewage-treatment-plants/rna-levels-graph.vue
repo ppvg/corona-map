@@ -1,12 +1,12 @@
 <script>
-    import SewerageArea from "@/classes/SewerageArea";
+    import SewageTreatmentPlant from "@/classes/SewageTreatmentPlant";
 
     export default {
         name: 'rna-levels-graph',
         components: {},
         props: {
-            sewerageArea: {
-                type: SewerageArea,
+            sewageTreatmentPlant: {
+                type: SewageTreatmentPlant,
                 required: true
             }
         },
@@ -36,16 +36,16 @@
                 return this.canvas.getContext('2d');
             },
             id() {
-                return 'rna-levels-graph-' + this.sewerageArea.id;
+                return 'rna-levels-graph-' + this.sewageTreatmentPlant.sewageTreatementPlant_id;
             },
             height() {
                 return 100;
             },
             step() {
-                return 10;
+                return 20;
             },
             width() {
-                return this.periodOfFocusLength * 2 * this.step;
+                return (this.periodOfFocusLength * 2 - 1) * this.step;
             },
         },
         methods: {
@@ -56,21 +56,22 @@
             clear() {
                 this.ctx.clearRect(0, 0, this.width, this.height);
             },
-            getX(ms) {
+            getX(date) {
+                let ms = new Date(date).getTime();
                 return this.width * (ms - this.startDateInMs) / (this.endDateInMs - this.startDateInMs)
             },
             drawGraph() {
                 let max, ctx, index, points;
                 index = 0;
                 ctx = this.ctx;
-                max = 30000;
+                max = 10000;
                 ctx.beginPath();
                 ctx.lineWidth = 1;
                 ctx.strokeStyle = 'black';
-                points = this.sewerageArea.sewerageMeasurements.map(measurement => {
+                points = this.sewageTreatmentPlant.measurements.map(measurement => {
                     return {
-                        x: this.getX(measurement.dateMs),
-                        y: this.height - (measurement.rnaLevel / max * this.height)
+                        x: this.getX(measurement.date),
+                        y: this.height - (measurement.RNA_per_ml / max * this.height)
                     }
                 });
                 for (let point of points) {

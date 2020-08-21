@@ -23,8 +23,8 @@ const getCityByPostalCode = function(postalCode) {
     }
 };
 
-$.getJSON(url, function(measurementents) {
-    for (let measurementent of measurementents) {
+$.getJSON(url, function(measurements) {
+    for (let measurementent of measurements) {
         let sewerageArea_code, postalCode, city_code;
         postalCode = measurementent.Postal_code;
         sewerageArea_code = measurementent.RWZI_AWZI_code;
@@ -37,10 +37,10 @@ $.getJSON(url, function(measurementents) {
                 name: measurementent.RWZI_AWZI_name,
                 security_region_code: measurementent.Security_region_code,
                 security_region_name: measurementent.Security_region_name,
-                measurementents: []
+                measurements: []
             }
         }
-        sewerageDict[sewerageArea_code].measurementents.push({
+        sewerageDict[sewerageArea_code].measurements.push({
             date: measurementent.Date_measurement,
             RNA_per_ml: measurementent.RNA_per_ml,
             representative_measurement: measurementent.Representative_measurement

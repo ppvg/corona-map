@@ -66,6 +66,7 @@
                 //let url = 'https://github.com/mzelst/covid-19/blob/master/data/municipality-today.csv';
                 let url = window.config.dataUrl + 'data/municipality-today.csv';
                 this.$store.commit('cities/init', cities.features);
+                console.log(cities.features.length);
                 d3.csv(url)
                     .then((data) => {
                         this.getDate(data);

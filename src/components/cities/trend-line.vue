@@ -22,10 +22,10 @@
                 return 200;
             },
             step() {
-                return 10;
+                return 20;
             },
             width() {
-                return this.city.report.history.length * this.step;
+                return (this.periodOfFocusLength * 2 - 1) * this.step;
             },
             min() {
                 return Math.min( ...this.city.report.history );
