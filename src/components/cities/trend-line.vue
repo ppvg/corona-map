@@ -44,6 +44,9 @@
             },
             offset() {
                 return this.$store.state.settings.currentDateOffset;
+            },
+            dateString() {
+                return this.$store.getters['ui/dateString'];
             }
         },
         methods: {
@@ -52,9 +55,17 @@
                 this.drawThresholds();
                 this.drawTrendLine();
                 this.drawPeriodBorder();
+                this.drawDate();
             },
             clear() {
                 this.ctx.clearRect(0, 0, this.width, this.height);
+            },
+            drawDate() {
+                let ctx = this.ctx;
+                ctx.font = '12px Arial';
+                ctx.textAlign = 'right';
+                ctx.fillStyle = '#000';
+                ctx.fillText(this.dateString, (this.width - 10), 20);
             },
             drawThresholds() {
                 let base, ctx;
