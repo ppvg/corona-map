@@ -64,10 +64,11 @@
             },
             loadData() {
                 //let url = 'https://github.com/mzelst/covid-19/blob/master/data/municipality-today.csv';
-                let url = window.config.dataUrl + 'data/municipality-today.csv';
+                let url = window.config.dataUrl + 'data/municipality-totals.csv';
                 this.$store.commit('cities/init', cities.features);
                 d3.csv(url)
                     .then((data) => {
+
                         this.getDate(data);
                         for (let item of data) {
                             this.addReport(item);
@@ -96,7 +97,7 @@
             getDate(data) {
                 let key, dateString, set, today;
                 if (data.columns) {
-                    key = data.columns[data.columns.length - 5];
+                    key = data.columns[data.columns.length - 1];
                     set = key.split('Total_reported.');
                     if (set.length > 0) {
                         dateString = set[1];
