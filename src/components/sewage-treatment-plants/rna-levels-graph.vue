@@ -141,37 +141,6 @@
                     }
                 }
 
-                function handleMouseOver(d, i) {
-                    d3.select(this)
-                        //.attr('fill', '#039dfc')
-                        .attr('r', 5);
-
-                    lineContainer.append('text')
-                        .attr('id', 'label-date')
-                        .attr('class', 'label')
-                        .attr('x', function() { return getX(d.x); })
-                        .attr('y', function() { return d.y - 30; })
-                        .text(function() {
-                            return format(new Date(d.measurement.date), 'd MMMM', {locale: nl} );
-                        });
-                    lineContainer.append('text')
-                        .attr('id', 'label-rna')
-                        .attr('class', 'label')
-                        .attr('x', function() { return getX(d.x); })
-                        .attr('y', function() { return d.y - 15; })
-                        .text(function() {
-                            return d.measurement.RNA_per_ml + ' RNA/ml';
-                        });
-                }
-
-                function handleMouseOut(d, i) {
-                    d3.select(this)
-                        .attr('fill', '##000')
-                        .attr('r', 2);
-                    d3.select('#label-date').remove();
-                    d3.select('#label-rna').remove();
-                }
-
                 this.lineContainer.selectAll('circle')
                     .data(this.points)
                     .enter()
@@ -183,8 +152,6 @@
                         return d.y;
                     })
                     .attr('r', 2);
-                    // .on('mouseover', handleMouseOver)
-                    // .on('mouseout', handleMouseOut);
 
                 this.textContainer.selectAll('text')
                     .data(this.points.filter(point => point.x > 0 && point.x < this.width))
