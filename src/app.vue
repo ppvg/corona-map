@@ -3,6 +3,7 @@
     import cities from '@/data/areas.json';
     import citiesPanel from "./components/cities/cities-panel";
     import * as d3 from 'd3';
+    import $ from 'jquery';
     import {format, sub } from 'date-fns';
 
     import credits from "./components/credits";
@@ -10,7 +11,7 @@
     import headerMenu from "./components/header-menu";
     import trends from "./components/trends/trends";
     import cityDetails from "./components/cities/city-details";
-    import sewageTreatmentPlants from '@/data/sewage-treatment-plants'
+    //import sewageTreatmentPlants from '@/data/sewage-treatment-plants'
 
 
     export default {
@@ -73,9 +74,12 @@
                         for (let item of data) {
                             this.addReport(item);
                         }
-                        this.addSewageTreatmentPlants(sewageTreatmentPlants);
-                        this.readQuery();
-                        this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
+                        let sewageMeasurementsUrl = 'https://raw.githubusercontent.com/innouveau/corona-map/master/data-conversion-stuff/_results/sewage-measurements-connected-to-city-codes.json';
+                        $.getJSON(sewageMeasurementsUrl, (measurements) => {
+                            this.addSewageTreatmentPlants(measurements);
+                            this.readQuery();
+                            this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
+                        });
                     })
                     .catch((error) => {
                         console.error(error);

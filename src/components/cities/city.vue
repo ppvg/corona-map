@@ -1,10 +1,12 @@
 <script>
     import City from "@/classes/City";
-    import Swatch from "./swatch";
+    import swatch from "@/components/elements/swatch";
 
     export default {
         name: 'city',
-        components: {Swatch},
+        components: {
+            swatch
+        },
         props: {
             city: {
                 type: City,

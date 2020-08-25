@@ -1,13 +1,15 @@
 <script>
     import City from "@/classes/City";
-    import trendLine from "./trend-line";
+    import testGraph from "./tests/test-graph";
     import sewageTreatmentPlants from "../sewage-treatment-plants/sewage-treatment-plants";
+    import caseCharacteristics from "./case-characteristics/case-characteristics";
 
     export default {
         name: 'city-details',
         components: {
+            caseCharacteristics,
             sewageTreatmentPlants,
-            trendLine
+            testGraph
         },
         props: {
             city: {
@@ -71,6 +73,10 @@
             v-if="city && city.report"
             class="city-details__info">
             <div class="city-details__section">
+                <case-characteristics
+                    :city="city"/>
+            </div>
+            <div class="city-details__section">
                 <div class="city-details__row">
                     <div class="city-details__label">
                         Inwoners
@@ -110,7 +116,7 @@
                 <div class="city-details__section-header">
                     Testen GGD
                 </div>
-                <trend-line :city="city"/>
+                <test-graph :city="city"/>
             </div>
             <div class="city-details__section">
                 <div class="city-details__row">

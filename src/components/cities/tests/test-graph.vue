@@ -3,7 +3,7 @@
     import thresholds from "@/data/thresholds";
 
     export default {
-        name: 'trend-line',
+        name: 'test-graph',
         components: {},
         props: {
             city: {
@@ -13,7 +13,7 @@
         },
         computed: {
             canvas() {
-                return document.getElementById('trend-line-' + this.city.id);
+                return document.getElementById('test-graph-' + this.city.id);
             },
             ctx() {
                 return this.canvas.getContext('2d');
@@ -170,9 +170,9 @@
 
 
 <template>
-    <div class="trend-line">
+    <div class="test-graph">
         <canvas
-            :id="'trend-line-' + city.id"
+            :id="'test-graph-' + city.id"
             :width="width"
             :height="height"></canvas>
     </div>
@@ -182,7 +182,7 @@
 <style lang="scss">
     @import '@/styles/variables.scss';
 
-    .trend-line {
+    .test-graph {
 
         canvas {
             background: #eee;

@@ -1,12 +1,12 @@
 <script>
     import thresholds from '@/data/thresholds';
     import city from "@/components/cities/city";
-    import Swatch from "../cities/swatch";
+    import swatch from "@/components/elements/swatch";
 
     export default {
         name: 'threshold-cities',
         components: {
-            Swatch,
+            swatch,
             city
         },
         data() {
