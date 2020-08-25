@@ -17,15 +17,15 @@
         computed: {},
         methods: {
             loadData() {
-                let url = 'https://data.rivm.nl/covid-19/COVID-19_casus_landelijk.csv';
-
-                $.get(url, function(data) {
-                    let options={"separator" : ";"};
-                    jqueryCsv.toObjects(data, options, function(error, data) {
-                        console.log(error);
-                        console.log(data);
-                    });
-                });
+                // let url = 'https://data.rivm.nl/covid-19/COVID-19_casus_landelijk.csv';
+                //
+                // $.get(url, function(data) {
+                //     let options={"separator" : ";"};
+                //     jqueryCsv.toObjects(data, options, function(error, data) {
+                //         console.log(error);
+                //         console.log(data);
+                //     });
+                // });
 
 
 

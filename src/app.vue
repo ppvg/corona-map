@@ -1,6 +1,8 @@
 <script>
     import mapNetherlands from "./components/map/map";
-    import cities from '@/data/areas.json';
+    import cities from '@/data/cities';
+    import ggds from '@/data/ggds';
+    import safetyRegions from '@/data/safety-regions';
     import citiesPanel from "./components/cities/cities-panel";
     import * as d3 from 'd3';
     import $ from 'jquery';
@@ -64,9 +66,14 @@
                 this.loadData();
             },
             loadData() {
-                //let url = 'https://github.com/mzelst/covid-19/blob/master/data/municipality-today.csv';
                 let url = window.config.dataUrl + 'data/municipality-totals.csv';
-                this.$store.commit('cities/init', cities.features);
+                this.$store.commit('cities/init', cities);
+                this.$store.commit('ggds/init', ggds);
+                this.$store.commit('safetyRegions/init', safetyRegions);
+
+                console.log(this.$store.state.ggds.all);
+                console.log(this.$store.state.safetyRegions.all);
+
                 d3.csv(url)
                     .then((data) => {
 
@@ -84,6 +91,49 @@
                     .catch((error) => {
                         console.error(error);
                     });
+            },
+            loadProps() {
+                // let safetyRegions = {};
+                // let ggdRegions = {};
+                // let vrs = [];
+                // let ggds = [];
+                // d3.csv('data/city_props.csv')
+                //     .then((data) => {
+                //         for (let item of data) {
+                //             //
+                //             // item.VR_code
+                //             if (!ggdRegions[item.ggd_code]) {
+                //                 ggdRegions[item.ggd_code] = {
+                //                     ggd_code: item.ggd_code,
+                //                     title: item.ggd_regio
+                //                 }
+                //             }
+                //             if (!safetyRegions[item.VR_code]) {
+                //                 safetyRegions[item.VR_code] = {
+                //                     safetyRegion_code: item.VR_code,
+                //                     title: item.veiligheidsregio
+                //                 }
+                //             }
+                //         }
+                //
+                //         for (let key in safetyRegions) {
+                //             vrs.push(safetyRegions[key])
+                //         }
+                //
+                //         for (let key in ggdRegions) {
+                //             ggds.push(ggdRegions[key])
+                //         }
+                //
+                //         console.log(JSON.stringify(vrs));
+                //         console.log(JSON.stringify(ggds));
+                //
+                //         // console.log(JSON.stringify(this.$store.state.cities.all.map(city => {
+                //         //     let c = {...city};
+                //         //     c.paths = city.paths.map(p => p.path);
+                //         //     return c;
+                //         // })));
+                //     })
+
             },
             addSewageTreatmentPlants(sewageTreatmentPlants){
                 this.$store.commit('sewageTreatmentPlants/init', sewageTreatmentPlants)

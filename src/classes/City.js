@@ -7,18 +7,24 @@ import interpolate from'color-interpolate';
 class City {
     constructor({
         id = null,
-        code = '',
-        attributes = {},
-        geometry = {},
-        report = null,
-        population = 0
+        municipality_code = '',
+        ggd_code = '',
+        safetyRegion_code = '',
+        title = '',
+        population = 0,
+        area = 0,
+        paths = [],
+        report = null
     }) {
-        this.id = (store.state.cities.all.length + 1);
-        this.code = 'GM' + attributes.Code;
-        this.title = attributes.Gemeentenaam;
-        this.paths = geometry.rings.map(ring => new Path(ring));
-        this.report = report;
+        this.id = id;
+        this.municipality_code = municipality_code;
+        this.ggd_code = ggd_code;
+        this.safetyRegion_code = safetyRegion_code;
+        this.title = title;
         this.population = population;
+        this.area = area;
+        this.paths = paths.map(path => new Path(path));
+        this.report = report;
     }
 
     get increaseDay() {

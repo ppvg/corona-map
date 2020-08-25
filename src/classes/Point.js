@@ -1,9 +1,12 @@
 import coordinatesTool from "@/tools/coordinates";
 
 class Point {
-    constructor(point) {
-        this.x = point[0];
-        this.y = point[1];
+    constructor({
+        x = 0,
+        y = 0
+    }) {
+        this.x = x;
+        this.y = y;
     }
 
     get asArray() {

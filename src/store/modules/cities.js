@@ -28,7 +28,7 @@ const mutations = {
             if (item) {
                 let c = new City(item);
                 state.all.push(c);
-                state.dict[c.code] = c;
+                state.dict[c.municipality_code] = c;
             }
         }
     },
