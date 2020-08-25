@@ -16,6 +16,7 @@
         data() {
             return {
                 svg: null,
+                gridContainer: null,
                 lineContainer: null,
                 textContainer: null,
                 height: 150,
@@ -32,9 +33,8 @@
                 return this.$store.state.settings.currentDateOffset;
             },
             width() {
-                return (this.periodOfFocusLength * 2 - 1) * this.step;
+                return this.periodOfFocusLength * 2 * this.step;
             },
-            //
             measurementsInRange() {
                 let startIndex, endIndex, index;
                 startIndex = null;
@@ -68,7 +68,6 @@
                     }
                 })
             },
-
             msPerDay() {
                 return 1000 * 3600 * 24;
             },
@@ -91,6 +90,7 @@
         methods: {
             init(){
                 this.svg = d3.select(this.$refs.container).select('svg');
+                this.gridContainer = this.svg.append('g').attr('class', 'grid-container');
                 this.lineContainer = this.svg.append('g').attr('class', 'line-container');
                 this.textContainer = this.svg.append('g').attr('class', 'text-container');
                 this.draw();
@@ -104,43 +104,72 @@
                 this.textContainer.selectAll('*').remove();
             },
             getX(dateInMs) {
-                return this.width * (dateInMs - this.startDateInMs) / (this.endDateInMs - this.startDateInMs)
+                let pct = (dateInMs - this.startDateInMs) / (this.endDateInMs - this.startDateInMs);
+                return (this.width) * pct - (0.5 * this.step);
             },
             getY(measurement) {
                 return this.height - (measurement.RNA_per_ml / this.max * this.height);
             },
             drawGraph() {
-                this.drawLine();
-                this.drawPoints();
+                this.drawGrid();
+                //this.drawLine();
+                this.drawBars();
+                //this.drawPoints();
+                this.drawTexts();
+            },
+            drawGrid() {
+                let set = Array.from(Array(2 * this.periodOfFocusLength).keys());
+                this.gridContainer.selectAll('line')
+                    .data(set)
+                    .enter()
+                    .append('line')
+                    .attr('x1', (d) => {
+                        return d * this.step;
+                    })
+                    .attr('x2', (d) => {
+                        return d * this.step;
+                    })
+                    .attr('y1', 0)
+                    .attr('y2', this.height)
+                    .attr('stroke', (d) => {
+                        return d === 7 ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.1)';
+                    })
+                    .attr('stroke-width', 1);
             },
             drawLine() {
-                let lineFunction;
-
-                lineFunction = d3.line()
+                let  lineFunction = d3.line()
                     .x(function(d) { return d.x; })
                     .y(function(d) { return d.y; });
 
                 this.lineContainer.append('path')
                     .attr('d', lineFunction(this.points))
-                    .attr('stroke', 'black')
+                    .attr('stroke', '#aaa')
                     .attr('stroke-width', 1)
                     .attr('fill', 'none');
             },
+            drawBars() {
+                let width, minHeight;
+                width = 8;
+
+                // give the bar a min width
+                // to show that there was a measurement
+                minHeight = 2;
+                this.lineContainer.selectAll('rect')
+                    .data(this.points)
+                    .enter()
+                    .append('rect')
+                    .attr('x', function(d) {
+                        return d.x - (0.5 * width);
+                    })
+                    .attr('y', function(d) {
+                        return d.y - minHeight;
+                    })
+                    .attr('width', width)
+                    .attr('height', (d) => {
+                        return (this.height - d.y) + minHeight;
+                    })
+            },
             drawPoints() {
-                let lineContainer, buffer;
-                lineContainer = this.lineContainer;
-                buffer = this.width - 70;
-
-                function getX(x) {
-                    if (x < 10) {
-                        return 10;
-                    } else if (x < buffer) {
-                        return x
-                    } else {
-                        return buffer;
-                    }
-                }
-
                 this.lineContainer.selectAll('circle')
                     .data(this.points)
                     .enter()
@@ -152,16 +181,28 @@
                         return d.y;
                     })
                     .attr('r', 2);
+            },
+            drawTexts() {
+                let buffer = this.width - 20;
 
                 this.textContainer.selectAll('text')
                     .data(this.points.filter(point => point.x > 0 && point.x < this.width))
                     .enter()
                     .append('text')
                     .attr('x', function(d) {
-                        return getX(d.x);
+                        return d.x;
                     })
                     .attr('y', function(d) {
                         return d.y - 15;
+                    })
+                    .attr('text-anchor', (d) => {
+                        if (d.x < 10) {
+                            return 'start'
+                        } else if (d.x >= buffer) {
+                            return 'end'
+                        } else {
+                            return 'middle';
+                        }
                     })
                     .text(function(d) {
                         return d.measurement.RNA_per_ml + ' RNA/ml';

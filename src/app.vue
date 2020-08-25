@@ -228,7 +228,8 @@
             }
 
             .city-details {
-                width: 300px;
+                //14 * 20 + 32
+                width: 312px;
             }
         }
 

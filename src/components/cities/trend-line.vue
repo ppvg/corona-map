@@ -25,7 +25,7 @@
                 return 20;
             },
             width() {
-                return (this.periodOfFocusLength * 2 - 1) * this.step;
+                return this.periodOfFocusLength * 2 * this.step;
             },
             min() {
                 return Math.min( ...this.city.report.history );
@@ -53,8 +53,8 @@
             redraw() {
                 this.clear();
                 this.drawThresholds();
+                this.drawGrid();
                 this.drawTrendLine();
-                this.drawPeriodBorder();
                 this.drawDate();
             },
             clear() {
@@ -89,6 +89,21 @@
                 }
                 ctx.globalAlpha = 1;
             },
+            drawGrid() {
+                let ctx, set;
+                ctx = this.ctx;
+                set = Array.from(Array(2 * this.periodOfFocusLength).keys());
+                for (let i of set) {
+                    let x = i * this.step;
+                    ctx.beginPath();
+                    ctx.lineWidth = 1;
+                    ctx.strokeStyle = i === 7 ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.1)';
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, this.height);
+                    ctx.stroke();
+                    ctx.closePath();
+                }
+            },
             drawTrendLine() {
                 let ctx, step, history, start;
                 ctx = this.ctx;
@@ -103,11 +118,14 @@
                 ctx.beginPath();
                 ctx.lineWidth = 1;
                 ctx.strokeStyle = 'black';
+                // draw 1 point extra, this point is out of the graph on the leftside
                 start = history.length - (2 * this.periodOfFocusLength) - this.offset;
-                ctx.moveTo(0, getValue(history[start]));
-                for (let i = (start + 1), l = (history.length - this.offset); i < l; i++) {
-                    let value = getValue(history[i]);
-                    ctx.lineTo((step * (i - start)), value);
+                ctx.moveTo((-0.5 * step), getValue(history[start - 1]));
+                for (let i = start, l = (history.length - this.offset); i < l; i++) {
+                    let value, index;
+                    value = getValue(history[i]);
+                    index = i - start;
+                    ctx.lineTo((step * (index + 0.5)), value);
                 }
                 ctx.stroke();
                 ctx.closePath();
