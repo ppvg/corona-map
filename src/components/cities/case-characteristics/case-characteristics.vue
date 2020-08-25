@@ -1,5 +1,9 @@
 <script>
     import City from "@/classes/City";
+    import * as d3 from "d3";
+    import jqueryCsv from 'jquery-csv';
+    import $ from 'jquery';
+
 
     export default {
         name: 'case-characteristics',
@@ -13,6 +17,18 @@
         computed: {},
         methods: {
             loadData() {
+                let url = 'https://data.rivm.nl/covid-19/COVID-19_casus_landelijk.csv';
+
+                $.get(url, function(data) {
+                    let options={"separator" : ";"};
+                    jqueryCsv.toObjects(data, options, function(error, data) {
+                        console.log(error);
+                        console.log(data);
+                    });
+                });
+
+
+
 
             }
         },
