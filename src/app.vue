@@ -81,7 +81,7 @@
                         for (let item of data) {
                             this.addReport(item);
                         }
-                        let sewageMeasurementsUrl = 'https://raw.githubusercontent.com/innouveau/corona-map/master/data-conversion-stuff/_results/sewage-measurements-connected-to-city-codes.json';
+                        let sewageMeasurementsUrl = window.config.sewageDataUrl + 'sewage-measurements-connected-to-city-codes.json';
                         $.getJSON(sewageMeasurementsUrl, (measurements) => {
                             this.addSewageTreatmentPlants(measurements);
                             this.readQuery();
