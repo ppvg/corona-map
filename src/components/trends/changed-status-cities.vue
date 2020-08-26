@@ -1,6 +1,6 @@
 <script>
     import thresholds from '@/data/thresholds';
-    import city from "@/components/cities/city";
+    import city from "@/components/trends/city";
 
     export default {
         name: 'changed-status-cities',

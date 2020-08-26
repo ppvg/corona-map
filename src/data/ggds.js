@@ -39,7 +39,7 @@ const ggds = [{
     "title": "GGD Groningen"
 }, {
     "ggd_code": "GG1911",
-    "title": "Veiligheids- en Gezondheidsregio Gelderland-Midden"
+    "title": "Gelderland-Midden"
 }, {
     "ggd_code": "GG5608",
     "title": "GGD Brabant-Zuidoost"

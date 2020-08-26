@@ -3,7 +3,7 @@
     import cities from '@/data/cities';
     import ggds from '@/data/ggds';
     import safetyRegions from '@/data/safety-regions';
-    import citiesPanel from "./components/cities/cities-panel";
+    import citiesPanel from "./components/regions/search/cities-panel";
     import * as d3 from 'd3';
     import $ from 'jquery';
     import {format, sub } from 'date-fns';
@@ -12,7 +12,7 @@
     import query from '@/components/elements/query';
     import headerMenu from "./components/header-menu";
     import trends from "./components/trends/trends";
-    import cityDetails from "./components/cities/city-details";
+    import regionDetails from "./components/regions/region-details";
     //import sewageTreatmentPlants from '@/data/sewage-treatment-plants'
 
 
@@ -24,7 +24,7 @@
             credits,
             citiesPanel,
             mapNetherlands,
-            cityDetails
+            regionDetails
         },
         props: {},
         mixins: [query],
@@ -55,10 +55,10 @@
                 return this.$store.state.ui.menu === 'map';
             },
             showCity() {
-                return this.currentCity;
+                return this.currentRegion;
             },
-            currentCity() {
-                return this.$store.state.ui.currentCity;
+            currentRegion() {
+                return this.$store.getters['ui/currentRegion'];
             }
         },
         methods: {
@@ -70,9 +70,6 @@
                 this.$store.commit('cities/init', cities);
                 this.$store.commit('ggds/init', ggds);
                 this.$store.commit('safetyRegions/init', safetyRegions);
-
-                console.log(this.$store.state.ggds.all);
-                console.log(this.$store.state.safetyRegions.all);
 
                 d3.csv(url)
                     .then((data) => {
@@ -228,13 +225,10 @@
             </div>
 
             <trends/>
-
-            <city-details
+            <region-details
                 v-if="showCity"
-                :city="currentCity"/>
+                :region="currentRegion"/>
         </div>
-
-
 
         <credits v-if="showCredits"/>
         <div
@@ -281,9 +275,9 @@
                 width: 300px;
             }
 
-            .city-details {
+            .region-details {
                 //14 * 20 + 32
-                width: 312px;
+                width: 450px;
             }
         }
 

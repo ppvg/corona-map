@@ -1,19 +1,19 @@
 <script>
-    import City from "@/classes/City";
     import thresholds from "@/data/thresholds";
+    import _Region from "@/classes/_Region";
 
     export default {
         name: 'test-graph',
         components: {},
         props: {
-            city: {
-                type: City,
+            region: {
+                type: _Region,
                 required: true
             }
         },
         computed: {
             canvas() {
-                return document.getElementById('test-graph-' + this.city.id);
+                return document.getElementById('test-graph-' + this.region.id);
             },
             ctx() {
                 return this.canvas.getContext('2d');
@@ -28,10 +28,10 @@
                 return this.periodOfFocusLength * 2 * this.step;
             },
             min() {
-                return Math.min( ...this.city.report.history );
+                return Math.min( ...this.region.getTotalReport().history );
             },
             max() {
-                return Math.max( ...this.city.report.history );
+                return Math.max( ...this.region.getTotalReport().history );
             },
             difference() {
                 return this.max - this.min;
@@ -108,10 +108,10 @@
                 let ctx, step, history, start;
                 ctx = this.ctx;
                 step = this.step;
-                history = this.city.report.history;
+                history = this.region.getTotalReport().history;
 
                 const getValue = (value) => {
-                    let relativeValue = thresholds.perPopulation * value / this.city.population;
+                    let relativeValue = thresholds.perPopulation * value / this.region.getTotalPopulation();
                     return this.height - (relativeValue * this.zoom);
                 };
 
@@ -150,8 +150,8 @@
             this.redraw();
         },
         watch: {
-            city: function (newValue, oldValue) {
-                if (this.city) {
+            region: function (newValue, oldValue) {
+                if (this.region) {
                     setTimeout(() => {
                         this.redraw();
                     })
@@ -172,7 +172,7 @@
 <template>
     <div class="test-graph">
         <canvas
-            :id="'test-graph-' + city.id"
+            :id="'test-graph-' + region.id"
             :width="width"
             :height="height"></canvas>
     </div>

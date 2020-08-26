@@ -2,9 +2,9 @@ import Path from './Path';
 import store from '@/store/store';
 import stringTool from '@/tools/string';
 import thresholds from "@/data/thresholds";
-import interpolate from'color-interpolate';
+import _Region from "./_Region";
 
-class City {
+class City extends _Region {
     constructor({
         id = null,
         municipality_code = '',
@@ -16,6 +16,8 @@ class City {
         paths = [],
         report = null
     }) {
+        super();
+        this.regionType = 'city';
         this.id = id;
         this.municipality_code = municipality_code;
         this.ggd_code = ggd_code;
@@ -44,10 +46,6 @@ class City {
 
     getRelativeIncreaseWeek() {
         return 100000 * this.getIncreaseWeek() /  this.population;
-    }
-
-    getThreshold(delta = 0) {
-        return thresholds.getThreshold(this.getIncreaseWeek(delta), this.population, 7);
     }
 
     get changedStatus(){
@@ -100,28 +98,6 @@ class City {
             return thresholds.thresholds[index + 1];
         } else {
             return null;
-        }
-    }
-
-
-    get color() {
-        let threshold = this.getThreshold();
-        if (!threshold) {
-            return '#888';
-        } else {
-            if (!store.state.settings.gradient) {
-                return threshold.color;
-            } else {
-                if (!this.prev || !this.next) {
-                    return threshold.color;
-                } else {
-                    let colormap, maxOfNextColor, ratio;
-                    maxOfNextColor = 0.65;
-                    ratio = maxOfNextColor * (this.getRelativeIncreaseWeek() - this.prev.n) / (threshold.n - this.prev.n);
-                    colormap = interpolate([threshold.color, this.next.color]);
-                    return colormap(ratio);
-                }
-            }
         }
     }
 }

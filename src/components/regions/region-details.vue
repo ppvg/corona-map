@@ -3,21 +3,27 @@
     import testGraph from "./tests/test-graph";
     import sewageTreatmentPlants from "../sewage-treatment-plants/sewage-treatment-plants";
     import caseCharacteristics from "./case-characteristics/case-characteristics";
+    import RegionTypePicker from "./region-type-picker";
+    import _Region from "@/classes/_Region";
 
     export default {
-        name: 'city-details',
+        name: 'region-details',
         components: {
+            RegionTypePicker,
             caseCharacteristics,
             sewageTreatmentPlants,
             testGraph
         },
         props: {
-            city: {
-                type: City,
+            region: {
+                type: _Region,
                 required: true
             }
         },
         computed: {
+            city() {
+                return this.$store.state.ui.currentCity;
+            },
             period1() {
                 let start, end, total;
                 total = 0;
@@ -56,70 +62,70 @@
 <template>
     <div
         :class="{'panel--active': showDetails}"
-        class="city-details panel">
-        <div
-            v-if="city"
-            class="city-details__header">
+        class="region-details panel">
+        <div class="region-details__header">
             <div
-                :style="{'background': city.color}"
+                :style="{'background': region.color}"
                 class="dot"></div>
-            <div
-                :title="city.population"
-                class="city-details__title">
-                {{city.title}}
+            <div class="region-details__title">
+                {{region.title}}
             </div>
         </div>
-        <div
-            v-if="city && city.report"
-            class="city-details__info">
-            <div class="city-details__section">
-                <case-characteristics
+        <div class="region-details__info">
+            <div class="region-details__section">
+                <region-type-picker
                     :city="city"/>
             </div>
-            <div class="city-details__section">
-                <div class="city-details__row">
-                    <div class="city-details__label">
+<!--            <div class="region-details__section">-->
+<!--                <case-characteristics-->
+<!--                    :city="city"/>-->
+<!--            </div>-->
+            <div class="region-details__section">
+                <div class="region-details__row">
+                    <div class="region-details__label">
                         Inwoners
                     </div>
-                    <div class="city-details__value">
-                        {{city.population}}
+                    <div class="region-details__value">
+                        {{region.getTotalPopulation()}}
                     </div>
                 </div>
             </div>
-            <div class="city-details__section">
-                <div class="city-details__row">
-                    <div class="city-details__label">
+            <div class="region-details__section">
+                <div class="region-details__row">
+                    <div class="region-details__label">
                         Toename vandaag
                     </div>
-                    <div class="city-details__value">
-                        {{format(city.increaseDay)}}
+                    <div class="region-details__value">
+                        {{format(region.getTotalIncreaseDay())}}
                     </div>
                 </div>
-                <div class="city-details__row">
-                    <div class="city-details__label">
+                <div class="region-details__row">
+                    <div class="region-details__label">
                         Toename laatste 7 dagen
                     </div>
-                    <div class="city-details__value">
-                        {{format(city.getIncreaseWeek())}}
+                    <div class="region-details__value">
+                        {{format(region.getTotalIncreaseWeek())}}
                     </div>
                 </div>
-                <div class="city-details__row">
-                    <div class="city-details__label">
+                <div class="region-details__row">
+                    <div class="region-details__label">
                         Relatieve toename laatste 7 dagen (per 100 dzd inw)
                     </div>
-                    <div class="city-details__value">
-                        {{format(Math.round(city.getRelativeIncreaseWeek()))}}
+                    <div class="region-details__value">
+                        {{format(Math.round(region.getTotalRelativeIncreaseWeek()))}}
                     </div>
                 </div>
             </div>
-            <div class="city-details__section">
-                <div class="city-details__section-header">
+            <div class="region-details__section">
+                <div class="region-details__section-header">
                     Testen GGD
                 </div>
-                <test-graph :city="city"/>
+                <test-graph :region="region"/>
             </div>
-            <div class="city-details__section">
-                <div class="city-details__row">
+            <div
+                v-if="region.regionType === 'city'"
+                class="region-details__section">
+                <div class="region-details__row">
                     <sewage-treatment-plants
                         :city="city"/>
                 </div>
@@ -132,11 +138,11 @@
 <style lang="scss">
     @import '@/styles/variables.scss';
 
-    .city-details {
+    .region-details {
         font-size: 15px;
         position: relative;
 
-        .city-details__header {
+        .region-details__header {
             font-weight: 700;
             font-size: 20px;
             margin-bottom: 12px;
@@ -151,28 +157,28 @@
             }
         }
 
-        .city-details__info {
+        .region-details__info {
 
-            .city-details__section {
+            .region-details__section {
                 border-bottom: 1px solid #ddd;
                 padding: 10px 0;
 
-                .city-details__section-header {
+                .region-details__section-header {
                     font-weight: 700;
                     margin-bottom: 4px;
                 }
             }
 
-            .city-details__row {
+            .region-details__row {
                 display: flex;
                 //align-items: center;
                 padding: 2px 0;
 
-                .city-details__label {
+                .region-details__label {
                     width: 200px;
                 }
 
-                .city-details__value {
+                .region-details__value {
                     font-weight: 700;
                     font-family: Courier;
                     font-size: 20px;
@@ -186,19 +192,19 @@
         @include mobile() {
             font-size: 12px;
 
-            .city-details__header {
+            .region-details__header {
                 margin-top: 16px;
             }
 
-            .city-details__info {
+            .region-details__info {
 
-                .city-details__row {
+                .region-details__row {
 
-                    .city-details__label {
+                    .region-details__label {
                         width: 160px;
                     }
 
-                    .city-details__value {
+                    .region-details__value {
                         font-size: 18px;
                         width: calc(100% - 160px);
                     }
