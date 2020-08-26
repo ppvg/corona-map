@@ -26,10 +26,13 @@
             },
             currentCity() {
                 return this.$store.state.ui.currentCity;
+            },
+            currentRegion() {
+                return this.$store.getters['ui/currentRegion'];
             }
         },
         methods: {
-            showCurrentCity() {
+            showCurrentRegion() {
                 let settings = {
                     key: 'map',
                     width: this.$store.state.settings.canvasWidth,
@@ -40,9 +43,9 @@
                     fill: false
                 };
                 this.clear();
-                if (this.currentCity) {
+                if (this.currentRegion) {
                     this.ctx.strokeStyle = '#000';
-                    canvasTools.drawCity(this.ctx, this.currentCity, settings);
+                    canvasTools.drawRegion(this.ctx, this.currentRegion, settings);
                 }
             },
             clear() {
@@ -50,8 +53,8 @@
             },
         },
         watch: {
-            currentCity: function () {
-                this.showCurrentCity();
+            currentRegion: function () {
+                this.showCurrentRegion();
             }
         }
 

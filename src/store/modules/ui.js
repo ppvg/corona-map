@@ -28,13 +28,17 @@ const getters = {
     },
     currentRegion(state, getters, rootState, rootGetters) {
         let city = state.currentCity;
-        switch(state.currentRegionType) {
-            case 'city':
-                return city;
-            case 'ggd':
-                return rootGetters['ggds/getItemByProperty']('ggd_code', city.ggd_code, true);
-            case 'sr':
-                return rootGetters['safetyRegions/getItemByProperty']('safetyRegion_code', city.safetyRegion_code, true);
+        if (city) {
+            switch(state.currentRegionType) {
+                case 'city':
+                    return city;
+                case 'ggd':
+                    return rootGetters['ggds/getItemByProperty']('ggd_code', city.ggd_code, true);
+                case 'sr':
+                    return rootGetters['safetyRegions/getItemByProperty']('safetyRegion_code', city.safetyRegion_code, true);
+            }
+        } else {
+            return null;
         }
     }
 };

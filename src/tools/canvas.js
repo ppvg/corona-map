@@ -4,18 +4,25 @@ const addBackground = function(ctx, width, height) {
     ctx.fill();
 };
 
-const draw = function(ctx, cities, settings) {
+const draw = function(ctx, regions, settings) {
     ctx.lineWidth = 0.5;
     ctx.strokeStyle = '#555';
 
-    for (let city of cities) {
+
+    for (let region of regions) {
+        drawRegion(ctx, region, settings);
+    }
+};
+
+const drawRegion = function(ctx, region, settings) {
+    ctx.fillStyle = region.color;
+    for (let city of region.getCities()) {
         drawCity(ctx, city, settings);
     }
 };
 
 const drawCity = function(ctx, city, settings) {
     for (let path of city.paths) {
-        ctx.fillStyle = city.color;
         drawPath(ctx, path, settings);
     }
 };
@@ -33,5 +40,6 @@ const drawPath = function(ctx, path, settings) {
 export default {
     addBackground,
     draw,
+    drawRegion,
     drawCity
 }

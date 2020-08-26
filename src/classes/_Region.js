@@ -93,6 +93,28 @@ class _Region {
         return thresholds.getThreshold(this.getTotalIncreaseWeek(delta), this.getTotalPopulation(), 7);
     }
 
+    get prev() {
+        let threshold, index;
+        threshold = this.getThreshold();
+        index = thresholds.thresholds.indexOf(threshold);
+        if (index > 0) {
+            return thresholds.thresholds[index - 1];
+        } else {
+            return null;
+        }
+    }
+
+    get next() {
+        let threshold, index;
+        threshold = this.getThreshold();
+        index = thresholds.thresholds.indexOf(threshold);
+        if (index < thresholds.thresholds.length - 1) {
+            return thresholds.thresholds[index + 1];
+        } else {
+            return null;
+        }
+    }
+
     get color() {
         let threshold = this.getThreshold();
         if (!threshold) {
@@ -106,7 +128,7 @@ class _Region {
                 } else {
                     let colormap, maxOfNextColor, ratio;
                     maxOfNextColor = 0.65;
-                    ratio = maxOfNextColor * (this.getRelativeIncreaseWeek() - this.prev.n) / (threshold.n - this.prev.n);
+                    ratio = maxOfNextColor * (this.getTotalRelativeIncreaseWeek() - this.prev.n) / (threshold.n - this.prev.n);
                     colormap = interpolate([threshold.color, this.next.color]);
                     return colormap(ratio);
                 }

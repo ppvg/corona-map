@@ -21,11 +21,18 @@
             height() {
                 return this.$store.state.settings.canvasHeight;
             },
+            regions() {
+                switch(this.currentRegionType) {
+                    case 'city':
+                        return this.$store.state.cities.all;
+                    case 'ggd':
+                        return this.$store.state.ggds.all;
+                    case 'sr':
+                        return this.$store.state.safetyRegions.all;
+                }
+            },
             cities() {
                 return this.$store.state.cities.all;
-            },
-            testCity() {
-                return this.cities.find(city => city.title === 'Goeree-Overflakkee')
             },
             canvas() {
                 return document.getElementById('main-canvas');
@@ -35,6 +42,9 @@
             },
             offset() {
                 return this.$store.state.settings.currentDateOffset;
+            },
+            currentRegionType() {
+                return this.$store.state.ui.currentRegionType
             }
         },
         methods: {
@@ -117,7 +127,7 @@
                     zoom: this.$store.state.settings.zoom,
                     fill: true
                 };
-                canvasTools.draw(this.ctx, this.cities, settings);
+                canvasTools.draw(this.ctx, this.regions, settings);
             },
             clear() {
                 this.ctx.clearRect(0, 0, this.width, this.height);
@@ -128,6 +138,11 @@
         },
         watch: {
             offset: {
+                handler: function(newValue) {
+                    this.draw();
+                }
+            },
+            currentRegionType: {
                 handler: function(newValue) {
                     this.draw();
                 }

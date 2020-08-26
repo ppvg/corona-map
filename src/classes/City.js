@@ -75,31 +75,6 @@ class City extends _Region {
     //     }
     // }
     //
-
-
-
-
-    get prev() {
-        let threshold, index;
-        threshold = this.getThreshold();
-        index = thresholds.thresholds.indexOf(threshold);
-        if (index > 0) {
-            return thresholds.thresholds[index - 1];
-        } else {
-            return null;
-        }
-    }
-
-    get next() {
-        let threshold, index;
-        threshold = this.getThreshold();
-        index = thresholds.thresholds.indexOf(threshold);
-        if (index < thresholds.thresholds.length - 1) {
-            return thresholds.thresholds[index + 1];
-        } else {
-            return null;
-        }
-    }
 }
 
 export default City;
