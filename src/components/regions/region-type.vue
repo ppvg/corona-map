@@ -1,5 +1,9 @@
 <script>
     import swatch from "../elements/swatch";
+    import $ from "jquery";
+    import jqueryCsv from "jquery-csv";
+
+
     export default {
         name: 'region-type',
         components: {
@@ -14,11 +18,81 @@
         computed: {
             isActive() {
                 return this.$store.state.ui.currentRegionType === this.type.tag;
+            },
+            caseDataReguested() {
+                return this.$store.state.ui.caseDataReguested;
+            },
+            ggds() {
+                return this.$store.state.ggds.all;
             }
         },
         methods: {
             select() {
                 this.$store.commit('ui/updateProperty', {key: 'currentRegionType', value: this.type.tag});
+                if (this.type.tag === 'ggd' && !this.caseDataReguested){
+                    this.loadCaseData();
+                }
+            },
+            loadCaseData() {
+                let url = window.config.casesDataUrl + 'COVID-19_casus_landelijk.csv';
+                this.$store.commit('ui/updateProperty', {key: 'caseDataReguested', value: true});
+                console.log('loading case data');
+
+                $.get(url, (data) => {
+                    let options = {separator : ';'};
+                    jqueryCsv.toObjects(data, options, (error, result) => {
+                        this.sortEntries(result);
+                    });
+                });
+            },
+            sortEntries(entries) {
+                let ggds = this.ggds.map(ggd => {
+                    return {title: ggd.title, report: []};
+                });
+
+                function getGgd(title) {
+                    return ggds.find(ggd => ggd.title === title);
+                }
+
+                function getDay(ggd, date) {
+                    let day = ggd.report.find(day => day.date === date);
+                    if (!day) {
+                        day = {date: date, ageGroups: []};
+                        ggd.report.push(day);
+                    }
+                    return day;
+                }
+
+                function findAgeGroup(day, ageGroupTitle) {
+                    let ageGroup = day.ageGroups.find(ageGroup => ageGroup.title === ageGroupTitle);
+                    if (!ageGroup) {
+                        ageGroup = {title: ageGroupTitle, cases: 0};
+                        day.ageGroups.push(ageGroup);
+                    }
+                    return ageGroup;
+                }
+
+                for (let entry of entries) {
+                    let ggd, day, ageGroup, month;
+                    month = Number(entry.Date_statistics.split('-')[1]);
+                    // currently just a rough cut, todo based on current date
+                    if (month > 6) {
+                        ggd = getGgd(entry.Municipal_health_service);
+                        if (ggd) {
+                            day = getDay(ggd, entry.Date_statistics);
+                            ageGroup = findAgeGroup(day, entry.Agegroup);
+                            ageGroup.cases++;
+                        } else {
+                            console.log(entry);
+                        }
+                    }
+                }
+
+                for (let ggdData of ggds) {
+                    let ggd = this.$store.getters['ggds/getItemByProperty']('title', ggdData.title, true);
+                    this.$store.commit('ggds/updatePropertyOfItem', {item: ggd, property: 'report', value: ggdData.report});
+                }
+                this.$store.commit('ui/updateProperty', {key: 'caseDataLoaded', value: true});
             }
         }
     }

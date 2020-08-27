@@ -2,7 +2,7 @@
     import City from "@/classes/City";
     import testGraph from "./tests/test-graph";
     import sewageTreatmentPlants from "../sewage-treatment-plants/sewage-treatment-plants";
-    import caseCharacteristics from "./case-characteristics/case-characteristics";
+    import caseCharacteristicsGraph from "./case-characteristics/case-characteristics-graph";
     import RegionTypePicker from "./region-type-picker";
     import _Region from "@/classes/_Region";
 
@@ -10,7 +10,7 @@
         name: 'region-details',
         components: {
             RegionTypePicker,
-            caseCharacteristics,
+            caseCharacteristicsGraph,
             sewageTreatmentPlants,
             testGraph
         },
@@ -44,6 +44,9 @@
             },
             showDetails() {
                 return this.$store.state.ui.menu === 'city';
+            },
+            caseDataLoaded() {
+                return this.$store.state.ui.caseDataLoaded;
             }
         },
         methods: {
@@ -76,10 +79,11 @@
                 <region-type-picker
                     :city="city"/>
             </div>
-<!--            <div class="region-details__section">-->
-<!--                <case-characteristics-->
-<!--                    :city="city"/>-->
-<!--            </div>-->
+            <div class="region-details__section">
+                <case-characteristics-graph
+                    v-if="region.regionType === 'ggd' && caseDataLoaded"
+                    :ggd="region"/>
+            </div>
             <div class="region-details__section">
                 <div class="region-details__row">
                     <div class="region-details__label">

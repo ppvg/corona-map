@@ -10,7 +10,9 @@ const state = {
     currentRegionType: 'city',
     today: null,
     credits: false,
-    menu: 'map'
+    menu: 'map',
+    caseDataReguested: false,
+    caseDataLoaded: false
 };
 
 const getters = {
