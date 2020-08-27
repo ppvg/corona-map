@@ -16,7 +16,7 @@
         computed: {
             sewageTreatmentPlants() {
                 return this.$store.state.sewageTreatmentPlants.all.filter(s => {
-                    return s.city_code === this.city.code;
+                    return s.city_code === this.city.municipality_code;
                 })
             }
         },

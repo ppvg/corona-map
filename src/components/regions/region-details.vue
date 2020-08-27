@@ -127,7 +127,7 @@
                 class="region-details__section">
                 <div class="region-details__row">
                     <sewage-treatment-plants
-                        :city="city"/>
+                        :city="region"/>
                 </div>
             </div>
         </div>
