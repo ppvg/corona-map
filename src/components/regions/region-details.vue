@@ -2,13 +2,15 @@
     import testGraph from "./tests/test-graph";
     import sewageTreatmentPlants from "../sewage-treatment-plants/sewage-treatment-plants";
     import ageDistributionGraph from "./case-characteristics/age-distribution-graph";
-    import RegionTypePicker from "./region-type-picker";
+    import regionTypePicker from "./region-type-picker";
     import _Region from "@/classes/_Region";
+    import loader from "@/components/elements/loader";
 
     export default {
         name: 'region-details',
         components: {
-            RegionTypePicker,
+            loader,
+            regionTypePicker,
             ageDistributionGraph,
             sewageTreatmentPlants,
             testGraph
@@ -46,6 +48,9 @@
             },
             caseDataLoaded() {
                 return this.$store.state.ui.caseDataLoaded;
+            },
+            caseDataRequested() {
+                return this.$store.state.ui.caseDataRequested;
             }
         },
         methods: {
@@ -79,12 +84,18 @@
                     :city="city"/>
             </div>
             <div
-                v-if="region.regionType === 'ggd' && caseDataLoaded"
+                v-if="region.regionType === 'ggd' && caseDataRequested"
                 class="region-details__section">
                 <div class="region-details__section-header">
                     Leeftijdsverdeling
                 </div>
-                <age-distribution-graph :ggd="region"/>
+                <div class="age-distribution-graph__container">
+                    <age-distribution-graph
+                            v-if="caseDataLoaded"
+                            :ggd="region"/>
+                    <loader v-if="!caseDataLoaded"/>
+                </div>
+
             </div>
             <div class="region-details__section">
                 <div class="region-details__row">
@@ -193,6 +204,13 @@
                     position: relative;
                 }
             }
+        }
+
+        .age-distribution-graph__container {
+            width: 390px;
+            height: 250px;
+            position: relative;
+            background: #fff;
         }
 
         @include mobile() {

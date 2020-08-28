@@ -19,8 +19,8 @@
             isActive() {
                 return this.$store.state.ui.currentRegionType === this.type.tag;
             },
-            caseDataReguested() {
-                return this.$store.state.ui.caseDataReguested;
+            caseDataRequested() {
+                return this.$store.state.ui.caseDataRequested;
             },
             ggds() {
                 return this.$store.state.ggds.all;
@@ -29,13 +29,13 @@
         methods: {
             select() {
                 this.$store.commit('ui/updateProperty', {key: 'currentRegionType', value: this.type.tag});
-                if (this.type.tag === 'ggd' && !this.caseDataReguested){
+                if (this.type.tag === 'ggd' && !this.caseDataRequested){
                     this.loadCaseData();
                 }
             },
             loadCaseData() {
                 let url = window.config.casesDataUrl + 'COVID-19_casus_landelijk.csv';
-                this.$store.commit('ui/updateProperty', {key: 'caseDataReguested', value: true});
+                this.$store.commit('ui/updateProperty', {key: 'caseDataRequested', value: true});
                 console.log('loading case data');
 
                 $.get(url, (data) => {

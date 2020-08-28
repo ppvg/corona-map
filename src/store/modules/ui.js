@@ -11,7 +11,7 @@ const state = {
     today: null,
     credits: false,
     menu: 'map',
-    caseDataReguested: false,
+    caseDataRequested: false,
     caseDataLoaded: false,
 };
 
