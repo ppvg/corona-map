@@ -3,6 +3,6 @@ window.config = {
     dataUrl: '',
     //sewageDataUrl: 'https://raw.githubusercontent.com/innouveau/corona-map/master/data-conversion-stuff/_results/'
     sewageDataUrl: 'data/',
-    casesDataUrl: 'https://data.rivm.nl/covid-19/',
-    //casesDataUrl: 'data/',
+    //casesDataUrl: 'https://data.rivm.nl/covid-19/',
+    casesDataUrl: 'data/',
 };

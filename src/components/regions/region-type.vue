@@ -57,7 +57,10 @@
                 function getDay(ggd, date) {
                     let day = ggd.report.find(day => day.date === date);
                     if (!day) {
-                        day = {date: date, ageGroups: []};
+                        day = {
+                            date: date,
+                            total: 0,
+                            ageGroups: []};
                         ggd.report.push(day);
                     }
                     return day;
@@ -72,6 +75,14 @@
                     return ageGroup;
                 }
 
+                function addPercentages(ggd) {
+                    for (let day of ggd.report) {
+                        for (let ageGroup of day.ageGroups) {
+                            ageGroup.percentage = ageGroup.cases / day.total;
+                        }
+                    }
+                }
+
                 for (let entry of entries) {
                     let ggd, day, ageGroup, month;
                     month = Number(entry.Date_statistics.split('-')[1]);
@@ -82,6 +93,7 @@
                             day = getDay(ggd, entry.Date_statistics);
                             ageGroup = findAgeGroup(day, entry.Agegroup);
                             ageGroup.cases++;
+                            day.total++;
                         } else {
                             console.log(entry);
                         }
@@ -90,8 +102,12 @@
 
                 for (let ggdData of ggds) {
                     let ggd = this.$store.getters['ggds/getItemByProperty']('title', ggdData.title, true);
+                    addPercentages(ggdData);
                     this.$store.commit('ggds/updatePropertyOfItem', {item: ggd, property: 'report', value: ggdData.report});
                 }
+
+                console.log(this.$store.state.ggds.all);
+
                 this.$store.commit('ui/updateProperty', {key: 'caseDataLoaded', value: true});
             }
         }

@@ -12,7 +12,7 @@ const state = {
     credits: false,
     menu: 'map',
     caseDataReguested: false,
-    caseDataLoaded: false
+    caseDataLoaded: false,
 };
 
 const getters = {

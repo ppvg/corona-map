@@ -33,13 +33,13 @@
                         },
                         tag: 'ggd'
                     },
-                    {
-                        label: 'Veiligheidsregio',
-                        getRegion() {
-                            return store.getters['safetyRegions/getItemByProperty']('safetyRegion_code', city.safetyRegion_code, true);
-                        },
-                        tag: 'sr'
-                    }
+                    // {
+                    //     label: 'Veiligheidsregio',
+                    //     getRegion() {
+                    //         return store.getters['safetyRegions/getItemByProperty']('safetyRegion_code', city.safetyRegion_code, true);
+                    //     },
+                    //     tag: 'sr'
+                    // }
                 ]
             }
         },

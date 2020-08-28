@@ -3,6 +3,7 @@
     import cities from '@/data/cities';
     import ggds from '@/data/ggds';
     import safetyRegions from '@/data/safety-regions';
+    import ageGroups from '@/data/age-groups';
     import citiesPanel from "./components/regions/search/cities-panel";
     import * as d3 from 'd3';
     import $ from 'jquery';
@@ -70,6 +71,7 @@
                 this.$store.commit('cities/init', cities);
                 this.$store.commit('ggds/init', ggds);
                 this.$store.commit('safetyRegions/init', safetyRegions);
+                this.$store.commit('ageGroups/init', ageGroups);
 
                 d3.csv(url)
                     .then((data) => {

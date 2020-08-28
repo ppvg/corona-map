@@ -1,11 +1,14 @@
 <script>
     import GGD from "@/classes/GGD";
     import * as d3 from "d3";
+    import ageGroups from "./age-groups";
 
 
     export default {
-        name: 'case-characteristics-graph',
-        components: {},
+        name: 'age-distribution-graph',
+        components: {
+            ageGroups
+        },
         props: {
             ggd: {
                 type: GGD,
@@ -19,44 +22,12 @@
                 width: 280,
                 height: 250,
                 step: 20,
-                scale: 6,
-                ageGroup: '',
-                ageGroups: [
-                    {
-                        title: '0-9',
-                        color: '#008837'
-                    }, {
-                        title: '10-19',
-                        color: '#00A0C6'
-                    }, {
-                        title: '20-29',
-                        color: '#F0047F'
-                    }, {
-                        title: '30-39',
-                        color: '#FD1A16'
-                    }, {
-                        title: '40-49',
-                        color: '#FF8000'
-                    }, {
-                        title: '50-59',
-                        color: '#AEBA17'
-                    }, {
-                        title: '60-69',
-                        color: '#237D26'
-                    }, {
-                        title: '70-79',
-                        color: '#4A007D'
-                    }, {
-                        title: '80-89',
-                        color: '#916F5D'
-                    }, {
-                        title: '90+',
-                        color: '#000'
-                    }
-                ]
             }
         },
         computed: {
+            ageGroups() {
+                return this.$store.state.ageGroups.all.filter(a => a.active);
+            },
             currentDateOffset() {
                 return this.$store.state.settings.currentDateOffset;
             },
@@ -70,10 +41,10 @@
                 return this.ggd.report;
             },
             lines(){
-                function getCasesForAgeGroup(day, ageGroupTitle) {
+                function getPercentageForAgeGroup(day, ageGroupTitle) {
                     let ageGroup = day.ageGroups.find(ageGroup => ageGroup.title === ageGroupTitle);
                     if (ageGroup) {
-                        return ageGroup.cases;
+                        return ageGroup.percentage;
                     } else {
                         return 0;
                     }
@@ -83,7 +54,7 @@
                     let cases = this.report.map(day => {
                         return {
                             date: day.date,
-                            cases: getCasesForAgeGroup(day, ageGroup.title)
+                            percentage: getPercentageForAgeGroup(day, ageGroup.title)
                         }
                     });
                     return {
@@ -111,7 +82,7 @@
                 this.drawLines();
             },
             drawLines() {
-                let lineFunction, getX, scale;
+                let lineFunction, getX, getY, scale;
                 scale = this.scale;
 
                 getX = (date) => {
@@ -121,12 +92,16 @@
                     return this.width - (daysOffset * this.step);
                 };
 
+                getY = (day) => {
+                    return this.height - (this.height * day.percentage);
+                };
+
                 lineFunction = d3.line()
-                    .x((d) => {
-                        return getX(d.date);
+                    .x((day) => {
+                        return getX(day.date);
                     })
-                    .y((d) => {
-                        return this.height - (scale * d.cases);
+                    .y((day) => {
+                        return getY(day);
                     });
 
                 this.lineContainer.selectAll('path')
@@ -141,10 +116,11 @@
                         return d.color;
                     })
                     .on('mouseover', (d) => {
-                        this.ageGroup = d;
+                        let ageGroup = this.$store.getters['ageGroups/getItemByProperty']('title', d.title);
+                        this.$store.commit('ageGroups/setCurrent', ageGroup);
                     })
                     .on('mouseout', (d) => {
-                        this.ageGroup = null;
+                        this.$store.commit('ageGroups/setCurrent', {key: 'currentAgeGroup', value: null});
                     })
 
             },
@@ -166,6 +142,14 @@
                         this.draw();
                     })
                 }
+            },
+            ageGroups: {
+                handler: function() {
+                    setTimeout(() => {
+                        this.draw();
+                    })
+                },
+                deep: true
             }
         }
     }
@@ -175,21 +159,10 @@
 <template>
     <div
         ref="container"
-        class="case-characteristics-graph">
+        class="age-distribution-graph">
         <svg :style="{width: width + 'px', height: height + 'px'}"></svg>
-        <div class="case-characteristics-graph__label">
-            <div
-                v-if="ageGroup"
-                class="case-characteristics-graph__age-group">
-                <div
-                    :style="{'background': ageGroup.color}"
-                    class="case-characteristics-graph__age-group-swatch">
-                </div>
-                <div class="case-characteristics-graph__age-group-title">
-                    {{ageGroup.title}}
-                </div>
-            </div>
-        </div>
+
+        <age-groups/>
     </div>
 </template>
 
@@ -197,31 +170,20 @@
 <style lang="scss">
     @import '@/styles/variables.scss';
 
-    .case-characteristics-graph {
+    .age-distribution-graph {
+            display: flex;
 
             svg {
                 background: #eee;
+                margin-right: 6px;
 
                 path {
                     fill: transparent;
                 }
             }
 
-            .case-characteristics-graph__label {
-                height: 32px;
-                padding-top: 4px;
+            .age-groups {
 
-                .case-characteristics-graph__age-group {
-                    display: flex;
-                    align-items: center;
-
-                    .case-characteristics-graph__age-group-swatch {
-                        width: 12px;
-                        height: 12px;
-                        border-radius: 50%;
-                        margin-right: 4px;
-                    }
-                }
             }
     }
 </style>
