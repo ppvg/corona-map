@@ -11,7 +11,7 @@
             cities() {
                 return this.$store.state.cities.all.filter(city => {
                     return this.$store.state.sewageTreatmentPlants.all.filter(s => {
-                        return s.city_code === city.code;
+                        return s.city_code === city.municipality_code;
                     }).length > 0;
                 })
             }
