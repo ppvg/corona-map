@@ -1,7 +1,6 @@
 <script>
     import swatch from "../elements/swatch";
-    import $ from "jquery";
-    import jqueryCsv from "jquery-csv";
+    import * as d3 from "d3";
 
 
     export default {
@@ -34,18 +33,73 @@
                 }
             },
             loadCaseData() {
-                let url = window.config.casesDataUrl + 'COVID-19_casus_landelijk.csv';
+                let url = window.config.dataUrl + 'data-dashboards/cases_ggd_agegroups.csv';
                 this.$store.commit('ui/updateProperty', {key: 'caseDataRequested', value: true});
-                console.log('loading case data');
-
-                $.get(url, (data) => {
-                    let options = {separator : ';'};
-                    jqueryCsv.toObjects(data, options, (error, result) => {
-                        this.sortEntries(result);
+                d3.csv(url)
+                    .then((data) => {
+                        this.sortEntries(data);
+                    })
+                    .catch((error) => {
+                        console.error(error);
                     });
-                });
             },
             sortEntries(entries) {
+                let ggds = this.ggds.map(ggd => {
+                    return {ggd_code: ggd.ggd_code, report: []};
+                });
+
+                function getGgd(code) {
+                    return ggds.find(ggd => ggd.ggd_code === code);
+                }
+
+                function getDay(ggd, date) {
+                    let day = ggd.report.find(day => day.date === date);
+                    if (!day) {
+                        day = {
+                            date: date,
+                            total: 0,
+                            ageGroups: []};
+                        ggd.report.push(day);
+                    }
+                    return day;
+                }
+
+                function addPercentages(ggd) {
+                    for (let day of ggd.report) {
+                        for (let ageGroup of day.ageGroups) {
+                            ageGroup.percentage = ageGroup.cases / day.total;
+                        }
+                    }
+                }
+
+                for (let entry of entries) {
+                    let ggd, day, ageGroup, month;
+                    month = Number(entry.date.split('-')[1]);
+                    // currently just a rough cut, todo based on current date
+                    if (month > 6) {
+                        ggd = getGgd(entry.ggd_code);
+                        if (ggd) {
+                            day = getDay(ggd, entry.date);
+                            day.total += Number(entry.cases);
+                            day.ageGroups.push({
+                                title: entry.age_group,
+                                cases: Number(entry.cases)
+                            });
+                        } else {
+                            console.log(entry);
+                        }
+                    }
+                }
+
+                for (let ggdData of ggds) {
+                    let ggd = this.$store.getters['ggds/getItemByProperty']('ggd_code', ggdData.ggd_code, true);
+                    addPercentages(ggdData);
+                    this.$store.commit('ggds/updatePropertyOfItem', {item: ggd, property: 'report', value: ggdData.report});
+                }
+
+                this.$store.commit('ui/updateProperty', {key: 'caseDataLoaded', value: true});
+            },
+            sortEntries2(entries) {
                 let ggds = this.ggds.map(ggd => {
                     return {title: ggd.title, report: []};
                 });
