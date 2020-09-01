@@ -81,7 +81,7 @@
                         } else {
                             ctx.rect(0, 0, this.width, (this.height - base));
                         }
-                        ctx.fillStyle = threshold.color;
+                        ctx.fillStyle = threshold.color[this.$store.state.ui.color];
                         ctx.closePath();
                         ctx.fill();
                         base += height;

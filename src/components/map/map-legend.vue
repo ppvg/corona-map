@@ -7,13 +7,27 @@
         props: {},
         data() {
             return {
-                thresholds: thresholds.thresholds
+                thresholds: thresholds.thresholds,
+                colorblind: this.$store.state.ui.color === 'colorblind1'
             }
         },
-        computed: {},
+        computed: {
+            colorSetting() {
+                return this.$store.state.ui.color;
+            }
+        },
         methods: {
             getNumber(threshold) {
                 return thresholds.getNumber(threshold);
+            }
+        },
+        watch: {
+            colorblind: {
+                handler: function(newValue) {
+                    let value = this.colorblind ? 'colorblind1' : 'regular';
+                    this.$store.commit('ui/updateProperty', {key: 'color', value});
+
+                }
             }
         }
     }
@@ -26,11 +40,16 @@
             v-for="threshold in thresholds"
             class="threshold">
             <div
-                :style="{'background-color': threshold.color}"
+                :style="{'background-color': threshold.color[colorSetting]}"
                 class="threshold__swatch"></div>
             <div class="threshold__cases">
                 {{getNumber(threshold)}}
             </div>
+        </div>
+        <div class="map-legend__colorblind">
+            <input
+                type="checkbox"
+                v-model="colorblind"> Kleurenblind
         </div>
     </div>
 </template>
@@ -54,6 +73,18 @@
                 border-radius: 50%;
                 margin-right: 4px;
                 border: 1px solid #555;
+            }
+        }
+
+        .map-legend__colorblind {
+            margin-top: 12px;
+            pointer-events: all;
+            display: flex;
+            align-items: center;
+
+            input {
+                margin-right: 4px;
+                margin-left: 0;
             }
         }
     }

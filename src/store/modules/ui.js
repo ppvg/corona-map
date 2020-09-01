@@ -13,6 +13,7 @@ const state = {
     menu: 'map',
     caseDataRequested: false,
     caseDataLoaded: false,
+    color: 'regular'
 };
 
 const getters = {

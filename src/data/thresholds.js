@@ -4,16 +4,28 @@ const perPopulation = 100000;
 const thresholds = [
     {
         n: 0,
-        color: 'rgb(144,250,5)'
+        color: {
+            regular: 'rgb(144,250,5)',
+            colorblind1: '#333'
+        }
     }, {
         n: 5,
-        color: 'rgb(255,255,0)'
+        color: {
+            regular: 'rgb(255,255,0)',
+            colorblind1: '#66c2a5'
+        }
     }, {
         n: 50,
-        color: 'rgb(250,172,5)'
+        color: {
+            regular: 'rgb(250,172,5)',
+            colorblind1: '#8da0cb'
+        }
     }, {
         n: Infinity,
-        color: 'rgb(255,0,0)'
+        color: {
+            regular: 'rgb(255,0,0)',
+            colorblind1: '#fc8d62'
+        }
     }
 ];
 

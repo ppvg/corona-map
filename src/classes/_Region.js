@@ -121,15 +121,16 @@ class _Region {
             return '#888';
         } else {
             if (!store.state.settings.gradient) {
-                return threshold.color;
+                return threshold.color[store.state.ui.color];
             } else {
-                if (!this.prev || !this.next) {
-                    return threshold.color;
+                console.log(threshold);
+                if (!this.prev || !this.next || store.state.ui.color === 'colorblind1') {
+                    return threshold.color[store.state.ui.color];
                 } else {
                     let colormap, maxOfNextColor, ratio;
                     maxOfNextColor = 0.65;
                     ratio = maxOfNextColor * (this.getTotalRelativeIncreaseWeek() - this.prev.n) / (threshold.n - this.prev.n);
-                    colormap = interpolate([threshold.color, this.next.color]);
+                    colormap = interpolate([threshold.color[store.state.ui.color], this.next.color[store.state.ui.color]]);
                     return colormap(ratio);
                 }
             }

@@ -91,7 +91,7 @@
                 ctx.strokeStyle = '#555';
                 ctx.font = (20 * this.imageScale) + 'px Arial';
                 for (let threshold of thresholds.thresholds) {
-                    ctx.fillStyle = threshold.color;
+                    ctx.fillStyle = threshold.color[this.$store.state.ui.color];
                     ctx.beginPath();
                     ctx.arc(baseX, baseY, (9 * this.imageScale), 0, (Math.PI * 2), false);
                     ctx.stroke();

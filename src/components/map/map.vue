@@ -45,6 +45,9 @@
             },
             currentRegionType() {
                 return this.$store.state.ui.currentRegionType
+            },
+            color() {
+                return this.$store.state.ui.color;
             }
         },
         methods: {
@@ -143,6 +146,11 @@
                 }
             },
             currentRegionType: {
+                handler: function(newValue) {
+                    this.draw();
+                }
+            },
+            color: {
                 handler: function(newValue) {
                     this.draw();
                 }
