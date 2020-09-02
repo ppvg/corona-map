@@ -1,10 +1,12 @@
 <script>
     import dateString from "./elements/date-string";
     import MenuButton from "./menu-button";
+    import totalInfections from "./elements/total-infections";
 
     export default {
         name: 'header-menu',
         components: {
+            totalInfections,
             MenuButton,
             dateString
         },
@@ -34,7 +36,7 @@
     <div class="header-menu">
         <div class="title">
             <h1>
-                Corona status <date-string/>
+                Corona status <date-string/> <total-infections/>
             </h1>
         </div>
 

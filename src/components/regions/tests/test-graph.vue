@@ -47,6 +47,9 @@
             },
             dateString() {
                 return this.$store.getters['ui/dateString'];
+            },
+            isColorblind() {
+                return this.$store.state.ui.color === 'colorblind1';
             }
         },
         methods: {
@@ -71,7 +74,9 @@
                 let base, ctx;
                 base = 0;
                 ctx = this.ctx;
-                ctx.globalAlpha = 0.5;
+                if (!this.isColorblind) {
+                    ctx.globalAlpha = 0.5;
+                }
                 for (let threshold of thresholds.thresholds) {
                     if (threshold.n > 0) {
                         let height = this.zoom * threshold.n / 7;
@@ -158,6 +163,13 @@
                 }
             },
             offset: {
+                handler: function(newValue) {
+                    setTimeout(() => {
+                        this.redraw();
+                    })
+                }
+            },
+            isColorblind: {
                 handler: function(newValue) {
                     setTimeout(() => {
                         this.redraw();
