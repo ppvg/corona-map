@@ -1,6 +1,7 @@
 <script>
     import mapNetherlands from "./components/map/map";
     import ggds from '@/data/ggds';
+    import countries from '@/data/countries';
     import safetyRegions from '@/data/safety-regions';
     import ageGroups from '@/data/age-groups';
     import citiesPanel from "./components/regions/search/cities-panel";
@@ -70,6 +71,7 @@
                 citiesUrl = 'data/cities.json';
 
                 $.getJSON(citiesUrl, (cities) => {
+                    this.$store.commit('countries/init', countries);
                     this.$store.commit('cities/init', cities);
                     this.$store.commit('ggds/init', ggds);
                     this.$store.commit('safetyRegions/init', safetyRegions);
@@ -190,6 +192,11 @@
             <region-details
                 v-if="showCity"
                 :region="currentRegion"/>
+            <div
+                v-else
+                class="region-details region-details--mobile">
+                Kies eerst een gemeente op de kaart.
+            </div>
         </div>
 
         <credits v-if="showCredits"/>
@@ -241,6 +248,11 @@
                 //14 * 20 + 32
                 width: 450px;
             }
+
+            .region-details--mobile {
+                padding: 20px;
+                display: none;
+            }
         }
 
         .open-credits {
@@ -263,33 +275,8 @@
                 position: relative;
                 height: calc(100% - 64px);
 
-                .left {
-                    width: 100%;
-                }
-
-                .right {
-                    position: absolute;
-                    left: 100%;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
+                .region-details--mobile {
                     display: block;
-                    z-index: 1;
-                    transition: all 0.5s ease;
-                    padding: 20px;
-                    pointer-events: none;
-
-                    h1 {
-                        display: none;
-                    }
-
-                    &.right--active {
-                        left: 0;
-                    }
-
-                    .city-card {
-                        pointer-events: all;
-                    }
                 }
             }
         }

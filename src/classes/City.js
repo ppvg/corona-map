@@ -19,6 +19,7 @@ class City extends _Region {
         super();
         this.regionType = 'city';
         this.id = id;
+        this.country_id = 1;
         this.municipality_code = municipality_code;
         this.ggd_code = ggd_code;
         this.safetyRegion_code = safetyRegion_code;

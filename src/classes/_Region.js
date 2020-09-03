@@ -7,6 +7,17 @@ class _Region {
 
     }
 
+    getGgds() {
+        switch(this.regionType) {
+            case 'ggd':
+                return [this];
+            case 'country':
+                return store.state.ggds.all;
+            default:
+                return [];
+        }
+    }
+
     getCities() {
         switch(this.regionType) {
             case 'city':
@@ -18,6 +29,10 @@ class _Region {
             case 'sr':
                 return store.state.cities.all.filter(city => {
                     return city.safetyRegion_code === this.safetyRegion_code;
+                });
+            case 'country':
+                return store.state.cities.all.filter(city => {
+                    return city.country_id === this.id;
                 });
         }
     }
@@ -123,7 +138,6 @@ class _Region {
             if (!store.state.settings.gradient) {
                 return threshold.color[store.state.ui.color];
             } else {
-                console.log(threshold);
                 if (!this.prev || !this.next || store.state.ui.color === 'colorblind1') {
                     return threshold.color[store.state.ui.color];
                 } else {

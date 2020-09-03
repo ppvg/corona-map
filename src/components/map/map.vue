@@ -29,6 +29,8 @@
                         return this.$store.state.ggds.all;
                     case 'sr':
                         return this.$store.state.safetyRegions.all;
+                    case 'country':
+                        return this.$store.state.countries.all;
                 }
             },
             cities() {

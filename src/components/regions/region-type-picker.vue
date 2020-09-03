@@ -39,7 +39,14 @@
                     //         return store.getters['safetyRegions/getItemByProperty']('safetyRegion_code', city.safetyRegion_code, true);
                     //     },
                     //     tag: 'sr'
-                    // }
+                    // },
+                    {
+                        label: 'Land',
+                        getRegion() {
+                            return store.getters['countries/getItemById'](city.country_id);
+                        },
+                        tag: 'country'
+                    }
                 ]
             }
         },

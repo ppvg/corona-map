@@ -84,15 +84,15 @@
                     :city="city"/>
             </div>
             <div
-                v-if="region.regionType === 'ggd' && caseDataRequested"
+                v-if="(region.regionType === 'ggd') && caseDataRequested"
                 class="region-details__section">
                 <div class="region-details__section-header">
-                    Leeftijdsverdeling
+                    Leeftijdsverdeling (beta)
                 </div>
                 <div class="age-distribution-graph__container">
                     <age-distribution-graph
                             v-if="caseDataLoaded"
-                            :ggd="region"/>
+                            :region="region"/>
                     <loader v-if="!caseDataLoaded"/>
                 </div>
 
@@ -208,7 +208,7 @@
 
         .age-distribution-graph__container {
             width: 390px;
-            height: 250px;
+            min-height: 250px;
             position: relative;
             background: #fff;
         }

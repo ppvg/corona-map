@@ -49,7 +49,7 @@
         <div class="map-legend__colorblind">
             <input
                 type="checkbox"
-                v-model="colorblind"> Kleurenblind
+                v-model="colorblind"> Kleurenblind (beta)
         </div>
     </div>
 </template>
@@ -78,13 +78,13 @@
 
         .map-legend__colorblind {
             margin-top: 12px;
-            pointer-events: all;
             display: flex;
             align-items: center;
 
             input {
                 margin-right: 4px;
                 margin-left: 0;
+                pointer-events: all;
             }
         }
     }

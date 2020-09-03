@@ -28,7 +28,7 @@
         methods: {
             select() {
                 this.$store.commit('ui/updateProperty', {key: 'currentRegionType', value: this.type.tag});
-                if (this.type.tag === 'ggd' && !this.caseDataRequested){
+                if ((this.type.tag === 'ggd' || this.type.tag === 'country') && !this.caseDataRequested){
                     this.loadCaseData();
                 }
             },
@@ -94,73 +94,18 @@
                 for (let ggdData of ggds) {
                     let ggd = this.$store.getters['ggds/getItemByProperty']('ggd_code', ggdData.ggd_code, true);
                     addPercentages(ggdData);
+
+                    // if (ggd.ggd_code === 'GG3406') {
+                    //     let x = 44;
+                    //     console.log(ggd);
+                    //     console.log(ggdData.report[x].date);
+                    //     console.log(ggdData.report[x].total);
+                    //     console.log(ggdData.report[x].ageGroups.map(a => {
+                    //         return {...a};
+                    //     }));
+                    // }
                     this.$store.commit('ggds/updatePropertyOfItem', {item: ggd, property: 'report', value: ggdData.report});
                 }
-
-                this.$store.commit('ui/updateProperty', {key: 'caseDataLoaded', value: true});
-            },
-            sortEntries2(entries) {
-                let ggds = this.ggds.map(ggd => {
-                    return {title: ggd.title, report: []};
-                });
-
-                function getGgd(title) {
-                    return ggds.find(ggd => ggd.title === title);
-                }
-
-                function getDay(ggd, date) {
-                    let day = ggd.report.find(day => day.date === date);
-                    if (!day) {
-                        day = {
-                            date: date,
-                            total: 0,
-                            ageGroups: []};
-                        ggd.report.push(day);
-                    }
-                    return day;
-                }
-
-                function findAgeGroup(day, ageGroupTitle) {
-                    let ageGroup = day.ageGroups.find(ageGroup => ageGroup.title === ageGroupTitle);
-                    if (!ageGroup) {
-                        ageGroup = {title: ageGroupTitle, cases: 0};
-                        day.ageGroups.push(ageGroup);
-                    }
-                    return ageGroup;
-                }
-
-                function addPercentages(ggd) {
-                    for (let day of ggd.report) {
-                        for (let ageGroup of day.ageGroups) {
-                            ageGroup.percentage = ageGroup.cases / day.total;
-                        }
-                    }
-                }
-
-                for (let entry of entries) {
-                    let ggd, day, ageGroup, month;
-                    month = Number(entry.Date_statistics.split('-')[1]);
-                    // currently just a rough cut, todo based on current date
-                    if (month > 6) {
-                        ggd = getGgd(entry.Municipal_health_service);
-                        if (ggd) {
-                            day = getDay(ggd, entry.Date_statistics);
-                            ageGroup = findAgeGroup(day, entry.Agegroup);
-                            ageGroup.cases++;
-                            day.total++;
-                        } else {
-                            console.log(entry);
-                        }
-                    }
-                }
-
-                for (let ggdData of ggds) {
-                    let ggd = this.$store.getters['ggds/getItemByProperty']('title', ggdData.title, true);
-                    addPercentages(ggdData);
-                    this.$store.commit('ggds/updatePropertyOfItem', {item: ggd, property: 'report', value: ggdData.report});
-                }
-
-                console.log(this.$store.state.ggds.all);
 
                 this.$store.commit('ui/updateProperty', {key: 'caseDataLoaded', value: true});
             }

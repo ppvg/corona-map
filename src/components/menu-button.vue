@@ -15,6 +15,9 @@
         },
         methods: {
             select() {
+                if (this.button.value === 'trends') {
+                    this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: 0});
+                }
                 this.$store.commit('ui/updateProperty', {key: 'menu', value: this.button.value});
 
             }

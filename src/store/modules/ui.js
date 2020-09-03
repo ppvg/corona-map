@@ -24,7 +24,7 @@ const getters = {
         if (today) {
             offset = rootState.settings.currentDateOffset;
             dateOfFocus = sub(today, {days: offset});
-            return format(dateOfFocus, 'EEEE d MMMM', {locale: nl} );
+            return format(dateOfFocus, 'EE d MMM', {locale: nl} );
         } else {
             return '';
         }
@@ -39,6 +39,8 @@ const getters = {
                     return rootGetters['ggds/getItemByProperty']('ggd_code', city.ggd_code, true);
                 case 'sr':
                     return rootGetters['safetyRegions/getItemByProperty']('safetyRegion_code', city.safetyRegion_code, true);
+                case 'country':
+                    return rootGetters['countries/getItemById'](city.country_id);
             }
         } else {
             return null;
