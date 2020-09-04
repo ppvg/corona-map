@@ -42,57 +42,7 @@
                 return 1000 * 3600 * 24;
             },
             report() {
-                let report;
-                report = [];
-
-                //console.log(this.ggds);
-
-                function getDay(d) {
-                    for (let day of report) {
-                        if (day.date === d.date) {
-                            return day;
-                        }
-                    }
-                }
-
-                function getAgeGroup(ageGroup, d) {
-                    for (let a of d.ageGroups) {
-                        if (a.title === ageGroup.title) {
-                            return a;
-                        }
-                    }
-                }
-
-                function merge(day, d) {
-                    day.total += d.total;
-                    for (let ageGroup of d.ageGroups) {
-                        let a = getAgeGroup(ageGroup, day);
-                        if (!a) {
-                            day.ageGroups.push({...ageGroup})
-                        } else {
-                            ageGroup.cases += a.cases;
-                        }
-                    }
-                }
-
-                for (let ggd of this.ggds) {
-                    for (let d of ggd.report) {
-                        let day = getDay(d);
-                        if (!day) {
-                            day = {
-                                date: d.date,
-                                total: d.total,
-                                ageGroups: d.ageGroups.map(a => {
-                                    return {...a};
-                                })
-                            };
-                            report.push(day);
-                        } else {
-                            merge(day, d);
-                        }
-                    }
-                }
-                return report;
+                return this.region.report;
             },
             lines(){
                 function getPercentageForAgeGroup(day, ageGroupTitle) {
@@ -102,6 +52,10 @@
                     } else {
                         return 0;
                     }
+                }
+
+                if (!this.report) {
+                    return [];
                 }
 
                 return this.ageGroups.map((ageGroup, ageGroupIndex) => {
@@ -121,12 +75,80 @@
             }
         },
         methods: {
+            checkForReport() {
+                if (this.region.regionType === 'country' && !this.region.report) {
+                    console.log("update");
+                    let report, sorted;
+                    report = [];
+
+                    function getDay(day) {
+                        for (let cumulativeDay of report) {
+                            if (cumulativeDay.date === day.date) {
+                                return cumulativeDay;
+                            }
+                        }
+                    }
+
+                    function getAgeGroup(ageGroup, cumulativeDay) {
+                        for (let cumulativeAgeGroup of cumulativeDay.ageGroups) {
+                            if (cumulativeAgeGroup.title === ageGroup.title) {
+                                return cumulativeAgeGroup;
+                            }
+                        }
+                    }
+
+                    function mergeDays(cumulativeDay, day) {
+                        cumulativeDay.total += day.total;
+                        for (let ageGroup of day.ageGroups) {
+                            let cumulativeAgeGroup = getAgeGroup(ageGroup, cumulativeDay);
+                            if (!cumulativeAgeGroup) {
+                                cumulativeDay.ageGroups.push({...ageGroup})
+                            } else {
+                                cumulativeAgeGroup.cases += ageGroup.cases;
+                            }
+                        }
+                    }
+
+                    function createDay(day) {
+                        return {
+                            date: day.date,
+                            total: day.total,
+                            ageGroups: day.ageGroups.map(ageGroup => {
+                                return {...ageGroup};
+                            })
+                        };
+                    }
+
+                    for (let ggd of this.ggds) {
+                        for (let day of ggd.report) {
+                            let cumulativeDay = getDay(day);
+                            if (!cumulativeDay) {
+                                report.push(createDay(day));
+                            } else {
+                                mergeDays(cumulativeDay, day);
+                            }
+                        }
+                    }
+
+
+                    sorted = report.sort((a,b) => (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0));
+
+                    for (let day of sorted) {
+                        for (let ageGroup of day.ageGroups) {
+                            ageGroup.percentage = ageGroup.cases / day.total;
+                        }
+                    }
+
+                    this.region.report = sorted;
+                }
+            },
             init(){
                 this.svg = d3.select(this.$refs.container).select('svg');
                 this.lineContainer = this.svg.append('g').attr('class', 'line-container');
                 this.draw();
             },
             draw() {
+                this.checkForReport();
                 this.clear();
                 this.drawGraph();
             },

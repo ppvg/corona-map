@@ -74,9 +74,9 @@
 
                 for (let entry of entries) {
                     let ggd, day, ageGroup, month;
-                    month = Number(entry.date.split('-')[1]);
+                    //month = Number(entry.date.split('-')[1]);
                     // currently just a rough cut, todo based on current date
-                    if (month > 6) {
+                    //if (month > 6) {
                         ggd = getGgd(entry.ggd_code);
                         if (ggd) {
                             day = getDay(ggd, entry.date);
@@ -88,7 +88,7 @@
                         } else {
                             console.log(entry);
                         }
-                    }
+                    //}
                 }
 
                 for (let ggdData of ggds) {

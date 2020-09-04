@@ -42,7 +42,7 @@
                     } else {
                         this.stop();
                     }
-                }, 500)
+                }, 10)
             },
             stop() {
                 this.playing = false;
@@ -57,7 +57,7 @@
     <div class="time-slider">
 
         <div
-            :style="{'width': (max * 10) + 'px'}"
+            :style="{'width': (max * 2) + 'px'}"
             class="vue-slider__container">
             <vue-slider
                     v-model="currentDateOffset"

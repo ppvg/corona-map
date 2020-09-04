@@ -84,7 +84,7 @@
                     :city="city"/>
             </div>
             <div
-                v-if="(region.regionType === 'ggd') && caseDataRequested"
+                v-if="(region.regionType === 'ggd' || region.regionType === 'country') && caseDataRequested"
                 class="region-details__section">
                 <div class="region-details__section-header">
                     Leeftijdsverdeling (beta)
