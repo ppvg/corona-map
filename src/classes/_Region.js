@@ -138,7 +138,7 @@ class _Region {
             if (!store.state.settings.gradient) {
                 return threshold.color[store.state.ui.color];
             } else {
-                if (!this.prev || !this.next || store.state.ui.color === 'colorblind1') {
+                if (!this.prev || !this.next || store.state.ui.color !== 'regular') {
                     return threshold.color[store.state.ui.color];
                 } else {
                     let colormap, maxOfNextColor, ratio;

@@ -1,9 +1,12 @@
 <script>
     import thresholds from '@/data/thresholds';
+    import colorSetPicker from "./color-set-picker";
 
     export default {
         name: 'map-legend',
-        components: {},
+        components: {
+            colorSetPicker
+        },
         props: {},
         data() {
             return {
@@ -46,11 +49,7 @@
                 {{getNumber(threshold)}}
             </div>
         </div>
-        <div class="map-legend__colorblind">
-            <input
-                type="checkbox"
-                v-model="colorblind"> Kleurenblind (beta)
-        </div>
+        <color-set-picker/>
     </div>
 </template>
 
@@ -73,18 +72,6 @@
                 border-radius: 50%;
                 margin-right: 4px;
                 border: 1px solid #555;
-            }
-        }
-
-        .map-legend__colorblind {
-            margin-top: 12px;
-            display: flex;
-            align-items: center;
-
-            input {
-                margin-right: 4px;
-                margin-left: 0;
-                pointer-events: all;
             }
         }
     }
