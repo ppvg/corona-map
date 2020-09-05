@@ -7,16 +7,16 @@
             return {
                 colorSets: [
                     {
-                        label: 'Standaard',
+                        label: 'Stoplicht',
                         value: 'regular'
                     }, {
-                        label: 'Variant 1',
+                        label: 'Kleurenblind (?)',
                         value: 'colorblind1'
                     }, {
-                        label: 'Variant 2',
+                        label: 'Verloop 1',
                         value: 'colorblind2'
                     }, {
-                        label: 'Variant 3',
+                        label: 'Verloop 2',
                         value: 'variant3'
                     }
                 ]

@@ -49,7 +49,10 @@
                 return this.$store.getters['ui/dateString'];
             },
             isColorblind() {
-                return this.$store.state.ui.color === 'colorblind1';
+                return this.colorSet === 'colorblind1';
+            },
+            colorSet() {
+                return this.$store.state.ui.color;
             }
         },
         methods: {
@@ -169,7 +172,7 @@
                     })
                 }
             },
-            isColorblind: {
+            colorSet: {
                 handler: function(newValue) {
                     setTimeout(() => {
                         this.redraw();
