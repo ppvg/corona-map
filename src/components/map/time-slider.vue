@@ -60,7 +60,7 @@
     <div class="time-slider">
 
         <div
-            :style="{'width': (max * 2) + 'px'}"
+            :style="{'width': (max * 5) + 'px'}"
             class="vue-slider__container">
             <vue-slider
                     v-model="currentDateOffset"

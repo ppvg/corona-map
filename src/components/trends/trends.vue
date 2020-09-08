@@ -27,7 +27,7 @@
                 return this.$store.state.ui.menu === 'trends';
             },
             isCurrent() {
-                return this.$store.state.settings.currentDateOffset === 0;
+                return this.$store.state.settings.currentDateOffset < 2;
             }
         },
         methods: {}

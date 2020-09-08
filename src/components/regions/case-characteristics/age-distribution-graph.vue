@@ -77,7 +77,6 @@
         methods: {
             checkForReport() {
                 if (this.region.regionType === 'country' && !this.region.report) {
-                    console.log("update");
                     let report, sorted;
                     report = [];
 
@@ -171,7 +170,7 @@
 
                 getY = (day) => {
                     let expectedMaxPct, smoothen, value, l;
-                    l = 3;
+                    l = 7;
                     expectedMaxPct = 50;
                     smoothen = true;
                     if (smoothen) {
@@ -261,8 +260,15 @@
         ref="container"
         class="age-distribution-graph">
 
-        <div class="age-distribution-graph__container">
-            <svg :style="{width: width + 'px', height: height + 'px'}"></svg>
+        <div class="age-distribution-graph__wrapper">
+
+            <div
+                 :style="{width: width + 'px', height: height + 'px'}"
+                class="age-distribution-graph__container">
+                <svg ></svg>
+                <div class="age-distribution-graph-cover"></div>
+            </div>
+
 
             <age-groups/>
         </div>
@@ -281,15 +287,40 @@
     .age-distribution-graph {
 
 
-        .age-distribution-graph__container {
+        .age-distribution-graph__wrapper {
             display: flex;
 
-            svg {
-                background: #eee;
+            .age-distribution-graph__container {
                 margin-right: 6px;
+                position: relative;
 
-                path {
-                    fill: transparent;
+                svg {
+                    background: #eee;
+                    width: 100%;
+                    height: 100%;
+
+                    path {
+                        fill: transparent;
+                    }
+                }
+
+                .age-distribution-graph-cover {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 30px;
+                    height: 100%;
+                    background: #eee;
+
+                    &:after {
+                        background-image: linear-gradient(to right, rgba(0,0,0,0), #eee);
+                        position: absolute;
+                        left: -20px;
+                        top: 0;
+                        width: 20px;
+                        height: 100%;
+                        content: '';
+                    }
                 }
             }
         }
@@ -302,8 +333,12 @@
 
         @include mobile() {
 
-            .age-distribution-graph__container {
+            .age-distribution-graph__wrapper {
                 display: block;
+
+                .age-distribution-graph__container {
+                    margin-right: 0;
+                }
             }
         }
     }
