@@ -14,11 +14,13 @@
     import headerMenu from "./components/header-menu";
     import trends from "./components/trends/trends";
     import regionDetails from "./components/regions/region-details";
+    import EmbedPopup from "./components/embed/embed-popup";
 
 
     export default {
         name: 'app',
         components: {
+            EmbedPopup,
             trends,
             headerMenu,
             credits,
@@ -200,6 +202,9 @@
         </div>
 
         <credits v-if="showCredits"/>
+
+        <embed-popup/>
+
         <div
             @click="openCredits()"
             class="open-credits">
