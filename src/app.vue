@@ -4,6 +4,7 @@
     import countries from '@/data/countries';
     import safetyRegions from '@/data/safety-regions';
     import ageGroups from '@/data/age-groups';
+    import signalingSystems from '@/data/signaling-systems';
     import citiesPanel from "./components/regions/search/cities-panel";
     import * as d3 from 'd3';
     import $ from 'jquery';
@@ -71,6 +72,8 @@
                 citiesUrl = 'data/cities.json';
 
                 $.getJSON(citiesUrl, (cities) => {
+                    this.$store.commit('signalingSystems/init', signalingSystems);
+                    this.$store.commit('signalingSystems/setCurrent', this.$store.state.signalingSystems.all[0]);
                     this.$store.commit('countries/init', countries);
                     this.$store.commit('cities/init', cities);
                     this.$store.commit('ggds/init', ggds);

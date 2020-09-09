@@ -1,7 +1,6 @@
 import Path from './Path';
 import store from '@/store/store';
 import stringTool from '@/tools/string';
-import thresholds from "@/data/thresholds";
 import _Region from "./_Region";
 
 class City extends _Region {
@@ -35,6 +34,11 @@ class City extends _Region {
         return this.report.history[this.report.history.length - 1 - offset];
     }
 
+    getIncreaseDay(delta = 0) {
+        let offset = store.state.settings.currentDateOffset;
+        return this.report.history[this.report.history.length - 1 - (offset + delta)];
+    }
+
     getIncreaseWeek(delta = 0) {
         let total, offset;
         total = 0;
@@ -47,6 +51,10 @@ class City extends _Region {
 
     getRelativeIncreaseWeek() {
         return 100000 * this.getIncreaseWeek() /  this.population;
+    }
+
+    getRelativeIncreaseDay() {
+        return 100000 * this.increaseDay /  this.population;
     }
 
     get changedStatus(){

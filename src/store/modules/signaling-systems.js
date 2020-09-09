@@ -1,9 +1,11 @@
 import _base from './_base-module';
-import City from '@/classes/City';
+import SignalingSystem from '@/classes/SignalingSystem';
+
+const Model = SignalingSystem;
+
 
 const state = {
     all: [],
-    dict: {},
     current: null
 };
 
@@ -15,17 +17,13 @@ const actions = {};
 
 const mutations = {
     init(state, set) {
-        state.all = [];
-        for (let item of set) {
-            if (item) {
-                let c = new City(item);
-                state.all.push(c);
-                state.dict[c.municipality_code] = c;
-            }
-        }
+        return _base.mutations.init(state, set, Model);
     },
     updatePropertyOfItem(state, payload) {
         _base.mutations.updatePropertyOfItem(state, payload.item, payload.property, payload.value);
+    },
+    setCurrent(state, item) {
+        _base.mutations.setCurrent(state, item);
     }
 };
 

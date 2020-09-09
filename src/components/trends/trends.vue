@@ -3,14 +3,13 @@
     import redCities from "./red-cities";
     import changedStatusCities from "./changed-status-cities";
     import thresholdCities from "./threshold-cities";
-    import thresholds from '@/data/thresholds';
-    import CitiesWithSewageTreatmentPlant
-        from "./cities-with-sewage-treatment-plant";
+    import thresholdTools from '@/tools/thresholds';
+    import citiesWithSewageTreatmentPlant from "./cities-with-sewage-treatment-plant";
 
     export default {
         name: 'trends',
         components: {
-            CitiesWithSewageTreatmentPlant,
+            citiesWithSewageTreatmentPlant,
             thresholdCities,
             newInfectionCities,
             redCities,
@@ -19,7 +18,7 @@
         props: {},
         data() {
             return {
-                thresholds: thresholds.thresholds
+                thresholds: thresholdTools.getThresholds()
             }
         },
         computed: {
@@ -43,7 +42,8 @@
             <threshold-cities/>
             <red-cities/>
             <changed-status-cities/>
-            <new-infection-cities/>
+<!--  pas op, deze werkt niet met RIVM signaling system           -->
+<!--            <new-infection-cities/>-->
             <cities-with-sewage-treatment-plant/>
         </div>
 

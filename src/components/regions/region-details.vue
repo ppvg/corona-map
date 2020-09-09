@@ -118,6 +118,14 @@
                 </div>
                 <div class="region-details__row">
                     <div class="region-details__label">
+                        Relatieve toename vandaag (per 100 dzd inw)
+                    </div>
+                    <div class="region-details__value">
+                        {{format(Math.round(region.getTotalRelativeIncreasDay()))}}
+                    </div>
+                </div>
+                <div class="region-details__row">
+                    <div class="region-details__label">
                         Toename laatste 7 dagen
                     </div>
                     <div class="region-details__value">

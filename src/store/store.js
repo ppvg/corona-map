@@ -2,8 +2,9 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 Vue.use(Vuex);
 
-import cities from './modules/cities';
+import signalingSystems from './modules/signaling-systems';
 import countries from './modules/countries';
+import cities from './modules/cities';
 import ggds from './modules/ggds';
 import safetyRegions from './modules/safety-regions';
 import sewageTreatmentPlants from './modules/sewage-treatment-plants';
@@ -25,6 +26,7 @@ const store = new Vuex.Store({
     mutations,
     actions: {},
     modules: {
+        signalingSystems,
         countries, cities, ggds, safetyRegions, sewageTreatmentPlants,
         ageGroups,
         settings, ui

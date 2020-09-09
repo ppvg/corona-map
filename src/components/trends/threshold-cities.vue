@@ -1,5 +1,4 @@
 <script>
-    import thresholds from '@/data/thresholds';
     import city from "@/components/trends/city";
     import swatch from "@/components/elements/swatch";
 
@@ -9,14 +8,12 @@
             swatch,
             city
         },
-        data() {
-            return {
-                thresholds: thresholds.thresholds.slice().reverse()
-            }
-        },
         computed: {
             n() {
                 return this.thresholds[this.thresholds.length - 2].n
+            },
+            thresholds() {
+                return this.$store.state.signalingSystems.current.thresholds;
             }
         },
         methods: {

@@ -1,36 +1,26 @@
 <script>
-    import thresholds from '@/data/thresholds';
+    import thresholdTools from '@/tools/thresholds';
     import colorSetPicker from "./color-set-picker";
+    import signalingSystemPicker from "./signaling-system-picker";
 
     export default {
         name: 'map-legend',
         components: {
+            signalingSystemPicker,
             colorSetPicker
         },
         props: {},
-        data() {
-            return {
-                thresholds: thresholds.thresholds,
-                colorblind: this.$store.state.ui.color === 'colorblind1'
-            }
-        },
         computed: {
             colorSetting() {
                 return this.$store.state.ui.color;
+            },
+            thresholds() {
+                return this.$store.state.signalingSystems.current.thresholds;
             }
         },
         methods: {
             getNumber(threshold) {
-                return thresholds.getNumber(threshold);
-            }
-        },
-        watch: {
-            colorblind: {
-                handler: function(newValue) {
-                    let value = this.colorblind ? 'colorblind1' : 'regular';
-                    this.$store.commit('ui/updateProperty', {key: 'color', value});
-
-                }
+                return thresholdTools.getNumber(threshold);
             }
         }
     }
@@ -50,6 +40,7 @@
             </div>
         </div>
         <color-set-picker/>
+        <signaling-system-picker/>
     </div>
 </template>
 

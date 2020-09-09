@@ -1,6 +1,6 @@
 <script>
     import canvasTools from '@/tools/canvas';
-    import thresholds from '@/data/thresholds';
+    import thresholdTools from '@/tools/thresholds';
 
     export default {
         name: 'download-image',
@@ -90,14 +90,14 @@
                 baseX = 38 * this.imageScale;
                 ctx.strokeStyle = '#555';
                 ctx.font = (20 * this.imageScale) + 'px Arial';
-                for (let threshold of thresholds.thresholds) {
+                for (let threshold of thresholdTools.getThresholds()) {
                     ctx.fillStyle = threshold.color[this.$store.state.ui.color];
                     ctx.beginPath();
                     ctx.arc(baseX, baseY, (9 * this.imageScale), 0, (Math.PI * 2), false);
                     ctx.stroke();
                     ctx.fill();
                     ctx.fillStyle = 'black';
-                    ctx.fillText(thresholds.getNumber(threshold), baseX + (24 * this.imageScale), (baseY + (7 * this.imageScale)));
+                    ctx.fillText(thresholdTools.getNumber(threshold), baseX + (24 * this.imageScale), (baseY + (7 * this.imageScale)));
                     baseY += (33 * this.imageScale);
                 }
                 ctx.beginPath();

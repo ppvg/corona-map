@@ -57,14 +57,6 @@
 
     .color-set-picker {
         margin-top: 12px;
-        display: flex;
-        align-items: center;
         pointer-events: all;
-
-        input {
-            margin-right: 4px;
-            margin-left: 0;
-
-        }
     }
 </style>

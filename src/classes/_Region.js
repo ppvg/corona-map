@@ -1,6 +1,6 @@
 import store from '@/store/store';
 import interpolate from "color-interpolate";
-import thresholds from "@/data/thresholds";
+import thresholdTools from "@/tools/thresholds";
 
 class _Region {
     constructor(_region) {
@@ -57,12 +57,12 @@ class _Region {
         return population;
     }
 
-    getTotalIncreaseDay() {
+    getTotalIncreaseDay(delta) {
         let increase, cities;
         increase = 0;
         cities = this.getCities();
         for (let city of cities) {
-            increase += city.increaseDay;
+            increase += city.getIncreaseDay(delta);
         }
         return increase;
     }
@@ -75,6 +75,11 @@ class _Region {
             increase += city.getIncreaseWeek(delta);
         }
         return increase;
+    }
+
+    getTotalRelativeIncreasDay() {
+        let increase = this.getTotalIncreaseDay();
+        return 100000 * increase / this.getTotalPopulation();
     }
 
     getTotalRelativeIncreaseWeek() {
@@ -105,15 +110,22 @@ class _Region {
     }
 
     getThreshold(delta = 0) {
-        return thresholds.getThreshold(this.getTotalIncreaseWeek(delta), this.getTotalPopulation(), 7);
+        let cases, signalingSystem;
+        signalingSystem = store.state.signalingSystems.current;
+        if (signalingSystem.days === 1) {
+            cases = this.getTotalIncreaseDay(delta);
+        } else if (signalingSystem.days === 7) {
+            cases = this.getTotalIncreaseWeek(delta);
+        }
+        return thresholdTools.getThreshold(cases, this.getTotalPopulation(), signalingSystem.days);
     }
 
     get prev() {
         let threshold, index;
         threshold = this.getThreshold();
-        index = thresholds.thresholds.indexOf(threshold);
+        index = thresholdTools.getThresholds().indexOf(threshold);
         if (index > 0) {
-            return thresholds.thresholds[index - 1];
+            return thresholdTools.getThresholds()[index - 1];
         } else {
             return null;
         }
@@ -122,9 +134,9 @@ class _Region {
     get next() {
         let threshold, index;
         threshold = this.getThreshold();
-        index = thresholds.thresholds.indexOf(threshold);
-        if (index < thresholds.thresholds.length - 1) {
-            return thresholds.thresholds[index + 1];
+        index = thresholdTools.getThresholds().indexOf(threshold);
+        if (index < thresholdTools.getThresholds().length - 1) {
+            return thresholdTools.getThresholds()[index + 1];
         } else {
             return null;
         }

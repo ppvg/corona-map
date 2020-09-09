@@ -50,6 +50,9 @@
             },
             color() {
                 return this.$store.state.ui.color;
+            },
+            signalingSystem() {
+                return this.$store.state.signalingSystems.current;
             }
         },
         methods: {
@@ -143,17 +146,22 @@
         },
         watch: {
             offset: {
-                handler: function(newValue) {
+                handler: function() {
                     this.draw();
                 }
             },
             currentRegionType: {
-                handler: function(newValue) {
+                handler: function() {
                     this.draw();
                 }
             },
             color: {
-                handler: function(newValue) {
+                handler: function() {
+                    this.draw();
+                }
+            },
+            signalingSystem: {
+                handler: function() {
                     this.draw();
                 }
             }

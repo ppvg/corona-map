@@ -1,5 +1,4 @@
 <script>
-    import thresholds from "@/data/thresholds";
     import _Region from "@/classes/_Region";
 
     export default {
@@ -53,6 +52,9 @@
             },
             colorSet() {
                 return this.$store.state.ui.color;
+            },
+            signalingSystem() {
+                return this.$store.state.signalingSystems.current;
             }
         },
         methods: {
@@ -74,25 +76,29 @@
                 ctx.fillText(this.dateString, (this.width - 10), 20);
             },
             drawThresholds() {
-                let base, ctx;
-                base = 0;
+                let lastY, ctx, thresholds;
+                lastY = 0;
                 ctx = this.ctx;
+                thresholds = this.signalingSystem.thresholds;
                 if (!this.isColorblind) {
                     ctx.globalAlpha = 0.5;
                 }
-                for (let threshold of thresholds.thresholds) {
+                for (let threshold of thresholds) {
                     if (threshold.n > 0) {
-                        let height = this.zoom * threshold.n / 7;
+                        let height, x, y;
                         ctx.beginPath();
                         if (threshold.n !== Infinity) {
-                            ctx.rect(0, (this.height - base - height), this.width, height);
+                            height = (this.zoom * threshold.n / this.signalingSystem.days) - lastY;
+                            y = this.height - lastY - height;
                         } else {
-                            ctx.rect(0, 0, this.width, (this.height - base));
+                            height = (this.height - lastY);
+                            y = 0;
                         }
+                        ctx.rect(0, y, this.width, height);
                         ctx.fillStyle = threshold.color[this.$store.state.ui.color];
                         ctx.closePath();
                         ctx.fill();
-                        base += height;
+                        lastY += height;
                     }
                 }
                 ctx.globalAlpha = 1;
@@ -119,7 +125,8 @@
                 history = this.region.getTotalReport().history;
 
                 const getValue = (value) => {
-                    let relativeValue = thresholds.perPopulation * value / this.region.getTotalPopulation();
+                    // for the graph we always use 100000, independent from the signaling system
+                    let relativeValue = 100000 * value / this.region.getTotalPopulation();
                     return this.height - (relativeValue * this.zoom);
                 };
 
@@ -177,6 +184,11 @@
                     setTimeout(() => {
                         this.redraw();
                     })
+                }
+            },
+            signalingSystem: {
+                handler: function() {
+                    this.redraw();
                 }
             }
         }

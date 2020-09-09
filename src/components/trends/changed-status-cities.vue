@@ -1,5 +1,4 @@
 <script>
-    import thresholds from '@/data/thresholds';
     import city from "@/components/trends/city";
 
     export default {
@@ -8,12 +7,10 @@
             city
         },
         props: {},
-        data() {
-            return {
-                thresholds: thresholds.thresholds
-            }
-        },
         computed: {
+            thresholds() {
+                return this.$store.state.signalingSystems.current.thresholds;
+            },
             sets(){
                 return this.thresholds.slice().reverse().map(threshold => {
                     return this.$store.state.cities.all.filter(city => {
@@ -58,7 +55,6 @@
                         ({{item.mutation}})
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
