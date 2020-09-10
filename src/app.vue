@@ -15,11 +15,13 @@
     import headerMenu from "./components/header-menu";
     import trends from "./components/trends/trends";
     import regionDetails from "./components/regions/region-details";
+    import EmbedPopup from "./components/embed/embed-popup";
 
 
     export default {
         name: 'app',
         components: {
+            EmbedPopup,
             trends,
             headerMenu,
             credits,
@@ -51,6 +53,9 @@
             },
             showCredits() {
                 return this.$store.state.ui.credits;
+            },
+            showEmbedPopup() {
+                return this.$store.state.ui.embedPopup;
             },
             showMap() {
                 return this.$store.state.ui.menu === 'map';
@@ -203,6 +208,9 @@
         </div>
 
         <credits v-if="showCredits"/>
+
+        <embed-popup v-if="showEmbedPopup"/>
+
         <div
             @click="openCredits()"
             class="open-credits">

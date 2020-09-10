@@ -34,7 +34,6 @@
         <div class="menu-button__label">
             {{button.label}}
         </div>
-
     </div>
 </template>
 
@@ -46,6 +45,7 @@
         border-right: 1px solid #aaa;
         height: 100%;
         width: calc(100% / 3);
+        cursor: pointer;
 
         .menu-button__label {
             border-bottom: 4px solid transparent;

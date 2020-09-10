@@ -4,10 +4,13 @@
     import downloadImage from "./download-image";
     import canvasTools from '@/tools/canvas';
     import PointerCanvas from "./pointer-canvas";
+    import embedButton from "./embed-button";
+    import $ from 'jquery';
 
     export default {
         name: 'map-netherlands',
         components: {
+            embedButton,
             PointerCanvas,
             downloadImage,
             TimeSlider,
@@ -64,6 +67,26 @@
                     this.draw();
                     this.addEvents();
                 });
+
+                $(window).resize(() => {
+                    this.resize();
+                });
+            },
+            resize() {
+                this.measure();
+                this.clearCache();
+                setTimeout(() => {
+                    this.canvas.width = this.width;
+                    this.canvas.height = this.height;
+                    this.draw();
+                });
+            },
+            clearCache() {
+                for (let city of this.$store.state.cities.all) {
+                    for (let path of city.paths) {
+                        path.storedPaths = {};
+                    }
+                }
             },
             measure() {
                 let height, ratio, windowWidth;
@@ -143,6 +166,7 @@
         },
         mounted() {
             this.init();
+
         },
         watch: {
             offset: {
@@ -171,15 +195,14 @@
 
 
 <template>
-    <div
-        :style="{'width': width + 'px'}"
-        class="map">
+    <div class="map">
         <canvas id="main-canvas"></canvas>
         <pointer-canvas
             :width="width"
             :height="height"/>
         <map-legend/>
         <time-slider/>
+        <embed-button/>
         <download-image/>
     </div>
 </template>
@@ -192,6 +215,7 @@
         display: flex;
         align-items: center;
         position: relative;
+        justify-content: center;
 
         #main-canvas {
             position: relative;
@@ -215,6 +239,13 @@
         .download-image {
             position: absolute;
             right: 10px;
+            bottom: 20px;
+            z-index: 1;
+        }
+
+        .embed-button {
+            position: absolute;
+            right: 44px;
             bottom: 20px;
             z-index: 1;
         }

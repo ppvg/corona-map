@@ -10,6 +10,7 @@ const state = {
     currentRegionType: 'city',
     today: null,
     credits: false,
+    embedPopup: false,
     menu: 'map',
     caseDataRequested: false,
     caseDataLoaded: false,
