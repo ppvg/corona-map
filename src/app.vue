@@ -53,6 +53,9 @@
             showCredits() {
                 return this.$store.state.ui.credits;
             },
+            showEmbedPopup() {
+                return this.$store.state.ui.embedPopup;
+            },
             showMap() {
                 return this.$store.state.ui.menu === 'map';
             },
@@ -203,7 +206,7 @@
 
         <credits v-if="showCredits"/>
 
-        <embed-popup/>
+        <embed-popup v-if="showEmbedPopup"/>
 
         <div
             @click="openCredits()"

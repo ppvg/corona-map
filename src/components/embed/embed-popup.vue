@@ -3,8 +3,22 @@
         name: 'embed-popup',
         components: {},
         props: {},
-        computed: {},
-        methods: {}
+        data() {
+            return {
+                width: 500,
+                height: 500
+            }
+        },
+        computed: {
+            embedString() {
+                return '<iframe src="https://innouveau.com/projecten/corona/kaart/#/" style="border: 1px solid #888; width:' + this.width + 'px; height:' + this.height + 'px;"></iframe>';
+            }
+        },
+        methods: {
+            close() {
+                this.$store.commit('ui/updateProperty', {key: 'embedPopup', value: false});
+            }
+        }
     }
 </script>
 
@@ -13,15 +27,40 @@
     <div class="embed-popup">
         <div class="embed__article">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar tincidunt eros non eleifend. Ut tempus urna vitae nunc pulvinar, quis euismod justo elementum. Nulla a tristique nisi. Praesent quis ipsum at turpis tincidunt luctus et in arcu. Nam eleifend mi at placerat interdum. Cras lacinia sapien id leo finibus, vitae luctus tellus feugiat. Morbi ac quam dictum libero varius auctor accumsan consequat sem. Cras dictum vestibulum sodales. Sed vehicula ex ut ex lobortis luctus.
+                Nam eleifend mi at placerat interdum. Cras lacinia sapien id leo finibus, vitae luctus tellus feugiat. Morbi ac quam dictum libero varius auctor accumsan consequat sem. Cras dictum vestibulum sodales. Sed vehicula ex ut ex lobortis luctus.
             </p>
             <div class="embed__size">
-                <iframe src="http://localhost:8080/#/?city=Amsterdam"></iframe>
+                <iframe
+                    style="border: 1px solid #888;"
+                    :style="{
+                        width: width + 'px',
+                        height: height + 'px'
+                    }"
+                    src="https://innouveau.com/projecten/corona/kaart/#/"></iframe>
             </div>
             <p>
                 Aenean volutpat erat at justo sodales accumsan. Etiam ultricies metus vel maximus molestie. Fusce tortor quam, tempus aliquet urna et, luctus tempus odio. Aliquam erat volutpat. Vestibulum feugiat lacinia laoreet. Etiam bibendum urna nec sodales accumsan. Suspendisse id lacus ac odio consequat egestas. Vestibulum hendrerit vitae libero congue imperdiet. Pellentesque porttitor sed massa congue auctor. Quisque mattis nisl quis semper sagittis. In dui dui, euismod ac feugiat ac, imperdiet vel metus.
             </p>
         </div>
+
+        <div class="embed__tools">
+            <div class="embed__tools-section">
+                <div class="embed__tools-row">
+                    <input type="number" v-model="width"> Breedte
+                </div>
+                <div class="embed__tools-row">
+                    <input type="number" v-model="height"> Hoogte
+                </div>
+            </div>
+            <p>
+                Kopieer deze html om de kaart te gebruiken bij een artikel.
+            </p>
+            <textarea v-model="embedString"/>
+        </div>
+
+        <div
+            @click="close()"
+            class="close-button"></div>
     </div>
 </template>
 
@@ -40,6 +79,36 @@
         font-size: 16px;
         box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
         padding: 20px;
+        display: flex;
+
+        .embed__tools {
+            width: calc(100% - 640px);
+
+            .embed__tools-section {
+                margin-bottom: 10px;
+
+                .embed__tools-row {
+                    margin-bottom: 4px;
+
+                    input {
+                        width: 60px;
+                    }
+                }
+            }
+
+            input, textarea {
+                background: #fff;
+                width: 100%;
+                max-width: 400px;
+                padding: 8px;
+                border: 0;
+                outline: 0;
+            }
+
+            textarea {
+                height: 100px;
+            }
+        }
 
         .embed__article {
             width: 600px;
@@ -48,8 +117,9 @@
             box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
             padding: 20px;
             height: 100%;
-            overflow: hidden;
             font-size: 12px;
+            overflow: auto;
+            margin-right: 40px;
 
             p {
                 width: 400px;
@@ -57,17 +127,29 @@
             }
 
             .embed__size {
-                width: 500px;
-                height: 300px;
+                margin: 30px 0;
 
                 iframe {
-                    width: 100%;
-                    height: 100%;
-                    border: 0;
+
                 }
             }
 
         }
 
+        @include mobile() {
+            display: block;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+
+            .embed__article {
+                display: none;
+            }
+
+            .embed__tools {
+                width: 100%;
+            }
+        }
     }
 </style>

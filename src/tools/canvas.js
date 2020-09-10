@@ -8,7 +8,6 @@ const draw = function(ctx, regions, settings) {
     ctx.lineWidth = 0.5;
     ctx.strokeStyle = 'rgba(0,0,0,0.3)';
 
-
     for (let region of regions) {
         drawRegion(ctx, region, settings);
     }
