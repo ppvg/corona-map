@@ -46,7 +46,19 @@ const getters = {
         } else {
             return null;
         }
-    }
+    },
+    regions(state, getters, rootState, rootGetters) {
+        switch(state.currentRegionType) {
+            case 'city':
+                return rootState.cities.all;
+            case 'ggd':
+                return rootState.ggds.all;
+            case 'sr':
+                return rootState.safetyRegions.all;
+            case 'country':
+                return rootState.countries.all;
+        }
+    },
 };
 
 const actions = {};

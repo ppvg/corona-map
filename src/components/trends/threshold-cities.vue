@@ -14,13 +14,26 @@
             },
             thresholds() {
                 return this.$store.state.signalingSystems.current.thresholds;
+            },
+            type() {
+                switch(this.$store.state.ui.currentRegionType) {
+                    case 'city':
+                        return 'gemeentes';
+                    case 'ggd':
+                        return 'ggds';
+                    case 'sr':
+                        return "veiligheidsregio's";
+                    case 'country':
+                        return "landen";
+                }
             }
         },
         methods: {
-            getCities(threshold) {
-                return this.$store.state.cities.all.filter(city => {
-                    return city.getThreshold() === threshold;
-                }).sort((a,b) => (a.getRelativeIncreaseWeek() < b.getRelativeIncreaseWeek()) ? 1 : ((b.getRelativeIncreaseWeek() < a.getRelativeIncreaseWeek()) ? -1 : 0));
+            getRegions(threshold) {
+                let regions = this.$store.getters['ui/regions'];
+                return regions.filter(region => {
+                    return region.getThreshold() === threshold;
+                }).sort((a,b) => (a.getTotalRelativeIncreaseWeek() < b.getTotalRelativeIncreaseWeek()) ? 1 : ((b.getTotalRelativeIncreaseWeek() < a.getTotalRelativeIncreaseWeek()) ? -1 : 0));
             },
         }
     }
@@ -30,7 +43,7 @@
 <template>
     <div class="section threshold-cities">
         <div class="section__header">
-            Aantal gemeentes per signaalwaarde
+            Aantal {{type}} per signaalwaarde
         </div>
         <div class="section__body">
             <div
@@ -40,7 +53,7 @@
                     <swatch :threshold="threshold"/>
                 </div>
                 <div class="threshold-cities__label">
-                    {{getCities(threshold).length}}
+                    {{getRegions(threshold).length}}
                 </div>
             </div>
         </div>

@@ -144,7 +144,7 @@
         }
 
         @include mobile() {
-            width: calc(100% - 80px)!important;
+            width: calc(100% - 90px)!important;
         }
     }
 </style>

@@ -1,5 +1,5 @@
 <script>
-    import swatch from "../elements/swatch";
+    import swatch from "@/components/elements/swatch";
     import * as d3 from "d3";
 
 
@@ -117,12 +117,24 @@
 <template>
     <div
         @click="select()"
-        :class="{'region-type--current': isActive}"
+        :class="{
+            'region-type--current': isActive,
+            'region-type--with-region': type.showRegion
+        }"
         class="region-type">
-        <swatch
-            :threshold="type.getRegion().getThreshold()"/>
-        <div class="region-type__value">
-            {{type.getRegion().title}}
+        <div
+            v-if="type.showRegion"
+            class="region-type__region">
+            <swatch
+                    :threshold="type.getRegion().getThreshold()"/>
+            <div class="region-type__value">
+                {{type.getRegion().title}}
+            </div>
+        </div>
+        <div
+            v-else
+            class="region-type__label">
+            {{type.label}}
         </div>
     </div>
 </template>
@@ -132,34 +144,61 @@
     @import '@/styles/variables.scss';
 
     .region-type {
-        display: flex;
-        align-items: center;
-        font-size: 10px;
-        margin-right: 12px;
-        border-bottom: 1px solid transparent;
-        cursor: pointer;
         position: relative;
+        cursor: pointer;
 
-        &:after {
-            content: '»';
-            position: absolute;
-            right: -8px;
+        .region-type__region {
+            display: flex;
+            align-items: center;
+            font-size: 10px;
+            border-bottom: 1px solid transparent;
         }
 
-        &:last-child {
-            margin-right: 0;
+        &.region-type--with-region {
+
+            margin-right: 16px;
 
             &:after {
-                display: none;
+                content: '»';
+                position: absolute;
+                right: -11px;
+                top: -5px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+
+                &:after {
+                    display: none;
+                }
             }
         }
 
-        .region-type__label {
-            margin-right: 3px;
+        &:not(.region-type--with-region) {
+            width: calc(100% / 3);
+            height: 100%;
+
+            .region-type__label {
+                padding: 4px;
+                border-right: 1px solid #ddd;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
         }
 
         &.region-type--current {
-            border-bottom: 1px solid #000;
+
+            .region-type__region {
+                border-bottom: 1px solid #000;
+            }
+
+            .region-type__label {
+                background: #ddd;
+            }
+
         }
     }
 </style>

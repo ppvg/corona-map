@@ -2,7 +2,7 @@
     import testGraph from "./tests/test-graph";
     import sewageTreatmentPlants from "../sewage-treatment-plants/sewage-treatment-plants";
     import ageDistributionGraph from "./case-characteristics/age-distribution-graph";
-    import regionTypePicker from "./region-type-picker";
+    import regionTypePicker from "./region-type/region-type-picker";
     import _Region from "@/classes/_Region";
     import loader from "@/components/elements/loader";
 

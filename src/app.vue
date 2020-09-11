@@ -16,11 +16,14 @@
     import trends from "./components/trends/trends";
     import regionDetails from "./components/regions/region-details";
     import EmbedPopup from "./components/embed/embed-popup";
+    import RegionTypePicker2
+        from "./components/regions/region-type/region-type-picker-2";
 
 
     export default {
         name: 'app',
         components: {
+            RegionTypePicker2,
             EmbedPopup,
             trends,
             headerMenu,
@@ -193,6 +196,7 @@
                 :class="{'panel--active': showMap}"
                 class="map-container panel">
                 <cities-panel v-if="dataLoaded"/>
+                <region-type-picker-2/>
                 <map-netherlands v-if="dataLoaded"/>
             </div>
 
@@ -246,8 +250,12 @@
                     height: 40px;
                 }
 
+                .region-type-picker-2 {
+                    margin-bottom: 6px;
+                }
+
                 .map {
-                    height: calc(100% - 40px);
+                    height: calc(100% - 76px);
                 }
             }
 

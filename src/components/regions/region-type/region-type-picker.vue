@@ -21,6 +21,7 @@
                 return [
                     {
                         label: 'Gemeente',
+                        showRegion: true,
                         getRegion() {
                             return city;
                         },
@@ -28,6 +29,7 @@
                     },
                     {
                         label: 'GGD',
+                        showRegion: true,
                         getRegion() {
                             return store.getters['ggds/getItemByProperty']('ggd_code', city.ggd_code, true);
                         },
@@ -42,6 +44,7 @@
                     // },
                     {
                         label: 'Land',
+                        showRegion: true,
                         getRegion() {
                             return store.getters['countries/getItemById'](city.country_id);
                         },
