@@ -109,6 +109,10 @@ class _Region {
         return report;
     }
 
+    get changedStatus(){
+        return this.getThreshold(1) !== this.getThreshold(0);
+    }
+
     getThreshold(delta = 0) {
         let cases, signalingSystem;
         signalingSystem = store.state.signalingSystems.current;

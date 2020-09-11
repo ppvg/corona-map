@@ -3,7 +3,7 @@
     import swatch from "@/components/elements/swatch";
 
     export default {
-        name: 'threshold-cities',
+        name: 'threshold-regions',
         components: {
             swatch,
             city
@@ -15,17 +15,8 @@
             thresholds() {
                 return this.$store.state.signalingSystems.current.thresholds;
             },
-            type() {
-                switch(this.$store.state.ui.currentRegionType) {
-                    case 'city':
-                        return 'gemeentes';
-                    case 'ggd':
-                        return 'ggds';
-                    case 'sr':
-                        return "veiligheidsregio's";
-                    case 'country':
-                        return "landen";
-                }
+            typeLabel() {
+                return this.$store.getters['ui/typeLabel'];
             }
         },
         methods: {
@@ -41,18 +32,18 @@
 
 
 <template>
-    <div class="section threshold-cities">
+    <div class="section threshold-regions">
         <div class="section__header">
-            Aantal {{type}} per signaalwaarde
+            Aantal {{typeLabel}} per signaalwaarde
         </div>
         <div class="section__body">
             <div
                 v-for="threshold in thresholds"
-                class="threshold-cities__row">
-                <div class="threshold-cities__swatch">
+                class="threshold-regions__row">
+                <div class="threshold-regions__swatch">
                     <swatch :threshold="threshold"/>
                 </div>
-                <div class="threshold-cities__label">
+                <div class="threshold-regions__label">
                     {{getRegions(threshold).length}}
                 </div>
             </div>
@@ -64,13 +55,13 @@
 <style lang="scss">
     @import '@/styles/variables.scss';
 
-    .threshold-cities {
+    .threshold-regions {
 
-        .threshold-cities__row {
+        .threshold-regions__row {
             display: flex;
             align-items: center;
 
-            .threshold-cities__swatch {
+            .threshold-regions__swatch {
                 margin-right: 10px;
             }
         }

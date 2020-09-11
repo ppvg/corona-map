@@ -1,10 +1,10 @@
 <script>
-    import city from "@/components/trends/city";
+    import region from "@/components/trends/region";
 
     export default {
-        name: 'changed-status-cities',
+        name: 'changed-status-regions',
         components: {
-            city
+            region
         },
         props: {},
         computed: {
@@ -12,23 +12,27 @@
                 return this.$store.state.signalingSystems.current.thresholds;
             },
             sets(){
+                let regions = this.$store.getters['ui/regions'];
                 return this.thresholds.slice().reverse().map(threshold => {
-                    return this.$store.state.cities.all.filter(city => {
-                        return city.changedStatus && city.getThreshold() === threshold
-                    }).map(city => {
+                    return regions.filter(region => {
+                        return region.changedStatus && region.getThreshold() === threshold
+                    }).map(region => {
                         let previousThreshold, mutation;
-                        previousThreshold = city.getThreshold(1);
+                        previousThreshold = region.getThreshold(1);
                         if (threshold.n > previousThreshold.n) {
                             mutation = '↑';
                         } else {
                             mutation = '↓'
                         }
                         return {
-                            city,
+                            region,
                             mutation
                         }
                     })
                 })
+            },
+            typeLabel() {
+                return this.$store.getters['ui/typeLabel'];
             }
         },
         methods: {}
@@ -37,21 +41,21 @@
 
 
 <template>
-    <div class="section changed-status-cities">
+    <div class="section changed-status-regions">
         <div class="section__header">
-            Gemeentes die van status veranderd zijn
+            {{typeLabel}} die van status veranderd zijn
         </div>
         <div class="section__body">
             <div
                 v-for="set in sets"
-                class="cities__list">
+                class="regions__list">
                 <div
                     v-for="item in set"
-                    class="city__container">
-                    <city :city="item.city"/>
+                    class="region__container">
+                    <region :region="item.region"/>
                     <div
                         v-if="item.mutation === '↓'"
-                        class="city__mutation">
+                        class="region__mutation">
                         ({{item.mutation}})
                     </div>
                 </div>

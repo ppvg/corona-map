@@ -1,8 +1,8 @@
 <script>
     import newInfectionCities from "./new-infection-cities";
-    import redCities from "./red-cities";
-    import changedStatusCities from "./changed-status-cities";
-    import thresholdCities from "./threshold-cities";
+    import redRegions from "./red-regions";
+    import changedStatusRegions from "./changed-status-regions";
+    import thresholdRegions from "./threshold-regions";
     import thresholdTools from '@/tools/thresholds';
     import citiesWithSewageTreatmentPlant from "./cities-with-sewage-treatment-plant";
 
@@ -10,10 +10,10 @@
         name: 'trends',
         components: {
             citiesWithSewageTreatmentPlant,
-            thresholdCities,
+            thresholdRegions,
             newInfectionCities,
-            redCities,
-            changedStatusCities
+            redRegions,
+            changedStatusRegions
         },
         props: {},
         data() {
@@ -25,8 +25,9 @@
             showTrends() {
                 return this.$store.state.ui.menu === 'trends';
             },
-            isCurrent() {
-                return this.$store.state.settings.currentDateOffset < 2;
+            show() {
+                return true;
+                //return this.$store.state.settings.currentDateOffset < 2;
             }
         },
         methods: {}
@@ -38,10 +39,10 @@
     <div
         :class="{'panel--active': showTrends}"
         class="trends panel">
-        <div v-if="isCurrent">
-            <threshold-cities/>
-            <red-cities/>
-            <changed-status-cities/>
+        <div v-if="show">
+            <threshold-regions/>
+            <red-regions/>
+            <changed-status-regions/>
 <!--  pas op, deze werkt niet met RIVM signaling system           -->
 <!--            <new-infection-cities/>-->
             <cities-with-sewage-treatment-plant/>

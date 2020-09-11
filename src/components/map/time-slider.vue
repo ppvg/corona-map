@@ -59,9 +59,7 @@
 <template>
     <div class="time-slider">
 
-        <div
-            :style="{'width': (max * 5) + 'px'}"
-            class="vue-slider__container">
+        <div class="vue-slider__container">
             <vue-slider
                     v-model="currentDateOffset"
                     :min="0"
@@ -105,6 +103,11 @@
         display: flex;
         align-items: center;
         pointer-events: none;
+        width: calc(100% - 90px)!important;
+
+        .vue-slider__container {
+            width: 100%;
+        }
 
         .icon-button {
             pointer-events: all;

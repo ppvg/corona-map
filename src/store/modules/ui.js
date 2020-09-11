@@ -59,6 +59,18 @@ const getters = {
                 return rootState.countries.all;
         }
     },
+    typeLabel(state) {
+        switch(state.currentRegionType) {
+            case 'city':
+                return 'gemeentes';
+            case 'ggd':
+                return 'ggds';
+            case 'sr':
+                return "veiligheidsregio's";
+            case 'country':
+                return "landen";
+        }
+    }
 };
 
 const actions = {};

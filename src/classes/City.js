@@ -57,10 +57,6 @@ class City extends _Region {
         return 100000 * this.increaseDay /  this.population;
     }
 
-    get changedStatus(){
-        return this.getThreshold(1) !== this.getThreshold(0);
-    }
-
     get titleForSorting() {
         return stringTool.titleForSorting(this.title);
     }
