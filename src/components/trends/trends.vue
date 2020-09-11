@@ -28,6 +28,9 @@
             show() {
                 return true;
                 //return this.$store.state.settings.currentDateOffset < 2;
+            },
+            isAdmin() {
+                return this.$store.state.ui.admin;
             }
         },
         methods: {}
@@ -45,7 +48,7 @@
             <changed-status-regions/>
 <!--  pas op, deze werkt niet met RIVM signaling system           -->
 <!--            <new-infection-cities/>-->
-            <cities-with-sewage-treatment-plant/>
+            <cities-with-sewage-treatment-plant v-if="isAdmin"/>
         </div>
 
     </div>

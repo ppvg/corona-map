@@ -14,7 +14,8 @@ const state = {
     menu: 'map',
     caseDataRequested: false,
     caseDataLoaded: false,
-    color: 'regular'
+    color: 'regular',
+    admin: false
 };
 
 const getters = {

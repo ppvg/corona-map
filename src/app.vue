@@ -119,6 +119,9 @@
                         this.$store.commit('ui/updateProperty', {key: 'currentCity', value: city});
                     }
                 }
+                if (this.$route.query.admin) {
+                    this.$store.commit('ui/updateProperty', {key: 'admin', value: true});
+                }
             },
             getDate(data) {
                 let key, dateString, set, today;
