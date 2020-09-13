@@ -217,9 +217,18 @@
         position: relative;
         justify-content: center;
 
+        canvas {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         #main-canvas {
-            position: relative;
             z-index: 0;
+        }
+
+        #pointer-canvas {
+            z-index: 1;
         }
 
         .map-legend {

@@ -74,8 +74,6 @@
     @import '@/styles/variables.scss';
 
     #pointer-canvas {
-        position: absolute;
-        z-index: 1;
         pointer-events: none;
     }
 </style>

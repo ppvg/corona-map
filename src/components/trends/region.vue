@@ -16,9 +16,9 @@
         computed: {},
         methods: {
             selectRegion() {
-                let city;
-                // todo
-                // this.$store.commit('ui/updateProperty', {key: 'currentCity', value: city});
+                if (this.region.regionType === 'city') {
+                    this.$store.commit('ui/updateProperty', {key: 'currentCity', value: this.region});
+                }
                 this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
             }
         }
