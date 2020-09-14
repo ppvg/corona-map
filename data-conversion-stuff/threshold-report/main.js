@@ -7,7 +7,7 @@ reportThresholds = [5,10,15,20,25,30,35,40,45];
 
 d3.csv(url)
     .then((data) => {
-        let reports = 'city, first time main threshold';
+        let reports = 'city, first time main threshold,';
         for (let threshold of reportThresholds) {
             reports += threshold + ',';
         }
