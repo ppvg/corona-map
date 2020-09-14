@@ -8,7 +8,7 @@ const state = {
     periodOfFocusLength: 7,
     historyLength: 40,
     currentDateOffset: 0,
-    gradient: false
+    gradient: true
 };
 
 const getters = {

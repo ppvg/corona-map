@@ -154,7 +154,7 @@ class _Region {
             if (!store.state.settings.gradient) {
                 return threshold.color[store.state.ui.color];
             } else {
-                if (!this.prev || !this.next || store.state.ui.color !== 'regular') {
+                if (!this.prev || !this.next) {
                     return threshold.color[store.state.ui.color];
                 } else {
                     let colormap, maxOfNextColor, ratio;

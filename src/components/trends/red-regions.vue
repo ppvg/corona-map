@@ -1,9 +1,11 @@
 <script>
     import region from "@/components/trends/region";
+    import downloadRedRegions from "./download-red-regions";
 
     export default {
         name: 'red-regions',
         components: {
+            downloadRedRegions,
             region
         },
         props: {},
@@ -68,6 +70,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="section__body">
+            <download-red-regions
+                :regions="redRegions"/>
         </div>
     </div>
 </template>

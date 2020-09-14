@@ -1,5 +1,5 @@
 <script>
-    import mapLegend from "./map-legend";
+    import mapTools from "./map-tools";
     import TimeSlider from "./time-slider";
     import downloadImage from "./download-image";
     import canvasTools from '@/tools/canvas';
@@ -14,7 +14,7 @@
             PointerCanvas,
             downloadImage,
             TimeSlider,
-            mapLegend
+            mapTools
         },
         props: {},
         computed: {
@@ -56,6 +56,9 @@
             },
             signalingSystem() {
                 return this.$store.state.signalingSystems.current;
+            },
+            gradient() {
+                return this.$store.state.settings.gradient;
             }
         },
         methods: {
@@ -188,6 +191,11 @@
                 handler: function() {
                     this.draw();
                 }
+            },
+            gradient: {
+                handler: function() {
+                    this.draw();
+                }
             }
         }
     }
@@ -200,7 +208,7 @@
         <pointer-canvas
             :width="width"
             :height="height"/>
-        <map-legend/>
+        <map-tools/>
         <time-slider/>
         <embed-button/>
         <download-image/>
@@ -231,7 +239,7 @@
             z-index: 1;
         }
 
-        .map-legend {
+        .map-tools {
             position: absolute;
             left: 0;
             top: 10px;

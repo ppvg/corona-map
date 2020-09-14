@@ -81,7 +81,7 @@
 
                 $.getJSON(citiesUrl, (cities) => {
                     this.$store.commit('signalingSystems/init', signalingSystems);
-                    this.$store.commit('signalingSystems/setCurrent', this.$store.state.signalingSystems.all[0]);
+                    this.$store.commit('signalingSystems/setCurrent', this.$store.state.signalingSystems.all[3]);
                     this.$store.commit('countries/init', countries);
                     this.$store.commit('cities/init', cities);
                     this.$store.commit('ggds/init', ggds);
