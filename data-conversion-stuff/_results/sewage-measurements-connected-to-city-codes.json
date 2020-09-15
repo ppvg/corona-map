@@ -120,6 +120,109 @@
         "date": "2020-09-02",
         "RNA_per_ml": 104,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1010,
+    "city_code": "GM1950",
+    "name": "Ter Apel",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 392,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1025,
+    "city_code": "GM1969",
+    "name": "Zuidhorn 1",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1026,
+    "city_code": "GM1952",
+    "name": "Hoogezand",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1027,
+    "city_code": "GM0765",
+    "name": "Oude Pekela",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1029,
+    "city_code": "GM1699",
+    "name": "Leek",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 188,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1031,
+    "city_code": "GM1969",
+    "name": "Gaarkeuken",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1032,
+    "city_code": "GM1969",
+    "name": "Marum",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 280,
+        "representative_measurement": true
       }
     ]
   },
@@ -249,6 +352,11 @@
         "date": "2020-09-03",
         "RNA_per_ml": 144,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 69,
+        "representative_measurement": true
       }
     ]
   },
@@ -271,6 +379,25 @@
       },
       {
         "date": "2020-08-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1038,
+    "city_code": "GM1895",
+    "name": "Scheve Klap",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurements": [
+      {
+        "date": "2020-09-08",
         "RNA_per_ml": 0,
         "representative_measurement": true
       }
@@ -315,6 +442,67 @@
       },
       {
         "date": "2020-09-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1040,
+    "city_code": "GM1950",
+    "name": "Vriescheloo",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1045,
+    "city_code": "GM0047",
+    "name": "Veendam",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 86,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 1046,
+    "city_code": "GM1950",
+    "name": "Bellingwolde",
+    "security_region_code": "VR01",
+    "security_region_name": "Groningen",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2002,
+    "city_code": "GM0085",
+    "name": "Oosterwolde",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
         "RNA_per_ml": 0,
         "representative_measurement": true
       }
@@ -436,6 +624,11 @@
         "date": "2020-09-01",
         "RNA_per_ml": 174,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 362,
+        "representative_measurement": true
       }
     ]
   },
@@ -475,6 +668,25 @@
         "date": "2020-08-30",
         "RNA_per_ml": 0,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 88,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2013,
+    "city_code": "GM0737",
+    "name": "Burgum",
+    "security_region_code": "VR09",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 34,
+        "representative_measurement": true
       }
     ]
   },
@@ -513,6 +725,67 @@
       {
         "date": "2020-09-01",
         "RNA_per_ml": 100,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2016,
+    "city_code": "GM0098",
+    "name": "Wolvega",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2017,
+    "city_code": "GM1949",
+    "name": "St Annaparochie",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 358,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2019,
+    "city_code": "GM0059",
+    "name": "Kootstertille",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2020,
+    "city_code": "GM0060",
+    "name": "Ameland",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
         "representative_measurement": true
       }
     ]
@@ -556,7 +829,12 @@
       },
       {
         "date": "2020-08-29",
-        "RNA_per_ml": 165,
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 229,
         "representative_measurement": true
       }
     ]
@@ -606,6 +884,137 @@
       {
         "date": "2020-09-01",
         "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 216,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2023,
+    "city_code": "GM1900",
+    "name": "Bolsward",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 1164,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2024,
+    "city_code": "GM1940",
+    "name": "Sloten",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 434,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2025,
+    "city_code": "GM0074",
+    "name": "Akkrum",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2026,
+    "city_code": "GM0093",
+    "name": "Terschelling",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2027,
+    "city_code": "GM1940",
+    "name": "Lemmer",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 268,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2028,
+    "city_code": "GM1970",
+    "name": "Dokkum",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 158,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2029,
+    "city_code": "GM1970",
+    "name": "Birdaard",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2030,
+    "city_code": "GM1900",
+    "name": "Workum",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 60,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2031,
+    "city_code": "GM0074",
+    "name": "Heerenveen",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 53,
         "representative_measurement": true
       }
     ]
@@ -721,6 +1130,25 @@
         "date": "2020-08-26",
         "RNA_per_ml": 0,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 85,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2036,
+    "city_code": "GM0080",
+    "name": "Grouw",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
       }
     ]
   },
@@ -748,6 +1176,11 @@
       },
       {
         "date": "2020-09-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
         "RNA_per_ml": 0,
         "representative_measurement": true
       }
@@ -799,6 +1232,39 @@
         "date": "2020-08-29",
         "RNA_per_ml": 0,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 103,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2040,
+    "city_code": "GM0096",
+    "name": "Vlieland",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 2041,
+    "city_code": "GM0088",
+    "name": "Schiermonnikoog",
+    "security_region_code": "VR02",
+    "security_region_name": "Friesland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
       }
     ]
   },
@@ -811,6 +1277,11 @@
     "measurements": [
       {
         "date": "2020-09-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
         "RNA_per_ml": 0,
         "representative_measurement": true
       }
@@ -942,6 +1413,11 @@
         "date": "2020-09-02",
         "RNA_per_ml": 91,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 158,
+        "representative_measurement": true
       }
     ]
   },
@@ -959,6 +1435,30 @@
       },
       {
         "date": "2020-09-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 3022,
+    "city_code": "GM0114",
+    "name": "Emmen",
+    "security_region_code": "VR03",
+    "security_region_name": "Drenthe",
+    "measurements": [
+      {
+        "date": "2020-09-08",
         "RNA_per_ml": 0,
         "representative_measurement": true
       }
@@ -1005,6 +1505,11 @@
         "date": "2020-09-02",
         "RNA_per_ml": 0,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
       }
     ]
   },
@@ -1048,6 +1553,11 @@
       {
         "date": "2020-09-01",
         "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 262,
         "representative_measurement": true
       }
     ]
@@ -1170,8 +1680,36 @@
         "representative_measurement": true
       },
       {
-        "date": "2020-09-02",
+        "date": "2020-09-08",
         "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 3031,
+    "city_code": "GM1680",
+    "name": "Gieten",
+    "security_region_code": "VR03",
+    "security_region_name": "Drenthe",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 3032,
+    "city_code": "GM1701",
+    "name": "Dieverbrug",
+    "security_region_code": "VR03",
+    "security_region_name": "Drenthe",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 101,
         "representative_measurement": true
       }
     ]
@@ -1252,6 +1790,91 @@
         "date": "2020-09-01",
         "RNA_per_ml": 40,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 3034,
+    "city_code": "GM0109",
+    "name": "Coevorden",
+    "security_region_code": "VR03",
+    "security_region_name": "Drenthe",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 4005,
+    "city_code": "GM1896",
+    "name": "Genemuiden",
+    "security_region_code": "VR04",
+    "security_region_name": "IJsselland",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 4006,
+    "city_code": null,
+    "name": "Olst",
+    "security_region_code": "VR04",
+    "security_region_name": "IJsselland",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 192,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 4017,
+    "city_code": "GM1708",
+    "name": "Vollenhove",
+    "security_region_code": "VR04",
+    "security_region_name": "IJsselland",
+    "measurements": [
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 4018,
+    "city_code": "GM0177",
+    "name": "Heino",
+    "security_region_code": "VR04",
+    "security_region_name": "IJsselland",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
       }
     ]
   },
@@ -1296,6 +1919,11 @@
         "date": "2020-09-01",
         "RNA_per_ml": 0,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
       }
     ]
   },
@@ -1309,6 +1937,11 @@
       {
         "date": "2020-09-01",
         "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 53,
         "representative_measurement": true
       }
     ]
@@ -1327,6 +1960,45 @@
       },
       {
         "date": "2020-09-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 14,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 14,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 188,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 188,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 4022,
+    "city_code": "GM1742",
+    "name": "Holten",
+    "security_region_code": "VR04",
+    "security_region_name": "IJsselland",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
         "RNA_per_ml": 0,
         "representative_measurement": true
       }
@@ -1373,6 +2045,11 @@
         "date": "2020-09-01",
         "RNA_per_ml": 62,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 66,
+        "representative_measurement": true
       }
     ]
   },
@@ -1410,6 +2087,25 @@
       },
       {
         "date": "2020-08-26",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 4025,
+    "city_code": "GM0148",
+    "name": "Dalfsen",
+    "security_region_code": "VR04",
+    "security_region_name": "IJselland",
+    "measurements": [
+      {
+        "date": "2020-09-05",
         "RNA_per_ml": 0,
         "representative_measurement": true
       }
@@ -1530,6 +2226,11 @@
       {
         "date": "2020-09-01",
         "RNA_per_ml": 152,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 44,
         "representative_measurement": true
       }
     ]
@@ -1670,6 +2371,25 @@
         "date": "2020-09-03",
         "RNA_per_ml": 53,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 1684,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 4030,
+    "city_code": "GM0193",
+    "name": "Hessenpoort",
+    "security_region_code": "VR04",
+    "security_region_name": "IJsselland",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
       }
     ]
   },
@@ -1718,6 +2438,25 @@
       {
         "date": "2020-09-01",
         "RNA_per_ml": 148,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 99,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 5004,
+    "city_code": "GM1700",
+    "name": "Vriezenveen",
+    "security_region_code": "VR05",
+    "security_region_name": "Twente",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
         "representative_measurement": true
       }
     ]
@@ -1841,6 +2580,77 @@
       },
       {
         "date": "2020-08-29",
+        "RNA_per_ml": 371,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 129,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 5017,
+    "city_code": "GM0164",
+    "name": "Hengelo",
+    "security_region_code": "VR05",
+    "security_region_name": "Twente",
+    "measurements": [
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 629,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 5019,
+    "city_code": "GM0141",
+    "name": "Almelo-Vissedijk",
+    "security_region_code": "VR05",
+    "security_region_name": "Twente",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 474,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 5022,
+    "city_code": "GM1742",
+    "name": "Rijssen",
+    "security_region_code": "VR05",
+    "security_region_name": "Twente",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 5023,
+    "city_code": "GM0163",
+    "name": "Nijverdal",
+    "security_region_code": "VR04",
+    "security_region_name": "IJsselland",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
         "RNA_per_ml": 0,
         "representative_measurement": true
       }
@@ -1877,6 +2687,11 @@
         "date": "2020-08-26",
         "RNA_per_ml": 0,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
       }
     ]
   },
@@ -1895,6 +2710,11 @@
       {
         "date": "2020-09-03",
         "RNA_per_ml": 50,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 266,
         "representative_measurement": true
       }
     ]
@@ -2025,6 +2845,11 @@
         "date": "2020-08-31",
         "RNA_per_ml": 158,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 920,
+        "representative_measurement": true
       }
     ]
   },
@@ -2048,6 +2873,11 @@
       {
         "date": "2020-08-31",
         "RNA_per_ml": 454,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 1423,
         "representative_measurement": true
       }
     ]
@@ -2098,6 +2928,53 @@
         "date": "2020-08-31",
         "RNA_per_ml": 41,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 349,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 7002,
+    "city_code": "GM0197",
+    "name": "Aalten",
+    "security_region_code": "VR06",
+    "security_region_name": "Noord- en Oost-Gelderland",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 149,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 7014,
+    "city_code": "GM1859",
+    "name": "Ruurlo",
+    "security_region_code": "VR06",
+    "security_region_name": "Noord- en Oost-Gelderland",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 7015,
+    "city_code": "GM1586",
+    "name": "Lichtenvoorde",
+    "security_region_code": "VR06",
+    "security_region_name": "Noord- en Oost-Gelderland",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
       }
     ]
   },
@@ -2140,6 +3017,72 @@
       },
       {
         "date": "2020-09-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 103,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 7017,
+    "city_code": "GM1509",
+    "name": "Varsseveld",
+    "security_region_code": "VR06",
+    "security_region_name": "Noord- en Oost-Gelderland",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 86,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 7018,
+    "city_code": "GM0197",
+    "name": "Dinxperlo",
+    "security_region_code": "VR06",
+    "security_region_name": "Noord- en Oost-Gelderland",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 85,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 7019,
+    "city_code": "GM0301",
+    "name": "Zutphen",
+    "security_region_code": "VR06",
+    "security_region_name": "Noord- en Oost-Gelderland",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 1164,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 7021,
+    "city_code": "GM1876",
+    "name": "Olburgen",
+    "security_region_code": "VR07",
+    "security_region_name": "Gelderland-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
         "RNA_per_ml": 0,
         "representative_measurement": true
       }
@@ -2264,7 +3207,40 @@
       },
       {
         "date": "2020-09-02",
-        "RNA_per_ml": 319,
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 260,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 7023,
+    "city_code": "GM1859",
+    "name": "Haarlo",
+    "security_region_code": "VR06",
+    "security_region_name": "Noord- en Oost-Gelderland",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 358,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 8005,
+    "city_code": "GM0267",
+    "name": "Nijkerk",
+    "security_region_code": "VR07",
+    "security_region_name": "Gelderland-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 127,
         "representative_measurement": true
       }
     ]
@@ -2315,6 +3291,25 @@
         "date": "2020-08-31",
         "RNA_per_ml": 0,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 98,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 8019,
+    "city_code": "GM0228",
+    "name": "Bennekom",
+    "security_region_code": "VR07",
+    "security_region_name": "Gelderland-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
       }
     ]
   },
@@ -2362,7 +3357,17 @@
       },
       {
         "date": "2020-08-29",
-        "RNA_per_ml": 178,
+        "RNA_per_ml": 201,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 495,
         "representative_measurement": true
       }
     ]
@@ -2408,6 +3413,53 @@
         "date": "2020-08-31",
         "RNA_per_ml": 51,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 96,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 8024,
+    "city_code": "GM0274",
+    "name": "Renkum",
+    "security_region_code": "VR07",
+    "security_region_name": "Gelderland-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 427,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9010,
+    "city_code": "GM1945",
+    "name": "Groesbeek",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9012,
+    "city_code": "GM1960",
+    "name": "Geldermalsen",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 292,
+        "representative_measurement": true
       }
     ]
   },
@@ -2450,6 +3502,25 @@
       },
       {
         "date": "2020-09-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9015,
+    "city_code": "GM1734",
+    "name": "Valburg",
+    "security_region_code": "VR07",
+    "security_region_name": "Gelderland-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-07",
         "RNA_per_ml": 0,
         "representative_measurement": true
       }
@@ -2731,6 +3802,16 @@
         "date": "2020-09-02",
         "RNA_per_ml": 134,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 495,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 495,
+        "representative_measurement": true
       }
     ]
   },
@@ -2770,6 +3851,39 @@
         "date": "2020-09-01",
         "RNA_per_ml": 50,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9019,
+    "city_code": "GM0216",
+    "name": "Culemborg",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 796,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9020,
+    "city_code": "GM0252",
+    "name": "Overasselt",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 29,
+        "representative_measurement": true
       }
     ]
   },
@@ -2808,6 +3922,254 @@
       {
         "date": "2020-09-01",
         "RNA_per_ml": 77,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 679,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9025,
+    "city_code": "GM0281",
+    "name": "Tiel",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 52,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9026,
+    "city_code": "GM1740",
+    "name": "Dodewaard",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9027,
+    "city_code": "GM0225",
+    "name": "Druten",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9029,
+    "city_code": "GM0297",
+    "name": "Aalst",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9030,
+    "city_code": "GM0668",
+    "name": "Maasbommel",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 78,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9031,
+    "city_code": "GM1960",
+    "name": "Beesd",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9032,
+    "city_code": "GM1734",
+    "name": "Zetten",
+    "security_region_code": "VR07",
+    "security_region_name": "Gelderland-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9034,
+    "city_code": "GM0214",
+    "name": "Eck En Wiel",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 61,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9037,
+    "city_code": "GM0512",
+    "name": "Gorinchem-Oost",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 310,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 310,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9038,
+    "city_code": "GM1705",
+    "name": "Gendt",
+    "security_region_code": "VR07",
+    "security_region_name": "Gelderland-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 155,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9039,
+    "city_code": "GM0668",
+    "name": "Dreumel",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 244,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9040,
+    "city_code": "GM1960",
+    "name": "Haaften",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9041,
+    "city_code": "GM0297",
+    "name": "Zaltbommel",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 1167,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9042,
+    "city_code": "GM1945",
+    "name": "Millingen",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 9043,
+    "city_code": "GM0214",
+    "name": "Lienden",
+    "security_region_code": "VR08",
+    "security_region_name": "Gelderland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10001,
+    "city_code": "GM0355",
+    "name": "Zeist",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 122,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10003,
+    "city_code": "GM0310",
+    "name": "De Bilt",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 118,
         "representative_measurement": true
       }
     ]
@@ -2852,6 +4214,11 @@
       {
         "date": "2020-09-01",
         "RNA_per_ml": 208,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 254,
         "representative_measurement": true
       }
     ]
@@ -2977,6 +4344,39 @@
         "date": "2020-08-31",
         "RNA_per_ml": 534,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 1234,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10010,
+    "city_code": "GM0342",
+    "name": "Soest",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 94,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10012,
+    "city_code": "GM0344",
+    "name": "De Meern",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 618,
+        "representative_measurement": true
       }
     ]
   },
@@ -3059,12 +4459,74 @@
       },
       {
         "date": "2020-08-29",
-        "RNA_per_ml": 371,
+        "RNA_per_ml": 0,
         "representative_measurement": true
       },
       {
         "date": "2020-08-29",
-        "RNA_per_ml": 371,
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 251,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 251,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10021,
+    "city_code": "GM1581",
+    "name": "Veenendaal",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 55,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10024,
+    "city_code": "GM0335",
+    "name": "Montfoort",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 604,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10025,
+    "city_code": "GM0312",
+    "name": "Bunnik",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
         "representative_measurement": true
       }
     ]
@@ -3188,7 +4650,115 @@
       },
       {
         "date": "2020-08-29",
+        "RNA_per_ml": 178,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 210,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 375,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10028,
+    "city_code": "GM0353",
+    "name": "Nieuwegein",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 728,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10029,
+    "city_code": "GM0352",
+    "name": "Wijk Bij Duurstede",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-07",
         "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10031,
+    "city_code": "GM1904",
+    "name": "Breukelen",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 82,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10032,
+    "city_code": "GM0589",
+    "name": "Oudewater",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10034,
+    "city_code": "GM0736",
+    "name": "De Ronde Venen",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 140,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10035,
+    "city_code": "GM0340",
+    "name": "Rhenen",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 1313,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10036,
+    "city_code": "GM0321",
+    "name": "Houten",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 180,
         "representative_measurement": true
       }
     ]
@@ -3233,6 +4803,67 @@
       {
         "date": "2020-08-30",
         "RNA_per_ml": 65,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 233,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 10038,
+    "city_code": "GM0331",
+    "name": "Lopik",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 11004,
+    "city_code": "GM0402",
+    "name": "Hilversum",
+    "security_region_code": "VR14",
+    "security_region_name": "Gooi en Vechtstreek",
+    "measurements": [
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 363,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 11005,
+    "city_code": "GM0362",
+    "name": "Amstelveen",
+    "security_region_code": "VR13",
+    "security_region_name": "Amsterdam-Amstelland",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 556,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 11006,
+    "city_code": "GM0451",
+    "name": "Uithoorn",
+    "security_region_code": "VR13",
+    "security_region_name": "Amsterdam-Amstelland",
+    "measurements": [
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 207,
         "representative_measurement": true
       }
     ]
@@ -3292,6 +4923,48 @@
       {
         "date": "2020-08-17",
         "RNA_per_ml": 516,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 11010,
+    "city_code": "GM0457",
+    "name": "Weesp",
+    "security_region_code": "VR14",
+    "security_region_name": "Gooi en Vechtstreek",
+    "measurements": [
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 126,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 11012,
+    "city_code": "GM0406",
+    "name": "Huizen",
+    "security_region_code": "VR14",
+    "security_region_name": "Gooi en Vechtstreek",
+    "measurements": [
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 509,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 11013,
+    "city_code": "GM1696",
+    "name": "Horstermeer",
+    "security_region_code": "VR14",
+    "security_region_name": "Gooi en Vechtstreek",
+    "measurements": [
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 655,
         "representative_measurement": true
       }
     ]
@@ -3372,6 +5045,30 @@
         "date": "2020-09-01",
         "RNA_per_ml": 719,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 759,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 759,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 12001,
+    "city_code": "GM0399",
+    "name": "Heiloo",
+    "security_region_code": "VR10",
+    "security_region_name": "Noord-Holland-Noord",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
       }
     ]
   },
@@ -3415,6 +5112,72 @@
       {
         "date": "2020-08-31",
         "RNA_per_ml": 110,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 676,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 12010,
+    "city_code": "GM0479",
+    "name": "Zaandam-Oost",
+    "security_region_code": "VR11",
+    "security_region_name": "Zaanstreek-Waterland",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 710,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 12013,
+    "city_code": "GM0441",
+    "name": "Geestmerambacht",
+    "security_region_code": "VR10",
+    "security_region_name": "Noord-Holland-Noord",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 92,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 12014,
+    "city_code": "GM0370",
+    "name": "Beemster",
+    "security_region_code": "VR10",
+    "security_region_name": "Noord-Holland-Noord",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 412,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 412,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 12016,
+    "city_code": "GM0852",
+    "name": "Katwoude",
+    "security_region_code": "VR11",
+    "security_region_name": "Zaanstreek-Waterland",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 189,
         "representative_measurement": true
       }
     ]
@@ -3498,6 +5261,11 @@
       {
         "date": "2020-09-01",
         "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 166,
         "representative_measurement": true
       }
     ]
@@ -3853,6 +5621,21 @@
         "date": "2020-08-31",
         "RNA_per_ml": 110,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 590,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 590,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 590,
+        "representative_measurement": true
       }
     ]
   },
@@ -3896,6 +5679,67 @@
       {
         "date": "2020-09-01",
         "RNA_per_ml": 83,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 238,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 12026,
+    "city_code": "GM0385",
+    "name": "Oosthuizen",
+    "security_region_code": "VR11",
+    "security_region_name": "Zaanstreek-Waterland",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 76,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13003,
+    "city_code": "GM0453",
+    "name": "Velsen",
+    "security_region_code": "VR12",
+    "security_region_name": "Kennemerland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13004,
+    "city_code": "GM0397",
+    "name": "Heemstede",
+    "security_region_code": "VR12",
+    "security_region_name": "Kennemerland",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 478,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13005,
+    "city_code": "GM0394",
+    "name": "Zwanenburg",
+    "security_region_code": "VR12",
+    "security_region_name": "Kennemerland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 412,
         "representative_measurement": true
       }
     ]
@@ -4029,7 +5873,40 @@
       },
       {
         "date": "2020-09-02",
-        "RNA_per_ml": 0,
+        "RNA_per_ml": 92,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 202,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13012,
+    "city_code": "GM0392",
+    "name": "Haarlem-Schalkwijk",
+    "security_region_code": "VR12",
+    "security_region_name": "Kennemerland",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 443,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13023,
+    "city_code": "GM0575",
+    "name": "Noordwijk",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 331,
         "representative_measurement": true
       }
     ]
@@ -4272,13 +6149,13 @@
         "representative_measurement": true
       },
       {
-        "date": "2020-09-01",
-        "RNA_per_ml": 35,
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
         "representative_measurement": true
       },
       {
-        "date": "2020-09-01",
-        "RNA_per_ml": 35,
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
         "representative_measurement": true
       }
     ]
@@ -4379,6 +6256,44 @@
         "date": "2020-08-31",
         "RNA_per_ml": 35,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 30,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 30,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13034,
+    "city_code": "GM0553",
+    "name": "Lisse",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 92,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13035,
+    "city_code": "GM0484",
+    "name": "Alphen Noord",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 934,
+        "representative_measurement": true
       }
     ]
   },
@@ -4421,6 +6336,185 @@
       },
       {
         "date": "2020-09-01",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 85,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13039,
+    "city_code": "GM0513",
+    "name": "Gouda",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13041,
+    "city_code": "GM0537",
+    "name": "Katwijk",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 102,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13042,
+    "city_code": "GM1901",
+    "name": "Bodegraven",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 197,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13044,
+    "city_code": "GM0394",
+    "name": "Zwaanshoek",
+    "security_region_code": "VR13",
+    "security_region_name": "Amsterdam-Amstelland",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 576,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 576,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 576,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13046,
+    "city_code": "GM0546",
+    "name": "Leiden-Noord",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 4386,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13047,
+    "city_code": "GM1884",
+    "name": "Nieuwe Wetering",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13048,
+    "city_code": "GM0627",
+    "name": "Waddinxveen Randenburg",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 175,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 13049,
+    "city_code": "GM0484",
+    "name": "Alphen Kerk en Zanen",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 219,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 14002,
+    "city_code": "GM0632",
+    "name": "Woerden",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 5752,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 5752,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 14003,
+    "city_code": "GM0344",
+    "name": "Leidsche Rijn",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 114,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 15004,
+    "city_code": "GM0599",
+    "name": "Nieuwe Waterweg",
+    "security_region_code": "VR15",
+    "security_region_name": "Haaglanden",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
         "RNA_per_ml": 0,
         "representative_measurement": true
       }
@@ -4547,6 +6641,11 @@
         "date": "2020-08-31",
         "RNA_per_ml": 672,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 1368,
+        "representative_measurement": true
       }
     ]
   },
@@ -4615,6 +6714,16 @@
       {
         "date": "2020-08-25",
         "RNA_per_ml": 277,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 444,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 444,
         "representative_measurement": true
       }
     ]
@@ -4730,6 +6839,40 @@
         "date": "2020-08-31",
         "RNA_per_ml": 262,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 270,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 270,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 270,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 16009,
+    "city_code": "GM1892",
+    "name": "Kortenoord",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 299,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 299,
+        "representative_measurement": true
       }
     ]
   },
@@ -4772,7 +6915,68 @@
       },
       {
         "date": "2020-09-02",
-        "RNA_per_ml": 92,
+        "RNA_per_ml": 319,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 407,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 16011,
+    "city_code": "GM0502",
+    "name": "Groenedijk",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 462,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17002,
+    "city_code": "GM1931",
+    "name": "Bergambacht",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17004,
+    "city_code": "GM1931",
+    "name": "Ammerstol",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 99,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17005,
+    "city_code": "GM1931",
+    "name": "Stolwijk",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 179,
         "representative_measurement": true
       }
     ]
@@ -4818,6 +7022,189 @@
         "date": "2020-09-01",
         "RNA_per_ml": 386,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 383,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17013,
+    "city_code": "GM0590",
+    "name": "Papendrecht",
+    "security_region_code": "VR18",
+    "security_region_name": "Zuid-Holland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 204,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17016,
+    "city_code": "GM0482",
+    "name": "Alblasserdam",
+    "security_region_code": "VR18",
+    "security_region_name": "Zuid-Holland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17026,
+    "city_code": "GM0523",
+    "name": "Hardinxveld-Giessendam",
+    "security_region_code": "VR18",
+    "security_region_name": "Zuid-Holland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17029,
+    "city_code": "GM1961",
+    "name": "Vianen",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 283,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17040,
+    "city_code": "GM0614",
+    "name": "Oostvoorne",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 81,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17041,
+    "city_code": "GM0530",
+    "name": "Hellevoetsluis",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 172,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 172,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17043,
+    "city_code": "GM1963",
+    "name": "Strijen",
+    "security_region_code": "VR18",
+    "security_region_name": "Zuid-Holland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 262,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17044,
+    "city_code": "GM0505",
+    "name": "Dordrecht",
+    "security_region_code": "VR18",
+    "security_region_name": "Zuid-Holland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 749,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17045,
+    "city_code": "GM1963",
+    "name": "Oud-Beijerland",
+    "security_region_code": "VR18",
+    "security_region_name": "Zuid-Holland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 253,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17048,
+    "city_code": "GM1924",
+    "name": "Goedereede",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17052,
+    "city_code": "GM0610",
+    "name": "Sliedrecht",
+    "security_region_code": "VR18",
+    "security_region_name": "Zuid-Holland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 165,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17053,
+    "city_code": "GM1931",
+    "name": "De Groote Zaag",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 618,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 618,
+        "representative_measurement": true
       }
     ]
   },
@@ -4861,6 +7248,250 @@
       {
         "date": "2020-09-01",
         "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 163,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17055,
+    "city_code": "GM1924",
+    "name": "Middelharnis",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 137,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17056,
+    "city_code": "GM1924",
+    "name": "Oude Tonge",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 138,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17057,
+    "city_code": "GM0599",
+    "name": "Rozenburg",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 307,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17061,
+    "city_code": "GM0599",
+    "name": "Dokhaven",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17062,
+    "city_code": "GM1930",
+    "name": "Heenvliet",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17063,
+    "city_code": "GM1961",
+    "name": "Leerdam",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 565,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17065,
+    "city_code": "GM1978",
+    "name": "Groot-Ammers",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 34,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 34,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 34,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17066,
+    "city_code": "GM1963",
+    "name": "Numansdorp",
+    "security_region_code": "VR18",
+    "security_region_name": "Zuid-Holland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 747,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17067,
+    "city_code": "GM1931",
+    "name": "Haastrecht",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 1122,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17068,
+    "city_code": "GM1931",
+    "name": "Berkenwoude",
+    "security_region_code": "VR16",
+    "security_region_name": "Hollands-Midden",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 144,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17070,
+    "city_code": "GM0599",
+    "name": "Hoogvliet",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 592,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17074,
+    "city_code": "GM1924",
+    "name": "Den Bommel",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 7,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17076,
+    "city_code": "GM1978",
+    "name": "Schelluinen",
+    "security_region_code": "VR09",
+    "security_region_name": "Utrecht",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 577,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 577,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17077,
+    "city_code": "GM1930",
+    "name": "Spijkenisse",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 261,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17078,
+    "city_code": "GM0642",
+    "name": "Zwijndrecht",
+    "security_region_code": "VR18",
+    "security_region_name": "Zuid-Holland-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 438,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 17079,
+    "city_code": "GM0489",
+    "name": "Barendrecht",
+    "security_region_code": "VR17",
+    "security_region_name": "Rotterdam-Rijnmond",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 706,
         "representative_measurement": true
       }
     ]
@@ -5148,6 +7779,25 @@
     ]
   },
   {
+    "sewerageArea_code": 25001,
+    "city_code": "GM0784",
+    "name": "Rijen",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurements": [
+      {
+        "date": "2020-09-03",
+        "RNA_per_ml": 33,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 167,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
     "sewerageArea_code": 25003,
     "city_code": "GM0867",
     "name": "Waalwijk",
@@ -5157,6 +7807,25 @@
       {
         "date": "2020-09-03",
         "RNA_per_ml": 55,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 205,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25008,
+    "city_code": "GM0873",
+    "name": "Ossendrecht",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurements": [
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 58,
         "representative_measurement": true
       }
     ]
@@ -5181,6 +7850,16 @@
       {
         "date": "2020-08-18",
         "RNA_per_ml": 521,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 187,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 401,
         "representative_measurement": true
       }
     ]
@@ -5226,6 +7905,44 @@
         "date": "2020-09-03",
         "RNA_per_ml": 262,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 308,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25014,
+    "city_code": "GM0867",
+    "name": "Waspik",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25016,
+    "city_code": "GM0851",
+    "name": "Nieuw-Vossemeer",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 45,
+        "representative_measurement": true
       }
     ]
   },
@@ -5264,6 +7981,25 @@
       {
         "date": "2020-08-25",
         "RNA_per_ml": 58,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25019,
+    "city_code": "GM1723",
+    "name": "Chaam",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 67,
         "representative_measurement": true
       }
     ]
@@ -5389,6 +8125,11 @@
         "date": "2020-09-03",
         "RNA_per_ml": 180,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 181,
+        "representative_measurement": true
       }
     ]
   },
@@ -5428,6 +8169,58 @@
         "date": "2020-09-02",
         "RNA_per_ml": 112,
         "representative_measurement": false
+      },
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 167,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25023,
+    "city_code": "GM0826",
+    "name": "Dongemond",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 72,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25025,
+    "city_code": "GM0748",
+    "name": "Halsteren",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 127,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25026,
+    "city_code": "GM0744",
+    "name": "Baarle-Nassau",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 384,
+        "representative_measurement": true
       }
     ]
   },
@@ -5545,6 +8338,109 @@
       },
       {
         "date": "2020-08-25",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25028,
+    "city_code": "GM0851",
+    "name": "Dinteloord",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 108,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 25029,
+    "city_code": "GM1709",
+    "name": "Willemstad",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 428,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 26005,
+    "city_code": "GM1959",
+    "name": "Sleeuwijk",
+    "security_region_code": "VR20",
+    "security_region_name": "Midden- en West-Brabant",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 41,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 27003,
+    "city_code": "GM0772",
+    "name": "Eindhoven",
+    "security_region_code": "VR22",
+    "security_region_name": "Brabant-Zuidoost",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 226,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 27004,
+    "city_code": "GM0757",
+    "name": "Boxtel",
+    "security_region_code": "VR21",
+    "security_region_name": "Brabant-Noord",
+    "measurements": [
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 49,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 27005,
+    "city_code": "GM1728",
+    "name": "Hapert",
+    "security_region_code": "VR22",
+    "security_region_name": "Brabant-Zuidoost",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 2124,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 27006,
+    "city_code": "GM1706",
+    "name": "Soerendonk",
+    "security_region_code": "VR22",
+    "security_region_name": "Brabant-Zuidoost",
+    "measurements": [
+      {
+        "date": "2020-09-06",
         "RNA_per_ml": 0,
         "representative_measurement": true
       }
@@ -5671,6 +8567,30 @@
         "date": "2020-08-30",
         "RNA_per_ml": 122,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 27009,
+    "city_code": "GM0788",
+    "name": "Haaren",
+    "security_region_code": "VR21",
+    "security_region_name": "Brabant-Noord",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 195,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 195,
+        "representative_measurement": true
       }
     ]
   },
@@ -5743,12 +8663,41 @@
       },
       {
         "date": "2020-08-30",
-        "RNA_per_ml": 319,
+        "RNA_per_ml": 268,
         "representative_measurement": true
       },
       {
         "date": "2020-08-30",
+        "RNA_per_ml": 268,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
         "RNA_per_ml": 319,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 319,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 27011,
+    "city_code": "GM0798",
+    "name": "Biest-Houtakker",
+    "security_region_code": "VR22",
+    "security_region_name": "Brabant-Zuidoost",
+    "measurements": [
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 711,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-06",
+        "RNA_per_ml": 711,
         "representative_measurement": true
       }
     ]
@@ -5793,6 +8742,11 @@
       {
         "date": "2020-09-02",
         "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 37,
         "representative_measurement": true
       }
     ]
@@ -5872,6 +8826,16 @@
       {
         "date": "2020-08-30",
         "RNA_per_ml": 63,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 77,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 77,
         "representative_measurement": true
       }
     ]
@@ -5997,6 +8961,39 @@
         "date": "2020-08-30",
         "RNA_per_ml": 97,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-05",
+        "RNA_per_ml": 149,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 28006,
+    "city_code": "GM0796",
+    "name": "Vinkel",
+    "security_region_code": "VR21",
+    "security_region_name": "Brabant-Noord",
+    "measurements": [
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 373,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 29002,
+    "city_code": "GM0828",
+    "name": "Oijen",
+    "security_region_code": "VR21",
+    "security_region_name": "Brabant-Noord",
+    "measurements": [
+      {
+        "date": "2020-09-10",
+        "RNA_per_ml": 370,
+        "representative_measurement": true
       }
     ]
   },
@@ -6119,7 +9116,40 @@
       },
       {
         "date": "2020-08-29",
-        "RNA_per_ml": 201,
+        "RNA_per_ml": 165,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30003,
+    "city_code": "GM0935",
+    "name": "Maastricht-Limmel",
+    "security_region_code": "VR24",
+    "security_region_name": "Limburg-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 50,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30005,
+    "city_code": "GM0988",
+    "name": "Weert",
+    "security_region_code": "VR23",
+    "security_region_name": "Limburg-Noord",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 0,
         "representative_measurement": true
       }
     ]
@@ -6245,6 +9275,11 @@
         "date": "2020-09-02",
         "RNA_per_ml": 416,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 434,
+        "representative_measurement": true
       }
     ]
   },
@@ -6287,6 +9322,53 @@
       },
       {
         "date": "2020-09-02",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 60,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30013,
+    "city_code": "GM0882",
+    "name": "Rimburg",
+    "security_region_code": "VR24",
+    "security_region_name": "Limburg-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30014,
+    "city_code": "GM0928",
+    "name": "Kerkrade-Kaffeberg",
+    "security_region_code": "VR24",
+    "security_region_name": "Limburg-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 48,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30016,
+    "city_code": "GM1903",
+    "name": "Maastricht-Heugem",
+    "security_region_code": "VR24",
+    "security_region_name": "Limburg-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-07",
         "RNA_per_ml": 0,
         "representative_measurement": true
       }
@@ -6332,6 +9414,39 @@
       {
         "date": "2020-09-02",
         "RNA_per_ml": 337,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 188,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30018,
+    "city_code": "GM1894",
+    "name": "Meijel",
+    "security_region_code": "VR23",
+    "security_region_name": "Limburg-Noord",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 60,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30019,
+    "city_code": "GM1729",
+    "name": "Wijlre",
+    "security_region_code": "VR24",
+    "security_region_name": "Limburg-Zuid",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
         "representative_measurement": true
       }
     ]
@@ -6452,6 +9567,11 @@
         "date": "2020-09-02",
         "RNA_per_ml": 0,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 280,
+        "representative_measurement": true
       }
     ]
   },
@@ -6531,6 +9651,16 @@
         "date": "2020-09-02",
         "RNA_per_ml": 37,
         "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
       }
     ]
   },
@@ -6574,6 +9704,53 @@
       {
         "date": "2020-09-02",
         "RNA_per_ml": 0,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 0,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30024,
+    "city_code": "GM0957",
+    "name": "Roermond",
+    "security_region_code": "VR23",
+    "security_region_name": "Limburg-Noord",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 37,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 30025,
+    "city_code": "GM0907",
+    "name": "Gennep",
+    "security_region_code": "VR23",
+    "security_region_name": "Limburg-Noord",
+    "measurements": [
+      {
+        "date": "2020-09-07",
+        "RNA_per_ml": 50,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 31005,
+    "city_code": "GM0363",
+    "name": "Westpoort",
+    "security_region_code": "VR13",
+    "security_region_name": "Amsterdam-Amstelland",
+    "measurements": [
+      {
+        "date": "2020-09-04",
+        "RNA_per_ml": 814,
         "representative_measurement": true
       }
     ]
@@ -6698,6 +9875,30 @@
       {
         "date": "2020-08-28",
         "RNA_per_ml": 328,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-09",
+        "RNA_per_ml": 1401,
+        "representative_measurement": true
+      }
+    ]
+  },
+  {
+    "sewerageArea_code": 33001,
+    "city_code": "GM1952",
+    "name": "Foxhol",
+    "security_region_code": "VR03",
+    "security_region_name": "Drenthe",
+    "measurements": [
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 132,
+        "representative_measurement": true
+      },
+      {
+        "date": "2020-09-08",
+        "RNA_per_ml": 132,
         "representative_measurement": true
       }
     ]
