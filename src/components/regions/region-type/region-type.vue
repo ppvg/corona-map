@@ -175,7 +175,7 @@
         }
 
         &:not(.region-type--with-region) {
-            width: calc(100% / 3);
+            width: calc(100% / 4);
             height: 100%;
 
             .region-type__label {

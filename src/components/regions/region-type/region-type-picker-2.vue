@@ -24,6 +24,11 @@
                         tag: 'ggd'
                     },
                     {
+                        label: 'Veiligheidsregio',
+                        showRegion: false,
+                        tag: 'sr'
+                    },
+                    {
                         label: 'Land',
                         showRegion: false,
                         tag: 'country'
