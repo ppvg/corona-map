@@ -20,12 +20,14 @@
                 lineContainer: null,
                 textContainer: null,
                 height: 150,
-                step: 20,
                 max: 10000
             }
         },
         computed: {
             // settings
+            step() {
+                return this.$store.state.settings.step;
+            },
             periodOfFocusLength() {
                 return this.$store.state.settings.periodOfFocusLength;
             },
@@ -33,7 +35,7 @@
                 return this.$store.state.settings.currentDateOffset;
             },
             width() {
-                return this.periodOfFocusLength * 2 * this.step;
+                return this.periodOfFocusLength * 7 * this.step;
             },
             measurementsInRange() {
                 let startIndex, endIndex, index;
@@ -75,7 +77,7 @@
                 return this.$store.state.ui.today.getTime();
             },
             startDateInMs() {
-                return this.endDateInMs - (2 * this.periodOfFocusLength * this.msPerDay)
+                return this.endDateInMs - (7 * this.periodOfFocusLength * this.msPerDay)
             },
             endDateInMs() {
                 return this.todayInMs - (this.currentDateOffset * this.msPerDay)
@@ -112,13 +114,11 @@
             },
             drawGraph() {
                 this.drawGrid();
-                //this.drawLine();
                 this.drawBars();
-                //this.drawPoints();
                 this.drawTexts();
             },
             drawGrid() {
-                let set = Array.from(Array(2 * this.periodOfFocusLength).keys());
+                let set = Array.from(Array(7 * this.periodOfFocusLength).keys());
                 this.gridContainer.selectAll('line')
                     .data(set)
                     .enter()
@@ -132,7 +132,7 @@
                     .attr('y1', 0)
                     .attr('y2', this.height)
                     .attr('stroke', (d) => {
-                        return d === 7 ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.1)';
+                        return (d % 7 === 0) ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.1)';
                     })
                     .attr('stroke-width', 1);
             },
@@ -205,7 +205,7 @@
                         }
                     })
                     .text(function(d) {
-                        return d.measurement.RNA_per_ml + ' RNA/ml';
+                        return d.measurement.RNA_per_ml + '';
                     });
             }
         },
@@ -263,7 +263,7 @@
             .text-container {
 
                 text {
-                    font-size: 10px;
+                    font-size: 9px;
                     fill: #555
                 }
             }

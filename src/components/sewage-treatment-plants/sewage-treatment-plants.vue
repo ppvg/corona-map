@@ -28,7 +28,7 @@
 <template>
     <div class="sewage-treatment-plants">
         <div class="city-details__section-header">
-            Rioolmetingen RIVM
+            Rioolmetingen RIVM (RNA/ml)
         </div>
         <div class="sewage-treatment-plants__list">
             <sewage-treatment-plant

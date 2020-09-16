@@ -5,7 +5,8 @@ const state = {
     canvasWidth: 0,
     canvasHeight: 0,
     mapRatio: 0.89,
-    periodOfFocusLength: 7,
+    step: 10,
+    periodOfFocusLength: 6, // weeks
     historyLength: 70,
     currentDateOffset: 0,
     gradient: true

@@ -21,10 +21,10 @@
                 return 200;
             },
             step() {
-                return 20;
+                return this.$store.state.settings.step;
             },
             width() {
-                return this.periodOfFocusLength * 2 * this.step;
+                return this.periodOfFocusLength * 7 * this.step;
             },
             min() {
                 return Math.min( ...this.region.getTotalReport().history );
@@ -106,12 +106,12 @@
             drawGrid() {
                 let ctx, set;
                 ctx = this.ctx;
-                set = Array.from(Array(2 * this.periodOfFocusLength).keys());
+                set = Array.from(Array(7 * this.periodOfFocusLength).keys());
                 for (let i of set) {
                     let x = i * this.step;
                     ctx.beginPath();
                     ctx.lineWidth = 1;
-                    ctx.strokeStyle = i === 7 ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.1)';
+                    ctx.strokeStyle = (i % 7 === 0) ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.1)';
                     ctx.moveTo(x, 0);
                     ctx.lineTo(x, this.height);
                     ctx.stroke();
@@ -134,7 +134,7 @@
                 ctx.lineWidth = 1;
                 ctx.strokeStyle = 'black';
                 // draw 1 point extra, this point is out of the graph on the leftside
-                start = history.length - (2 * this.periodOfFocusLength) - this.offset;
+                start = history.length - (7 * this.periodOfFocusLength) - this.offset;
                 ctx.moveTo((-0.5 * step), getValue(history[start - 1]));
                 for (let i = start, l = (history.length - this.offset); i < l; i++) {
                     let value, index;
@@ -149,8 +149,8 @@
                 let ctx, x1, x2;
                 ctx = this.ctx;
                 ctx.strokeStyle = 'rgba(255,255,255,0.3)';
-                x1 = this.step * (this.periodOfFocusLength - 1);
-                x2 = this.step * (2 * this.periodOfFocusLength - 1);
+                x1 = this.step * 6;
+                x2 = this.step * (7 * this.periodOfFocusLength - 1);
                 ctx.beginPath();
                 ctx.moveTo(x1, 0);
                 ctx.lineTo(x1, this.height);
