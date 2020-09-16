@@ -13,6 +13,7 @@ class City extends _Region {
         population = 0,
         area = 0,
         paths = [],
+        ageGroups = [],
         report = null
     }) {
         super();
@@ -26,6 +27,7 @@ class City extends _Region {
         this.population = population;
         this.area = area;
         this.paths = paths.map(path => new Path(path));
+        this.ageGroups = ageGroups;
         this.report = report;
     }
 

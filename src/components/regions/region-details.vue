@@ -5,10 +5,12 @@
     import regionTypePicker from "./region-type/region-type-picker";
     import _Region from "@/classes/_Region";
     import loader from "@/components/elements/loader";
+    import ageDistributionGraphNormalised from "./case-characteristics/age-distribution-graph-normalised";
 
     export default {
         name: 'region-details',
         components: {
+            ageDistributionGraphNormalised,
             loader,
             regionTypePicker,
             ageDistributionGraph,
@@ -87,16 +89,29 @@
                 v-if="(region.regionType === 'ggd' || region.regionType === 'country') && caseDataRequested"
                 class="region-details__section">
                 <div class="region-details__section-header">
-                    Leeftijdsverdeling (beta)
+                    Leeftijdsverdeling
                 </div>
                 <div class="age-distribution-graph__container">
-                    <age-distribution-graph
-                            v-if="caseDataLoaded"
-                            :region="region"/>
-                    <loader v-if="!caseDataLoaded"/>
+                    <age-distribution-graph-normalised
+                        v-if="caseDataLoaded"
+                        :region="region"/>
+                    <loader v-else/>
                 </div>
 
             </div>
+<!--            <div-->
+<!--                v-if="(region.regionType === 'ggd' || region.regionType === 'country') && caseDataRequested"-->
+<!--                class="region-details__section">-->
+<!--                <div class="region-details__section-header">-->
+<!--                    Leeftijdsverdeling (beta)-->
+<!--                </div>-->
+<!--                <div class="age-distribution-graph__container">-->
+<!--                    <age-distribution-graph-->
+<!--                            v-if="caseDataLoaded"-->
+<!--                            :region="region"/>-->
+<!--                    <loader v-if="!caseDataLoaded"/>-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="region-details__section">
                 <div class="region-details__row">
                     <div class="region-details__label">

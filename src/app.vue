@@ -88,6 +88,8 @@
                     this.$store.commit('safetyRegions/init', safetyRegions);
                     this.$store.commit('ageGroups/init', ageGroups);
 
+                    this.addAgeGroupsToCities();
+
                     d3.csv(testDataUrl)
                         .then((data) => {
 
@@ -106,6 +108,30 @@
                             console.error(error);
                         });
                 });
+            },
+            addAgeGroupsToCities() {
+                d3.csv('data/cities-population-agegroup.csv')
+                    .then((result) => {
+                        for (let item of result) {
+                            let city = this.$store.getters['cities/getItemByProperty']('municipality_code', item.Gemeentecode, true);
+                            if (city) {
+                                let cityAgeGroups = ageGroups.map(ageGroup => {
+                                    let key = ageGroup.title;
+                                    if (key === '10-19') {
+                                        key = 'okt-19';
+                                    }
+                                    return {
+                                        title: ageGroup.title,
+                                        population: Number(item[key])
+                                    }
+                                });
+                                this.$store.commit('cities/updatePropertyOfItem', {item: city, property: 'ageGroups', value: cityAgeGroups});
+                            }
+                        }
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
             },
             addSewageTreatmentPlants(sewageTreatmentPlants){
                 this.$store.commit('sewageTreatmentPlants/init', sewageTreatmentPlants)
