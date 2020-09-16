@@ -1,4 +1,5 @@
 import store from '@/store/store';
+import interpolate from "color-interpolate";
 
 
 
@@ -57,8 +58,47 @@ const getThresholds = function() {
     return store.state.signalingSystems.current.thresholds;
 };
 
+const _prevThreshold = function(threshold) {
+    let index = getThresholds().indexOf(threshold);
+    if (index > 0) {
+        return getThresholds()[index - 1];
+    } else {
+        return null;
+    }
+};
+
+const _nextThreshold = function(threshold) {
+    let index = getThresholds().indexOf(threshold);
+    if (index < getThresholds().length - 1) {
+        return getThresholds()[index + 1];
+    } else {
+        return null;
+    }
+};
+
+const thresholdToColor = function(threshold, cases) {
+    if (!threshold) {
+        return '#888';
+    } else {
+        if (!store.state.settings.gradient) {
+            return threshold.color[store.state.ui.color];
+        } else {
+            if (!_prevThreshold(threshold) || !_nextThreshold(threshold)) {
+                return threshold.color[store.state.ui.color];
+            } else {
+                let colormap, maxOfNextColor, ratio;
+                maxOfNextColor = 0.65;
+                ratio = maxOfNextColor * (cases - _prevThreshold(threshold).n) / (threshold.n - _prevThreshold(threshold).n);
+                colormap = interpolate([threshold.color[store.state.ui.color], _nextThreshold(threshold).color[store.state.ui.color]]);
+                return colormap(ratio);
+            }
+        }
+    }
+};
+
 export default {
     getThreshold,
     getNumber,
-    getThresholds
+    getThresholds,
+    thresholdToColor
 }

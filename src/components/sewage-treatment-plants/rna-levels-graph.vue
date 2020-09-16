@@ -28,14 +28,14 @@
             step() {
                 return this.$store.state.settings.step;
             },
-            periodOfFocusLength() {
-                return this.$store.state.settings.periodOfFocusLength;
+            weeks() {
+                return this.$store.state.settings.weeks;
             },
             currentDateOffset() {
                 return this.$store.state.settings.currentDateOffset;
             },
             width() {
-                return this.periodOfFocusLength * 7 * this.step;
+                return this.weeks * 7 * this.step;
             },
             measurementsInRange() {
                 let startIndex, endIndex, index;
@@ -77,7 +77,7 @@
                 return this.$store.state.ui.today.getTime();
             },
             startDateInMs() {
-                return this.endDateInMs - (7 * this.periodOfFocusLength * this.msPerDay)
+                return this.endDateInMs - (7 * this.weeks * this.msPerDay)
             },
             endDateInMs() {
                 return this.todayInMs - (this.currentDateOffset * this.msPerDay)
@@ -118,7 +118,7 @@
                 this.drawTexts();
             },
             drawGrid() {
-                let set = Array.from(Array(7 * this.periodOfFocusLength).keys());
+                let set = Array.from(Array(7 * this.weeks).keys());
                 this.gridContainer.selectAll('line')
                     .data(set)
                     .enter()

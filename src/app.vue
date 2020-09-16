@@ -43,7 +43,7 @@
             },
             lastDates() {
                 let n, dates, today;
-                n = (this.$store.state.settings.periodOfFocusLength * 7) + this.$store.state.settings.historyLength + 1;
+                n = (this.$store.state.settings.weeks * 7) + this.$store.state.settings.historyLength + 1;
                 dates = [];
                 today = this.$store.state.ui.today;
                 for (let i = 0; i < n; i++) {
@@ -293,8 +293,7 @@
             }
 
             .region-details {
-                //14 * 20 + 32
-                width: 450px;
+                width: 500px;
             }
 
             .region-details--mobile {

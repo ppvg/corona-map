@@ -1,5 +1,4 @@
 import store from '@/store/store';
-import interpolate from "color-interpolate";
 import thresholdTools from "@/tools/thresholds";
 
 class _Region {
@@ -124,50 +123,9 @@ class _Region {
         return thresholdTools.getThreshold(cases, this.getTotalPopulation(), signalingSystem.days);
     }
 
-    get prev() {
-        let threshold, index;
-        threshold = this.getThreshold();
-        index = thresholdTools.getThresholds().indexOf(threshold);
-        if (index > 0) {
-            return thresholdTools.getThresholds()[index - 1];
-        } else {
-            return null;
-        }
-    }
-
-    get next() {
-        let threshold, index;
-        threshold = this.getThreshold();
-        index = thresholdTools.getThresholds().indexOf(threshold);
-        if (index < thresholdTools.getThresholds().length - 1) {
-            return thresholdTools.getThresholds()[index + 1];
-        } else {
-            return null;
-        }
-    }
-
     get color() {
-        let threshold = this.getThreshold();
-        if (!threshold) {
-            return '#888';
-        } else {
-            if (!store.state.settings.gradient) {
-                return threshold.color[store.state.ui.color];
-            } else {
-                if (!this.prev || !this.next) {
-                    return threshold.color[store.state.ui.color];
-                } else {
-                    let colormap, maxOfNextColor, ratio;
-                    maxOfNextColor = 0.65;
-                    ratio = maxOfNextColor * (this.getTotalRelativeIncreaseWeek() - this.prev.n) / (threshold.n - this.prev.n);
-                    colormap = interpolate([threshold.color[store.state.ui.color], this.next.color[store.state.ui.color]]);
-                    return colormap(ratio);
-                }
-            }
-        }
+        return thresholdTools.thresholdToColor(this.getThreshold(), this.getTotalRelativeIncreaseWeek());
     }
-
-
 }
 
 export default _Region;

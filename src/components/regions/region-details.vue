@@ -5,7 +5,7 @@
     import regionTypePicker from "./region-type/region-type-picker";
     import _Region from "@/classes/_Region";
     import loader from "@/components/elements/loader";
-    import ageDistributionGraphNormalised from "./case-characteristics/age-distribution-graph-normalised";
+    import ageDistributionGraphNormalised from "./case-characteristics/age-distribution-graph-normalised/age-distribution-graph-normalised";
 
     export default {
         name: 'region-details',
@@ -53,6 +53,9 @@
             },
             caseDataRequested() {
                 return this.$store.state.ui.caseDataRequested;
+            },
+            date() {
+                return this.$store.getters['ui/dateString'];
             }
         },
         methods: {
@@ -86,10 +89,10 @@
                     :city="city"/>
             </div>
             <div
-                v-if="(region.regionType === 'ggd' || region.regionType === 'country') && caseDataRequested"
+                v-if="(region.regionType === 'ggd') && caseDataRequested"
                 class="region-details__section">
                 <div class="region-details__section-header">
-                    Leeftijdsverdeling
+                    Leeftijdsverdeling (beta) {{date}}
                 </div>
                 <div class="age-distribution-graph__container">
                     <age-distribution-graph-normalised
@@ -230,8 +233,7 @@
         }
 
         .age-distribution-graph__container {
-            width: 390px;
-            min-height: 250px;
+            height: 400px;
             position: relative;
             background: #fff;
         }
