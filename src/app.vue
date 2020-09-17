@@ -293,7 +293,8 @@
             }
 
             .region-details {
-                width: 500px;
+                // 7 * 70 + 32 + scrollbar
+                width: 540px;
             }
 
             .region-details--mobile {

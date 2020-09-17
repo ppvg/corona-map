@@ -29,6 +29,9 @@
             isAtEnd() {
                 return this.$store.state.settings.currentDateOffset === 0;
             },
+            isAtStart() {
+                return this.$store.state.settings.currentDateOffset === this.max;
+            },
             date() {
                 return this.$store.getters['ui/dateString'];
             }
@@ -46,6 +49,9 @@
                         this.stop();
                     }
                 }, 50)
+            },
+            oneBack() {
+                this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: (this.$store.state.settings.currentDateOffset +1)});
             },
             stop() {
                 this.playing = false;
@@ -69,26 +75,34 @@
                     :duration="0"/>
         </div>
 
+        <div class="vue-slider__icons">
+            <div
+                    v-if="isAtEnd"
+                    @click="rewind()"
+                    class="icon-button">
+                <img src="assets/img/tools/redo.svg">
+            </div>
 
-        <div
-            v-if="isAtEnd"
-            @click="rewind()"
-            class="icon-button">
-            <img src="assets/img/tools/redo.svg">
-        </div>
+            <div
+                    v-if="!playing && !isAtEnd"
+                    @click="play()"
+                    class="icon-button">
+                <img src="assets/img/tools/play.svg">
+            </div>
 
-        <div
-            v-if="!playing && !isAtEnd"
-            @click="play()"
-            class="icon-button">
-            <img src="assets/img/tools/play.svg">
-        </div>
+            <div
+                    v-if="playing"
+                    @click="stop()"
+                    class="icon-button">
+                <img src="assets/img/tools/stop.svg">
+            </div>
 
-        <div
-            v-if="playing"
-            @click="stop()"
-            class="icon-button">
-            <img src="assets/img/tools/stop.svg">
+            <div
+                    v-if="!playing && !isAtStart"
+                    @click="oneBack()"
+                    class="icon-button">
+                <img src="assets/img/tools/back.svg">
+            </div>
         </div>
     </div>
 </template>
@@ -106,12 +120,20 @@
         width: calc(100% - 90px)!important;
 
         .vue-slider__container {
-            width: 100%;
+            width: calc(100% - 100px);
         }
 
-        .icon-button {
-            pointer-events: all;
+        .vue-slider__icons {
+            display: flex;
+            align-items: center;
+
+            .icon-button {
+                pointer-events: all;
+                margin-right: 8px;
+            }
         }
+
+
 
         .vue-slider {
             margin-right: 20px;
@@ -144,10 +166,6 @@
                     }
                 }
             }
-        }
-
-        @include mobile() {
-            width: calc(100% - 90px)!important;
         }
     }
 </style>

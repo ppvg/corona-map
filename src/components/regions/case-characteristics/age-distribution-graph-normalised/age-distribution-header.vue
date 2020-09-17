@@ -11,8 +11,7 @@
         computed: {
             width() {
                 return 7 * this.$store.state.settings.step;
-            },
-
+            }
         },
         methods: {
             getDateString(week) {
@@ -40,8 +39,13 @@
         </div>
         <div
             :style="{'width': width + 'px'}"
-            class="age-distribution-header__week">
+            class="age-distribution-header__week age-distribution-header__week--alt">
             Leeftijd
+        </div>
+        <div
+            :style="{'width': width + 'px'}"
+            class="age-distribution-header__week age-distribution-header__week--alt">
+            Inwoners
         </div>
     </div>
 </template>
@@ -65,6 +69,10 @@
             justify-content: center;
             border-right: 1px solid #fff;
             font-size: 10px;
+
+            &.age-distribution-header__week--alt {
+                background: #aaa;
+            }
         }
     }
 </style>

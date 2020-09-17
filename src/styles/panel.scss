@@ -4,6 +4,10 @@
     padding: 16px;
     height: 100%;
 
+    &:last-child {
+        border-right: 0;
+    }
+
     @include mobile() {
         display: none;
         width: 100%!important;

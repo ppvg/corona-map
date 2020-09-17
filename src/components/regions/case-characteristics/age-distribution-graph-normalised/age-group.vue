@@ -21,6 +21,9 @@
             }
         },
         computed: {
+            currentDateOffset() {
+                return this.$store.state.settings.currentDateOffset
+            },
             population() {
                 let population = 0;
                 for (let city of this.region.getCities()) {
@@ -31,7 +34,7 @@
                 }
                 return population;
             },
-            coverWidth() {
+            width() {
                 return 7 * this.$store.state.settings.step;
             }
         },
@@ -50,18 +53,19 @@
                 :region="region"
                 :population="population"/>
             <div
-                :style="{'width': coverWidth + 'px'}"
+                :class="{'age-group__cover--display': currentDateOffset < 3}"
+                :style="{'width': width + 'px'}"
                 class="age-group__cover"></div>
         </div>
-        <div class="age-group__head">
-            <div class="age-group__title">
-                {{ageGroup.title}}
-            </div>
-            <div class="age-group__population">
-                <span>
-                    inw: {{population}}
-                </span>
-            </div>
+        <div
+            :style="{'width': width + 'px'}"
+            class="age-group__title">
+            {{ageGroup.title}}
+        </div>
+        <div
+            :style="{'width': width + 'px'}"
+            class="age-group__population">
+            {{population}}
         </div>
     </div>
 </template>
@@ -75,25 +79,20 @@
         width: 100%;
         height: 32px;
 
-        .age-group__head {
-            width: 120px;
+        .age-group__title {
             height: 100%;
             padding: 4px 8px;
             align-items: center;
+            justify-content: center;
             display: flex;
+        }
 
-            .age-group__title {
-                width: 50px;
-            }
-
-            .age-group__population {
-
-                span {
-                    font-size: 8px;
-                    //background: #ddd;
-                    padding: 2px;
-                }
-            }
+        .age-group__population {
+            height: 100%;
+            padding: 4px 8px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
         }
 
         .age-group__weeks {
@@ -107,9 +106,14 @@
                 right: 0;
                 top: 0;
                 height: 100%;
-                background: rgba(255,255,255,0.9);
+                background: rgba(0,0,0,0.8);
                 z-index: 1;
-                //display: none;
+                opacity: 0;
+                transition: all 0.2s ease;
+
+                &.age-group__cover--display {
+                    opacity: 1;
+                }
             }
         }
     }
