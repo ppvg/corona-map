@@ -246,6 +246,49 @@
             top: 0;
             height: 100%;
             overflow: auto;
+
+            .sources {
+
+                .source__row {
+                    display: block;
+
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+
+                    .source__subject {
+                        width: 100%;
+                        border-right: 0;
+                        border-bottom: 1px solid #ddd;
+                    }
+
+                    .source__value {
+                        width: 100%;
+
+                        .source__value-row {
+                            flex-wrap: wrap;
+
+                            .source__value-what {
+                                width: 100%;
+                                border-right: 0;
+                                border-bottom: 1px solid #ddd;
+                            }
+
+                            .source__value-who {
+                                width: 100%;
+                                border-right: 0;
+                                border-bottom: 1px solid #ddd;
+                                padding-left: 32px;
+                            }
+
+                            .source__value-link {
+                                width: 100%;
+                                padding-left: 32px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 </style>
