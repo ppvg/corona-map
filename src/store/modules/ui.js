@@ -31,6 +31,16 @@ const getters = {
             return '';
         }
     },
+    getDateByOffset: (state) => (offset, dateFormat = 'EE d MMM') => {
+        let today, dateOfFocus;
+        today = state.today;
+        if (today) {
+            dateOfFocus = sub(today, {days: offset});
+            return format(dateOfFocus, dateFormat, {locale: nl} );
+        } else {
+            return '';
+        }
+    },
     currentRegion(state, getters, rootState, rootGetters) {
         let city = state.currentCity;
         if (city) {

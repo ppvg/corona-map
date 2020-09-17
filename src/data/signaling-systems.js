@@ -1,7 +1,7 @@
 let signalingSystems = [
     {
         id: 1,
-        title: 'Duitse signaalwaardes',
+        title: '@edwinveldhuizen',
         days: 7,
         population: 100000,
         thresholds: [
@@ -105,7 +105,7 @@ let signalingSystems = [
         ]
     }, {
         id: 4,
-        title: 'Duits II',
+        title: 'WHO',
         days: 7,
         population: 100000,
         thresholds: [
