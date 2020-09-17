@@ -17,9 +17,9 @@
             },
             description() {
                 if (this.ageDistributionAbsolute) {
-                    return 'De waardes in deze grafiek zijn aantallen positieve tests per leeftijdsgroep, gedurende 7 dagen';
+                    return 'Positieve tests per leeftijdsgroep, gedurende 7 dagen';
                 } else {
-                    return 'De waardes in deze grafiek zijn aantallen positieve tests per 100.000 inwoners van die leeftijdsgroep, gedurende 7 dagen';
+                    return 'Positieve tests per 100.000 inw. van die leeftijdsgroep, gedurende 7 dagen';
                 }
             },
             showException() {
@@ -42,7 +42,7 @@
         </div>
         <div class="age-distribution-tools__text">
             <div v-if="showException">
-                * De data van de laatste dagen wordt nog aangevuld, daarom wordt deze week verborgen.
+                * Data van aatste dagen wordt nog aangevuld, daarom wordt deze verborgen.
             </div>
         </div>
         <div class="age-distribution-tools__tools">
@@ -85,8 +85,7 @@
         font-size: 12px;
 
         .age-distribution-tools__text {
-            height: 36px;
-            margin-bottom: 12px;
+            height: 18px;
         }
 
 

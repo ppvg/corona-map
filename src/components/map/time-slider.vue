@@ -48,7 +48,7 @@
                     } else {
                         this.stop();
                     }
-                }, 50)
+                }, 200)
             },
             oneBack() {
                 this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: (this.$store.state.settings.currentDateOffset +1)});

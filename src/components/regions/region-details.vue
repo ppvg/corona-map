@@ -106,6 +106,20 @@
                 <age-distribution-tools/>
             </div>
             <div class="region-details__section">
+                <div class="region-details__section-header">
+                    Testen GGD
+                </div>
+                <test-graph :region="region"/>
+            </div>
+            <div
+                v-if="region.regionType === 'city'"
+                class="region-details__section">
+                <div class="region-details__row">
+                    <sewage-treatment-plants
+                        :city="region"/>
+                </div>
+            </div>
+            <div class="region-details__section">
                 <div class="region-details__row">
                     <div class="region-details__label">
                         Inwoners
@@ -147,20 +161,6 @@
                     <div class="region-details__value">
                         {{format(Math.round(region.getTotalRelativeIncreaseWeek()))}}
                     </div>
-                </div>
-            </div>
-            <div class="region-details__section">
-                <div class="region-details__section-header">
-                    Testen GGD
-                </div>
-                <test-graph :region="region"/>
-            </div>
-            <div
-                v-if="region.regionType === 'city'"
-                class="region-details__section">
-                <div class="region-details__row">
-                    <sewage-treatment-plants
-                        :city="region"/>
                 </div>
             </div>
         </div>

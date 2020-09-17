@@ -60,12 +60,12 @@
                 :age-group="ageGroup"
                 :region="region"
                 :population="population"/>
-<!--            <div-->
-<!--                :style="{-->
-<!--                    'width': width + 'px',-->
-<!--                    'opacity': opacityCover + '%'-->
-<!--                }"-->
-<!--                class="age-group__cover"></div>-->
+            <div
+                :style="{
+                    'width': width + 'px',
+                    'opacity': opacityCover + '%'
+                }"
+                class="age-group__cover"></div>
         </div>
         <div
             :style="{'width': width + 'px'}"

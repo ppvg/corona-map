@@ -34,7 +34,7 @@
             cases() {
                 let cases, offset, start;
                 cases = 0;
-                offset = (this.week * 7) - this.currentDateOffset;
+                offset = (this.week * 7) + this.currentDateOffset;
                 start = this.region.report.length - 1 - offset;
                 for (let i = start; i > start - 7; i--) {
                     let date, day, ageGroup;

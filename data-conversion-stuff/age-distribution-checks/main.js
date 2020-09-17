@@ -6,8 +6,8 @@ dateObj = {};
 settings = {
     ggd: 'GGD Amsterdam',
     ageGroup: '60-69',
-    dateMin: new Date('2020-09-04').getTime(),
-    dateMax: new Date('2020-09-10').getTime(),
+    dateMin: new Date('2020-07-31').getTime(),
+    dateMax: new Date('2020-08-06').getTime(),
 };
 
 
@@ -35,7 +35,7 @@ d3.csv(url)
                     if (!dateObj[date]) {
                         dateObj[date] = 0;
                     }
-                    dateObj[date]++
+                    dateObj[date]++;
                     count++;
                 }
             }
