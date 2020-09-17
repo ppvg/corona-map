@@ -53,6 +53,12 @@
             },
             color() {
                 return thresholdTools.thresholdToColor(this.threshold, this.casesPerPopulation);
+            },
+            ageDistributionAbsolute() {
+                return this.$store.state.settings.ageDistributionAbsolute;
+            },
+            value() {
+                return this.ageDistributionAbsolute ? this.cases : this.casesPerPopulation;
             }
         },
         methods: {}
@@ -66,9 +72,8 @@
             'width': width + 'px',
             'background': color
         }"
-        :title="cases + ' cases ' + population + ' inwoners'"
         class="age-group-week">
-        {{casesPerPopulation}}
+        {{value}}
     </div>
 </template>
 

@@ -11,16 +11,23 @@
         computed: {
             width() {
                 return 7 * this.$store.state.settings.step;
+            },
+            currentDateOffset() {
+                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {
             getDateString(week) {
-                let date1, date2, format1, format2;
+                let date1, date2, format1, format2, string;
                 format1 = 'd';
                 format2 = 'd MMM';
-                date1 = this.$store.getters['ui/getDateByOffset']((week * 7 + 6), format1);
-                date2 = this.$store.getters['ui/getDateByOffset']((week * 7), format2);
-                return date1 + ' - ' + date2;
+                date1 = this.$store.getters['ui/getDateByOffset']((week * 7 + 6 + this.currentDateOffset), format1);
+                date2 = this.$store.getters['ui/getDateByOffset']((week * 7 + this.currentDateOffset), format2);
+                string = date1 + ' - ' + date2;
+                if (this.currentDateOffset < 3 && week === 0) {
+                    string += ' *';
+                }
+                return string;
             }
         }
     }

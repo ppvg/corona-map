@@ -6,10 +6,13 @@
     import _Region from "@/classes/_Region";
     import loader from "@/components/elements/loader";
     import ageDistributionGraphNormalised from "./case-characteristics/age-distribution-graph-normalised/age-distribution-graph-normalised";
+    import AgeDistributionTools
+        from "./case-characteristics/age-distribution-graph-normalised/age-distribution-tools";
 
     export default {
         name: 'region-details',
         components: {
+            AgeDistributionTools,
             ageDistributionGraphNormalised,
             loader,
             regionTypePicker,
@@ -92,7 +95,7 @@
                 v-if="(region.regionType === 'ggd') && caseDataRequested"
                 class="region-details__section">
                 <div class="region-details__section-header">
-                    Leeftijdsverdeling (beta) {{date}}
+                    Leeftijdsverdeling (beta)
                 </div>
                 <div class="age-distribution-graph__container">
                     <age-distribution-graph-normalised
@@ -100,21 +103,8 @@
                         :region="region"/>
                     <loader v-else/>
                 </div>
-
+                <age-distribution-tools/>
             </div>
-<!--            <div-->
-<!--                v-if="(region.regionType === 'ggd' || region.regionType === 'country') && caseDataRequested"-->
-<!--                class="region-details__section">-->
-<!--                <div class="region-details__section-header">-->
-<!--                    Leeftijdsverdeling (beta)-->
-<!--                </div>-->
-<!--                <div class="age-distribution-graph__container">-->
-<!--                    <age-distribution-graph-->
-<!--                            v-if="caseDataLoaded"-->
-<!--                            :region="region"/>-->
-<!--                    <loader v-if="!caseDataLoaded"/>-->
-<!--                </div>-->
-<!--            </div>-->
             <div class="region-details__section">
                 <div class="region-details__row">
                     <div class="region-details__label">
@@ -233,9 +223,10 @@
         }
 
         .age-distribution-graph__container {
-            height: 400px;
+            height: 352px;
             position: relative;
             background: #fff;
+            margin-bottom: 12px;
         }
 
         @include mobile() {

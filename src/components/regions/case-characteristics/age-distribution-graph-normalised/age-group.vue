@@ -36,6 +36,14 @@
             },
             width() {
                 return 7 * this.$store.state.settings.step;
+            },
+            opacityCover() {
+                let uncertainDays = 3;
+                if (this.currentDateOffset > uncertainDays) {
+                    return 0;
+                } else {
+                    return 100 - (this.currentDateOffset * (100 / uncertainDays))
+                }
             }
         },
         methods: {}
@@ -53,8 +61,10 @@
                 :region="region"
                 :population="population"/>
             <div
-                :class="{'age-group__cover--display': currentDateOffset < 3}"
-                :style="{'width': width + 'px'}"
+                :style="{
+                    'width': width + 'px',
+                    'opacity': opacityCover + '%'
+                }"
                 class="age-group__cover"></div>
         </div>
         <div
@@ -106,14 +116,9 @@
                 right: 0;
                 top: 0;
                 height: 100%;
-                background: rgba(0,0,0,0.8);
+                background: #fff;
                 z-index: 1;
-                opacity: 0;
                 transition: all 0.2s ease;
-
-                &.age-group__cover--display {
-                    opacity: 1;
-                }
             }
         }
     }

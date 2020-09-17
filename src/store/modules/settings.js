@@ -9,7 +9,8 @@ const state = {
     weeks: 5, // weeks
     historyLength: 70,
     currentDateOffset: 0,
-    gradient: true
+    gradient: true,
+    ageDistributionAbsolute: false
 };
 
 const getters = {
