@@ -23,22 +23,114 @@
         </div>
 
         <div class="credits__section">
-            Bronnen en dank voor data:
-            <ul>
-                <li>
-                    Data besmettingen via <a href="https://twitter.com/mzelst" target="_blank">@mzelst</a>,
-                    <a href="https://github.com/mzelst/covid-19/blob/master/data/municipality-totals.csv" target="_blank">bron</a>
-                </li>
-                <li>
-                    Data rioolmetingen via <a href="https://data.rivm.nl/covid-19/COVID-19_rioolwaterdata.json" target="_blank">RIVM</a>
-                </li>
-                <li>
-                    Geo data via <a href="https://services.arcgis.com/" target="_blank">arcgis.com</a>
-                </li>
-                <li>
-                    Grenswaardes voor kleurindeling overgenomen van <a href="https://twitter.com/edwinveldhuizen" target="_blank">@edwinveldhuizen</a>
-                </li>
-            </ul>
+            Bronnen:
+            <div class="sources">
+                <div class="source__row">
+                    <div class="source__subject">
+                        Data positieve testen
+                    </div>
+                    <div class="source__value">
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Dagelijkse aantallen covid 19 per gemeente per dag
+                            </div>
+                            <div class="source__value-who">
+                                RIVM
+                            </div>
+                            <div class="source__value-link">
+                                https://data.rivm.nl/covid-19/COVID-19_aantallen_gemeente_per_dag.csv
+                            </div>
+                        </div>
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Publicatie van RIVM verzameld en gecorrigeerd
+                            </div>
+                            <div class="source__value-who">
+                                <a href="https://twitter.com/mzelst" target="_blank">@mzelst</a> en <a href="https://twitter.com/edwinveldhuizen" target="_blank">@edwinveldhuizen</a>
+                            </div>
+                            <div class="source__value-link">
+                                https://github.com/mzelst/covid-19/blob/master/data/municipality-totals.csv
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="source__row">
+                    <div class="source__subject">
+                        Data rioolmetingen
+                    </div>
+                    <div class="source__value">
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Wekelijkse rioolmetingen per rwzi
+                            </div>
+                            <div class="source__value-who">
+                                RIVM
+                            </div>
+                            <div class="source__value-link">
+                                https://data.rivm.nl/covid-19/COVID-19_rioolwaterdata.csv
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="source__row">
+                    <div class="source__subject">
+                        Data leeftijdsverdeling
+                    </div>
+                    <div class="source__value">
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Dagelijkse casus covid 19
+                            </div>
+                            <div class="source__value-who">
+                                RIVM
+                            </div>
+                            <div class="source__value-link">
+                                https://data.rivm.nl/covid-19/COVID-19_casus_landelijk.csv
+                            </div>
+                        </div>
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Publicatie van RIVM verzameld
+                            </div>
+                            <div class="source__value-who">
+                                <a href="https://twitter.com/mzelst" target="_blank">@mzelst</a>
+                            </div>
+                            <div class="source__value-link">
+                                https://github.com/mzelst/covid-19/blob/master/data-dashboards/cases_ggd_agegroups.csv
+                            </div>
+                        </div>
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Data leeftijdsgroepen per gemeente
+                            </div>
+                            <div class="source__value-who">
+                                CBS en bewerking <a href="https://twitter.com/jannoTR" target="_blank">@jannoTR</a>
+                            </div>
+                            <div class="source__value-link">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="source__row">
+                    <div class="source__subject">
+                        Geo data voor gemeentegrenzen
+                    </div>
+                    <div class="source__value">
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Geo data voor gemeentegrenzen
+                            </div>
+                            <div class="source__value-who">
+                                Esri Nederland Conten
+                            </div>
+                            <div class="source__value-link">
+                                https://hub.arcgis.com/datasets/e1f0dd70abcb4fceabbc43412e43ad4b_0
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="credits__section">
             Bron van deze applicatie: <a href="https://github.com/innouveau/corona-map" target="_blank">github repo</a>
@@ -68,8 +160,60 @@
         height: calc(100% - 40px);
         background: #fff;
         z-index: 10;
-        font-size: 16px;
         box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+        overflow: auto;
+        font-size: 12px;
+
+        .sources {
+            margin-top: 12px;
+            border: 1px solid #ddd;
+
+            .source__row {
+                display: flex;
+                border-bottom: 1px solid #ddd;
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+
+                .source__subject {
+                    width: 200px;
+                    border-right: 1px solid #ddd;
+                    padding: 8px;
+                    font-weight: 700;
+                }
+
+                .source__value {
+                    width: calc(100% - 200px);
+
+                    .source__value-row {
+                        display: flex;
+                        border-bottom: 1px solid #ddd;
+
+                        &:last-child {
+                            border-bottom: 0;
+                        }
+
+                        .source__value-what {
+                            width: 200px;
+                            border-right: 1px solid #ddd;
+                            padding: 8px;
+                        }
+
+                        .source__value-who {
+                            width: 200px;
+                            border-right: 1px solid #ddd;
+                            padding: 8px;
+                        }
+
+                        .source__value-link {
+                            width: calc(100% - 400px);
+                            padding: 8px;
+                        }
+                    }
+                }
+            }
+        }
 
         .credits__section {
             padding: 20px;
