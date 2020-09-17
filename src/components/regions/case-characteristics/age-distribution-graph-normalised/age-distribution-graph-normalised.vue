@@ -49,6 +49,6 @@
     @import '@/styles/variables.scss';
 
     .age-distribution-graph-normalised {
-        font-size: 10px;
+        font-size: 9px;
     }
 </style>

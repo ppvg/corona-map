@@ -62,19 +62,18 @@
                 <img src="assets/img/tools/7xback.svg">
             </div>
             <div
-                v-if="currentDateOffset > 0"
-                @click="move(-1)"
-                class="icon-button">
-                <img src="assets/img/tools/forward.svg">
-            </div>
-            <div
                 v-if="currentDateOffset > 6"
                 @click="move(-7)"
                 class="icon-button">
                 <img src="assets/img/tools/7xforward.svg">
             </div>
+            <div
+                v-if="currentDateOffset > 0"
+                @click="move(-1)"
+                class="icon-button">
+                <img src="assets/img/tools/forward.svg">
+            </div>
         </div>
-
     </div>
 </template>
 

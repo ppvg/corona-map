@@ -73,22 +73,18 @@
                 }
 
                 for (let entry of entries) {
-                    let ggd, day, ageGroup, month;
-                    //month = Number(entry.date.split('-')[1]);
-                    // currently just a rough cut, todo based on current date
-                    //if (month > 6) {
-                        ggd = getGgd(entry.ggd_code);
-                        if (ggd) {
-                            day = getDay(ggd, entry.date);
-                            day.total += Number(entry.cases);
-                            day.ageGroups.push({
-                                title: entry.age_group,
-                                cases: Number(entry.cases)
-                            });
-                        } else {
-                            console.log(entry);
-                        }
-                    //}
+                    let ggd, day;
+                    ggd = getGgd(entry.ggd_code);
+                    if (ggd) {
+                        day = getDay(ggd, entry.date);
+                        day.total += Number(entry.cases);
+                        day.ageGroups.push({
+                            title: entry.age_group,
+                            cases: Number(entry.cases)
+                        });
+                    } else {
+                        console.log(entry);
+                    }
                 }
 
                 for (let ggdData of ggds) {

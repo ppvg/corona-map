@@ -32,15 +32,20 @@
                 return this.$store.state.settings.currentDateOffset;
             },
             cases() {
-                let cases, start;
+                let cases, offset, start;
                 cases = 0;
-                start = this.region.report.length - (this.week * 7) - 1 - this.currentDateOffset;
+                offset = (this.week * 7) - this.currentDateOffset;
+                start = this.region.report.length - 1 - offset;
                 for (let i = start; i > start - 7; i--) {
-                    let day, ageGroup;
-                    day = this.region.report[i];
-                    ageGroup = day.ageGroups.find(a => a.title === this.ageGroup.title);
-                    if (ageGroup) {
-                        cases += ageGroup.cases;
+                    let date, day, ageGroup;
+                    date = this.$store.getters['ui/getDateByOffset'](offset, 'yyyy-MM-dd');
+                    offset++;
+                    day = this.region.report.find(d => d.date === date);
+                    if (day) {
+                        ageGroup = day.ageGroups.find(a => a.title === this.ageGroup.title);
+                        if (ageGroup) {
+                            cases += ageGroup.cases;
+                        }
                     }
                 }
                 return cases;
