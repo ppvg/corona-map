@@ -94,5 +94,6 @@
         align-items: center;
         justify-content: center;
         transition: all 0.1s ease;
+        flex-shrink: 0;
     }
 </style>

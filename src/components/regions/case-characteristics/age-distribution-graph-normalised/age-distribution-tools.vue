@@ -85,7 +85,7 @@
         font-size: 12px;
 
         .age-distribution-tools__text {
-            height: 18px;
+            //height: 18px;
         }
 
 

@@ -95,6 +95,7 @@
             align-items: center;
             justify-content: center;
             display: flex;
+            flex-shrink: 0;
         }
 
         .age-group__population {
@@ -103,6 +104,7 @@
             align-items: center;
             justify-content: center;
             display: flex;
+            flex-shrink: 0;
         }
 
         .age-group__weeks {

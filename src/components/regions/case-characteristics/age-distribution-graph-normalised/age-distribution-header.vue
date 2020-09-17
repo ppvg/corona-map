@@ -76,6 +76,7 @@
             justify-content: center;
             border-right: 1px solid #fff;
             font-size: 10px;
+            flex-shrink: 0;
 
             &.age-distribution-header__week--alt {
                 background: #aaa;
