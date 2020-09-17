@@ -14,12 +14,13 @@
             ageGroup: {
                 type: Object,
                 required: true
+            },
+            weeks: {
+                type: Array,
+                required: true
             }
         },
         computed: {
-            weeks() {
-                return [...Array(this.$store.state.settings.weeks).keys()].slice().reverse();
-            },
             population() {
                 let population = 0;
                 for (let city of this.region.getCities()) {
@@ -73,7 +74,6 @@
         display: flex;
         width: 100%;
         height: 32px;
-        font-size: 10px;
 
         .age-group__head {
             width: 120px;

@@ -25,7 +25,7 @@
             }
         },
         computed: {
-            step() {
+            width() {
                 return 7 * this.$store.state.settings.step;
             },
             currentDateOffset() {
@@ -63,7 +63,7 @@
 <template>
     <div
         :style="{
-            'width': step + 'px',
+            'width': width + 'px',
             'background': color
         }"
         :title="cases + ' cases ' + population + ' inwoners'"
