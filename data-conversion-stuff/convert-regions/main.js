@@ -4,7 +4,9 @@ $.getJSON( "regions.json", function( data ) {
     for (let item of data.features) {
         let region, paths;
         region = {};
+        region.id = regions.length + 1;
         region.title = item.properties.Stadsdeel;
+        region.municipality_code = item.properties.Stadsdeel;
         region.area = item.properties.Opp_m2;
 
         if (item.geometry.type === 'MultiPolygon') {

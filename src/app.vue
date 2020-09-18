@@ -42,19 +42,6 @@
             width() {
                 return this.$store.state.settings.canvasWidth + 20;
             },
-            lastDates() {
-                let n, dates, today;
-                n = (this.$store.state.settings.weeks * 7) + this.$store.state.settings.historyLength + 1;
-                dates = [];
-                today = this.$store.state.ui.today;
-                for (let i = 0; i < n; i++) {
-                    let date, formatted;
-                    date = sub(today, {days: i}) ;
-                    formatted = format(date, 'yyyy-MM-dd');
-                    dates.unshift(formatted);
-                }
-                return dates;
-            },
             showCredits() {
                 return this.$store.state.ui.credits;
             },
@@ -105,7 +92,7 @@
                     if (this.currentMap.settings.hasSewageTreatmentPlants) {
                         promises.push(this.loadSewageTreatmentPlants);
                     }
-                    if (promises.length) {
+                    if (promises.length === 0) {
                         this.readQuery();
                         this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
                     } else {
@@ -201,8 +188,9 @@
                 }
             },
             addReport(data) {
-                let key, city, report, absoluteNumbers;
-                absoluteNumbers = [];
+                let keys, key, city, report, incidents;
+                keys = [];
+                incidents = [];
                 const convertToNumber = function(value) {
                     let numb = Number(value);
                     if (!isNaN(numb)) {
@@ -213,31 +201,45 @@
                 };
 
                 report = {
-                    increaseDay: convertToNumber(data['increase']),
-                    increaseWeek: convertToNumber(data['increase.week']),
-                    relativeIncreaseDay: convertToNumber(data['rel.increase']),
-                    relativeIncreaseWeek: convertToNumber(data['rel.increase.week']),
                     history: []
                 };
-                for (let date of this.lastDates) {
-                    let dateKey = 'Total_reported.' + date;
+                for (let key in data) {
+                    if (key.indexOf('Total_reported.') > -1) {
+                        keys.push(key);
+                    }
+                }
+                for (let dateKey of keys) {
                     if (data[dateKey]) {
-                        absoluteNumbers.push(Number(data[dateKey]));
+                        let date, value;
+                        date = dateKey.slice(15);
+                        value = Number(data[dateKey]);
+                        incidents.push({
+                            date,
+                            value
+                        });
                     }
                 }
-                for (let i = 0, l = absoluteNumbers.length; i < l; i++) {
-                    if (i > 0) {
-                        let value = absoluteNumbers[i] - absoluteNumbers[i - 1];
-                        report.history.push(value);
+                if (this.currentMap.settings.testDataCumulative) {
+                    for (let i = 0, l = incidents.length; i < l; i++) {
+                        if (i > 0) {
+                            let value = incidents[i].value - incidents[i - 1].value;
+                            report.history.push({
+                                date: incidents[i].date,
+                                value
+                            });
+                        }
                     }
+                } else {
+                    report.history = incidents;
                 }
+
                 key = data.Municipality_code;
                 if (this.$store.state.cities.dict[key]) {
                     city = this.$store.state.cities.dict[key];
                     this.$store.commit('cities/updatePropertyOfItem', {item: city, property: 'report', value: report});
                     this.$store.commit('cities/updatePropertyOfItem', {item: city, property: 'population', value: convertToNumber(data.population)})
                 } else {
-                    console.log('not found ' + key);
+                    // console.log('not found ' + key);
                 }
             },
             openCredits() {
@@ -253,7 +255,7 @@
 
 <template>
     <div class="app">
-        <header-menu/>
+        <header-menu v-if="dataLoaded"/>
 
         <div
             v-if="dataLoaded"

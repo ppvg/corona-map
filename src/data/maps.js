@@ -7,6 +7,7 @@ const maps = [
             regionTypes: ['ggd', 'sr', 'country'],
             hasAgeGroups: true,
             hasSewageTreatmentPlants: true,
+            testDataCumulative: true,
             map: {
                 latitude: 52.15,
                 longitude: 5.34,
@@ -27,8 +28,9 @@ const maps = [
         settings: {
             regionTypes: ['ggd'],
             hasAgeGroups: false,
-            hasTests: false,
+            hasTests: true,
             hasSewageTreatmentPlants: false,
+            testDataCumulative: false,
             map: {
                 latitude: 52.36,
                 longitude: 4.92,
@@ -37,7 +39,7 @@ const maps = [
             }
         },
         url: {
-            tests: (window.config.dataUrl + 'data/municipality-totals.csv'),
+            tests: 'data/amsterdam-positieve-tests.csv',
             regions: 'data/amsterdam.json',
             ageGroups: 'data/cities-population-agegroup.csv',
             sewageTreatmentPlants: (window.config.sewageDataUrl + 'sewage-measurements-connected-to-city-codes.json')

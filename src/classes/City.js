@@ -14,7 +14,9 @@ class City extends _Region {
         area = 0,
         paths = [],
         ageGroups = [],
-        report = null
+        report = {
+            history: []
+        }
     }) {
         super();
         this.regionType = 'city';
@@ -33,7 +35,7 @@ class City extends _Region {
 
     get increaseDay() {
         let offset = store.state.settings.currentDateOffset;
-        return this.report.history[this.report.history.length - 1 - offset];
+        return this.report.history[this.report.history.length - 1 - offset].value;
     }
 
     getIncreaseDay(delta = 0) {
