@@ -114,7 +114,7 @@
                 </div>
                 <div class="source__row">
                     <div class="source__subject">
-                        Geo data voor gemeentegrenzen
+                        Geo data
                     </div>
                     <div class="source__value">
                         <div class="source__value-row">
@@ -126,6 +126,17 @@
                             </div>
                             <div class="source__value-link">
                                 https://hub.arcgis.com/datasets/e1f0dd70abcb4fceabbc43412e43ad4b_0
+                            </div>
+                        </div>
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Geo data Amsterdam
+                            </div>
+                            <div class="source__value-who">
+                                Amsterdam.nl
+                            </div>
+                            <div class="source__value-link">
+                                https://maps.amsterdam.nl/open_geodata/geojson.php?KAARTLAAG=GEBIED_STADSDELEN_EXWATER&THEMA=gebiedsindeling
                             </div>
                         </div>
                     </div>

@@ -12,6 +12,11 @@
             type: {
                 type: Object,
                 required: true
+            },
+            n: {
+                type: Number,
+                required: false,
+                default: 1
             }
         },
         computed: {
@@ -23,6 +28,13 @@
             },
             ggds() {
                 return this.$store.state.ggds.all;
+            },
+            width() {
+                if (this.type.showRegion) {
+                    return 'auto';
+                } else {
+                    return 'calc(100% / ' + this.n + ')';
+                }
             }
         },
         methods: {
@@ -117,6 +129,7 @@
             'region-type--current': isActive,
             'region-type--with-region': type.showRegion
         }"
+        :style="{'width': width}"
         class="region-type">
         <div
             v-if="type.showRegion"
@@ -171,7 +184,6 @@
         }
 
         &:not(.region-type--with-region) {
-            width: calc(100% / 4);
             height: 100%;
 
             .region-type__label {

@@ -8,13 +8,16 @@
             regionType
         },
         computed: {
+            currentMap() {
+                return this.$store.state.maps.current;
+            },
             types() {
                 let city, store;
                 city = this.city;
                 store = this.$store;
                 return [
                     {
-                        label: 'Gemeente',
+                        label: this.currentMap.regionType,
                         showRegion: false,
                         tag: 'city'
                     },
@@ -33,7 +36,9 @@
                         showRegion: false,
                         tag: 'country'
                     }
-                ]
+                ].filter(type => {
+                    return type.tag === 'city' || this.currentMap.settings.regionTypes.indexOf(type.tag) > -1;
+                })
             }
         },
         methods: {}
@@ -45,7 +50,8 @@
     <div class="region-type-picker-2">
         <region-type
             v-for="type in types"
-            :type="type"/>
+            :type="type"
+            :n="types.length"/>
     </div>
 </template>
 

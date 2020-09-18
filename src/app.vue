@@ -96,21 +96,28 @@
                 $.getJSON(this.currentMap.url.regions, (regions) => {
                     let promises = [];
                     this.$store.commit('cities/init', regions);
-                    promises.push(this.loadTests);
+                    if (this.currentMap.settings.hasTests) {
+                        promises.push(this.loadTests);
+                    }
                     if (this.currentMap.settings.hasAgeGroups) {
                         promises.push(this.loadAgeGroupsForCities);
                     }
                     if (this.currentMap.settings.hasSewageTreatmentPlants) {
                         promises.push(this.loadSewageTreatmentPlants);
                     }
-                    Promise.all(promises.map(p => p()))
-                        .then((result) => {
-                            this.readQuery();
-                            this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
-                        })
-                        .catch(error => {
-                            console.error(error)
-                        });
+                    if (promises.length) {
+                        this.readQuery();
+                        this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
+                    } else {
+                        Promise.all(promises.map(p => p()))
+                            .then((result) => {
+                                this.readQuery();
+                                this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
+                            })
+                            .catch(error => {
+                                console.error(error)
+                            });
+                    }
                 });
             },
             loadSewageTreatmentPlants() {
@@ -261,15 +268,15 @@
                 <map-netherlands v-if="dataLoaded"/>
             </div>
 
-            <trends/>
-            <region-details
-                v-if="showCity"
-                :region="currentRegion"/>
-            <div
-                v-else
-                class="region-details region-details--mobile">
-                Kies eerst een gemeente op de kaart.
-            </div>
+<!--            <trends/>-->
+<!--            <region-details-->
+<!--                v-if="showCity"-->
+<!--                :region="currentRegion"/>-->
+<!--            <div-->
+<!--                v-else-->
+<!--                class="region-details region-details&#45;&#45;mobile">-->
+<!--                Kies eerst een gemeente op de kaart.-->
+<!--            </div>-->
         </div>
 
         <credits v-if="showCredits"/>

@@ -59,6 +59,9 @@
             },
             gradient() {
                 return this.$store.state.settings.gradient;
+            },
+            currentMap() {
+                return this.$store.state.maps.current;
             }
         },
         methods: {
@@ -104,7 +107,7 @@
                 }
                 this.$store.commit('settings/updateProperty', {key: 'canvasHeight', value: height});
                 this.$store.commit('settings/updateProperty', {key: 'canvasWidth', value: Math.round(ratio * height)});
-                this.$store.commit('settings/updateProperty', {key: 'zoom', value: (height / 2.9)});
+                this.$store.commit('settings/updateProperty', {key: 'zoom', value: (height * this.currentMap.settings.map.zoom)});
 
             },
             addEvents() {

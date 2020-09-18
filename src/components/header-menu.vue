@@ -25,6 +25,15 @@
                         value: 'city'
                     }
                 ]
+            },
+            currentMap() {
+                return this.$store.state.maps.current
+            },
+            hasTests() {
+                return this.currentMap && this.currentMap.settings.hasTests;
+            },
+            mapTitle() {
+                return this.$store.state.maps.current ? this.$store.state.maps.current.title : '';
             }
         },
         methods: {}
@@ -36,7 +45,8 @@
     <div class="header-menu">
         <div class="title">
             <h1>
-                Corona status <date-string/> <total-infections/>
+                Corona status {{mapTitle}} <date-string/>
+                <total-infections v-if="hasTests"/>
             </h1>
         </div>
 

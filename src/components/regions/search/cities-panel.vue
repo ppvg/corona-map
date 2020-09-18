@@ -13,6 +13,9 @@
             },
             hoverValue() {
                 return this.$store.state.ui.hoverValue;
+            },
+            regionType() {
+                return 'Zoek ' + this.$store.state.maps.current.regionType.toLowerCase() + ' of klik op de kaart';
             }
         },
         methods: {
@@ -29,7 +32,7 @@
         <input
             :value="searchValue"
             @keyup="updateSearchValue"
-            placeholder="Zoek gemeente of klik op de kaart">
+            :placeholder="regionType">
         <div
             v-if="hoverValue.length > 0"
             class="hover-value">{{hoverValue}}</div>

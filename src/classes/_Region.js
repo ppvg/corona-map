@@ -82,8 +82,12 @@ class _Region {
     }
 
     getTotalRelativeIncreaseWeek() {
-        let increase = this.getTotalIncreaseWeek();
-        return 100000 * increase / this.getTotalPopulation();
+        if (store.state.maps.current.settings.hasTests) {
+            let increase = this.getTotalIncreaseWeek();
+            return 100000 * increase / this.getTotalPopulation();
+        } else {
+            return 0;
+        }
     }
 
     getTotalReport() {
@@ -113,14 +117,18 @@ class _Region {
     }
 
     getThreshold(delta = 0) {
-        let cases, signalingSystem;
-        signalingSystem = store.state.signalingSystems.current;
-        if (signalingSystem.days === 1) {
-            cases = this.getTotalIncreaseDay(delta);
-        } else if (signalingSystem.days === 7) {
-            cases = this.getTotalIncreaseWeek(delta);
+        if (store.state.maps.current.settings.hasTests) {{
+            let cases, signalingSystem;
+            signalingSystem = store.state.signalingSystems.current;
+            if (signalingSystem.days === 1) {
+                cases = this.getTotalIncreaseDay(delta);
+            } else if (signalingSystem.days === 7) {
+                cases = this.getTotalIncreaseWeek(delta);
+            }
+            return thresholdTools.getThreshold(cases, this.getTotalPopulation(), signalingSystem.days);
+        }} else {
+            return null;
         }
-        return thresholdTools.getThreshold(cases, this.getTotalPopulation(), signalingSystem.days);
     }
 
     get color() {
