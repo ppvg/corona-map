@@ -40,17 +40,21 @@ class City extends _Region {
 
     getIncreaseDay(delta = 0) {
         let offset = store.state.settings.currentDateOffset;
-        return this.report.history[this.report.history.length - 1 - (offset + delta)];
+        return this.report.history[this.report.history.length - 1 - (offset + delta)].value;
     }
 
     getIncreaseWeek(delta = 0) {
         let total, offset;
-        total = 0;
         offset = store.state.settings.currentDateOffset + delta;
-        for (let i = (this.report.history.length - 1 - offset), l = (this.report.history.length - 8 - offset); i > l; i--) {
-            total += this.report.history[i];
+        if (store.state.maps.current.settings.testDataInterval === 1) {
+            total = 0;
+            for (let i = (this.report.history.length - 1 - offset), l = (this.report.history.length - 8 - offset); i > l; i--) {
+                total += this.report.history[i].value;
+            }
+            return total;
+        } else {
+            return this.report.history[this.report.history.length - 1 - offset].value
         }
-        return total;
     }
 
     getRelativeIncreaseWeek() {

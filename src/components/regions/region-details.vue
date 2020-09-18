@@ -59,6 +59,12 @@
             },
             date() {
                 return this.$store.getters['ui/dateString'];
+            },
+            hasDays() {
+                return this.$store.state.maps.current.settings.testDataInterval === 1;
+            },
+            hasSewageTreatmentPlants() {
+                return this.$store.state.maps.current.settings.hasSewageTreatmentPlants;
             }
         },
         methods: {
@@ -88,8 +94,8 @@
         </div>
         <div class="region-details__info">
             <div class="region-details__section">
-                <region-type-picker
-                    :city="city"/>
+<!--                <region-type-picker-->
+<!--                    :city="city"/>-->
             </div>
             <div
                 v-if="(region.regionType === 'ggd') && caseDataRequested"
@@ -112,7 +118,7 @@
                 <test-graph :region="region"/>
             </div>
             <div
-                v-if="region.regionType === 'city'"
+                v-if="region.regionType === 'city' && hasSewageTreatmentPlants"
                 class="region-details__section">
                 <div class="region-details__row">
                     <sewage-treatment-plants
@@ -130,7 +136,7 @@
                 </div>
             </div>
             <div class="region-details__section">
-                <div class="region-details__row">
+                <div v-if="hasDays" class="region-details__row">
                     <div class="region-details__label">
                         Toename vandaag
                     </div>
@@ -138,7 +144,7 @@
                         {{format(region.getTotalIncreaseDay())}}
                     </div>
                 </div>
-                <div class="region-details__row">
+                <div v-if="hasDays" class="region-details__row">
                     <div class="region-details__label">
                         Relatieve toename vandaag (per 100 dzd inw)
                     </div>

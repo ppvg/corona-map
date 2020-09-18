@@ -55,6 +55,12 @@
             },
             signalingSystem() {
                 return this.$store.state.signalingSystems.current;
+            },
+            ms() {
+                return new Date(this.$store.state.ui.today).getTime();
+            },
+            currentMap() {
+                return this.$store.state.maps.current;
             }
         },
         methods: {
@@ -124,23 +130,28 @@
                 step = this.step;
                 history = this.region.getTotalReport().history;
 
-                const getValue = (value) => {
+                const getY = (day) => {
                     // for the graph we always use 100000, independent from the signaling system
-                    let relativeValue = 100000 * value / this.region.getTotalPopulation();
+                    let relativeValue = 100000 * (day.value / this.currentMap.settings.testDataInterval) / this.region.getTotalPopulation();
                     return this.height - (relativeValue * this.zoom);
+                };
+
+                const getX = (day) => {
+                    let difference, msPerDay, days;
+                    msPerDay = 60 * 60 * 1000 * 24;
+                    difference = (this.ms - day.ms);
+                    days = (difference / msPerDay) - this.offset;
+                    return this.width - (this.step * days);
                 };
 
                 ctx.beginPath();
                 ctx.lineWidth = 1;
                 ctx.strokeStyle = 'black';
                 // draw 1 point extra, this point is out of the graph on the leftside
-                start = history.length - (7 * this.weeks) - this.offset;
-                ctx.moveTo((-0.5 * step), getValue(history[start - 1]));
-                for (let i = start, l = (history.length - this.offset); i < l; i++) {
-                    let value, index;
-                    value = getValue(history[i]);
-                    index = i - start;
-                    ctx.lineTo((step * (index + 0.5)), value);
+                start = 1;
+                ctx.moveTo(getX(history[0]), getY(history[0]));
+                for (let i = start, l = history.length; i < l; i++) {
+                    ctx.lineTo(getX(history[i]), getY(history[i]));
                 }
                 ctx.stroke();
                 ctx.closePath();

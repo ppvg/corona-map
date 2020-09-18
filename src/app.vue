@@ -9,7 +9,6 @@
     import citiesPanel from "./components/regions/search/cities-panel";
     import * as d3 from 'd3';
     import $ from 'jquery';
-    import {format, sub } from 'date-fns';
 
     import credits from "./components/credits";
     import query from '@/components/elements/query';
@@ -214,6 +213,7 @@
                         date = dateKey.slice(15);
                         value = Number(data[dateKey]);
                         incidents.push({
+                            ms: new Date(date).getTime(),
                             date,
                             value
                         });
@@ -224,6 +224,7 @@
                         if (i > 0) {
                             let value = incidents[i].value - incidents[i - 1].value;
                             report.history.push({
+                                ms: incidents[i].ms,
                                 date: incidents[i].date,
                                 value
                             });
@@ -270,15 +271,15 @@
                 <map-netherlands v-if="dataLoaded"/>
             </div>
 
-<!--            <trends/>-->
-<!--            <region-details-->
-<!--                v-if="showCity"-->
-<!--                :region="currentRegion"/>-->
-<!--            <div-->
-<!--                v-else-->
-<!--                class="region-details region-details&#45;&#45;mobile">-->
-<!--                Kies eerst een gemeente op de kaart.-->
-<!--            </div>-->
+            <trends/>
+            <region-details
+                v-if="showCity"
+                :region="currentRegion"/>
+            <div
+                v-else
+                class="region-details region-details--mobile">
+                Kies eerst een gemeente op de kaart.
+            </div>
         </div>
 
         <credits v-if="showCredits"/>

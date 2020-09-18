@@ -70,10 +70,10 @@ const getters = {
                 return rootState.countries.all;
         }
     },
-    typeLabel(state) {
+    typeLabel(state, getters, rootState, rootGetters) {
         switch(state.currentRegionType) {
             case 'city':
-                return 'gemeentes';
+                return rootState.maps.current.regionLabel;
             case 'ggd':
                 return 'ggds';
             case 'sr':
