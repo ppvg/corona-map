@@ -1,5 +1,6 @@
 <script>
     import mapNetherlands from "./components/map/map";
+    import maps from '@/data/maps';
     import ggds from '@/data/ggds';
     import countries from '@/data/countries';
     import safetyRegions from '@/data/safety-regions';
@@ -68,74 +69,105 @@
             },
             currentRegion() {
                 return this.$store.getters['ui/currentRegion'];
+            },
+            currentMap() {
+                return this.$store.state.maps.current;
             }
         },
         methods: {
             init() {
+                this.pickMap();
+            },
+            pickMap() {
+                this.$store.commit('maps/init', maps);
+                this.$store.commit('maps/setCurrent', this.$store.state.maps.all[1]);
                 this.loadData();
             },
             loadData() {
-                let testDataUrl, citiesUrl;
-                testDataUrl = window.config.dataUrl + 'data/municipality-totals.csv';
-                citiesUrl = 'data/cities.json';
-
-                $.getJSON(citiesUrl, (cities) => {
-                    this.$store.commit('signalingSystems/init', signalingSystems);
-                    this.$store.commit('signalingSystems/setCurrent', this.$store.state.signalingSystems.all[3]);
-                    this.$store.commit('countries/init', countries);
-                    this.$store.commit('cities/init', cities);
-                    this.$store.commit('ggds/init', ggds);
-                    this.$store.commit('safetyRegions/init', safetyRegions);
-                    this.$store.commit('ageGroups/init', ageGroups);
-
-                    this.addAgeGroupsToCities();
-
-                    d3.csv(testDataUrl)
+                this.$store.commit('signalingSystems/init', signalingSystems);
+                this.$store.commit('signalingSystems/setCurrent', this.$store.state.signalingSystems.all[3]);
+                this.$store.commit('countries/init', countries);
+                this.$store.commit('ggds/init', ggds);
+                this.$store.commit('safetyRegions/init', safetyRegions);
+                this.$store.commit('ageGroups/init', ageGroups);
+                this.loadRegions();
+            },
+            loadRegions() {
+                $.getJSON(this.currentMap.url.regions, (regions) => {
+                    let promises = [];
+                    this.$store.commit('cities/init', regions);
+                    promises.push(this.loadTests);
+                    if (this.currentMap.settings.hasAgeGroups) {
+                        promises.push(this.loadAgeGroupsForCities);
+                    }
+                    if (this.currentMap.settings.hasSewageTreatmentPlants) {
+                        promises.push(this.loadSewageTreatmentPlants);
+                    }
+                    Promise.all(promises.map(p => p()))
+                        .then((result) => {
+                            this.readQuery();
+                            this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
+                        })
+                        .catch(error => {
+                            console.error(error)
+                        });
+                });
+            },
+            loadSewageTreatmentPlants() {
+                return new Promise((resolve, reject) => {
+                    $.getJSON(this.currentMap.url.sewageTreatmentPlants, (sewageTreatmentPlants) => {
+                        this.$store.commit('sewageTreatmentPlants/init', sewageTreatmentPlants);
+                        resolve();
+                    });
+                })
+            },
+            loadTests() {
+                return new Promise((resolve, reject) => {
+                    d3.csv(this.currentMap.url.tests)
                         .then((data) => {
-
                             this.getDate(data);
                             for (let item of data) {
                                 this.addReport(item);
                             }
-                            let sewageMeasurementsUrl = window.config.sewageDataUrl + 'sewage-measurements-connected-to-city-codes.json';
-                            $.getJSON(sewageMeasurementsUrl, (measurements) => {
-                                this.addSewageTreatmentPlants(measurements);
-                                this.readQuery();
-                                this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
-                            });
+                            resolve();
+                        })
+                        .catch((error) => {
+                            console.error(error);
+                        });
+                })
+            },
+            loadAgeGroupsForCities() {
+                return new Promise((resolve, reject) => {
+                    d3.csv(this.currentMap.url.ageGroups)
+                        .then((result) => {
+                            for (let item of result) {
+                                let city = this.$store.getters['cities/getItemByProperty']('municipality_code', item.Gemeentecode, true);
+                                if (city) {
+                                    let cityAgeGroups = ageGroups.map(ageGroup => {
+                                        let key = ageGroup.title;
+                                        if (key === '10-19') {
+                                            key = 'okt-19';
+                                        }
+                                        return {
+                                            title: ageGroup.title,
+                                            population: Number(item[key])
+                                        }
+                                    });
+                                    this.$store.commit('cities/updatePropertyOfItem', {
+                                        item: city,
+                                        property: 'ageGroups',
+                                        value: cityAgeGroups
+                                    });
+                                }
+                            }
+                            resolve();
                         })
                         .catch((error) => {
                             console.error(error);
                         });
                 });
             },
-            addAgeGroupsToCities() {
-                d3.csv('data/cities-population-agegroup.csv')
-                    .then((result) => {
-                        for (let item of result) {
-                            let city = this.$store.getters['cities/getItemByProperty']('municipality_code', item.Gemeentecode, true);
-                            if (city) {
-                                let cityAgeGroups = ageGroups.map(ageGroup => {
-                                    let key = ageGroup.title;
-                                    if (key === '10-19') {
-                                        key = 'okt-19';
-                                    }
-                                    return {
-                                        title: ageGroup.title,
-                                        population: Number(item[key])
-                                    }
-                                });
-                                this.$store.commit('cities/updatePropertyOfItem', {item: city, property: 'ageGroups', value: cityAgeGroups});
-                            }
-                        }
-                    })
-                    .catch((error) => {
-                        console.error(error);
-                    });
-            },
-            addSewageTreatmentPlants(sewageTreatmentPlants){
-                this.$store.commit('sewageTreatmentPlants/init', sewageTreatmentPlants)
-            },
+
             readQuery() {
                 let city, cityString;
                 if (this.$route.query.city) {
