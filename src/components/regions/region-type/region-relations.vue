@@ -1,6 +1,6 @@
 <script>
-    import City from "@/classes/City";
     import regionType from './region-type';
+    import _Region from "@/classes/_Region";
 
     export default {
         name: 'region-relations',
@@ -8,22 +8,22 @@
             regionType
         },
         props: {
-            city: {
-                type: City,
+            region: {
+                type: _Region,
                 required: true
             }
         },
         computed: {
             types() {
-                let city, store;
-                city = this.city;
+                let region, store;
+                region = this.region;
                 store = this.$store;
                 return [
                     {
                         label: 'Gemeente',
                         showRegion: true,
                         getRegion() {
-                            return city;
+                            return region;
                         },
                         tag: 'city'
                     },
@@ -31,7 +31,7 @@
                         label: 'GGD',
                         showRegion: true,
                         getRegion() {
-                            return store.getters['ggds/getItemByProperty']('ggd_code', city.ggd_code, true);
+                            return store.getters['ggds/getItemByProperty']('ggd_code', region.ggd_code, true);
                         },
                         tag: 'ggd'
                     },
@@ -46,7 +46,7 @@
                         label: 'Land',
                         showRegion: true,
                         getRegion() {
-                            return store.getters['countries/getItemById'](city.country_id);
+                            return store.getters['countries/getItemById'](region.country_id);
                         },
                         tag: 'country'
                     }

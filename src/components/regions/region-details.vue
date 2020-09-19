@@ -2,19 +2,19 @@
     import testGraph from "./tests/test-graph";
     import sewageTreatmentPlants from "../sewage-treatment-plants/sewage-treatment-plants";
     import ageDistributionGraph from "./case-characteristics/age-distribution-graph";
-    import regionTypePicker from "./region-type/region-type-picker";
     import _Region from "@/classes/_Region";
     import loader from "@/components/elements/loader";
     import ageDistributionGraphNormalised from "./case-characteristics/age-distribution-graph-normalised/age-distribution-graph-normalised";
     import ageDistributionTools from "./case-characteristics/age-distribution-graph-normalised/age-distribution-tools";
+    import regionRelations from "./region-type/region-relations";
 
     export default {
         name: 'region-details',
         components: {
+            regionRelations,
             ageDistributionTools,
             ageDistributionGraphNormalised,
             loader,
-            regionTypePicker,
             ageDistributionGraph,
             sewageTreatmentPlants,
             testGraph
@@ -26,8 +26,8 @@
             }
         },
         computed: {
-            city() {
-                return this.$store.state.ui.currentRegion;
+            regionOfFocus() {
+                
             },
             period1() {
                 let start, end, total;
@@ -93,8 +93,8 @@
         </div>
         <div class="region-details__info">
             <div class="region-details__section">
-<!--                <region-type-picker-->
-<!--                    :city="city"/>-->
+                <region-relations
+                    :region="region"/>
             </div>
             <div
                 v-if="(region.regionType === 'ggd') && caseDataRequested"
