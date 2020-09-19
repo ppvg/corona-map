@@ -121,7 +121,7 @@
                         .then((data) => {
                             this.getDate(data);
                             for (let item of data) {
-                                this.addReport(item);
+                                this.addTests(item);
                             }
                             resolve();
                         })
@@ -187,7 +187,7 @@
                     }
                 }
             },
-            addReport(data) {
+            addTests(data) {
                 let keys, key, region, report, incidents;
                 keys = [];
                 incidents = [];
