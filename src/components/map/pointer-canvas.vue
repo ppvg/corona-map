@@ -24,12 +24,12 @@
             hoverValue() {
                 return this.$store.state.ui.hoverValue;
             },
-            currentRegion() {
-                return this.$store.state.ui.currentRegion;
+            currentMap() {
+                return this.$store.state.maps.current;
             },
             currentRegion() {
                 return this.$store.getters['ui/currentRegion'];
-            }
+            },
         },
         methods: {
             showCurrentRegion() {
@@ -45,7 +45,7 @@
                 this.clear();
                 if (this.currentRegion) {
                     this.ctx.strokeStyle = '#000';
-                    canvasTools.drawRegion(this.ctx, this.currentRegion, settings);
+                    canvasTools.drawRegionContainer(this.ctx, this.currentRegion, settings);
                 }
             },
             clear() {

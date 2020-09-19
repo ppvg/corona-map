@@ -27,7 +27,7 @@
         },
         computed: {
             regionOfFocus() {
-                
+                return this.$store.getters['ui/currentRegion'];
             },
             period1() {
                 let start, end, total;
@@ -88,7 +88,7 @@
                 :style="{'background': region.color}"
                 class="dot"></div>
             <div class="region-details__title">
-                {{region.title}}
+                {{regionOfFocus.title}}
             </div>
         </div>
         <div class="region-details__info">
@@ -97,7 +97,7 @@
                     :region="region"/>
             </div>
             <div
-                v-if="(region.regionType === 'ggd') && caseDataRequested"
+                v-if="(regionOfFocus.regionType === 'ggd') && caseDataRequested"
                 class="region-details__section">
                 <div class="region-details__section-header">
                     Leeftijdsverdeling (beta)
@@ -105,7 +105,7 @@
                 <div class="age-distribution-graph__container">
                     <age-distribution-graph-normalised
                         v-if="caseDataLoaded"
-                        :region="region"/>
+                        :region="regionOfFocus"/>
                     <loader v-else/>
                 </div>
                 <age-distribution-tools/>
@@ -114,14 +114,14 @@
                 <div class="region-details__section-header">
                     Testen GGD
                 </div>
-                <test-graph :region="region"/>
+                <test-graph :region="regionOfFocus"/>
             </div>
             <div
                 v-if="hasSewageTreatmentPlants"
                 class="region-details__section">
                 <div class="region-details__row">
                     <sewage-treatment-plants
-                        :region="region"/>
+                        :region="regionOfFocus"/>
                 </div>
             </div>
             <div class="region-details__section">
@@ -130,7 +130,7 @@
                         Inwoners
                     </div>
                     <div class="region-details__value">
-                        {{region.getTotalPopulation()}}
+                        {{regionOfFocus.getTotalPopulation()}}
                     </div>
                 </div>
             </div>
@@ -140,7 +140,7 @@
                         Toename vandaag
                     </div>
                     <div class="region-details__value">
-                        {{format(region.getTotalIncreaseDay())}}
+                        {{format(regionOfFocus.getTotalIncreaseDay())}}
                     </div>
                 </div>
                 <div v-if="hasDays" class="region-details__row">
@@ -148,7 +148,7 @@
                         Relatieve toename vandaag (per 100 dzd inw)
                     </div>
                     <div class="region-details__value">
-                        {{format(Math.round(region.getTotalRelativeIncreasDay()))}}
+                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreasDay()))}}
                     </div>
                 </div>
                 <div class="region-details__row">
@@ -156,7 +156,7 @@
                         Toename laatste 7 dagen
                     </div>
                     <div class="region-details__value">
-                        {{format(region.getTotalIncreaseWeek())}}
+                        {{format(regionOfFocus.getTotalIncreaseWeek())}}
                     </div>
                 </div>
                 <div class="region-details__row">
@@ -164,7 +164,7 @@
                         Relatieve toename laatste 7 dagen (per 100 dzd inw)
                     </div>
                     <div class="region-details__value">
-                        {{format(Math.round(region.getTotalRelativeIncreaseWeek()))}}
+                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreaseWeek()))}}
                     </div>
                 </div>
             </div>

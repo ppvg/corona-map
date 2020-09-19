@@ -41,17 +41,17 @@ const getters = {
         }
     },
     currentRegion(state, getters, rootState, rootGetters) {
-        let city = state.currentRegion;
-        if (city) {
+        let region = rootState[rootState.maps.current.module].current;
+        if (region) {
             switch(state.currentRegionType) {
                 case 'city':
-                    return city;
+                    return region;
                 case 'ggd':
-                    return rootGetters['ggds/getItemByProperty']('ggd_code', city.ggd_code, true);
+                    return rootGetters['ggds/getItemByProperty']('ggd_code', region.ggd_code, true);
                 case 'sr':
-                    return rootGetters['safetyRegions/getItemByProperty']('safetyRegion_code', city.safetyRegion_code, true);
+                    return rootGetters['safetyRegions/getItemByProperty']('safetyRegion_code', region.safetyRegion_code, true);
                 case 'country':
-                    return rootGetters['countries/getItemById'](city.country_id);
+                    return rootGetters['countries/getItemById'](region.country_id);
             }
         } else {
             return null;
