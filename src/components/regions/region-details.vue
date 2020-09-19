@@ -6,13 +6,12 @@
     import _Region from "@/classes/_Region";
     import loader from "@/components/elements/loader";
     import ageDistributionGraphNormalised from "./case-characteristics/age-distribution-graph-normalised/age-distribution-graph-normalised";
-    import AgeDistributionTools
-        from "./case-characteristics/age-distribution-graph-normalised/age-distribution-tools";
+    import ageDistributionTools from "./case-characteristics/age-distribution-graph-normalised/age-distribution-tools";
 
     export default {
         name: 'region-details',
         components: {
-            AgeDistributionTools,
+            ageDistributionTools,
             ageDistributionGraphNormalised,
             loader,
             regionTypePicker,
@@ -118,11 +117,11 @@
                 <test-graph :region="region"/>
             </div>
             <div
-                v-if="region.regionType === 'city' && hasSewageTreatmentPlants"
+                v-if="hasSewageTreatmentPlants"
                 class="region-details__section">
                 <div class="region-details__row">
                     <sewage-treatment-plants
-                        :city="region"/>
+                        :region="region"/>
                 </div>
             </div>
             <div class="region-details__section">

@@ -11,7 +11,7 @@
                 return window.location.href.split('#')[0];
             },
             query() {
-                return this.currentRegion ? '?city=' + encodeURI(this.currentRegion.title) : ''
+                return this.currentRegion ? '?region=' + encodeURI(this.currentRegion.title) : ''
             },
             url() {
                 return this.routePath + '#/' + this.query;

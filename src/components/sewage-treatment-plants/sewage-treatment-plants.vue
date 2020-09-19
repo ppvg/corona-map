@@ -1,6 +1,6 @@
 <script>
-    import City from "@/classes/City";
     import sewageTreatmentPlant from "./sewage-treatment-plant";
+    import _Region from "@/classes/_Region";
 
     export default {
         name: 'sewage-treatment-plants',
@@ -8,15 +8,16 @@
             sewageTreatmentPlant
         },
         props: {
-            city: {
-                type: City,
+            region: {
+                type: _Region,
                 required: true
             }
         },
         computed: {
             sewageTreatmentPlants() {
                 return this.$store.state.sewageTreatmentPlants.all.filter(s => {
-                    return s.city_code === this.city.municipality_code;
+                    let key = this.region.regionType === 'city' ? 'city_code' : 'district_code';
+                    return s[key] === this.region.identifier;
                 })
             }
         },
@@ -36,18 +37,10 @@
                 :sewage-treatment-plant="sewageTreatmentPlant"/>
         </div>
 
-
         <div
             v-if="sewageTreatmentPlants.length === 0"
             class="sewage-treatment-plants__note">
-            Nog geen riooldata voor deze gemeente. Per 1 september volgen meer locaties (RIVM).
-        </div>
-        <div
-            v-else
-            class="sewage-treatment-plants__note">
-            Note: het gebruik van de rioolmetingen-grafieken is nog experimenteeel.<br>
-            We kijken nog naar de schaal van de grafieken en de koppeling van riool-meting-locatie aan
-            een gemeente is op dit moment nog gedaan obv enkele aannames.
+            Nog geen riooldata voor deze locatie.
         </div>
 
     </div>
