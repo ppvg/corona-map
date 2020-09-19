@@ -34,7 +34,7 @@ const maps = [
             regionTypes: ['district'],
             hasAgeGroups: false,
             hasTests: true,
-            hasSewageTreatmentPlants: false,
+            hasSewageTreatmentPlants: true,
             testDataCumulative: false,
             testDataInterval: 7,
             map: {
