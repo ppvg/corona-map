@@ -2,9 +2,10 @@ const maps = [
     {
         id: 1,
         title: 'Nederland',
-        regionType: 'Gemeente',
+        module: 'cities',
         regionLabel: 'gemeentes',
         settings: {
+            identifier: 'municipality_code',
             regionTypes: ['ggd', 'sr', 'country'],
             hasAgeGroups: true,
             hasTests: true,
@@ -26,10 +27,11 @@ const maps = [
         }
     }, {
         id: 2,
-        regionType: 'Stadsdeel',
-        regionLabel: 'stadsdelen',
+        regionType: 'District',
+        module: 'districts',
         title: 'Amsterdam',
         settings: {
+            identifier: 'district_code',
             //regionTypes: ['ggd'],
             regionTypes: [],
             hasAgeGroups: false,

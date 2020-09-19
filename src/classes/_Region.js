@@ -17,9 +17,10 @@ class _Region {
         }
     }
 
-    getCities() {
+    getRegions() {
         switch(this.regionType) {
             case 'city':
+            case 'district':
                 return [this];
             case 'ggd':
                 return store.state.cities.all.filter(city => {
@@ -38,7 +39,7 @@ class _Region {
 
     getAllPaths() {
         let cities, paths;
-        cities = this.getCities();
+        cities = this.getRegions();
         paths = [];
         for (let city of cities) {
             paths = paths.concat(city.paths);
@@ -49,7 +50,7 @@ class _Region {
     getTotalPopulation() {
         let population, cities;
         population = 0;
-        cities = this.getCities();
+        cities = this.getRegions();
         for (let city of cities) {
             population += city.population;
         }
@@ -59,7 +60,7 @@ class _Region {
     getTotalIncreaseDay(delta) {
         let increase, cities;
         increase = 0;
-        cities = this.getCities();
+        cities = this.getRegions();
         for (let city of cities) {
             increase += city.getIncreaseDay(delta);
         }
@@ -69,7 +70,7 @@ class _Region {
     getTotalIncreaseWeek(delta) {
         let increase, cities;
         increase = 0;
-        cities = this.getCities();
+        cities = this.getRegions();
         for (let city of cities) {
             increase += city.getIncreaseWeek(delta);
         }
@@ -96,7 +97,7 @@ class _Region {
             history: []
         };
         counter = 0;
-        cities = this.getCities();
+        cities = this.getRegions();
         for (let city of cities) {
             let dayCounter = 0;
             for (let day of city.report.history) {
@@ -134,6 +135,8 @@ class _Region {
     get color() {
         return thresholdTools.thresholdToColor(this.getThreshold(), this.getTotalRelativeIncreaseWeek());
     }
+
+
 }
 
 export default _Region;

@@ -1,35 +1,35 @@
 <script>
-    import mapNetherlands from "./components/map/map";
+    import * as d3 from 'd3';
+    import $ from 'jquery';
+
     import maps from '@/data/maps';
     import ggds from '@/data/ggds';
     import countries from '@/data/countries';
     import safetyRegions from '@/data/safety-regions';
     import ageGroups from '@/data/age-groups';
     import signalingSystems from '@/data/signaling-systems';
-    import citiesPanel from "./components/regions/search/cities-panel";
-    import * as d3 from 'd3';
-    import $ from 'jquery';
 
+    import mapTests from "./components/map/map";
+    import searchRegions from "./components/regions/search/search-regions";
     import credits from "./components/credits";
     import query from '@/components/elements/query';
     import headerMenu from "./components/header-menu";
     import trends from "./components/trends/trends";
     import regionDetails from "./components/regions/region-details";
-    import EmbedPopup from "./components/embed/embed-popup";
-    import RegionTypePicker2
-        from "./components/regions/region-type/region-type-picker-2";
+    import embedPopup from "./components/embed/embed-popup";
+    import regionTypePicker2 from "./components/regions/region-type/region-type-picker-2";
 
 
     export default {
         name: 'app',
         components: {
-            RegionTypePicker2,
-            EmbedPopup,
+            regionTypePicker2,
+            embedPopup,
             trends,
             headerMenu,
             credits,
-            citiesPanel,
-            mapNetherlands,
+            searchRegions,
+            mapTests,
             regionDetails
         },
         props: {},
@@ -81,7 +81,7 @@
             loadRegions() {
                 $.getJSON(this.currentMap.url.regions, (regions) => {
                     let promises = [];
-                    this.$store.commit('cities/init', regions);
+                    this.$store.commit(this.currentMap.module + '/init', regions);
                     if (this.currentMap.settings.hasTests) {
                         promises.push(this.loadTests);
                     }
@@ -187,7 +187,7 @@
                 }
             },
             addReport(data) {
-                let keys, key, city, report, incidents;
+                let keys, key, region, report, incidents;
                 keys = [];
                 incidents = [];
                 const convertToNumber = function(value) {
@@ -235,12 +235,12 @@
                 }
 
                 key = data.Municipality_code;
-                if (this.$store.state.cities.dict[key]) {
-                    city = this.$store.state.cities.dict[key];
-                    this.$store.commit('cities/updatePropertyOfItem', {item: city, property: 'report', value: report});
-                    this.$store.commit('cities/updatePropertyOfItem', {item: city, property: 'population', value: convertToNumber(data.population)})
+                if (this.$store.state[this.currentMap.module].dict[key]) {
+                    region = this.$store.state[this.currentMap.module].dict[key];
+                    this.$store.commit(this.currentMap.module + '/updatePropertyOfItem', {item: region, property: 'report', value: report});
+                    this.$store.commit(this.currentMap.module + '/updatePropertyOfItem', {item: region, property: 'population', value: convertToNumber(data.population)})
                 } else {
-                    // console.log('not found ' + key);
+                    console.log('not found ' + key);
                 }
             },
             openCredits() {
@@ -266,20 +266,20 @@
                 :style="{'width': width + 'px'}"
                 :class="{'panel--active': showMap}"
                 class="map-container panel">
-                <cities-panel v-if="dataLoaded"/>
+                <search-regions v-if="dataLoaded"/>
                 <region-type-picker-2/>
-                <map-netherlands v-if="dataLoaded"/>
+                <map-tests v-if="dataLoaded"/>
             </div>
 
-            <trends/>
-            <region-details
-                v-if="showCity"
-                :region="currentRegion"/>
-            <div
-                v-else
-                class="region-details region-details--mobile">
-                Kies eerst een gemeente op de kaart.
-            </div>
+<!--            <trends/>-->
+<!--            <region-details-->
+<!--                v-if="showCity"-->
+<!--                :region="currentRegion"/>-->
+<!--            <div-->
+<!--                v-else-->
+<!--                class="region-details region-details&#45;&#45;mobile">-->
+<!--                Kies eerst een gemeente op de kaart.-->
+<!--            </div>-->
         </div>
 
         <credits v-if="showCredits"/>

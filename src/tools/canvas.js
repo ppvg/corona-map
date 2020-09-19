@@ -4,24 +4,24 @@ const addBackground = function(ctx, width, height) {
     ctx.fill();
 };
 
-const draw = function(ctx, regions, settings) {
+const draw = function(ctx, regionContainers, settings) {
     ctx.lineWidth = 0.5;
     ctx.strokeStyle = 'rgba(0,0,0,0.3)';
 
-    for (let region of regions) {
+    for (let regionContainer of regionContainers) {
+        drawRegionContainer(ctx, regionContainer, settings);
+    }
+};
+
+const drawRegionContainer = function(ctx, regionContainer, settings) {
+    ctx.fillStyle = regionContainer.color;
+    for (let region of regionContainer.getRegions()) {
         drawRegion(ctx, region, settings);
     }
 };
 
 const drawRegion = function(ctx, region, settings) {
-    ctx.fillStyle = region.color;
-    for (let city of region.getCities()) {
-        drawCity(ctx, city, settings);
-    }
-};
-
-const drawCity = function(ctx, city, settings) {
-    for (let path of city.paths) {
+    for (let path of region.paths) {
         drawPath(ctx, path, settings);
     }
 };
@@ -39,6 +39,6 @@ const drawPath = function(ctx, path, settings) {
 export default {
     addBackground,
     draw,
-    drawRegion,
-    drawCity
+    drawRegionContainer,
+    drawRegion
 }
