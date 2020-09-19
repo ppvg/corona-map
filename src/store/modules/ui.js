@@ -23,7 +23,7 @@ const getters = {
         let today, offset, dateOfFocus;
         today = state.today;
         if (today) {
-            offset = rootState.settings.currentDateOffset;
+            offset = rootState.settings.currentDateOffset * rootState.maps.current.settings.testDataInterval;
             dateOfFocus = sub(today, {days: offset});
             return format(dateOfFocus, 'EE d MMM', {locale: nl} );
         } else {

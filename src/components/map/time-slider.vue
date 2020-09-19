@@ -67,12 +67,12 @@
 
         <div class="vue-slider__container">
             <vue-slider
-                    v-model="currentDateOffset"
-                    :min="0"
-                    :max="max"
-                    :interval="1"
-                    :tooltip-formatter="date"
-                    :duration="0"/>
+                v-model="currentDateOffset"
+                :min="0"
+                :max="max"
+                :interval="1"
+                :tooltip-formatter="date"
+                :duration="0"/>
         </div>
 
         <div class="vue-slider__icons">

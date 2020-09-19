@@ -34,6 +34,11 @@
         },
         props: {},
         mixins: [query],
+        data() {
+            return {
+                dates: null
+            }
+        },
         computed: {
             dataLoaded() {
                 return this.$store.state.dataLoaded;
@@ -119,7 +124,7 @@
                 return new Promise((resolve, reject) => {
                     d3.csv(this.currentMap.url.tests)
                         .then((data) => {
-                            this.getDate(data);
+                            this.getDate(data.columns);
                             for (let item of data) {
                                 this.addTests(item);
                             }
@@ -175,17 +180,29 @@
                     this.$store.commit('ui/updateProperty', {key: 'admin', value: true});
                 }
             },
-            getDate(data) {
-                let key, dateString, set, today;
-                if (data.columns) {
-                    key = data.columns[data.columns.length - 1];
-                    set = key.split('Total_reported.');
-                    if (set.length > 0) {
-                        dateString = set[1];
-                        today = new Date(dateString);
-                        this.$store.commit('ui/updateProperty', {key: 'today', value: today});
+            getDate(columns) {
+                let dates, today, first, last, totalLengthOfTestHistory;
+                dates = [];
+
+                for (let column of columns) {
+                    if (column.indexOf('Total_reported.') > -1) {
+                        let dateString, date;
+                        dateString = column.split('Total_reported.')[1];
+                        dates.push({
+                            key: column,
+                            dateString,
+                            ms: new Date(dateString).getTime()
+                        });
                     }
                 }
+                dates = dates.sort((a,b) => (a.ms > b.ms) ? 1 : ((b.ms > a.ms) ? -1 : 0));
+                first = dates[0];
+                last = dates[dates.length - 1];
+                today = new Date(last.dateString);
+                totalLengthOfTestHistory = (last.ms - first.ms) / (1000 * 3600 * 24 * this.currentMap.settings.testDataInterval);
+                this.$store.commit('ui/updateProperty', {key: 'today', value: today});
+                this.$store.commit('settings/updateProperty', {key: 'historyLength', value: totalLengthOfTestHistory});
+                this.dates = dates.map(d => d.key);
             },
             addTests(data) {
                 let keys, key, region, report, incidents;

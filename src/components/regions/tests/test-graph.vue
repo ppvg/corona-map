@@ -140,7 +140,7 @@
                     let difference, msPerDay, days;
                     msPerDay = 60 * 60 * 1000 * 24;
                     difference = (this.ms - day.ms);
-                    days = (difference / msPerDay) - this.offset;
+                    days = (difference / msPerDay) - (this.offset * this.currentMap.settings.testDataInterval);
                     return this.width - (this.step * days);
                 };
 
