@@ -16,7 +16,7 @@
                 return this.$store.state.signalingSystems.current.thresholds;
             },
             typeLabel() {
-                return this.$store.getters['ui/typeLabel'];
+                return this.$store.getters['ui/typeLabel'](true).toLowerCase();
             }
         },
         methods: {

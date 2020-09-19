@@ -32,7 +32,7 @@
                 })
             },
             typeLabel() {
-                return this.$store.getters['ui/typeLabel'];
+                return this.$store.getters['ui/typeLabel'](true).toLowerCase();
             }
         },
         methods: {}

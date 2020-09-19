@@ -272,7 +272,7 @@
                 <map-tests v-if="dataLoaded"/>
             </div>
 
-<!--            <trends/>-->
+            <trends/>
 <!--            <region-details-->
 <!--                v-if="showCity"-->
 <!--                :region="currentRegion"/>-->
