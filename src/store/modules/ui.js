@@ -4,6 +4,7 @@ import { nl } from 'date-fns/locale'
 
 
 const state = {
+    isPlaying: false,
     searchValue: '',
     hoverValue: '',
     currentRegionType: '',

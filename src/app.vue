@@ -71,7 +71,7 @@
             },
             pickMap() {
                 this.$store.commit('maps/init', maps);
-                this.$store.commit('maps/setCurrent', this.$store.state.maps.all[0]);
+                this.$store.commit('maps/setCurrent', this.$store.state.maps.all[1]);
                 this.$store.commit('ui/updateProperty', {key: 'currentRegionType', value: this.currentMap.settings.regionTypes[0]});
                 this.loadData();
             },
