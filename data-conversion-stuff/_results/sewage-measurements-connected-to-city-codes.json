@@ -2,6 +2,7 @@
   {
     "sewerageArea_code": 1008,
     "city_code": "GM0037",
+    "district_code": "",
     "name": "Stadskanaal",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -131,6 +132,7 @@
   {
     "sewerageArea_code": 1010,
     "city_code": "GM1950",
+    "district_code": "",
     "name": "Ter Apel",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -145,6 +147,7 @@
   {
     "sewerageArea_code": 1025,
     "city_code": "GM1969",
+    "district_code": "",
     "name": "Zuidhorn 1",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -159,6 +162,7 @@
   {
     "sewerageArea_code": 1026,
     "city_code": "GM1952",
+    "district_code": "",
     "name": "Hoogezand",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -173,6 +177,7 @@
   {
     "sewerageArea_code": 1027,
     "city_code": "GM0765",
+    "district_code": "",
     "name": "Oude Pekela",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -187,6 +192,7 @@
   {
     "sewerageArea_code": 1029,
     "city_code": "GM1699",
+    "district_code": "",
     "name": "Leek",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -201,6 +207,7 @@
   {
     "sewerageArea_code": 1031,
     "city_code": "GM1969",
+    "district_code": "",
     "name": "Gaarkeuken",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -215,6 +222,7 @@
   {
     "sewerageArea_code": 1032,
     "city_code": "GM1969",
+    "district_code": "",
     "name": "Marum",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -229,6 +237,7 @@
   {
     "sewerageArea_code": 1033,
     "city_code": "GM0014",
+    "district_code": "",
     "name": "Garmerwolde",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -363,6 +372,7 @@
   {
     "sewerageArea_code": 1034,
     "city_code": "GM1969",
+    "district_code": "",
     "name": "Feerwerd",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -392,6 +402,7 @@
   {
     "sewerageArea_code": 1038,
     "city_code": "GM1895",
+    "district_code": "",
     "name": "Scheve Klap",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -406,6 +417,7 @@
   {
     "sewerageArea_code": 1039,
     "city_code": "GM1895",
+    "district_code": "",
     "name": "Scheemda",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -455,6 +467,7 @@
   {
     "sewerageArea_code": 1040,
     "city_code": "GM1950",
+    "district_code": "",
     "name": "Vriescheloo",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -469,6 +482,7 @@
   {
     "sewerageArea_code": 1045,
     "city_code": "GM0047",
+    "district_code": "",
     "name": "Veendam",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -483,6 +497,7 @@
   {
     "sewerageArea_code": 1046,
     "city_code": "GM1950",
+    "district_code": "",
     "name": "Bellingwolde",
     "security_region_code": "VR01",
     "security_region_name": "Groningen",
@@ -497,6 +512,7 @@
   {
     "sewerageArea_code": 2002,
     "city_code": "GM0085",
+    "district_code": "",
     "name": "Oosterwolde",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -511,6 +527,7 @@
   {
     "sewerageArea_code": 2011,
     "city_code": "GM0080",
+    "district_code": "",
     "name": "Leeuwarden",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -635,6 +652,7 @@
   {
     "sewerageArea_code": 2012,
     "city_code": "GM0090",
+    "district_code": "",
     "name": "Drachten",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -679,6 +697,7 @@
   {
     "sewerageArea_code": 2013,
     "city_code": "GM0737",
+    "district_code": "",
     "name": "Burgum",
     "security_region_code": "VR09",
     "security_region_name": "Friesland",
@@ -693,6 +712,7 @@
   {
     "sewerageArea_code": 2015,
     "city_code": "GM0086",
+    "district_code": "",
     "name": "Gorredijk",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -737,6 +757,7 @@
   {
     "sewerageArea_code": 2016,
     "city_code": "GM0098",
+    "district_code": "",
     "name": "Wolvega",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -751,6 +772,7 @@
   {
     "sewerageArea_code": 2017,
     "city_code": "GM1949",
+    "district_code": "",
     "name": "St Annaparochie",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -765,6 +787,7 @@
   {
     "sewerageArea_code": 2019,
     "city_code": "GM0059",
+    "district_code": "",
     "name": "Kootstertille",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -779,6 +802,7 @@
   {
     "sewerageArea_code": 2020,
     "city_code": "GM0060",
+    "district_code": "",
     "name": "Ameland",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -793,6 +817,7 @@
   {
     "sewerageArea_code": 2021,
     "city_code": "GM1891",
+    "district_code": "",
     "name": "Damwoude",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -842,6 +867,7 @@
   {
     "sewerageArea_code": 2022,
     "city_code": "GM1940",
+    "district_code": "",
     "name": "Joure",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -896,6 +922,7 @@
   {
     "sewerageArea_code": 2023,
     "city_code": "GM1900",
+    "district_code": "",
     "name": "Bolsward",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -910,6 +937,7 @@
   {
     "sewerageArea_code": 2024,
     "city_code": "GM1940",
+    "district_code": "",
     "name": "Sloten",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -924,6 +952,7 @@
   {
     "sewerageArea_code": 2025,
     "city_code": "GM0074",
+    "district_code": "",
     "name": "Akkrum",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -938,6 +967,7 @@
   {
     "sewerageArea_code": 2026,
     "city_code": "GM0093",
+    "district_code": "",
     "name": "Terschelling",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -952,6 +982,7 @@
   {
     "sewerageArea_code": 2027,
     "city_code": "GM1940",
+    "district_code": "",
     "name": "Lemmer",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -966,6 +997,7 @@
   {
     "sewerageArea_code": 2028,
     "city_code": "GM1970",
+    "district_code": "",
     "name": "Dokkum",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -980,6 +1012,7 @@
   {
     "sewerageArea_code": 2029,
     "city_code": "GM1970",
+    "district_code": "",
     "name": "Birdaard",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -994,6 +1027,7 @@
   {
     "sewerageArea_code": 2030,
     "city_code": "GM1900",
+    "district_code": "",
     "name": "Workum",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -1008,6 +1042,7 @@
   {
     "sewerageArea_code": 2031,
     "city_code": "GM0074",
+    "district_code": "",
     "name": "Heerenveen",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -1022,6 +1057,7 @@
   {
     "sewerageArea_code": 2032,
     "city_code": "GM0072",
+    "district_code": "",
     "name": "Harlingen",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -1141,6 +1177,7 @@
   {
     "sewerageArea_code": 2036,
     "city_code": "GM0080",
+    "district_code": "",
     "name": "Grouw",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -1155,6 +1192,7 @@
   {
     "sewerageArea_code": 2037,
     "city_code": "GM1900",
+    "district_code": "",
     "name": "Warns",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -1189,6 +1227,7 @@
   {
     "sewerageArea_code": 2038,
     "city_code": "GM1949",
+    "district_code": "",
     "name": "Franeker",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -1243,6 +1282,7 @@
   {
     "sewerageArea_code": 2040,
     "city_code": "GM0096",
+    "district_code": "",
     "name": "Vlieland",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -1257,6 +1297,7 @@
   {
     "sewerageArea_code": 2041,
     "city_code": "GM0088",
+    "district_code": "",
     "name": "Schiermonnikoog",
     "security_region_code": "VR02",
     "security_region_name": "Friesland",
@@ -1271,6 +1312,7 @@
   {
     "sewerageArea_code": 3001,
     "city_code": "GM1731",
+    "district_code": "",
     "name": "Beilen",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
@@ -1290,6 +1332,7 @@
   {
     "sewerageArea_code": 3010,
     "city_code": "GM0106",
+    "district_code": "",
     "name": "Assen",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
@@ -1424,6 +1467,7 @@
   {
     "sewerageArea_code": 3014,
     "city_code": "GM0119",
+    "district_code": "",
     "name": "Meppel",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
@@ -1453,6 +1497,7 @@
   {
     "sewerageArea_code": 3022,
     "city_code": "GM0114",
+    "district_code": "",
     "name": "Emmen",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
@@ -1467,6 +1512,7 @@
   {
     "sewerageArea_code": 3023,
     "city_code": "GM0173",
+    "district_code": "",
     "name": "Tweede Exloermond",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
@@ -1516,6 +1562,7 @@
   {
     "sewerageArea_code": 3027,
     "city_code": "GM1731",
+    "district_code": "",
     "name": "Smilde",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
@@ -1565,6 +1612,7 @@
   {
     "sewerageArea_code": 3028,
     "city_code": "GM0109",
+    "district_code": "",
     "name": "Sleen",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
@@ -1689,6 +1737,7 @@
   {
     "sewerageArea_code": 3031,
     "city_code": "GM1680",
+    "district_code": "",
     "name": "Gieten",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
@@ -1703,6 +1752,7 @@
   {
     "sewerageArea_code": 3032,
     "city_code": "GM1701",
+    "district_code": "",
     "name": "Dieverbrug",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
@@ -1717,6 +1767,7 @@
   {
     "sewerageArea_code": 3033,
     "city_code": "GM0118",
+    "district_code": "",
     "name": "Echten",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
@@ -1806,6 +1857,7 @@
   {
     "sewerageArea_code": 3034,
     "city_code": "GM0109",
+    "district_code": "",
     "name": "Coevorden",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",
@@ -1825,6 +1877,7 @@
   {
     "sewerageArea_code": 4005,
     "city_code": "GM1896",
+    "district_code": "",
     "name": "Genemuiden",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
@@ -1839,6 +1892,7 @@
   {
     "sewerageArea_code": 4006,
     "city_code": null,
+    "district_code": "",
     "name": "Olst",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
@@ -1853,6 +1907,7 @@
   {
     "sewerageArea_code": 4017,
     "city_code": "GM1708",
+    "district_code": "",
     "name": "Vollenhove",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
@@ -1867,6 +1922,7 @@
   {
     "sewerageArea_code": 4018,
     "city_code": "GM0177",
+    "district_code": "",
     "name": "Heino",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
@@ -1881,6 +1937,7 @@
   {
     "sewerageArea_code": 4019,
     "city_code": "GM0150",
+    "district_code": "",
     "name": "Deventer",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
@@ -1930,6 +1987,7 @@
   {
     "sewerageArea_code": 4020,
     "city_code": "GM1708",
+    "district_code": "",
     "name": "Steenwijk",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
@@ -1949,6 +2007,7 @@
   {
     "sewerageArea_code": 4021,
     "city_code": "GM0177",
+    "district_code": "",
     "name": "Raalte",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
@@ -1988,6 +2047,7 @@
   {
     "sewerageArea_code": 4022,
     "city_code": "GM1742",
+    "district_code": "",
     "name": "Holten",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
@@ -2007,6 +2067,7 @@
   {
     "sewerageArea_code": 4023,
     "city_code": "GM0166",
+    "district_code": "",
     "name": "Kampen",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
@@ -2056,6 +2117,7 @@
   {
     "sewerageArea_code": 4024,
     "city_code": "GM0160",
+    "district_code": "",
     "name": "Hardenberg",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
@@ -2100,6 +2162,7 @@
   {
     "sewerageArea_code": 4025,
     "city_code": "GM0148",
+    "district_code": "",
     "name": "Dalfsen",
     "security_region_code": "VR04",
     "security_region_name": "IJselland",
@@ -2114,6 +2177,7 @@
   {
     "sewerageArea_code": 4026,
     "city_code": "GM0193",
+    "district_code": "",
     "name": "Zwolle",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
@@ -2238,6 +2302,7 @@
   {
     "sewerageArea_code": 4027,
     "city_code": "GM0171",
+    "district_code": "",
     "name": "Tollebeek",
     "security_region_code": "VR25",
     "security_region_name": "Flevoland",
@@ -2382,6 +2447,7 @@
   {
     "sewerageArea_code": 4030,
     "city_code": "GM0193",
+    "district_code": "",
     "name": "Hessenpoort",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
@@ -2396,6 +2462,7 @@
   {
     "sewerageArea_code": 5002,
     "city_code": "GM0153",
+    "district_code": "",
     "name": "Enschede-West",
     "security_region_code": "VR05",
     "security_region_name": "Twente",
@@ -2450,6 +2517,7 @@
   {
     "sewerageArea_code": 5004,
     "city_code": "GM1700",
+    "district_code": "",
     "name": "Vriezenveen",
     "security_region_code": "VR05",
     "security_region_name": "Twente",
@@ -2464,6 +2532,7 @@
   {
     "sewerageArea_code": 5012,
     "city_code": "GM0173",
+    "district_code": "",
     "name": "Oldenzaal",
     "security_region_code": "VR05",
     "security_region_name": "Twente",
@@ -2598,6 +2667,7 @@
   {
     "sewerageArea_code": 5017,
     "city_code": "GM0164",
+    "district_code": "",
     "name": "Hengelo",
     "security_region_code": "VR05",
     "security_region_name": "Twente",
@@ -2612,6 +2682,7 @@
   {
     "sewerageArea_code": 5019,
     "city_code": "GM0141",
+    "district_code": "",
     "name": "Almelo-Vissedijk",
     "security_region_code": "VR05",
     "security_region_name": "Twente",
@@ -2626,6 +2697,7 @@
   {
     "sewerageArea_code": 5022,
     "city_code": "GM1742",
+    "district_code": "",
     "name": "Rijssen",
     "security_region_code": "VR05",
     "security_region_name": "Twente",
@@ -2640,6 +2712,7 @@
   {
     "sewerageArea_code": 5023,
     "city_code": "GM0163",
+    "district_code": "",
     "name": "Nijverdal",
     "security_region_code": "VR04",
     "security_region_name": "IJsselland",
@@ -2659,6 +2732,7 @@
   {
     "sewerageArea_code": 5025,
     "city_code": "GM1700",
+    "district_code": "",
     "name": "Den Ham",
     "security_region_code": "VR05",
     "security_region_name": "Twente",
@@ -2698,6 +2772,7 @@
   {
     "sewerageArea_code": 6003,
     "city_code": "GM0303",
+    "district_code": "",
     "name": "Dronten",
     "security_region_code": "VR25",
     "security_region_name": "Flevoland",
@@ -2722,6 +2797,7 @@
   {
     "sewerageArea_code": 6004,
     "city_code": "GM0995",
+    "district_code": "",
     "name": "Lelystad",
     "security_region_code": "VR25",
     "security_region_name": "Flevoland",
@@ -2856,6 +2932,7 @@
   {
     "sewerageArea_code": 6005,
     "city_code": "GM0034",
+    "district_code": "",
     "name": "Almere",
     "security_region_code": "VR25",
     "security_region_name": "Flevoland",
@@ -2885,6 +2962,7 @@
   {
     "sewerageArea_code": 6006,
     "city_code": "GM0050",
+    "district_code": "",
     "name": "Zeewolde",
     "security_region_code": "VR25",
     "security_region_name": "Flevoland",
@@ -2939,6 +3017,7 @@
   {
     "sewerageArea_code": 7002,
     "city_code": "GM0197",
+    "district_code": "",
     "name": "Aalten",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
@@ -2953,6 +3032,7 @@
   {
     "sewerageArea_code": 7014,
     "city_code": "GM1859",
+    "district_code": "",
     "name": "Ruurlo",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
@@ -2967,6 +3047,7 @@
   {
     "sewerageArea_code": 7015,
     "city_code": "GM1586",
+    "district_code": "",
     "name": "Lichtenvoorde",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
@@ -2981,6 +3062,7 @@
   {
     "sewerageArea_code": 7016,
     "city_code": "GM0294",
+    "district_code": "",
     "name": "Winterswijk",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
@@ -3030,6 +3112,7 @@
   {
     "sewerageArea_code": 7017,
     "city_code": "GM1509",
+    "district_code": "",
     "name": "Varsseveld",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
@@ -3044,6 +3127,7 @@
   {
     "sewerageArea_code": 7018,
     "city_code": "GM0197",
+    "district_code": "",
     "name": "Dinxperlo",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
@@ -3058,6 +3142,7 @@
   {
     "sewerageArea_code": 7019,
     "city_code": "GM0301",
+    "district_code": "",
     "name": "Zutphen",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
@@ -3072,6 +3157,7 @@
   {
     "sewerageArea_code": 7021,
     "city_code": "GM1876",
+    "district_code": "",
     "name": "Olburgen",
     "security_region_code": "VR07",
     "security_region_name": "Gelderland-Midden",
@@ -3091,6 +3177,7 @@
   {
     "sewerageArea_code": 7022,
     "city_code": "GM1509",
+    "district_code": "",
     "name": "Etten",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
@@ -3220,6 +3307,7 @@
   {
     "sewerageArea_code": 7023,
     "city_code": "GM1859",
+    "district_code": "",
     "name": "Haarlo",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
@@ -3234,6 +3322,7 @@
   {
     "sewerageArea_code": 8005,
     "city_code": "GM0267",
+    "district_code": "",
     "name": "Nijkerk",
     "security_region_code": "VR07",
     "security_region_name": "Gelderland-Midden",
@@ -3248,6 +3337,7 @@
   {
     "sewerageArea_code": 8017,
     "city_code": "GM0232",
+    "district_code": "",
     "name": "Epe",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
@@ -3302,6 +3392,7 @@
   {
     "sewerageArea_code": 8019,
     "city_code": "GM0228",
+    "district_code": "",
     "name": "Bennekom",
     "security_region_code": "VR07",
     "security_region_name": "Gelderland-Midden",
@@ -3316,6 +3407,7 @@
   {
     "sewerageArea_code": 8021,
     "city_code": "GM0228",
+    "district_code": "",
     "name": "Ede",
     "security_region_code": "VR07",
     "security_region_name": "Gelderland-Midden",
@@ -3375,6 +3467,7 @@
   {
     "sewerageArea_code": 8022,
     "city_code": "GM0200",
+    "district_code": "",
     "name": "Apeldoorn",
     "security_region_code": "VR06",
     "security_region_name": "Noord- en Oost-Gelderland",
@@ -3424,6 +3517,7 @@
   {
     "sewerageArea_code": 8024,
     "city_code": "GM0274",
+    "district_code": "",
     "name": "Renkum",
     "security_region_code": "VR07",
     "security_region_name": "Gelderland-Midden",
@@ -3438,6 +3532,7 @@
   {
     "sewerageArea_code": 9010,
     "city_code": "GM1945",
+    "district_code": "",
     "name": "Groesbeek",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -3452,6 +3547,7 @@
   {
     "sewerageArea_code": 9012,
     "city_code": "GM1960",
+    "district_code": "",
     "name": "Geldermalsen",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -3466,6 +3562,7 @@
   {
     "sewerageArea_code": 9013,
     "city_code": "GM1960",
+    "district_code": "",
     "name": "Asperen",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -3515,6 +3612,7 @@
   {
     "sewerageArea_code": 9015,
     "city_code": "GM1734",
+    "district_code": "",
     "name": "Valburg",
     "security_region_code": "VR07",
     "security_region_name": "Gelderland-Midden",
@@ -3529,6 +3627,7 @@
   {
     "sewerageArea_code": 9016,
     "city_code": "GM0202",
+    "district_code": "",
     "name": "Arnhem",
     "security_region_code": "VR07",
     "security_region_name": "Gelderland-Midden",
@@ -3818,6 +3917,7 @@
   {
     "sewerageArea_code": 9017,
     "city_code": "GM0296",
+    "district_code": "",
     "name": "Bergharen",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -3862,6 +3962,7 @@
   {
     "sewerageArea_code": 9019,
     "city_code": "GM0216",
+    "district_code": "",
     "name": "Culemborg",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -3876,6 +3977,7 @@
   {
     "sewerageArea_code": 9020,
     "city_code": "GM0252",
+    "district_code": "",
     "name": "Overasselt",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -3890,6 +3992,7 @@
   {
     "sewerageArea_code": 9024,
     "city_code": "GM0209",
+    "district_code": "",
     "name": "Nijmegen",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -3934,6 +4037,7 @@
   {
     "sewerageArea_code": 9025,
     "city_code": "GM0281",
+    "district_code": "",
     "name": "Tiel",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -3948,6 +4052,7 @@
   {
     "sewerageArea_code": 9026,
     "city_code": "GM1740",
+    "district_code": "",
     "name": "Dodewaard",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -3962,6 +4067,7 @@
   {
     "sewerageArea_code": 9027,
     "city_code": "GM0225",
+    "district_code": "",
     "name": "Druten",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -3976,6 +4082,7 @@
   {
     "sewerageArea_code": 9029,
     "city_code": "GM0297",
+    "district_code": "",
     "name": "Aalst",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -3990,6 +4097,7 @@
   {
     "sewerageArea_code": 9030,
     "city_code": "GM0668",
+    "district_code": "",
     "name": "Maasbommel",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -4004,6 +4112,7 @@
   {
     "sewerageArea_code": 9031,
     "city_code": "GM1960",
+    "district_code": "",
     "name": "Beesd",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -4018,6 +4127,7 @@
   {
     "sewerageArea_code": 9032,
     "city_code": "GM1734",
+    "district_code": "",
     "name": "Zetten",
     "security_region_code": "VR07",
     "security_region_name": "Gelderland-Midden",
@@ -4032,6 +4142,7 @@
   {
     "sewerageArea_code": 9034,
     "city_code": "GM0214",
+    "district_code": "",
     "name": "Eck En Wiel",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -4046,6 +4157,7 @@
   {
     "sewerageArea_code": 9037,
     "city_code": "GM0512",
+    "district_code": "",
     "name": "Gorinchem-Oost",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -4065,6 +4177,7 @@
   {
     "sewerageArea_code": 9038,
     "city_code": "GM1705",
+    "district_code": "",
     "name": "Gendt",
     "security_region_code": "VR07",
     "security_region_name": "Gelderland-Midden",
@@ -4079,6 +4192,7 @@
   {
     "sewerageArea_code": 9039,
     "city_code": "GM0668",
+    "district_code": "",
     "name": "Dreumel",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -4093,6 +4207,7 @@
   {
     "sewerageArea_code": 9040,
     "city_code": "GM1960",
+    "district_code": "",
     "name": "Haaften",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -4107,6 +4222,7 @@
   {
     "sewerageArea_code": 9041,
     "city_code": "GM0297",
+    "district_code": "",
     "name": "Zaltbommel",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -4121,6 +4237,7 @@
   {
     "sewerageArea_code": 9042,
     "city_code": "GM1945",
+    "district_code": "",
     "name": "Millingen",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -4135,6 +4252,7 @@
   {
     "sewerageArea_code": 9043,
     "city_code": "GM0214",
+    "district_code": "",
     "name": "Lienden",
     "security_region_code": "VR08",
     "security_region_name": "Gelderland-Zuid",
@@ -4149,6 +4267,7 @@
   {
     "sewerageArea_code": 10001,
     "city_code": "GM0355",
+    "district_code": "",
     "name": "Zeist",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4163,6 +4282,7 @@
   {
     "sewerageArea_code": 10003,
     "city_code": "GM0310",
+    "district_code": "",
     "name": "De Bilt",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4177,6 +4297,7 @@
   {
     "sewerageArea_code": 10008,
     "city_code": "GM1581",
+    "district_code": "",
     "name": "Driebergen",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4226,6 +4347,7 @@
   {
     "sewerageArea_code": 10009,
     "city_code": "GM0344",
+    "district_code": "",
     "name": "Utrecht",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4355,6 +4477,7 @@
   {
     "sewerageArea_code": 10010,
     "city_code": "GM0342",
+    "district_code": "",
     "name": "Soest",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4369,6 +4492,7 @@
   {
     "sewerageArea_code": 10012,
     "city_code": "GM0344",
+    "district_code": "",
     "name": "De Meern",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4383,6 +4507,7 @@
   {
     "sewerageArea_code": 10020,
     "city_code": "GM0351",
+    "district_code": "",
     "name": "Woudenberg",
     "security_region_code": "VR07",
     "security_region_name": "Gelderland-Midden",
@@ -4492,6 +4617,7 @@
   {
     "sewerageArea_code": 10021,
     "city_code": "GM1581",
+    "district_code": "",
     "name": "Veenendaal",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4506,6 +4632,7 @@
   {
     "sewerageArea_code": 10024,
     "city_code": "GM0335",
+    "district_code": "",
     "name": "Montfoort",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4520,6 +4647,7 @@
   {
     "sewerageArea_code": 10025,
     "city_code": "GM0312",
+    "district_code": "",
     "name": "Bunnik",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4534,6 +4662,7 @@
   {
     "sewerageArea_code": 10027,
     "city_code": "GM0307",
+    "district_code": "",
     "name": "Amersfoort",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4668,6 +4797,7 @@
   {
     "sewerageArea_code": 10028,
     "city_code": "GM0353",
+    "district_code": "",
     "name": "Nieuwegein",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4682,6 +4812,7 @@
   {
     "sewerageArea_code": 10029,
     "city_code": "GM0352",
+    "district_code": "",
     "name": "Wijk Bij Duurstede",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4696,6 +4827,7 @@
   {
     "sewerageArea_code": 10031,
     "city_code": "GM1904",
+    "district_code": "",
     "name": "Breukelen",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4710,6 +4842,7 @@
   {
     "sewerageArea_code": 10032,
     "city_code": "GM0589",
+    "district_code": "",
     "name": "Oudewater",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4724,6 +4857,7 @@
   {
     "sewerageArea_code": 10034,
     "city_code": "GM0736",
+    "district_code": "",
     "name": "De Ronde Venen",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4738,6 +4872,7 @@
   {
     "sewerageArea_code": 10035,
     "city_code": "GM0340",
+    "district_code": "",
     "name": "Rhenen",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4752,6 +4887,7 @@
   {
     "sewerageArea_code": 10036,
     "city_code": "GM0321",
+    "district_code": "",
     "name": "Houten",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4766,6 +4902,7 @@
   {
     "sewerageArea_code": 10037,
     "city_code": "GM1904",
+    "district_code": "",
     "name": "Loenen",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -4815,6 +4952,7 @@
   {
     "sewerageArea_code": 10038,
     "city_code": "GM0331",
+    "district_code": "",
     "name": "Lopik",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -4829,6 +4967,7 @@
   {
     "sewerageArea_code": 11004,
     "city_code": "GM0402",
+    "district_code": "",
     "name": "Hilversum",
     "security_region_code": "VR14",
     "security_region_name": "Gooi en Vechtstreek",
@@ -4843,6 +4982,7 @@
   {
     "sewerageArea_code": 11005,
     "city_code": "GM0362",
+    "district_code": "",
     "name": "Amstelveen",
     "security_region_code": "VR13",
     "security_region_name": "Amsterdam-Amstelland",
@@ -4857,6 +4997,7 @@
   {
     "sewerageArea_code": 11006,
     "city_code": "GM0451",
+    "district_code": "",
     "name": "Uithoorn",
     "security_region_code": "VR13",
     "security_region_name": "Amsterdam-Amstelland",
@@ -4871,6 +5012,7 @@
   {
     "sewerageArea_code": 11008,
     "city_code": "GM0376",
+    "district_code": "",
     "name": "Blaricum Gooiergracht",
     "security_region_code": "VR14",
     "security_region_name": "Gooi en Vechtstreek",
@@ -4930,6 +5072,7 @@
   {
     "sewerageArea_code": 11010,
     "city_code": "GM0457",
+    "district_code": "",
     "name": "Weesp",
     "security_region_code": "VR14",
     "security_region_name": "Gooi en Vechtstreek",
@@ -4944,6 +5087,7 @@
   {
     "sewerageArea_code": 11012,
     "city_code": "GM0406",
+    "district_code": "",
     "name": "Huizen",
     "security_region_code": "VR14",
     "security_region_name": "Gooi en Vechtstreek",
@@ -4958,6 +5102,7 @@
   {
     "sewerageArea_code": 11013,
     "city_code": "GM1696",
+    "district_code": "",
     "name": "Horstermeer",
     "security_region_code": "VR14",
     "security_region_name": "Gooi en Vechtstreek",
@@ -4972,6 +5117,7 @@
   {
     "sewerageArea_code": 11014,
     "city_code": "GM0363",
+    "district_code": "West",
     "name": "Amsterdam-West",
     "security_region_code": "VR13",
     "security_region_name": "Amsterdam-Amstelland",
@@ -5061,6 +5207,7 @@
   {
     "sewerageArea_code": 12001,
     "city_code": "GM0399",
+    "district_code": "",
     "name": "Heiloo",
     "security_region_code": "VR10",
     "security_region_name": "Noord-Holland-Noord",
@@ -5075,6 +5222,7 @@
   {
     "sewerageArea_code": 12006,
     "city_code": "GM0361",
+    "district_code": "",
     "name": "Alkmaar",
     "security_region_code": "VR10",
     "security_region_name": "Noord-Holland-Noord",
@@ -5124,6 +5272,7 @@
   {
     "sewerageArea_code": 12010,
     "city_code": "GM0479",
+    "district_code": "",
     "name": "Zaandam-Oost",
     "security_region_code": "VR11",
     "security_region_name": "Zaanstreek-Waterland",
@@ -5138,6 +5287,7 @@
   {
     "sewerageArea_code": 12013,
     "city_code": "GM0441",
+    "district_code": "",
     "name": "Geestmerambacht",
     "security_region_code": "VR10",
     "security_region_name": "Noord-Holland-Noord",
@@ -5152,6 +5302,7 @@
   {
     "sewerageArea_code": 12014,
     "city_code": "GM0370",
+    "district_code": "",
     "name": "Beemster",
     "security_region_code": "VR10",
     "security_region_name": "Noord-Holland-Noord",
@@ -5171,6 +5322,7 @@
   {
     "sewerageArea_code": 12016,
     "city_code": "GM0852",
+    "district_code": "",
     "name": "Katwoude",
     "security_region_code": "VR11",
     "security_region_name": "Zaanstreek-Waterland",
@@ -5185,6 +5337,7 @@
   {
     "sewerageArea_code": 12018,
     "city_code": "GM1911",
+    "district_code": "",
     "name": "Wieringen",
     "security_region_code": "VR10",
     "security_region_name": "Noord-Holland-Noord",
@@ -5224,6 +5377,7 @@
   {
     "sewerageArea_code": 12021,
     "city_code": "GM0420",
+    "district_code": "",
     "name": "Wervershoof",
     "security_region_code": "VR10",
     "security_region_name": "Noord-Holland-Noord",
@@ -5273,6 +5427,7 @@
   {
     "sewerageArea_code": 12022,
     "city_code": "GM0375",
+    "district_code": "",
     "name": "Beverwijk",
     "security_region_code": "VR12",
     "security_region_name": "Kennemerland",
@@ -5642,6 +5797,7 @@
   {
     "sewerageArea_code": 12023,
     "city_code": "GM0400",
+    "district_code": "",
     "name": "Den Helder",
     "security_region_code": "VR10",
     "security_region_name": "Noord-Holland-Noord",
@@ -5691,6 +5847,7 @@
   {
     "sewerageArea_code": 12026,
     "city_code": "GM0385",
+    "district_code": "",
     "name": "Oosthuizen",
     "security_region_code": "VR11",
     "security_region_name": "Zaanstreek-Waterland",
@@ -5705,6 +5862,7 @@
   {
     "sewerageArea_code": 13003,
     "city_code": "GM0453",
+    "district_code": "",
     "name": "Velsen",
     "security_region_code": "VR12",
     "security_region_name": "Kennemerland",
@@ -5719,6 +5877,7 @@
   {
     "sewerageArea_code": 13004,
     "city_code": "GM0397",
+    "district_code": "",
     "name": "Heemstede",
     "security_region_code": "VR12",
     "security_region_name": "Kennemerland",
@@ -5733,6 +5892,7 @@
   {
     "sewerageArea_code": 13005,
     "city_code": "GM0394",
+    "district_code": "",
     "name": "Zwanenburg",
     "security_region_code": "VR12",
     "security_region_name": "Kennemerland",
@@ -5747,6 +5907,7 @@
   {
     "sewerageArea_code": 13010,
     "city_code": "GM0392",
+    "district_code": "",
     "name": "Haarlem-Waarderpolder",
     "security_region_code": "VR12",
     "security_region_name": "Kennemerland",
@@ -5886,6 +6047,7 @@
   {
     "sewerageArea_code": 13012,
     "city_code": "GM0392",
+    "district_code": "",
     "name": "Haarlem-Schalkwijk",
     "security_region_code": "VR12",
     "security_region_name": "Kennemerland",
@@ -5900,6 +6062,7 @@
   {
     "sewerageArea_code": 13023,
     "city_code": "GM0575",
+    "district_code": "",
     "name": "Noordwijk",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -5914,6 +6077,7 @@
   {
     "sewerageArea_code": 13030,
     "city_code": "GM0451",
+    "district_code": "",
     "name": "Leimuiden",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6163,6 +6327,7 @@
   {
     "sewerageArea_code": 13033,
     "city_code": "GM0546",
+    "district_code": "",
     "name": "Leiden-Zuidwest",
     "security_region_code": "VR15",
     "security_region_name": "Haaglanden",
@@ -6272,6 +6437,7 @@
   {
     "sewerageArea_code": 13034,
     "city_code": "GM0553",
+    "district_code": "",
     "name": "Lisse",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6286,6 +6452,7 @@
   {
     "sewerageArea_code": 13035,
     "city_code": "GM0484",
+    "district_code": "",
     "name": "Alphen Noord",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6300,6 +6467,7 @@
   {
     "sewerageArea_code": 13038,
     "city_code": "GM0569",
+    "district_code": "",
     "name": "Nieuwveen",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6349,6 +6517,7 @@
   {
     "sewerageArea_code": 13039,
     "city_code": "GM0513",
+    "district_code": "",
     "name": "Gouda",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6363,6 +6532,7 @@
   {
     "sewerageArea_code": 13041,
     "city_code": "GM0537",
+    "district_code": "",
     "name": "Katwijk",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6377,6 +6547,7 @@
   {
     "sewerageArea_code": 13042,
     "city_code": "GM1901",
+    "district_code": "",
     "name": "Bodegraven",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6391,6 +6562,7 @@
   {
     "sewerageArea_code": 13044,
     "city_code": "GM0394",
+    "district_code": "",
     "name": "Zwaanshoek",
     "security_region_code": "VR13",
     "security_region_name": "Amsterdam-Amstelland",
@@ -6415,6 +6587,7 @@
   {
     "sewerageArea_code": 13046,
     "city_code": "GM0546",
+    "district_code": "",
     "name": "Leiden-Noord",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6429,6 +6602,7 @@
   {
     "sewerageArea_code": 13047,
     "city_code": "GM1884",
+    "district_code": "",
     "name": "Nieuwe Wetering",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6443,6 +6617,7 @@
   {
     "sewerageArea_code": 13048,
     "city_code": "GM0627",
+    "district_code": "",
     "name": "Waddinxveen Randenburg",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6457,6 +6632,7 @@
   {
     "sewerageArea_code": 13049,
     "city_code": "GM0484",
+    "district_code": "",
     "name": "Alphen Kerk en Zanen",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6471,6 +6647,7 @@
   {
     "sewerageArea_code": 14002,
     "city_code": "GM0632",
+    "district_code": "",
     "name": "Woerden",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6490,6 +6667,7 @@
   {
     "sewerageArea_code": 14003,
     "city_code": "GM0344",
+    "district_code": "",
     "name": "Leidsche Rijn",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -6504,6 +6682,7 @@
   {
     "sewerageArea_code": 15004,
     "city_code": "GM0599",
+    "district_code": "",
     "name": "Nieuwe Waterweg",
     "security_region_code": "VR15",
     "security_region_name": "Haaglanden",
@@ -6523,6 +6702,7 @@
   {
     "sewerageArea_code": 15005,
     "city_code": "GM0518",
+    "district_code": "",
     "name": "Houtrust",
     "security_region_code": "VR15",
     "security_region_name": "Haaglanden",
@@ -6652,6 +6832,7 @@
   {
     "sewerageArea_code": 15007,
     "city_code": "GM0622",
+    "district_code": "",
     "name": "De Groote Lucht",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -6731,6 +6912,7 @@
   {
     "sewerageArea_code": 15008,
     "city_code": "GM1842",
+    "district_code": "",
     "name": "Harnaschpolder",
     "security_region_code": "VR15",
     "security_region_name": "Haaglanden",
@@ -6860,6 +7042,7 @@
   {
     "sewerageArea_code": 16009,
     "city_code": "GM1892",
+    "district_code": "",
     "name": "Kortenoord",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6879,6 +7062,7 @@
   {
     "sewerageArea_code": 16010,
     "city_code": "GM0502",
+    "district_code": "",
     "name": "Capelle ad IJssel/Kralingseveer",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -6928,6 +7112,7 @@
   {
     "sewerageArea_code": 16011,
     "city_code": "GM0502",
+    "district_code": "",
     "name": "Groenedijk",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -6942,6 +7127,7 @@
   {
     "sewerageArea_code": 17002,
     "city_code": "GM1931",
+    "district_code": "",
     "name": "Bergambacht",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6956,6 +7142,7 @@
   {
     "sewerageArea_code": 17004,
     "city_code": "GM1931",
+    "district_code": "",
     "name": "Ammerstol",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6970,6 +7157,7 @@
   {
     "sewerageArea_code": 17005,
     "city_code": "GM1931",
+    "district_code": "",
     "name": "Stolwijk",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -6984,6 +7172,7 @@
   {
     "sewerageArea_code": 17011,
     "city_code": "GM0597",
+    "district_code": "",
     "name": "Ridderkerk",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -7033,6 +7222,7 @@
   {
     "sewerageArea_code": 17013,
     "city_code": "GM0590",
+    "district_code": "",
     "name": "Papendrecht",
     "security_region_code": "VR18",
     "security_region_name": "Zuid-Holland-Zuid",
@@ -7047,6 +7237,7 @@
   {
     "sewerageArea_code": 17016,
     "city_code": "GM0482",
+    "district_code": "",
     "name": "Alblasserdam",
     "security_region_code": "VR18",
     "security_region_name": "Zuid-Holland-Zuid",
@@ -7061,6 +7252,7 @@
   {
     "sewerageArea_code": 17026,
     "city_code": "GM0523",
+    "district_code": "",
     "name": "Hardinxveld-Giessendam",
     "security_region_code": "VR18",
     "security_region_name": "Zuid-Holland-Zuid",
@@ -7075,6 +7267,7 @@
   {
     "sewerageArea_code": 17029,
     "city_code": "GM1961",
+    "district_code": "",
     "name": "Vianen",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -7089,6 +7282,7 @@
   {
     "sewerageArea_code": 17040,
     "city_code": "GM0614",
+    "district_code": "",
     "name": "Oostvoorne",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -7103,6 +7297,7 @@
   {
     "sewerageArea_code": 17041,
     "city_code": "GM0530",
+    "district_code": "",
     "name": "Hellevoetsluis",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -7122,6 +7317,7 @@
   {
     "sewerageArea_code": 17043,
     "city_code": "GM1963",
+    "district_code": "",
     "name": "Strijen",
     "security_region_code": "VR18",
     "security_region_name": "Zuid-Holland-Zuid",
@@ -7136,6 +7332,7 @@
   {
     "sewerageArea_code": 17044,
     "city_code": "GM0505",
+    "district_code": "",
     "name": "Dordrecht",
     "security_region_code": "VR18",
     "security_region_name": "Zuid-Holland-Zuid",
@@ -7150,6 +7347,7 @@
   {
     "sewerageArea_code": 17045,
     "city_code": "GM1963",
+    "district_code": "",
     "name": "Oud-Beijerland",
     "security_region_code": "VR18",
     "security_region_name": "Zuid-Holland-Zuid",
@@ -7164,6 +7362,7 @@
   {
     "sewerageArea_code": 17048,
     "city_code": "GM1924",
+    "district_code": "",
     "name": "Goedereede",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -7178,6 +7377,7 @@
   {
     "sewerageArea_code": 17052,
     "city_code": "GM0610",
+    "district_code": "",
     "name": "Sliedrecht",
     "security_region_code": "VR18",
     "security_region_name": "Zuid-Holland-Zuid",
@@ -7192,6 +7392,7 @@
   {
     "sewerageArea_code": 17053,
     "city_code": "GM1931",
+    "district_code": "",
     "name": "De Groote Zaag",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -7211,6 +7412,7 @@
   {
     "sewerageArea_code": 17054,
     "city_code": "GM1963",
+    "district_code": "",
     "name": "Piershil",
     "security_region_code": "VR18",
     "security_region_name": "Zuid-Holland-Zuid",
@@ -7260,6 +7462,7 @@
   {
     "sewerageArea_code": 17055,
     "city_code": "GM1924",
+    "district_code": "",
     "name": "Middelharnis",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -7274,6 +7477,7 @@
   {
     "sewerageArea_code": 17056,
     "city_code": "GM1924",
+    "district_code": "",
     "name": "Oude Tonge",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -7288,6 +7492,7 @@
   {
     "sewerageArea_code": 17057,
     "city_code": "GM0599",
+    "district_code": "",
     "name": "Rozenburg",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -7302,6 +7507,7 @@
   {
     "sewerageArea_code": 17061,
     "city_code": "GM0599",
+    "district_code": "",
     "name": "Dokhaven",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -7316,6 +7522,7 @@
   {
     "sewerageArea_code": 17062,
     "city_code": "GM1930",
+    "district_code": "",
     "name": "Heenvliet",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -7330,6 +7537,7 @@
   {
     "sewerageArea_code": 17063,
     "city_code": "GM1961",
+    "district_code": "",
     "name": "Leerdam",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -7344,6 +7552,7 @@
   {
     "sewerageArea_code": 17065,
     "city_code": "GM1978",
+    "district_code": "",
     "name": "Groot-Ammers",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -7368,6 +7577,7 @@
   {
     "sewerageArea_code": 17066,
     "city_code": "GM1963",
+    "district_code": "",
     "name": "Numansdorp",
     "security_region_code": "VR18",
     "security_region_name": "Zuid-Holland-Zuid",
@@ -7382,6 +7592,7 @@
   {
     "sewerageArea_code": 17067,
     "city_code": "GM1931",
+    "district_code": "",
     "name": "Haastrecht",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -7396,6 +7607,7 @@
   {
     "sewerageArea_code": 17068,
     "city_code": "GM1931",
+    "district_code": "",
     "name": "Berkenwoude",
     "security_region_code": "VR16",
     "security_region_name": "Hollands-Midden",
@@ -7410,6 +7622,7 @@
   {
     "sewerageArea_code": 17070,
     "city_code": "GM0599",
+    "district_code": "",
     "name": "Hoogvliet",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -7424,6 +7637,7 @@
   {
     "sewerageArea_code": 17074,
     "city_code": "GM1924",
+    "district_code": "",
     "name": "Den Bommel",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -7438,6 +7652,7 @@
   {
     "sewerageArea_code": 17076,
     "city_code": "GM1978",
+    "district_code": "",
     "name": "Schelluinen",
     "security_region_code": "VR09",
     "security_region_name": "Utrecht",
@@ -7457,6 +7672,7 @@
   {
     "sewerageArea_code": 17077,
     "city_code": "GM1930",
+    "district_code": "",
     "name": "Spijkenisse",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -7471,6 +7687,7 @@
   {
     "sewerageArea_code": 17078,
     "city_code": "GM0642",
+    "district_code": "",
     "name": "Zwijndrecht",
     "security_region_code": "VR18",
     "security_region_name": "Zuid-Holland-Zuid",
@@ -7485,6 +7702,7 @@
   {
     "sewerageArea_code": 17079,
     "city_code": "GM0489",
+    "district_code": "",
     "name": "Barendrecht",
     "security_region_code": "VR17",
     "security_region_name": "Rotterdam-Rijnmond",
@@ -7499,6 +7717,7 @@
   {
     "sewerageArea_code": 18006,
     "city_code": "GM1676",
+    "district_code": "",
     "name": "Westerschouwen",
     "security_region_code": "VR19",
     "security_region_name": "Zeeland",
@@ -7538,6 +7757,7 @@
   {
     "sewerageArea_code": 21001,
     "city_code": "GM0718",
+    "district_code": "",
     "name": "Walcheren",
     "security_region_code": "VR19",
     "security_region_name": "Zeeland",
@@ -7657,6 +7877,7 @@
   {
     "sewerageArea_code": 23002,
     "city_code": "GM0715",
+    "district_code": "",
     "name": "Terneuzen",
     "security_region_code": "VR19",
     "security_region_name": "Zeeland",
@@ -7781,6 +8002,7 @@
   {
     "sewerageArea_code": 25001,
     "city_code": "GM0784",
+    "district_code": "",
     "name": "Rijen",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -7800,6 +8022,7 @@
   {
     "sewerageArea_code": 25003,
     "city_code": "GM0867",
+    "district_code": "",
     "name": "Waalwijk",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -7819,6 +8042,7 @@
   {
     "sewerageArea_code": 25008,
     "city_code": "GM0873",
+    "district_code": "",
     "name": "Ossendrecht",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -7833,6 +8057,7 @@
   {
     "sewerageArea_code": 25012,
     "city_code": "GM0873",
+    "district_code": "",
     "name": "Putte",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -7867,6 +8092,7 @@
   {
     "sewerageArea_code": 25013,
     "city_code": "GM0785",
+    "district_code": "",
     "name": "Riel",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -7921,6 +8147,7 @@
   {
     "sewerageArea_code": 25014,
     "city_code": "GM0867",
+    "district_code": "",
     "name": "Waspik",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -7935,6 +8162,7 @@
   {
     "sewerageArea_code": 25016,
     "city_code": "GM0851",
+    "district_code": "",
     "name": "Nieuw-Vossemeer",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -7949,6 +8177,7 @@
   {
     "sewerageArea_code": 25017,
     "city_code": "GM0758",
+    "district_code": "",
     "name": "Nieuwveer",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -7993,6 +8222,7 @@
   {
     "sewerageArea_code": 25019,
     "city_code": "GM1723",
+    "district_code": "",
     "name": "Chaam",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -8007,6 +8237,7 @@
   {
     "sewerageArea_code": 25020,
     "city_code": "GM0809",
+    "district_code": "",
     "name": "Kaatsheuvel",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -8136,6 +8367,7 @@
   {
     "sewerageArea_code": 25021,
     "city_code": "GM0703",
+    "district_code": "",
     "name": "Bath",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -8185,6 +8417,7 @@
   {
     "sewerageArea_code": 25023,
     "city_code": "GM0826",
+    "district_code": "",
     "name": "Dongemond",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -8199,6 +8432,7 @@
   {
     "sewerageArea_code": 25025,
     "city_code": "GM0748",
+    "district_code": "",
     "name": "Halsteren",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -8213,6 +8447,7 @@
   {
     "sewerageArea_code": 25026,
     "city_code": "GM0744",
+    "district_code": "",
     "name": "Baarle-Nassau",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -8227,6 +8462,7 @@
   {
     "sewerageArea_code": 25027,
     "city_code": "GM1719",
+    "district_code": "",
     "name": "Lage Zwaluwe",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -8351,6 +8587,7 @@
   {
     "sewerageArea_code": 25028,
     "city_code": "GM0851",
+    "district_code": "",
     "name": "Dinteloord",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -8365,6 +8602,7 @@
   {
     "sewerageArea_code": 25029,
     "city_code": "GM1709",
+    "district_code": "",
     "name": "Willemstad",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -8379,6 +8617,7 @@
   {
     "sewerageArea_code": 26005,
     "city_code": "GM1959",
+    "district_code": "",
     "name": "Sleeuwijk",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -8393,6 +8632,7 @@
   {
     "sewerageArea_code": 27003,
     "city_code": "GM0772",
+    "district_code": "",
     "name": "Eindhoven",
     "security_region_code": "VR22",
     "security_region_name": "Brabant-Zuidoost",
@@ -8407,6 +8647,7 @@
   {
     "sewerageArea_code": 27004,
     "city_code": "GM0757",
+    "district_code": "",
     "name": "Boxtel",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
@@ -8421,6 +8662,7 @@
   {
     "sewerageArea_code": 27005,
     "city_code": "GM1728",
+    "district_code": "",
     "name": "Hapert",
     "security_region_code": "VR22",
     "security_region_name": "Brabant-Zuidoost",
@@ -8435,6 +8677,7 @@
   {
     "sewerageArea_code": 27006,
     "city_code": "GM1706",
+    "district_code": "",
     "name": "Soerendonk",
     "security_region_code": "VR22",
     "security_region_name": "Brabant-Zuidoost",
@@ -8449,6 +8692,7 @@
   {
     "sewerageArea_code": 27008,
     "city_code": "GM0796",
+    "district_code": "",
     "name": "Den Bosch",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
@@ -8578,6 +8822,7 @@
   {
     "sewerageArea_code": 27009,
     "city_code": "GM0788",
+    "district_code": "",
     "name": "Haaren",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
@@ -8597,6 +8842,7 @@
   {
     "sewerageArea_code": 27010,
     "city_code": "GM1948",
+    "district_code": "",
     "name": "St Oedenrode",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
@@ -8686,6 +8932,7 @@
   {
     "sewerageArea_code": 27011,
     "city_code": "GM0798",
+    "district_code": "",
     "name": "Biest-Houtakker",
     "security_region_code": "VR22",
     "security_region_name": "Brabant-Zuidoost",
@@ -8705,6 +8952,7 @@
   {
     "sewerageArea_code": 28002,
     "city_code": "GM0743",
+    "district_code": "",
     "name": "Asten",
     "security_region_code": "VR22",
     "security_region_name": "Brabant-Zuidoost",
@@ -8754,6 +9002,7 @@
   {
     "sewerageArea_code": 28003,
     "city_code": "GM1659",
+    "district_code": "",
     "name": "Aarle Rixtel",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
@@ -8843,6 +9092,7 @@
   {
     "sewerageArea_code": 28005,
     "city_code": "GM1721",
+    "district_code": "",
     "name": "Dinther",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
@@ -8972,6 +9222,7 @@
   {
     "sewerageArea_code": 28006,
     "city_code": "GM0796",
+    "district_code": "",
     "name": "Vinkel",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
@@ -8986,6 +9237,7 @@
   {
     "sewerageArea_code": 29002,
     "city_code": "GM0828",
+    "district_code": "",
     "name": "Oijen",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
@@ -9000,6 +9252,7 @@
   {
     "sewerageArea_code": 29003,
     "city_code": "GM1684",
+    "district_code": "",
     "name": "Land van Cuijk",
     "security_region_code": "VR21",
     "security_region_name": "Brabant-Noord",
@@ -9129,6 +9382,7 @@
   {
     "sewerageArea_code": 30003,
     "city_code": "GM0935",
+    "district_code": "",
     "name": "Maastricht-Limmel",
     "security_region_code": "VR24",
     "security_region_name": "Limburg-Zuid",
@@ -9143,6 +9397,7 @@
   {
     "sewerageArea_code": 30005,
     "city_code": "GM0988",
+    "district_code": "",
     "name": "Weert",
     "security_region_code": "VR23",
     "security_region_name": "Limburg-Noord",
@@ -9157,6 +9412,7 @@
   {
     "sewerageArea_code": 30007,
     "city_code": "GM0935",
+    "district_code": "",
     "name": "Maastricht-Bosscherveld",
     "security_region_code": "VR24",
     "security_region_name": "Limburg-Zuid",
@@ -9286,6 +9542,7 @@
   {
     "sewerageArea_code": 30011,
     "city_code": "GM0965",
+    "district_code": "",
     "name": "Simpelveld",
     "security_region_code": "VR24",
     "security_region_name": "Limburg-Zuid",
@@ -9335,6 +9592,7 @@
   {
     "sewerageArea_code": 30013,
     "city_code": "GM0882",
+    "district_code": "",
     "name": "Rimburg",
     "security_region_code": "VR24",
     "security_region_name": "Limburg-Zuid",
@@ -9349,6 +9607,7 @@
   {
     "sewerageArea_code": 30014,
     "city_code": "GM0928",
+    "district_code": "",
     "name": "Kerkrade-Kaffeberg",
     "security_region_code": "VR24",
     "security_region_name": "Limburg-Zuid",
@@ -9363,6 +9622,7 @@
   {
     "sewerageArea_code": 30016,
     "city_code": "GM1903",
+    "district_code": "",
     "name": "Maastricht-Heugem",
     "security_region_code": "VR24",
     "security_region_name": "Limburg-Zuid",
@@ -9377,6 +9637,7 @@
   {
     "sewerageArea_code": 30017,
     "city_code": "GM0983",
+    "district_code": "",
     "name": "Venlo",
     "security_region_code": "VR23",
     "security_region_name": "Limburg-Noord",
@@ -9426,6 +9687,7 @@
   {
     "sewerageArea_code": 30018,
     "city_code": "GM1894",
+    "district_code": "",
     "name": "Meijel",
     "security_region_code": "VR23",
     "security_region_name": "Limburg-Noord",
@@ -9440,6 +9702,7 @@
   {
     "sewerageArea_code": 30019,
     "city_code": "GM1729",
+    "district_code": "",
     "name": "Wijlre",
     "security_region_code": "VR24",
     "security_region_name": "Limburg-Zuid",
@@ -9454,6 +9717,7 @@
   {
     "sewerageArea_code": 30020,
     "city_code": "GM0984",
+    "district_code": "",
     "name": "Venraij",
     "security_region_code": "VR23",
     "security_region_name": "Limburg-Noord",
@@ -9578,6 +9842,7 @@
   {
     "sewerageArea_code": 30022,
     "city_code": "GM1711",
+    "district_code": "",
     "name": "Susteren",
     "security_region_code": "VR23",
     "security_region_name": "Limburg-Noord",
@@ -9667,6 +9932,7 @@
   {
     "sewerageArea_code": 30023,
     "city_code": "GM1641",
+    "district_code": "",
     "name": "Panheel",
     "security_region_code": "VR23",
     "security_region_name": "Limburg-Noord",
@@ -9716,6 +9982,7 @@
   {
     "sewerageArea_code": 30024,
     "city_code": "GM0957",
+    "district_code": "",
     "name": "Roermond",
     "security_region_code": "VR23",
     "security_region_name": "Limburg-Noord",
@@ -9730,6 +9997,7 @@
   {
     "sewerageArea_code": 30025,
     "city_code": "GM0907",
+    "district_code": "",
     "name": "Gennep",
     "security_region_code": "VR23",
     "security_region_name": "Limburg-Noord",
@@ -9744,6 +10012,7 @@
   {
     "sewerageArea_code": 31005,
     "city_code": "GM0363",
+    "district_code": "",
     "name": "Westpoort",
     "security_region_code": "VR13",
     "security_region_name": "Amsterdam-Amstelland",
@@ -9758,6 +10027,7 @@
   {
     "sewerageArea_code": 32002,
     "city_code": "GM0855",
+    "district_code": "",
     "name": "Tilburg",
     "security_region_code": "VR20",
     "security_region_name": "Midden- en West-Brabant",
@@ -9887,6 +10157,7 @@
   {
     "sewerageArea_code": 33001,
     "city_code": "GM1952",
+    "district_code": "",
     "name": "Foxhol",
     "security_region_code": "VR03",
     "security_region_name": "Drenthe",

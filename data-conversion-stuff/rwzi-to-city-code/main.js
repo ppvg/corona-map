@@ -4,6 +4,14 @@ url = 'https://data.rivm.nl/covid-19/COVID-19_rioolwaterdata.json';
 sewerageAreas = [];
 sewerageDict = {};
 
+const getDistrictCode = function(measurement) {
+    if (measurement.RWZI_AWZI_name === 'Amsterdam-West') {
+        return 'West';
+    } else {
+        return '';
+    }
+};
+
 const getCityByPostalCode = function(postalCode) {
     let letters = postalCode.substring(0, 4);
     if (window.postcodes[letters]) {
@@ -25,15 +33,17 @@ const getCityByPostalCode = function(postalCode) {
 
 $.getJSON(url, function(measurements) {
     for (let measurementent of measurements) {
-        let sewerageArea_code, postalCode, city_code;
+        let sewerageArea_code, postalCode, city_code, district_code;
         postalCode = measurementent.Postal_code;
         sewerageArea_code = measurementent.RWZI_AWZI_code;
 
         if (!sewerageDict[sewerageArea_code]) {
             city_code = getCityByPostalCode(postalCode);
+            district_code = getDistrictCode(measurementent);
             sewerageDict[sewerageArea_code] = {
                 sewerageArea_code,
                 city_code,
+                district_code,
                 name: measurementent.RWZI_AWZI_name,
                 security_region_code: measurementent.Security_region_code,
                 security_region_name: measurementent.Security_region_name,
