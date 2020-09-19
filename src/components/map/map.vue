@@ -25,16 +25,7 @@
                 return this.$store.state.settings.canvasHeight;
             },
             containerRegions() {
-                switch(this.currentRegionType) {
-                    case 'city':
-                        return this.$store.state[this.currentMap.module].all;
-                    case 'ggd':
-                        return this.$store.state.ggds.all;
-                    case 'sr':
-                        return this.$store.state.safetyRegions.all;
-                    case 'country':
-                        return this.$store.state.countries.all;
-                }
+                return this.$store.getters['ui/regions'];
             },
             currentMap() {
                 return this.$store.state.maps.current;

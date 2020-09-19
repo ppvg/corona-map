@@ -15,7 +15,7 @@
                 return this.$store.state.ui.hoverValue;
             },
             regionType() {
-                return 'Zoek ' + this.$store.state.maps.current.regionLabel + ' of klik op de kaart';
+                return 'Zoek ' + this.$store.getters['ui/typeLabel'](false).toLowerCase() + ' of klik op de kaart';
             }
         },
         methods: {

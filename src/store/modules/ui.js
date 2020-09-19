@@ -7,7 +7,7 @@ const state = {
     searchValue: '',
     hoverValue: '',
     currentCity: null,
-    currentRegionType: 'city',
+    currentRegionType: '',
     today: null,
     credits: false,
     embedPopup: false,
@@ -60,26 +60,30 @@ const getters = {
     },
     regions(state, getters, rootState, rootGetters) {
         switch(state.currentRegionType) {
+            case 'district':
+                return rootState.districts.all;
             case 'city':
                 return rootState.cities.all;
             case 'ggd':
                 return rootState.ggds.all;
-            case 'sr':
+            case 'safety-region':
                 return rootState.safetyRegions.all;
             case 'country':
                 return rootState.countries.all;
         }
     },
-    typeLabel(state, getters, rootState, rootGetters) {
+    typeLabel: (state) => (plural = true) => {
         switch(state.currentRegionType) {
+            case 'district':
+                return plural ? "Stadsdelen" : "Stadsdeel";
             case 'city':
-                return rootState.maps.current.regionLabel;
+                return plural ? "Gemeentes" : "Gemeente";
             case 'ggd':
-                return 'ggds';
+                return plural ? "GGD'en" : "GGD";
             case 'sr':
-                return "veiligheidsregio's";
+                return plural ? "Veiligheidsregio's" : "Veiligheidsregio";
             case 'country':
-                return "landen";
+                return plural ? "Landen" : "Land";
         }
     }
 };

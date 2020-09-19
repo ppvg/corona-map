@@ -1,56 +1,49 @@
 <script>
     import City from "@/classes/City";
-    import regionType from './region-type';
+    import regionType from "./region-type";
 
     export default {
         name: 'region-type-picker',
         components: {
             regionType
         },
-        props: {
-            city: {
-                type: City,
-                required: true
-            }
-        },
         computed: {
+            currentMap() {
+                return this.$store.state.maps.current;
+            },
             types() {
                 let city, store;
                 city = this.city;
                 store = this.$store;
                 return [
                     {
+                        label: 'Stadsdeel',
+                        showRegion: false,
+                        tag: 'district'
+                    },
+                    {
                         label: 'Gemeente',
-                        showRegion: true,
-                        getRegion() {
-                            return city;
-                        },
+                        showRegion: false,
                         tag: 'city'
                     },
                     {
                         label: 'GGD',
-                        showRegion: true,
-                        getRegion() {
-                            return store.getters['ggds/getItemByProperty']('ggd_code', city.ggd_code, true);
-                        },
+                        showRegion: false,
                         tag: 'ggd'
                     },
-                    // {
-                    //     label: 'Veiligheidsregio',
-                    //     getRegion() {
-                    //         return store.getters['safetyRegions/getItemByProperty']('safetyRegion_code', city.safetyRegion_code, true);
-                    //     },
-                    //     tag: 'sr'
-                    // },
+                    {
+                        label: 'Veiligheidsregio',
+                        showRegion: false,
+                        tag: 'sr'
+                    },
                     {
                         label: 'Land',
-                        showRegion: true,
-                        getRegion() {
-                            return store.getters['countries/getItemById'](city.country_id);
-                        },
+                        showRegion: false,
                         tag: 'country'
                     }
-                ]
+                ].filter(type => {
+                    return this.currentMap.settings.regionTypes.indexOf(type.tag) > -1;
+                })
             }
         },
         methods: {}
@@ -62,7 +55,8 @@
     <div class="region-type-picker">
         <region-type
             v-for="type in types"
-            :type="type"/>
+            :type="type"
+            :n="types.length"/>
     </div>
 </template>
 
@@ -73,5 +67,10 @@
     .region-type-picker {
         display: flex;
         flex-wrap: wrap;
+        border-bottom: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        height: 24px;
+        margin-top: 6px;
     }
 </style>

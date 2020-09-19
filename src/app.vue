@@ -17,13 +17,13 @@
     import trends from "./components/trends/trends";
     import regionDetails from "./components/regions/region-details";
     import embedPopup from "./components/embed/embed-popup";
-    import regionTypePicker2 from "./components/regions/region-type/region-type-picker-2";
+    import regionTypePicker from "./components/regions/region-type/region-type-picker";
 
 
     export default {
         name: 'app',
         components: {
-            regionTypePicker2,
+            regionTypePicker,
             embedPopup,
             trends,
             headerMenu,
@@ -67,6 +67,7 @@
             pickMap() {
                 this.$store.commit('maps/init', maps);
                 this.$store.commit('maps/setCurrent', this.$store.state.maps.all[1]);
+                this.$store.commit('ui/updateProperty', {key: 'currentRegionType', value: this.currentMap.settings.regionTypes[0]});
                 this.loadData();
             },
             loadData() {
@@ -267,7 +268,7 @@
                 :class="{'panel--active': showMap}"
                 class="map-container panel">
                 <search-regions v-if="dataLoaded"/>
-                <region-type-picker-2/>
+                <region-type-picker/>
                 <map-tests v-if="dataLoaded"/>
             </div>
 
