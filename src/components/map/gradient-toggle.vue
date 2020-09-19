@@ -31,9 +31,12 @@
     @import '@/styles/variables.scss';
 
     .gradient-toggle {
-        pointer-events: all;
         display: flex;
         align-items: center;
         margin-top: 2px;
+
+        input {
+            pointer-events: all;
+        }
     }
 </style>

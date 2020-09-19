@@ -57,6 +57,9 @@
 
     .color-set-picker {
         margin-top: 12px;
-        pointer-events: all;
+
+        select {
+            pointer-events: all;
+        }
     }
 </style>
