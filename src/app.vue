@@ -36,7 +36,7 @@
         mixins: [query],
         data() {
             return {
-                dates: null
+                dateKeys: null
             }
         },
         computed: {
@@ -202,11 +202,10 @@
                 totalLengthOfTestHistory = (last.ms - first.ms) / (1000 * 3600 * 24 * this.currentMap.settings.testDataInterval);
                 this.$store.commit('ui/updateProperty', {key: 'today', value: today});
                 this.$store.commit('settings/updateProperty', {key: 'historyLength', value: totalLengthOfTestHistory});
-                this.dates = dates.map(d => d.key);
+                this.dateKeys = dates.map(d => d.key);
             },
             addTests(data) {
-                let keys, key, region, report, incidents;
-                keys = [];
+                let key, region, report, incidents;
                 incidents = [];
                 const convertToNumber = function(value) {
                     let numb = Number(value);
@@ -220,12 +219,8 @@
                 report = {
                     history: []
                 };
-                for (let key in data) {
-                    if (key.indexOf('Total_reported.') > -1) {
-                        keys.push(key);
-                    }
-                }
-                for (let dateKey of keys) {
+
+                for (let dateKey of this.dateKeys) {
                     if (data[dateKey]) {
                         let date, value;
                         date = dateKey.slice(15);
