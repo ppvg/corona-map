@@ -5,7 +5,6 @@ const maps = [
         module: 'cities',
         regionLabel: 'gemeentes',
         settings: {
-            identifier: 'municipality_code',
             regionTypes: ['city','ggd', 'safety-region', 'country'],
             hasAgeGroups: true,
             hasTests: true,
@@ -31,8 +30,8 @@ const maps = [
         module: 'districts',
         title: 'Amsterdam',
         settings: {
-            identifier: 'district_code',
-            regionTypes: ['district','ggd'],
+            //regionTypes: ['district','ggd'],
+            regionTypes: ['district'],
             hasAgeGroups: false,
             hasTests: true,
             hasSewageTreatmentPlants: false,
