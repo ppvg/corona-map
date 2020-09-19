@@ -45,6 +45,7 @@ const getters = {
         let region = rootState[rootState.maps.current.module].current;
         if (region) {
             switch(state.currentRegionType) {
+                case 'district':
                 case 'city':
                     return region;
                 case 'ggd':

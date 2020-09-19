@@ -10,8 +10,14 @@
             routePath() {
                 return window.location.href.split('#')[0];
             },
+            currentMap() {
+                return this.$store.state.maps.current;
+            },
             query() {
-                return this.currentRegion ? '?region=' + encodeURI(this.currentRegion.title) : ''
+                let query = '?';
+                query += this.currentMap ? ('map=' + encodeURI(this.currentMap.title)) : '';
+                query += this.currentRegion ? ('?region=' + encodeURI(this.currentRegion.title)) : '';
+                return query;
             },
             url() {
                 return this.routePath + '#/' + this.query;

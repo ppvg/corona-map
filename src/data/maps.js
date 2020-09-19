@@ -5,10 +5,11 @@ const maps = [
         module: 'cities',
         regionLabel: 'gemeentes',
         settings: {
+            showRelations: true,
             regionTypes: ['city','ggd', 'safety-region', 'country'],
             hasAgeGroups: true,
             hasTests: true,
-            hasSewageTreatmentPlants: false,
+            hasSewageTreatmentPlants: true,
             testDataCumulative: true,
             testDataInterval: 1,
             map: {
@@ -31,6 +32,7 @@ const maps = [
         title: 'Amsterdam',
         settings: {
             //regionTypes: ['district','ggd'],
+            showRelations: false,
             regionTypes: ['district'],
             hasAgeGroups: false,
             hasTests: true,

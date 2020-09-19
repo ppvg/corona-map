@@ -64,6 +64,12 @@
             },
             hasSewageTreatmentPlants() {
                 return this.$store.state.maps.current.settings.hasSewageTreatmentPlants;
+            },
+            currentMap() {
+                return this.$store.state.maps.current;
+            },
+            showRelations() {
+                this.currentMap.settings.showRelations;
             }
         },
         methods: {
@@ -94,6 +100,7 @@
         <div class="region-details__info">
             <div class="region-details__section">
                 <region-relations
+                    v-if="showRelations"
                     :region="region"/>
             </div>
             <div

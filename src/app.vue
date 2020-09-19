@@ -70,8 +70,16 @@
                 this.pickMap();
             },
             pickMap() {
+                let map;
                 this.$store.commit('maps/init', maps);
-                this.$store.commit('maps/setCurrent', this.$store.state.maps.all[1]);
+                if (this.$route.query.map) {
+                    map = this.$store.getters['maps/getItemByProperty']('title', this.$route.query.map, true);
+                }
+                if (map) {
+                    this.$store.commit('maps/setCurrent', map);
+                } else {
+                    this.$store.commit('maps/setCurrent', this.$store.state.maps.all[0]);
+                }
                 this.$store.commit('ui/updateProperty', {key: 'currentRegionType', value: this.currentMap.settings.regionTypes[0]});
                 this.loadData();
             },
