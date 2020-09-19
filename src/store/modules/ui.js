@@ -6,7 +6,6 @@ import { nl } from 'date-fns/locale'
 const state = {
     searchValue: '',
     hoverValue: '',
-    currentCity: null,
     currentRegionType: '',
     today: null,
     credits: false,
@@ -42,7 +41,7 @@ const getters = {
         }
     },
     currentRegion(state, getters, rootState, rootGetters) {
-        let city = state.currentCity;
+        let city = state.currentRegion;
         if (city) {
             switch(state.currentRegionType) {
                 case 'city':

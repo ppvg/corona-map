@@ -10,10 +10,14 @@
                 required: true
             }
         },
-        computed: {},
+        computed: {
+            currentMap() {
+                return this.$store.state.maps.current;
+            }
+        },
         methods: {
             select() {
-                this.$store.commit('ui/updateProperty', {key: 'currentCity', value: this.city});
+                this.$store.commit(this.currentMap.module + '/setCurrent', this.region);
                 this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
                 this.$store.commit('ui/updateProperty', {key: 'menu', value: 'city'});
             }

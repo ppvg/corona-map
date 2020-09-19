@@ -112,12 +112,12 @@
                     y = event.offsetY;
                     region = this.getRegionForPoint(x, y);
                     if (region) {
-                        this.$store.commit('ui/updateProperty', {key: 'currentCity', value: region});
+                        this.$store.commit(this.currentMap.module + '/setCurrent', region);
                         this.$store.commit('ui/updateProperty', {key: 'menu', value: 'region'});
                         this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
                         this.$store.commit('ui/updateProperty', {key: 'hoverValue', value: ''});
                     } else {
-                        this.$store.commit('ui/updateProperty', {key: 'currentCity', value: false});
+                        this.$store.commit(this.currentMap.module + '/setCurrent', null);
                     }
                 }, false);
             },

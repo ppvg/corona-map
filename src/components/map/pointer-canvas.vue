@@ -24,8 +24,8 @@
             hoverValue() {
                 return this.$store.state.ui.hoverValue;
             },
-            currentCity() {
-                return this.$store.state.ui.currentCity;
+            currentRegion() {
+                return this.$store.state.ui.currentRegion;
             },
             currentRegion() {
                 return this.$store.getters['ui/currentRegion'];

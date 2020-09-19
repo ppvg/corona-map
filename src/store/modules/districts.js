@@ -26,6 +26,9 @@ const mutations = {
     },
     updatePropertyOfItem(state, payload) {
         _base.mutations.updatePropertyOfItem(state, payload.item, payload.property, payload.value);
+    },
+    setCurrent(state, item) {
+        _base.mutations.setCurrent(state, item);
     }
 };
 

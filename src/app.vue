@@ -50,11 +50,11 @@
             showMap() {
                 return this.$store.state.ui.menu === 'map';
             },
-            showCity() {
+            showRegion() {
                 return this.currentRegion;
             },
             currentRegion() {
-                return this.$store.getters['ui/currentRegion'];
+                return this.currentMap && this.$store.state[this.currentMap.module].current;
             },
             currentMap() {
                 return this.$store.state.maps.current;
@@ -163,12 +163,12 @@
             },
 
             readQuery() {
-                let city, cityString;
-                if (this.$route.query.city) {
-                    cityString = decodeURI(this.$route.query.city);
-                    city = this.$store.getters['cities/getItemByProperty']('title', cityString, true);
-                    if (city) {
-                        this.$store.commit('ui/updateProperty', {key: 'currentCity', value: city});
+                let region, string;
+                if (this.$route.query.region) {
+                    string = decodeURI(this.$route.query.region);
+                    region = this.$store.getters[this.currentMap.module + '/getItemByProperty']('title', string, true);
+                    if (region) {
+                        this.$store.commit(this.currentMap.module + '/setCurrent', region);
                     }
                 }
                 if (this.$route.query.admin) {
@@ -273,14 +273,14 @@
             </div>
 
             <trends/>
-<!--            <region-details-->
-<!--                v-if="showCity"-->
-<!--                :region="currentRegion"/>-->
-<!--            <div-->
-<!--                v-else-->
-<!--                class="region-details region-details&#45;&#45;mobile">-->
-<!--                Kies eerst een gemeente op de kaart.-->
-<!--            </div>-->
+            <region-details
+                v-if="showRegion"
+                :region="currentRegion"/>
+            <div
+                v-else
+                class="region-details region-details--mobile">
+                Kies eerst een gemeente op de kaart.
+            </div>
         </div>
 
         <credits v-if="showCredits"/>

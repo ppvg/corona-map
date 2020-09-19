@@ -4,14 +4,14 @@
         components: {},
         props: {},
         computed: {
-            currentCity() {
-                return this.$store.state.ui.currentCity;
+            currentRegion() {
+                return this.$store.state.ui.currentRegion;
             },
             routePath() {
                 return window.location.href.split('#')[0];
             },
             query() {
-                return this.currentCity ? '?city=' + encodeURI(this.currentCity.title) : ''
+                return this.currentRegion ? '?city=' + encodeURI(this.currentRegion.title) : ''
             },
             url() {
                 return this.routePath + '#/' + this.query;

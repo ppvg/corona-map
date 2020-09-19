@@ -16,7 +16,7 @@
         computed: {},
         methods: {
             selectCity() {
-                this.$store.commit('ui/updateProperty', {key: 'currentCity', value: this.city});
+                this.$store.commit('ui/updateProperty', {key: 'currentRegion', value: this.city});
                 this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
             }
         }

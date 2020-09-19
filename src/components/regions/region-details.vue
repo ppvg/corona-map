@@ -28,7 +28,7 @@
         },
         computed: {
             city() {
-                return this.$store.state.ui.currentCity;
+                return this.$store.state.ui.currentRegion;
             },
             period1() {
                 let start, end, total;
