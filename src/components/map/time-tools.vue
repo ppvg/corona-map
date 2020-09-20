@@ -51,36 +51,41 @@
 <template>
     <div class="time-tools">
         <div
-                v-if="isAtEnd"
-                @click="rewind()"
-                class="icon-button">
+            v-if="isAtEnd"
+            @click="rewind()"
+            class="icon-button">
             <img src="assets/img/tools/redo.svg">
         </div>
 
         <div
-                v-if="!isPlaying && !isAtEnd"
-                @click="play()"
-                class="icon-button">
+            v-if="!isPlaying && !isAtEnd"
+            @click="play()"
+            class="icon-button">
             <img src="assets/img/tools/play.svg">
         </div>
 
         <div
-                v-if="isPlaying"
-                @click="stop()"
-                class="icon-button">
-            <img src="assets/img/tools/stop.svg">
+            v-if="isPlaying"
+            @click="stop()"
+            class="icon-button">
+        <img src="assets/img/tools/stop.svg">
         </div>
 
         <div
-                v-if="!isPlaying && !isAtStart"
-                @click="move(-1)"
-                class="icon-button">
+                v-if="isPlaying || isAtStart"
+                class="icon-button--placeholder">
+        </div>
+
+        <div
+            v-if="!isPlaying && !isAtStart"
+            @click="move(-1)"
+            class="icon-button">
             <img src="assets/img/tools/back.svg">
         </div>
         <div
-                v-if="!isPlaying && !isAtEnd"
-                @click="move(1)"
-                class="icon-button">
+            v-if="!isPlaying && !isAtEnd"
+            @click="move(1)"
+            class="icon-button">
             <img src="assets/img/tools/forward.svg">
         </div>
     </div>
@@ -96,6 +101,11 @@
 
         .icon-button {
             pointer-events: all;
+            margin-right: 8px;
+        }
+
+        .icon-button--placeholder {
+            width: 26px;
             margin-right: 8px;
         }
     }
