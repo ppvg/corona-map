@@ -78,7 +78,7 @@
                 if (map) {
                     this.$store.commit('maps/setCurrent', map);
                 } else {
-                    this.$store.commit('maps/setCurrent', this.$store.state.maps.all[0]);
+                    this.$store.commit('maps/setCurrent', this.$store.state.maps.all[1]);
                 }
                 this.$store.commit('ui/updateProperty', {key: 'currentRegionType', value: this.currentMap.settings.regionTypes[0]});
                 this.loadData();
@@ -197,7 +197,8 @@
                         let dateString, date;
                         dateString = column.split('Total_reported.')[1];
                         dates.push({
-                            key: column,
+                            positiveTestsKey: column,
+                            administeredTestsKey: ('Total_administered.' + dateString),
                             dateString,
                             ms: new Date(dateString).getTime()
                         });
@@ -242,14 +243,20 @@
                 };
 
                 for (let dateKey of this.dateKeys) {
-                    if (data[dateKey.key]) {
-                        let value = Number(data[dateKey.key]);
-                        incidents.push({
+                    if (data[dateKey.positiveTestsKey]) {
+                        let positiveTests, administeredTests, day;
+                        positiveTests = Number(data[dateKey.positiveTestsKey]);
+                        day = {
                             // ms: new Date(dateKey.dateString).getTime(),
                             // date: dateKey.dateString,
                             offset: dateKey.offset,
-                            value
-                        });
+                            positiveTests
+                        };
+                        if (this.currentMap.settings.hasAdministeredTests) {
+                            administeredTests = Number(data[dateKey.administeredTestsKey]);
+                            day.administeredTests = administeredTests;
+                        }
+                        incidents.push(day);
                     }
                 }
                 if (this.currentMap.settings.testDataCumulative) {
@@ -260,7 +267,7 @@
                                 // ms: incidents[i].ms,
                                 // date: incidents[i].date,
                                 offset: incidents[i].offset,
-                                value
+                                positiveTests
                             });
                         }
                     }

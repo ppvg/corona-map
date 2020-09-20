@@ -1,5 +1,5 @@
 <script>
-    import testGraph from "./tests/test-graph";
+    import positiveTests from "./tests/positive-tests";
     import sewageTreatmentPlants from "../sewage-treatment-plants/sewage-treatment-plants";
     import ageDistributionGraph from "./case-characteristics/age-distribution-graph";
     import _Region from "@/classes/_Region";
@@ -7,17 +7,19 @@
     import ageDistributionGraphNormalised from "./case-characteristics/age-distribution-graph-normalised/age-distribution-graph-normalised";
     import ageDistributionTools from "./case-characteristics/age-distribution-graph-normalised/age-distribution-tools";
     import regionRelations from "./region-type/region-relations";
+    import AdministeredTests from "./tests/administered-tests";
 
     export default {
         name: 'region-details',
         components: {
+            AdministeredTests,
             regionRelations,
             ageDistributionTools,
             ageDistributionGraphNormalised,
             loader,
             ageDistributionGraph,
             sewageTreatmentPlants,
-            testGraph
+            positiveTests
         },
         props: {
             region: {
@@ -121,7 +123,12 @@
                 <div class="region-details__section-header">
                     Testen GGD
                 </div>
-                <test-graph :region="regionOfFocus"/>
+                <positive-tests
+                    :region="regionOfFocus"/>
+
+                <administered-tests
+                    v-if="currentMap.settings.hasAdministeredTests"
+                    :region="region"/>
             </div>
             <div
                 v-if="hasSewageTreatmentPlants"

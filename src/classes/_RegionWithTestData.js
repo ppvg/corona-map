@@ -12,12 +12,12 @@ class _RegionWithTestData extends _Region{
         let offset, day;
         offset = store.state.settings.currentDateOffset;
         day = this.report.history.find(d => d.offset === offset);
-        return day ? day.value : 0;
+        return day ? day.positiveTests : 0;
     }
 
     getIncreaseDay(delta = 0) {
         let offset = store.state.settings.currentDateOffset;
-        return this.report.history[this.report.history.length - 1 - (offset + delta)].value;
+        return this.report.history[this.report.history.length - 1 - (offset + delta)].positiveTests;
     }
 
     getIncreaseWeek(delta = 0) {
@@ -26,11 +26,11 @@ class _RegionWithTestData extends _Region{
         if (store.state.maps.current.settings.testDataInterval === 1) {
             total = 0;
             for (let i = (this.report.history.length - 1 - offset), l = (this.report.history.length - 8 - offset); i > l; i--) {
-                total += this.report.history[i].value;
+                total += this.report.history[i].positiveTests;
             }
             return total;
         } else {
-            return this.report.history[this.report.history.length - 1 - offset].value
+            return this.report.history[this.report.history.length - 1 - offset].positiveTests
         }
     }
 

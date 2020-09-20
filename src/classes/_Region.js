@@ -104,7 +104,7 @@ class _Region {
                 if (counter === 0) {
                     report.history.push(day)
                 } else {
-                    report.history[dayCounter].value += day.value;
+                    report.history[dayCounter].positiveTests += day.positiveTests;
                 }
                 dayCounter++;
             }

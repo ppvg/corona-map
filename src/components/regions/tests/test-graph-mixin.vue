@@ -1,19 +1,9 @@
 <script>
-    import _Region from "@/classes/_Region";
-
     export default {
-        name: 'test-graph',
+        name: 'test-graph-mixin',
         components: {},
-        props: {
-            region: {
-                type: _Region,
-                required: true
-            }
-        },
+        props: {},
         computed: {
-            canvas() {
-                return document.getElementById('test-graph-' + this.region.id);
-            },
             ctx() {
                 return this.canvas.getContext('2d');
             },
@@ -26,12 +16,6 @@
             },
             paddingBottom() {
                 return 20;
-            },
-            colorSet() {
-                return this.$store.state.ui.color;
-            },
-            signalingSystem() {
-                return this.$store.state.signalingSystems.current;
             },
             currentMap() {
                 return this.$store.state.maps.current;
@@ -68,15 +52,6 @@
             }
         },
         methods: {
-            redraw() {
-                this.clear();
-                this.drawThresholds();
-                this.drawGrid();
-                if (this.days.length > 0) {
-                    this.drawTrendLine();
-                }
-                this.drawDates();
-            },
             clear() {
                 let ctx = this.ctx;
                 ctx.clearRect(0, 0, this.width, this.height);
@@ -109,34 +84,6 @@
                     index++;
                 }
             },
-            drawThresholds() {
-                let lastY, ctx, thresholds;
-                lastY = 0;
-                ctx = this.ctx;
-                thresholds = this.signalingSystem.thresholds;
-                if (!this.isColorblind) {
-                    ctx.globalAlpha = 0.5;
-                }
-                for (let threshold of thresholds) {
-                    if (threshold.n > 0) {
-                        let height, x, y;
-                        ctx.beginPath();
-                        if (threshold.n !== Infinity) {
-                            height = (this.zoom * threshold.n / this.signalingSystem.days) - lastY;
-                            y = (this.height - this.paddingBottom) - lastY - height;
-                        } else {
-                            height = (this.height - this.paddingBottom) - lastY;
-                            y = 0;
-                        }
-                        ctx.rect(0, y, this.width, height);
-                        ctx.fillStyle = threshold.color[this.$store.state.ui.color];
-                        ctx.closePath();
-                        ctx.fill();
-                        lastY += height;
-                    }
-                }
-                ctx.globalAlpha = 1;
-            },
             drawGrid() {
                 let ctx, set;
                 ctx = this.ctx;
@@ -152,50 +99,9 @@
                     ctx.closePath();
                 }
             },
-            drawTrendLine() {
-                let ctx, step, history, start, days;
-                ctx = this.ctx;
-                step = this.step;
-                history = this.region.getTotalReport().history;
-
-                const getY = (day) => {
-                    // for the graph we always use 100000, independent from the signaling system
-                    let relativeValue = 100000 * (day.value / this.currentMap.settings.testDataInterval) / this.region.getTotalPopulation();
-                    return (this.height - this.paddingBottom) - (relativeValue * this.zoom);
-                };
-
-                const getX = (day) => {
-                    let offset = day.offset - this.offset;
-                    return this.width - (this.step * this.currentMap.settings.testDataInterval * offset);
-                };
-                ctx.beginPath();
-                ctx.lineWidth = 1;
-                ctx.strokeStyle = 'black';
-                // draw 1 point extra, this point is out of the graph on the leftside
-                start = 1;
-
-                ctx.moveTo(getX(this.days[0]), getY(this.days[0]));
-                days = this.days.slice(1);
-                for (let day of days) {
-                    ctx.lineTo(getX(day), getY(day));
-                }
-                ctx.stroke();
-                ctx.closePath();
-            },
-            drawPeriodBorder() {
-                let ctx, x1, x2;
-                ctx = this.ctx;
-                ctx.strokeStyle = 'rgba(255,255,255,0.3)';
-                x1 = this.step * 6;
-                x2 = this.step * (7 * this.weeks - 1);
-                ctx.beginPath();
-                ctx.moveTo(x1, 0);
-                ctx.lineTo(x1, this.height);
-                ctx.stroke();
-                ctx.beginPath();
-                ctx.moveTo(x2, 0);
-                ctx.lineTo(x2, this.height);
-                ctx.stroke();
+            getX(day) {
+                let offset = day.offset - this.offset;
+                return this.width - (this.step * this.currentMap.settings.testDataInterval * offset);
             }
         },
         mounted() {
@@ -233,23 +139,13 @@
 </script>
 
 
-<template>
-    <div class="test-graph">
-        <canvas
-            :id="'test-graph-' + region.id"
-            :width="width"
-            :height="height"></canvas>
-    </div>
-</template>
+<template></template>
 
 
 <style lang="scss">
     @import '@/styles/variables.scss';
 
-    .test-graph {
+    .test-graph-mixin {
 
-        canvas {
-            background: #eee;
-        }
     }
 </style>

@@ -9,6 +9,7 @@ const maps = [
             regionTypes: ['city','ggd', 'safety-region', 'country'],
             hasAgeGroups: true,
             hasTests: true,
+            hasAdministeredTests: false,
             hasSewageTreatmentPlants: true,
             testDataCumulative: true,
             testDataInterval: 1,
@@ -36,6 +37,7 @@ const maps = [
             regionTypes: ['district'],
             hasAgeGroups: false,
             hasTests: true,
+            hasAdministeredTests: true,
             hasSewageTreatmentPlants: true,
             testDataCumulative: false,
             testDataInterval: 7,
@@ -47,7 +49,7 @@ const maps = [
             }
         },
         url: {
-            tests: 'data/amsterdam-positieve-tests.csv',
+            tests: 'data/amsterdam-tests.csv',
             regions: 'data/amsterdam.json',
             ageGroups: 'data/cities-population-agegroup.csv',
             sewageTreatmentPlants: (window.config.sewageDataUrl + 'sewage-measurements-connected-to-city-codes.json')
