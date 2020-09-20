@@ -72,7 +72,9 @@
                 this.clear();
                 this.drawThresholds();
                 this.drawGrid();
-                this.drawTrendLine();
+                if (this.days.length > 0) {
+                    this.drawTrendLine();
+                }
                 this.drawDates();
             },
             clear() {

@@ -9,8 +9,10 @@ class _RegionWithTestData extends _Region{
     }
 
     get increaseDay() {
-        let offset = store.state.settings.currentDateOffset;
-        return this.report.history[this.report.history.length - 1 - offset].value;
+        let offset, day;
+        offset = store.state.settings.currentDateOffset;
+        day = this.report.history.find(d => d.offset === offset);
+        return day ? day.value : 0;
     }
 
     getIncreaseDay(delta = 0) {
