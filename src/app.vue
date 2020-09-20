@@ -96,6 +96,7 @@
                 $.getJSON(this.currentMap.url.regions, (regions) => {
                     let promises = [];
                     this.$store.commit(this.currentMap.module + '/init', regions);
+                    this.readQuery();
                     if (this.currentMap.settings.hasTests) {
                         promises.push(this.loadTests);
                     }
@@ -106,12 +107,10 @@
                         promises.push(this.loadSewageTreatmentPlants);
                     }
                     if (promises.length === 0) {
-                        this.readQuery();
                         this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
                     } else {
                         Promise.all(promises.map(p => p()))
                             .then((result) => {
-                                this.readQuery();
                                 this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
                             })
                             .catch(error => {

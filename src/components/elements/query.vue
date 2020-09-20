@@ -16,7 +16,13 @@
             query() {
                 let query = '?';
                 query += this.currentMap ? ('map=' + encodeURI(this.currentMap.title)) : '';
-                query += this.currentRegion ? ('?region=' + encodeURI(this.currentRegion.title)) : '';
+                if (this.currentRegion) {
+                    if (this.currentMap) {
+                        query += '&';
+                    }
+                    query += this.currentRegion ? ('region=' + encodeURI(this.currentRegion.title)) : '';
+                }
+                //console.log(this.currentRegion, query);
                 return query;
             },
             url() {
