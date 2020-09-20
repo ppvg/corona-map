@@ -24,6 +24,9 @@
             weeks() {
                 return this.$store.state.settings.weeks;
             },
+            paddingBottom() {
+                return 20;
+            },
             colorSet() {
                 return this.$store.state.ui.color;
             },
@@ -57,24 +60,12 @@
                     return day.offset <= this.min && day.offset >= this.max;
                 })
             },
-            // difference() {
-            //     return this.max - this.min;
-            // },
             zoom() {
                 return 3;
             },
-
-            // dateString() {
-            //     return this.$store.getters['ui/dateString'];
-            // },
             isColorblind() {
                 return this.colorSet === 'colorblind1';
-            },
-
-            // ms() {
-            //     return new Date(this.$store.state.ui.today).getTime();
-            // },
-
+            }
         },
         methods: {
             redraw() {
@@ -82,17 +73,39 @@
                 this.drawThresholds();
                 this.drawGrid();
                 this.drawTrendLine();
-                this.drawDate();
+                this.drawDates();
             },
             clear() {
-                this.ctx.clearRect(0, 0, this.width, this.height);
-            },
-            drawDate() {
                 let ctx = this.ctx;
+                ctx.clearRect(0, 0, this.width, this.height);
+                ctx.rect(0, 0, this.width, this.height);
+                ctx.fillStyle = '#fff';
+                ctx.fill();
+            },
+            drawDates() {
+                let ctx, weeks, index;
+                index = 0;
+                ctx = this.ctx;
+                weeks = Array.from(Array(this.weeks + 1).keys());
                 ctx.font = '12px Arial';
-                ctx.textAlign = 'right';
+
                 ctx.fillStyle = '#000';
-                ctx.fillText(this.dateString, (this.width - 10), 20);
+                for (let week of weeks) {
+                    let dateString, x, y, offset;
+                    offset = (this.offset * this.currentMap.settings.testDataInterval) + ((this.weeks - week) * 7);
+                    dateString = this.$store.getters['ui/getDateByOffset'](offset, 'd/M');
+                    x = this.step * week * 7;
+                    y = this.height - 4;
+                    if (index === 0) {
+                        ctx.textAlign = 'left';
+                    } else if (index === weeks.length - 1) {
+                        ctx.textAlign = 'right';
+                    } else {
+                        ctx.textAlign = 'center';
+                    }
+                    ctx.fillText(dateString, x, y);
+                    index++;
+                }
             },
             drawThresholds() {
                 let lastY, ctx, thresholds;
@@ -108,9 +121,9 @@
                         ctx.beginPath();
                         if (threshold.n !== Infinity) {
                             height = (this.zoom * threshold.n / this.signalingSystem.days) - lastY;
-                            y = this.height - lastY - height;
+                            y = (this.height - this.paddingBottom) - lastY - height;
                         } else {
-                            height = (this.height - lastY);
+                            height = (this.height - this.paddingBottom) - lastY;
                             y = 0;
                         }
                         ctx.rect(0, y, this.width, height);
@@ -132,7 +145,7 @@
                     ctx.lineWidth = 1;
                     ctx.strokeStyle = (i % 7 === 0) ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.1)';
                     ctx.moveTo(x, 0);
-                    ctx.lineTo(x, this.height);
+                    ctx.lineTo(x, (this.height - this.paddingBottom));
                     ctx.stroke();
                     ctx.closePath();
                 }
@@ -146,7 +159,7 @@
                 const getY = (day) => {
                     // for the graph we always use 100000, independent from the signaling system
                     let relativeValue = 100000 * (day.value / this.currentMap.settings.testDataInterval) / this.region.getTotalPopulation();
-                    return this.height - (relativeValue * this.zoom);
+                    return (this.height - this.paddingBottom) - (relativeValue * this.zoom);
                 };
 
                 const getX = (day) => {
