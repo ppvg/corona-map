@@ -220,6 +220,7 @@
                 if (this.currentMap.settings.testDataInterval === 1) {
                     totalLengthOfTestHistory -= 7;
                 }
+                totalLengthOfTestHistory /= this.currentMap.settings.testDataInterval;
                 this.$store.commit('ui/updateProperty', {key: 'today', value: today});
                 this.$store.commit('settings/updateProperty', {key: 'historyLength', value: totalLengthOfTestHistory});
                 this.dateKeys = dates;
