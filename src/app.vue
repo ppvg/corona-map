@@ -78,7 +78,7 @@
                 if (map) {
                     this.$store.commit('maps/setCurrent', map);
                 } else {
-                    this.$store.commit('maps/setCurrent', this.$store.state.maps.all[1]);
+                    this.$store.commit('maps/setCurrent', this.$store.state.maps.all[0]);
                 }
                 this.$store.commit('ui/updateProperty', {key: 'currentRegionType', value: this.currentMap.settings.regionTypes[0]});
                 this.loadData();
@@ -262,7 +262,7 @@
                 if (this.currentMap.settings.testDataCumulative) {
                     for (let i = 0, l = incidents.length; i < l; i++) {
                         if (i > 0) {
-                            let value = incidents[i].value - incidents[i - 1].value;
+                            let positiveTests = incidents[i].positiveTests - incidents[i - 1].positiveTests;
                             report.history.push({
                                 // ms: incidents[i].ms,
                                 // date: incidents[i].date,
