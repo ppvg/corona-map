@@ -38,7 +38,7 @@
             },
             // dimensions
             height() {
-                return 200;
+                return 220;
             },
             step() {
                 return this.$store.state.settings.step;
@@ -151,7 +151,7 @@
                 }
             },
             drawTrendLine() {
-                let ctx, step, history, start;
+                let ctx, step, history, start, days;
                 ctx = this.ctx;
                 step = this.step;
                 history = this.region.getTotalReport().history;
@@ -171,8 +171,10 @@
                 ctx.strokeStyle = 'black';
                 // draw 1 point extra, this point is out of the graph on the leftside
                 start = 1;
-                ctx.moveTo(getX(history[0]), getY(history[0]));
-                for (let day of this.days) {
+
+                ctx.moveTo(getX(this.days[0]), getY(this.days[0]));
+                days = this.days.slice(1);
+                for (let day of days) {
                     ctx.lineTo(getX(day), getY(day));
                 }
                 ctx.stroke();

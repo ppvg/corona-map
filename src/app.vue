@@ -247,8 +247,9 @@
                         if (i > 0) {
                             let value = incidents[i].value - incidents[i - 1].value;
                             report.history.push({
-                                ms: incidents[i].ms,
-                                date: incidents[i].date,
+                                // ms: incidents[i].ms,
+                                // date: incidents[i].date,
+                                offset: incidents[i].offset,
                                 value
                             });
                         }
