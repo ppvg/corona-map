@@ -17,38 +17,12 @@
             ctx() {
                 return this.canvas.getContext('2d');
             },
-            height() {
-                return 200;
-            },
-            step() {
-                return this.$store.state.settings.step;
-            },
-            width() {
-                return this.weeks * 7 * this.step;
-            },
-            min() {
-                return Math.min( ...this.region.getTotalReport().history );
-            },
-            max() {
-                return Math.max( ...this.region.getTotalReport().history );
-            },
-            difference() {
-                return this.max - this.min;
-            },
-            zoom() {
-                return 3;
-            },
-            weeks() {
-                return this.$store.state.settings.weeks;
-            },
+            // settings
             offset() {
                 return this.$store.state.settings.currentDateOffset;
             },
-            dateString() {
-                return this.$store.getters['ui/dateString'];
-            },
-            isColorblind() {
-                return this.colorSet === 'colorblind1';
+            weeks() {
+                return this.$store.state.settings.weeks;
             },
             colorSet() {
                 return this.$store.state.ui.color;
@@ -56,12 +30,51 @@
             signalingSystem() {
                 return this.$store.state.signalingSystems.current;
             },
-            ms() {
-                return new Date(this.$store.state.ui.today).getTime();
-            },
             currentMap() {
                 return this.$store.state.maps.current;
-            }
+            },
+            // dimensions
+            height() {
+                return 200;
+            },
+            step() {
+                return this.$store.state.settings.step;
+            },
+            width() {
+                return this.length * this.step;
+            },
+            length() {
+                return this.weeks * 7;
+            },
+            min() {
+                return this.offset + (this.length / this.currentMap.settings.testDataInterval);
+            },
+            max() {
+                return this.offset;
+            },
+            days() {
+                return this.region.report.history.filter(day => {
+                    return day.offset <= this.min && day.offset >= this.max;
+                })
+            },
+            // difference() {
+            //     return this.max - this.min;
+            // },
+            zoom() {
+                return 3;
+            },
+
+            // dateString() {
+            //     return this.$store.getters['ui/dateString'];
+            // },
+            isColorblind() {
+                return this.colorSet === 'colorblind1';
+            },
+
+            // ms() {
+            //     return new Date(this.$store.state.ui.today).getTime();
+            // },
+
         },
         methods: {
             redraw() {
@@ -137,21 +150,17 @@
                 };
 
                 const getX = (day) => {
-                    let difference, msPerDay, days;
-                    msPerDay = 60 * 60 * 1000 * 24;
-                    difference = (this.ms - day.ms);
-                    days = (difference / msPerDay) - (this.offset * this.currentMap.settings.testDataInterval);
-                    return this.width - (this.step * days);
+                    let offset = day.offset - this.offset;
+                    return this.width - (this.step * this.currentMap.settings.testDataInterval * offset);
                 };
-
                 ctx.beginPath();
                 ctx.lineWidth = 1;
                 ctx.strokeStyle = 'black';
                 // draw 1 point extra, this point is out of the graph on the leftside
                 start = 1;
                 ctx.moveTo(getX(history[0]), getY(history[0]));
-                for (let i = start, l = history.length; i < l; i++) {
-                    ctx.lineTo(getX(history[i]), getY(history[i]));
+                for (let day of this.days) {
+                    ctx.lineTo(getX(day), getY(day));
                 }
                 ctx.stroke();
                 ctx.closePath();

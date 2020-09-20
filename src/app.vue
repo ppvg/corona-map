@@ -204,13 +204,16 @@
                     }
                 }
                 dates = dates.sort((a,b) => (a.ms > b.ms) ? 1 : ((b.ms > a.ms) ? -1 : 0));
+                for (let date of dates) {
+                    date.offset = dates.length - dates.indexOf(date) - 1;
+                }
                 first = dates[0];
                 last = dates[dates.length - 1];
                 today = new Date(last.dateString);
                 totalLengthOfTestHistory = (last.ms - first.ms) / (1000 * 3600 * 24 * this.currentMap.settings.testDataInterval);
                 this.$store.commit('ui/updateProperty', {key: 'today', value: today});
                 this.$store.commit('settings/updateProperty', {key: 'historyLength', value: totalLengthOfTestHistory});
-                this.dateKeys = dates.map(d => d.key);
+                this.dateKeys = dates;
             },
             addTests(data) {
                 let key, region, report, incidents;
@@ -229,13 +232,12 @@
                 };
 
                 for (let dateKey of this.dateKeys) {
-                    if (data[dateKey]) {
-                        let date, value;
-                        date = dateKey.slice(15);
-                        value = Number(data[dateKey]);
+                    if (data[dateKey.key]) {
+                        let value = Number(data[dateKey.key]);
                         incidents.push({
-                            ms: new Date(date).getTime(),
-                            date,
+                            // ms: new Date(dateKey.dateString).getTime(),
+                            // date: dateKey.dateString,
+                            offset: dateKey.offset,
                             value
                         });
                     }
