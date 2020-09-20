@@ -7,8 +7,8 @@
         components: {},
         props: {},
         computed: {
-            cities() {
-                return this.$store.state.cities.all;
+            regions() {
+                return this.$store.getters['ui/regions'];
             },
             dateString() {
                 return this.$store.getters['ui/dateString'];
@@ -18,6 +18,9 @@
             },
             imageScale() {
                 return 1;
+            },
+            currentMap() {
+                return this.$store.state.maps.current;
             }
         },
         methods: {
@@ -43,14 +46,14 @@
                         height,
                         shiftX: 220 * this.imageScale,
                         shiftY: 0,
-                        zoom: 190 * this.imageScale,
+                        zoom: this.currentMap.settings.map.zoom * 550 * this.imageScale,
                         key: 'download',
                         fill: true
                     };
                     this.addDate(ctx);
                     this.addLegend(ctx);
                     this.addRedCities(ctx);
-                    canvasTools.draw(ctx, this.cities, settings);
+                    canvasTools.draw(ctx, this.regions, settings);
                     this.addCreator(ctx, width, height);
 
                     downloadLink.setAttribute('download', 'corona-status-' + this.dateStringdashes + '.png');
