@@ -158,7 +158,7 @@
                                 Cartomap
                             </div>
                             <div class="source__value-link">
-                                https://cartomap.github.io/nl/wgs84/ggdregio_2020.geojson
+                                https://github.com/cartomap/nl
                             </div>
                         </div>
                         <div class="source__value-row">

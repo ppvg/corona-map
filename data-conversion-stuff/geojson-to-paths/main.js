@@ -2,11 +2,12 @@ let regions = [];
 
 $.getJSON( "regions.json", function( data ) {
     for (let item of data.features) {
+        console.log(item);
         let region, paths;
         region = {};
         region.id = regions.length + 1;
         region.title = item.properties.statnaam;
-        region.safetyRegion_code = item.properties.statcode;
+        region.province_code = item.properties.statcode;
 
         if (item.geometry.type === 'MultiPolygon') {
             paths = [];
@@ -30,8 +31,9 @@ $.getJSON( "regions.json", function( data ) {
                 }
             })
         });
+
         regions.push(region);
     }
-    console.log(regions);
+    //console.log(regions);
     console.log(JSON.stringify(regions));
 });

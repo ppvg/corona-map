@@ -2,10 +2,12 @@
     import * as d3 from 'd3';
     import $ from 'jquery';
 
+    // data
     import maps from '@/data/maps';
     import ggds from '@/data/ggds';
-    import countries from '@/data/countries';
     import safetyRegions from '@/data/safety-regions';
+    import provinces from '@/data/provinces';
+    import countries from '@/data/countries';
     import ageGroups from '@/data/age-groups';
     import signalingSystems from '@/data/signaling-systems';
 
@@ -89,6 +91,7 @@
                 this.$store.commit('countries/init', countries);
                 this.$store.commit('ggds/init', ggds);
                 this.$store.commit('safetyRegions/init', safetyRegions);
+                this.$store.commit('provinces/init', provinces);
                 this.$store.commit('ageGroups/init', ageGroups);
                 this.loadRegions();
             },

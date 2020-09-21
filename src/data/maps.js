@@ -6,7 +6,7 @@ const maps = [
         regionLabel: 'gemeentes',
         settings: {
             showRelations: true,
-            regionTypes: ['city','ggd', 'safety-region', 'country'],
+            regionTypes: ['city','ggd', 'safety-region', 'province', 'country'],
             hasAgeGroups: true,
             hasTests: true,
             hasAdministeredTests: false,

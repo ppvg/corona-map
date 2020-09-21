@@ -37,6 +37,11 @@
                         tag: 'safety-region'
                     },
                     {
+                        label: 'Provincie',
+                        showRegion: false,
+                        tag: 'province'
+                    },
+                    {
                         label: 'Land',
                         showRegion: false,
                         tag: 'country'

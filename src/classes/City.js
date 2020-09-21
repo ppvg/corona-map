@@ -7,6 +7,7 @@ class City extends _RegionWithTestData {
         identifier = '',
         ggd_code = '',
         safetyRegion_code = '',
+        province_code = '',
         title = '',
         population = 0,
         area = 0,
@@ -23,6 +24,7 @@ class City extends _RegionWithTestData {
         this.identifier = identifier;
         this.ggd_code = ggd_code;
         this.safetyRegion_code = safetyRegion_code;
+        this.province_code = province_code;
         this.title = title;
         this.population = population;
         this.area = area;

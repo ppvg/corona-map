@@ -39,25 +39,28 @@
             max() {
                 return this.offset;
             },
-            days() {
-                return this.region.report.history.filter(day => {
-                    return day.offset <= this.min && day.offset >= this.max;
-                })
-            },
+            // days() {
+            //     return this.report.history.filter(day => {
+            //         return day.offset <= this.min && day.offset >= this.max;
+            //     })
+            // },
             zoom() {
                 return 3;
             },
             isColorblind() {
                 return this.colorSet === 'colorblind1';
+            },
+            report() {
+                return this.region.report
             }
         },
         methods: {
             clear() {
                 let ctx = this.ctx;
                 ctx.clearRect(0, 0, this.width, this.height);
-                ctx.rect(0, 0, this.width, this.height);
-                ctx.fillStyle = '#fff';
-                ctx.fill();
+                // ctx.rect(0, (this.height - this.paddingBottom), this.width, (this.height - this.paddingBottom));
+                // ctx.fillStyle = '#fff';
+                // ctx.fill();
             },
             drawDates() {
                 let ctx, weeks, index;
@@ -102,7 +105,21 @@
             getX(day) {
                 let offset = day.offset - this.offset;
                 return this.width - (this.step * this.currentMap.settings.testDataInterval * offset);
-            }
+            },
+            getDays() {
+                let report, module, days;
+                report = this.region.report;
+                if (!report) {
+                    report = this.region.getTotalReport();
+                    module = this.$store.getters['ui/module'];
+                    this.$store.commit(module +'/updatePropertyOfItem', {item: this.region, property: 'report', value: report});
+
+                }
+                days = report.history.filter(day => {
+                    return day.offset <= this.min && day.offset >= this.max;
+                });
+                return days;
+            },
         },
         mounted() {
             this.redraw();

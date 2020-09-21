@@ -18,6 +18,7 @@ const drawRegionContainer = function(ctx, regionContainer, settings) {
     if (regionContainer.hasPaths) {
         drawRegion(ctx, regionContainer, settings);
     } else {
+        settings.hideStroke = true;
         for (let region of regionContainer.getRegions()) {
             drawRegion(ctx, region, settings);
         }
@@ -38,7 +39,9 @@ const drawPath = function(ctx, path, settings) {
     if (settings.fill) {
         ctx.fill(path.storedPaths[settings.key]);
     }
-    ctx.stroke(path.storedPaths[settings.key]);
+    if (!settings.hideStroke) {
+        ctx.stroke(path.storedPaths[settings.key]);
+    }
 };
 
 export default {

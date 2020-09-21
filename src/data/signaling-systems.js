@@ -144,10 +144,10 @@ let signalingSystems = [
             }, {
                 n: Infinity,
                 color: {
-                    regular: 'rgb(0,0,0)',
-                    colorblind1: 'rgb(0,0,0)',
-                    colorblind2: 'rgb(0,0,0)',
-                    variant3: 'rgb(0,0,0)'
+                    regular: 'rgb(40,40,40)',
+                    colorblind1: 'rgb(40,40,40)',
+                    colorblind2: 'rgb(40,40,40)',
+                    variant3: 'rgb(40,40,40)'
                 }
             }
         ]

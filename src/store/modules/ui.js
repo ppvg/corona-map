@@ -41,6 +41,22 @@ const getters = {
             return '';
         }
     },
+    module(state) {
+        switch(state.currentRegionType) {
+            case 'district':
+                return 'districts';
+            case 'city':
+                return 'cities';
+            case 'ggd':
+                return 'ggds';
+            case 'safety-region':
+                return 'safetyRegions';
+            case 'province':
+                return 'provinces';
+            case 'country':
+                return 'countries';
+        }
+    },
     currentRegion(state, getters, rootState, rootGetters) {
         let region = rootState[rootState.maps.current.module].current;
         if (region) {
@@ -50,10 +66,12 @@ const getters = {
                     return region;
                 case 'ggd':
                     return rootGetters['ggds/getItemByProperty']('ggd_code', region.ggd_code, true);
-                case 'sr':
+                case 'safety-region':
                     return rootGetters['safetyRegions/getItemByProperty']('safetyRegion_code', region.safetyRegion_code, true);
+                case 'province':
+                    return rootGetters['provinces/getItemByProperty']('province_code', region.province_code, true);
                 case 'country':
-                    return rootGetters['countries/getItemById'](region.country_id);
+                return rootGetters['countries/getItemById'](region.country_id);
             }
         } else {
             return null;
@@ -69,6 +87,8 @@ const getters = {
                 return rootState.ggds.all;
             case 'safety-region':
                 return rootState.safetyRegions.all;
+            case 'province':
+                return rootState.provinces.all;
             case 'country':
                 return rootState.countries.all;
         }
@@ -83,6 +103,8 @@ const getters = {
                 return plural ? "GGD'en" : "GGD";
             case 'safety-region':
                 return plural ? "Veiligheidsregio's" : "Veiligheidsregio";
+            case 'province':
+                return plural ? "Provincies" : "Provincie";
             case 'country':
                 return plural ? "Landen" : "Land";
         }

@@ -31,7 +31,7 @@
                 this.clear();
                 this.drawThresholds();
                 this.drawGrid();
-                if (this.days.length > 0) {
+                if (this.getDays().length > 0) {
                     this.drawTrendLine();
                 }
                 this.drawDates();
@@ -65,10 +65,9 @@
                 ctx.globalAlpha = 1;
             },
             drawTrendLine() {
-                let ctx, step, history, start, days;
+                let ctx, step, start, report, days;
                 ctx = this.ctx;
                 step = this.step;
-                history = this.region.getTotalReport().history;
 
                 const getY = (day) => {
                     // for the graph we always use 100000, independent from the signaling system
@@ -82,8 +81,11 @@
                 // draw 1 point extra, this point is out of the graph on the leftside
                 start = 1;
 
-                ctx.moveTo(this.getX(this.days[0]), getY(this.days[0]));
-                days = this.days.slice(1);
+
+                days = this.getDays();
+
+                ctx.moveTo(this.getX(days[0]), getY(days[0]));
+                days = days.slice(1);
                 for (let day of days) {
                     ctx.lineTo(this.getX(day), getY(day));
                 }

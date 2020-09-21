@@ -7,7 +7,8 @@ class GGD extends _Region{
         ggd_code = '',
         title = '',
         paths = [],
-        report = []
+        report = null,
+        ageGroupReport = null
     }) {
         super();
         this.id = (store.state.ggds.all.length + 1);
@@ -16,6 +17,7 @@ class GGD extends _Region{
         this.title = title;
         this.paths = paths.map(path => new Path(path));
         this.report = report;
+        this.ageGroupReport = ageGroupReport;
         this.hasPaths = true;
     }
 }

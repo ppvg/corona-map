@@ -35,13 +35,22 @@
                         },
                         tag: 'ggd'
                     },
-                    // {
-                    //     label: 'Veiligheidsregio',
-                    //     getRegion() {
-                    //         return store.getters['safetyRegions/getItemByProperty']('safetyRegion_code', city.safetyRegion_code, true);
-                    //     },
-                    //     tag: 'sr'
-                    // },
+                    {
+                        label: 'Veiligheidsregio',
+                        showRegion: true,
+                        getRegion() {
+                            return store.getters['safetyRegions/getItemByProperty']('safetyRegion_code', region.safetyRegion_code, true);
+                        },
+                        tag: 'safety-region'
+                    },
+                    {
+                        label: 'Provincie',
+                        showRegion: true,
+                        getRegion() {
+                            return store.getters['provinces/getItemByProperty']('province_code', region.province_code, true);
+                        },
+                        tag: 'province'
+                    },
                     {
                         label: 'Land',
                         showRegion: true,
@@ -73,5 +82,7 @@
     .region-relations {
         display: flex;
         flex-wrap: wrap;
+        align-items: flex-start;
+        height: 30px;
     }
 </style>

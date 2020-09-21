@@ -21,6 +21,10 @@ class Path {
     getTranslatedPath(settings) {
         return this.path.map(point => point.getTranslated(settings));
     }
+
+    export() {
+        return this.path;
+    }
 }
 
 export default Path;

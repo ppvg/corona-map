@@ -112,7 +112,7 @@
                     //         return {...a};
                     //     }));
                     // }
-                    this.$store.commit('ggds/updatePropertyOfItem', {item: ggd, property: 'report', value: ggdData.report});
+                    this.$store.commit('ggds/updatePropertyOfItem', {item: ggd, property: 'ageGroupReport', value: ggdData.report});
                 }
 
                 this.$store.commit('ui/updateProperty', {key: 'caseDataLoaded', value: true});

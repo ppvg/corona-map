@@ -97,6 +97,9 @@
                 class="dot"></div>
             <div class="region-details__title">
                 {{regionOfFocus.title}}
+                <div v-if="regionOfFocus.regionType === 'sr'">
+                    {{region.safetyRegion_code}}
+                </div>
             </div>
         </div>
         <div class="region-details__info">
@@ -105,20 +108,7 @@
                     v-if="showRelations"
                     :region="region"/>
             </div>
-            <div
-                v-if="(regionOfFocus.regionType === 'ggd') && caseDataRequested"
-                class="region-details__section">
-                <div class="region-details__section-header">
-                    Leeftijdsverdeling (beta)
-                </div>
-                <div class="age-distribution-graph__container">
-                    <age-distribution-graph-normalised
-                        v-if="caseDataLoaded"
-                        :region="regionOfFocus"/>
-                    <loader v-else/>
-                </div>
-                <age-distribution-tools/>
-            </div>
+
             <div class="region-details__section">
                 <div class="region-details__section-header">
                     Testen GGD
@@ -131,12 +121,18 @@
                     :region="region"/>
             </div>
             <div
-                v-if="hasSewageTreatmentPlants"
-                class="region-details__section">
-                <div class="region-details__row">
-                    <sewage-treatment-plants
-                        :region="regionOfFocus"/>
+                    v-if="(regionOfFocus.regionType === 'ggd') && caseDataRequested"
+                    class="region-details__section">
+                <div class="region-details__section-header">
+                    Leeftijdsverdeling (beta)
                 </div>
+                <div class="age-distribution-graph__container">
+                    <age-distribution-graph-normalised
+                            v-if="caseDataLoaded"
+                            :region="regionOfFocus"/>
+                    <loader v-else/>
+                </div>
+                <age-distribution-tools/>
             </div>
             <div class="region-details__section">
                 <div class="region-details__row">
@@ -180,6 +176,14 @@
                     <div class="region-details__value">
                         {{format(Math.round(regionOfFocus.getTotalRelativeIncreaseWeek()))}}
                     </div>
+                </div>
+            </div>
+            <div
+                    v-if="hasSewageTreatmentPlants"
+                    class="region-details__section">
+                <div class="region-details__row">
+                    <sewage-treatment-plants
+                            :region="regionOfFocus"/>
                 </div>
             </div>
         </div>

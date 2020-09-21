@@ -26,9 +26,13 @@ class _Region {
                 return store.state.cities.all.filter(city => {
                     return city.ggd_code === this.ggd_code;
                 });
-            case 'sr':
+            case 'safety-region':
                 return store.state.cities.all.filter(city => {
                     return city.safetyRegion_code === this.safetyRegion_code;
+                });
+            case 'province':
+                return store.state.cities.all.filter(city => {
+                    return city.province_code === this.province_code;
                 });
             case 'country':
                 return store.state.cities.all.filter(city => {
@@ -101,10 +105,11 @@ class _Region {
         for (let city of cities) {
             let dayCounter = 0;
             for (let day of city.report.history) {
+                let copy = {...day};
                 if (counter === 0) {
-                    report.history.push(day)
+                    report.history.push(copy)
                 } else {
-                    report.history[dayCounter].positiveTests += day.positiveTests;
+                    report.history[dayCounter].positiveTests += copy.positiveTests;
                 }
                 dayCounter++;
             }

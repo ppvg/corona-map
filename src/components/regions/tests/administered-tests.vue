@@ -23,7 +23,7 @@
                 this.drawBackground();
                 this.drawGrid();
                 this.drawMaxLine();
-                if (this.days.length > 0) {
+                if (this.getDays().length > 0) {
                     this.drawLine();
                 }
                 this.drawDates();
@@ -51,9 +51,10 @@
                 ctx.strokeStyle = 'black';
                 // draw 1 point extra, this point is out of the graph on the leftside
                 start = 1;
+                days = this.getDays();
 
-                ctx.moveTo(this.getX(this.days[0]), getY(this.days[0]));
-                days = this.days.slice(1);
+                ctx.moveTo(this.getX(days[0]), getY(days[0]));
+                days = days.slice(1);
                 for (let day of days) {
                     ctx.lineTo(this.getX(day), getY(day));
                 }
