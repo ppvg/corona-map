@@ -152,6 +152,17 @@
                         </div>
                         <div class="source__value-row">
                             <div class="source__value-what">
+                                Geo data GGD regios's
+                            </div>
+                            <div class="source__value-who">
+                                Cartomap
+                            </div>
+                            <div class="source__value-link">
+                                https://cartomap.github.io/nl/wgs84/ggdregio_2020.geojson
+                            </div>
+                        </div>
+                        <div class="source__value-row">
+                            <div class="source__value-what">
                                 Geo data Amsterdam
                             </div>
                             <div class="source__value-who">

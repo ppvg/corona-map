@@ -15,9 +15,14 @@ const draw = function(ctx, regionContainers, settings) {
 
 const drawRegionContainer = function(ctx, regionContainer, settings) {
     ctx.fillStyle = regionContainer.color;
-    for (let region of regionContainer.getRegions()) {
-        drawRegion(ctx, region, settings);
+    if (regionContainer.hasPaths) {
+        drawRegion(ctx, regionContainer, settings);
+    } else {
+        for (let region of regionContainer.getRegions()) {
+            drawRegion(ctx, region, settings);
+        }
     }
+
 };
 
 const drawRegion = function(ctx, region, settings) {
