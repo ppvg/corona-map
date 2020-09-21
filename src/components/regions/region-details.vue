@@ -71,7 +71,7 @@
                 return this.$store.state.maps.current;
             },
             showRelations() {
-                this.currentMap.settings.showRelations;
+                return this.currentMap.settings.showRelations;
             }
         },
         methods: {
