@@ -34,7 +34,7 @@
                     {
                         label: 'Veiligheidsregio',
                         showRegion: false,
-                        tag: 'sr'
+                        tag: 'safety-region'
                     },
                     {
                         label: 'Land',

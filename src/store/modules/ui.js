@@ -81,7 +81,7 @@ const getters = {
                 return plural ? "Gemeentes" : "Gemeente";
             case 'ggd':
                 return plural ? "GGD'en" : "GGD";
-            case 'sr':
+            case 'safety-region':
                 return plural ? "Veiligheidsregio's" : "Veiligheidsregio";
             case 'country':
                 return plural ? "Landen" : "Land";

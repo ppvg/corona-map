@@ -6,7 +6,7 @@ $.getJSON( "regions.json", function( data ) {
         region = {};
         region.id = regions.length + 1;
         region.title = item.properties.statnaam;
-        region.ggd_code = item.properties.statcode;
+        region.safetyRegion_code = item.properties.statcode;
 
         if (item.geometry.type === 'MultiPolygon') {
             paths = [];
@@ -32,6 +32,6 @@ $.getJSON( "regions.json", function( data ) {
         });
         regions.push(region);
     }
-    //console.log(regions);
+    console.log(regions);
     console.log(JSON.stringify(regions));
 });
