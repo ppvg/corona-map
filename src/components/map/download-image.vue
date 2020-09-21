@@ -104,8 +104,8 @@
                     baseY += (33 * this.imageScale);
                 }
                 ctx.beginPath();
-                ctx.moveTo(30 * this.imageScale, 290 * this.imageScale);
-                ctx.lineTo(465 * this.imageScale, 290 * this.imageScale);
+                ctx.moveTo(30 * this.imageScale, 330 * this.imageScale);
+                ctx.lineTo(465 * this.imageScale, 330 * this.imageScale);
                 ctx.stroke();
             },
             addRedCities(ctx) {
