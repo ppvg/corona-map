@@ -1,10 +1,10 @@
 <script>
-    import cities from "./cities";
+    import searchRegionsResults from "./search-regions-results";
 
     export default {
-        name: 'cities-panel',
+        name: 'search-regions',
         components: {
-            cities
+            searchRegionsResults
         },
         props: {},
         computed: {
@@ -13,6 +13,10 @@
             },
             hoverValue() {
                 return this.$store.state.ui.hoverValue;
+            },
+            regionType() {
+                return 'Zoek gemeente of klik op de kaart';
+                //return 'Zoek ' + this.$store.getters['ui/typeLabel'](false).toLowerCase() + ' of klik op de kaart';
             }
         },
         methods: {
@@ -25,15 +29,15 @@
 
 
 <template>
-    <div class="cities-panel">
+    <div class="search-regions">
         <input
             :value="searchValue"
             @keyup="updateSearchValue"
-            placeholder="Zoek gemeente of klik op de kaart">
+            :placeholder="regionType">
         <div
             v-if="hoverValue.length > 0"
             class="hover-value">{{hoverValue}}</div>
-        <cities/>
+        <search-regions-results/>
     </div>
 </template>
 
@@ -41,7 +45,7 @@
 <style lang="scss">
     @import '@/styles/variables.scss';
 
-    .cities-panel {
+    .search-regions {
         position: relative;
 
         input {

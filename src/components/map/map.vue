@@ -8,7 +8,7 @@
     import $ from 'jquery';
 
     export default {
-        name: 'map-netherlands',
+        name: 'map-tests',
         components: {
             embedButton,
             PointerCanvas,
@@ -24,20 +24,14 @@
             height() {
                 return this.$store.state.settings.canvasHeight;
             },
-            regions() {
-                switch(this.currentRegionType) {
-                    case 'city':
-                        return this.$store.state.cities.all;
-                    case 'ggd':
-                        return this.$store.state.ggds.all;
-                    case 'sr':
-                        return this.$store.state.safetyRegions.all;
-                    case 'country':
-                        return this.$store.state.countries.all;
-                }
+            containerRegions() {
+                return this.$store.getters['ui/regions'];
             },
-            cities() {
-                return this.$store.state.cities.all;
+            currentMap() {
+                return this.$store.state.maps.current;
+            },
+            regions() {
+                return this.$store.state[this.currentMap.module].all;
             },
             canvas() {
                 return document.getElementById('main-canvas');
@@ -85,8 +79,8 @@
                 });
             },
             clearCache() {
-                for (let city of this.$store.state.cities.all) {
-                    for (let path of city.paths) {
+                for (let region of this.$store.state[this.currentMap.module].all) {
+                    for (let path of region.paths) {
                         path.storedPaths = {};
                     }
                 }
@@ -104,7 +98,7 @@
                 }
                 this.$store.commit('settings/updateProperty', {key: 'canvasHeight', value: height});
                 this.$store.commit('settings/updateProperty', {key: 'canvasWidth', value: Math.round(ratio * height)});
-                this.$store.commit('settings/updateProperty', {key: 'zoom', value: (height / 2.9)});
+                this.$store.commit('settings/updateProperty', {key: 'zoom', value: (height * this.currentMap.settings.map.zoom)});
 
             },
             addEvents() {
@@ -113,38 +107,38 @@
             },
             addClickEvent() {
                 this.canvas.addEventListener('click', (event) => {
-                    let x, y, city;
+                    let x, y, region;
                     x = event.offsetX;
                     y = event.offsetY;
-                    city = this.getCityForPoint(x, y);
-                    if (city) {
-                        this.$store.commit('ui/updateProperty', {key: 'currentCity', value: city});
+                    region = this.getRegionForPoint(x, y);
+                    if (region) {
+                        this.$store.commit(this.currentMap.module + '/setCurrent', region);
                         this.$store.commit('ui/updateProperty', {key: 'menu', value: 'city'});
                         this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
                         this.$store.commit('ui/updateProperty', {key: 'hoverValue', value: ''});
                     } else {
-                        this.$store.commit('ui/updateProperty', {key: 'currentCity', value: false});
+                        this.$store.commit(this.currentMap.module + '/setCurrent', null);
                     }
                 }, false);
             },
             addHoverEvent() {
                 this.canvas.addEventListener('mousemove', (event) => {
-                    let x, y, city;
+                    let x, y, region;
                     x = event.offsetX;
                     y = event.offsetY;
-                    city = this.getCityForPoint(x, y);
-                    if (city) {
-                        this.$store.commit('ui/updateProperty', {key: 'hoverValue', value: city.title});
+                    region = this.getRegionForPoint(x, y);
+                    if (region) {
+                        this.$store.commit('ui/updateProperty', {key: 'hoverValue', value: region.title});
                     } else {
                         this.$store.commit('ui/updateProperty', {key: 'hoverValue', value: ''});
                     }
                 }, false);
             },
-            getCityForPoint(x, y) {
-                for (let city of this.cities) {
-                    for (let path of city.paths) {
+            getRegionForPoint(x, y) {
+                for (let region of this.regions) {
+                    for (let path of region.paths) {
                         if (this.ctx.isPointInPath(path.storedPaths['map'], x, y)) {
-                            return city;
+                            return region;
                         }
                     }
                 }
@@ -161,7 +155,7 @@
                     zoom: this.$store.state.settings.zoom,
                     fill: true
                 };
-                canvasTools.draw(this.ctx, this.regions, settings);
+                canvasTools.draw(this.ctx, this.containerRegions, settings);
             },
             clear() {
                 this.ctx.clearRect(0, 0, this.width, this.height);

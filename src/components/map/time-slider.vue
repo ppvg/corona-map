@@ -1,63 +1,32 @@
 <script>
     import VueSlider from 'vue-slider-component'
     import 'vue-slider-component/theme/default.css'
+    import TimeTools from "./time-tools";
 
     export default {
         name: 'time-slider',
         components: {
+            TimeTools,
             VueSlider
         },
         props: {},
-        data() {
-            return {
-                playing: false,
-                timer: null
-            }
-        },
         computed: {
             currentDateOffset: {
                 get() {
-                    return this.max - this.$store.state.settings.currentDateOffset;
+                    return this.historyLength - this.$store.state.settings.currentDateOffset;
                 },
                 set(value) {
-                    this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: (this.max - value)});
+                    this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: (this.historyLength - value)});
                 }
             },
-            max() {
+            historyLength() {
                 return this.$store.state.settings.historyLength;
-            },
-            isAtEnd() {
-                return this.$store.state.settings.currentDateOffset === 0;
-            },
-            isAtStart() {
-                return this.$store.state.settings.currentDateOffset === this.max;
             },
             date() {
                 return this.$store.getters['ui/dateString'];
             }
         },
-        methods: {
-            rewind() {
-                this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: this.max});
-            },
-            play() {
-                this.playing = true;
-                this.timer = setInterval(() => {
-                    if (this.$store.state.settings.currentDateOffset > 0) {
-                        this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: (this.$store.state.settings.currentDateOffset -1)});
-                    } else {
-                        this.stop();
-                    }
-                }, 200)
-            },
-            oneBack() {
-                this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: (this.$store.state.settings.currentDateOffset +1)});
-            },
-            stop() {
-                this.playing = false;
-                clearInterval(this.timer);
-            }
-        }
+        methods: {}
     }
 </script>
 
@@ -67,43 +36,15 @@
 
         <div class="vue-slider__container">
             <vue-slider
-                    v-model="currentDateOffset"
-                    :min="0"
-                    :max="max"
-                    :interval="1"
-                    :tooltip-formatter="date"
-                    :duration="0"/>
+                v-model="currentDateOffset"
+                :min="0"
+                :max="historyLength"
+                :interval="1"
+                :tooltip-formatter="date"
+                :duration="0"/>
         </div>
 
-        <div class="vue-slider__icons">
-            <div
-                    v-if="isAtEnd"
-                    @click="rewind()"
-                    class="icon-button">
-                <img src="assets/img/tools/redo.svg">
-            </div>
-
-            <div
-                    v-if="!playing && !isAtEnd"
-                    @click="play()"
-                    class="icon-button">
-                <img src="assets/img/tools/play.svg">
-            </div>
-
-            <div
-                    v-if="playing"
-                    @click="stop()"
-                    class="icon-button">
-                <img src="assets/img/tools/stop.svg">
-            </div>
-
-            <div
-                    v-if="!playing && !isAtStart"
-                    @click="oneBack()"
-                    class="icon-button">
-                <img src="assets/img/tools/back.svg">
-            </div>
-        </div>
+        <time-tools/>
     </div>
 </template>
 
@@ -120,20 +61,8 @@
         width: calc(100% - 90px)!important;
 
         .vue-slider__container {
-            width: calc(100% - 100px);
+            width: calc(100% - 120px);
         }
-
-        .vue-slider__icons {
-            display: flex;
-            align-items: center;
-
-            .icon-button {
-                pointer-events: all;
-                margin-right: 8px;
-            }
-        }
-
-
 
         .vue-slider {
             margin-right: 20px;

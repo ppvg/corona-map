@@ -1,28 +1,30 @@
 import Path from './Path';
-import store from '@/store/store';
-import stringTool from '@/tools/string';
-import _Region from "./_Region";
+import _RegionWithTestData from "./_RegionWithTestData";
 
-class City extends _Region {
+class City extends _RegionWithTestData {
     constructor({
         id = null,
-        municipality_code = '',
+        identifier = '',
         ggd_code = '',
         safetyRegion_code = '',
+        province_code = '',
         title = '',
         population = 0,
         area = 0,
         paths = [],
         ageGroups = [],
-        report = null
+        report = {
+            history: []
+        }
     }) {
         super();
         this.regionType = 'city';
         this.id = id;
         this.country_id = 1;
-        this.municipality_code = municipality_code;
+        this.identifier = identifier;
         this.ggd_code = ggd_code;
         this.safetyRegion_code = safetyRegion_code;
+        this.province_code = province_code;
         this.title = title;
         this.population = population;
         this.area = area;
@@ -31,43 +33,7 @@ class City extends _Region {
         this.report = report;
     }
 
-    get increaseDay() {
-        let offset = store.state.settings.currentDateOffset;
-        return this.report.history[this.report.history.length - 1 - offset];
-    }
 
-    getIncreaseDay(delta = 0) {
-        let offset = store.state.settings.currentDateOffset;
-        return this.report.history[this.report.history.length - 1 - (offset + delta)];
-    }
-
-    getIncreaseWeek(delta = 0) {
-        let total, offset;
-        total = 0;
-        offset = store.state.settings.currentDateOffset + delta;
-        for (let i = (this.report.history.length - 1 - offset), l = (this.report.history.length - 8 - offset); i > l; i--) {
-            total += this.report.history[i];
-        }
-        return total;
-    }
-
-    getRelativeIncreaseWeek() {
-        return 100000 * this.getIncreaseWeek() /  this.population;
-    }
-
-    getRelativeIncreaseDay() {
-        return 100000 * this.increaseDay /  this.population;
-    }
-
-    get titleForSorting() {
-        return stringTool.titleForSorting(this.title);
-    }
-
-
-
-    get hasNewInfection() {
-        return this.getIncreaseWeek() > 0 && this.getIncreaseWeek(7) === 0
-    }
     //
     // get trend() {
     //     let difference = this.newestSet - this.oldestSet;

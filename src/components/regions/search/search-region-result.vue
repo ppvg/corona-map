@@ -1,19 +1,23 @@
 <script>
-    import City from "@/classes/City";
+    import _Region from "@/classes/_Region";
 
     export default {
-        name: 'city-result',
+        name: 'search-region-result',
         components: {},
         props: {
-            city: {
-                type: City,
+            region: {
+                type: _Region,
                 required: true
             }
         },
-        computed: {},
+        computed: {
+            currentMap() {
+                return this.$store.state.maps.current;
+            }
+        },
         methods: {
-            selectCity() {
-                this.$store.commit('ui/updateProperty', {key: 'currentCity', value: this.city});
+            select() {
+                this.$store.commit(this.currentMap.module + '/setCurrent', this.region);
                 this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
                 this.$store.commit('ui/updateProperty', {key: 'menu', value: 'city'});
             }
@@ -24,9 +28,9 @@
 
 <template>
     <div
-        @click="selectCity()"
-        class="city-result">
-        {{city.title}}
+        @click="select()"
+        class="search-region-result">
+        {{region.title}}
     </div>
 </template>
 
@@ -34,7 +38,7 @@
 <style lang="scss">
     @import '@/styles/variables.scss';
 
-    .city-result {
+    .search-region-result {
         border-bottom: 1px solid $grey-1;
         padding: 14px 10px;
         cursor: pointer;

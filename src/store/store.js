@@ -3,10 +3,13 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 import signalingSystems from './modules/signaling-systems';
+import maps from './modules/maps';
 import countries from './modules/countries';
 import cities from './modules/cities';
+import districts from './modules/districts';
 import ggds from './modules/ggds';
 import safetyRegions from './modules/safety-regions';
+import provinces from './modules/provinces';
 import sewageTreatmentPlants from './modules/sewage-treatment-plants';
 import ageGroups from './modules/age-groups';
 import settings from './modules/settings';
@@ -27,7 +30,9 @@ const store = new Vuex.Store({
     actions: {},
     modules: {
         signalingSystems,
-        countries, cities, ggds, safetyRegions, sewageTreatmentPlants,
+        maps,
+        countries, cities, districts, ggds, safetyRegions, provinces,
+        sewageTreatmentPlants,
         ageGroups,
         settings, ui
     }

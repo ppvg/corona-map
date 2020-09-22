@@ -1,19 +1,22 @@
 <script>
-    import cityResult from "./city-result";
+    import searchRegionResult from "./search-region-result";
 
     export default {
-        name: 'cities',
+        name: 'search-regions-results',
         components: {
-            cityResult
+            searchRegionResult
         },
         props: {},
         computed: {
             searchValue() {
                 return this.$store.state.ui.searchValue;
             },
-            cities() {
-                return this.$store.state.cities.all
-                    .filter(city => this.searchValue.length > 0 && city.title.toLowerCase().indexOf(this.searchValue.toLowerCase()) > -1)
+            currentMap() {
+                return this.$store.state.maps.current;
+            },
+            regions() {
+                return this.$store.state[this.currentMap.module].all
+                    .filter(region => this.searchValue.length > 0 && region.title.toLowerCase().indexOf(this.searchValue.toLowerCase()) > -1)
                     .sort((a,b) => (a.titleForSorting > b.titleForSorting) ? 1 : ((b.titleForSorting > a.titleForSorting) ? -1 : 0));
             }
         },
@@ -23,13 +26,13 @@
 
 
 <template>
-    <div class="cities">
+    <div class="search-regions-results">
         <div
-            v-if="cities.length > 0"
-            class="cities__results">
-            <city-result
-                v-for="city in cities"
-                :city="city"/>
+            v-if="regions.length > 0"
+            class="search-regions-results__results">
+            <search-region-result
+                v-for="region in regions"
+                :region="region"/>
         </div>
     </div>
 </template>
@@ -38,10 +41,10 @@
 <style lang="scss">
     @import '@/styles/variables.scss';
 
-    .cities {
+    .search-regions-results {
         position: relative;
 
-        .cities__results {
+        .search-regions-results__results {
             position: absolute;
             left: 0;
             top: 0;

@@ -20,12 +20,15 @@ const mutations = {
             if (item) {
                 let c = new City(item);
                 state.all.push(c);
-                state.dict[c.municipality_code] = c;
+                state.dict[c.identifier] = c;
             }
         }
     },
     updatePropertyOfItem(state, payload) {
         _base.mutations.updatePropertyOfItem(state, payload.item, payload.property, payload.value);
+    },
+    setCurrent(state, item) {
+        _base.mutations.setCurrent(state, item);
     }
 };
 

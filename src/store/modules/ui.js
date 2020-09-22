@@ -4,10 +4,10 @@ import { nl } from 'date-fns/locale'
 
 
 const state = {
+    isPlaying: false,
     searchValue: '',
     hoverValue: '',
-    currentCity: null,
-    currentRegionType: 'city',
+    currentRegionType: '',
     today: null,
     credits: false,
     embedPopup: false,
@@ -24,7 +24,7 @@ const getters = {
         let today, offset, dateOfFocus;
         today = state.today;
         if (today) {
-            offset = rootState.settings.currentDateOffset;
+            offset = rootState.settings.currentDateOffset * rootState.maps.current.settings.testDataInterval;
             dateOfFocus = sub(today, {days: offset});
             return format(dateOfFocus, 'EE d MMM', {locale: nl} );
         } else {
@@ -41,18 +41,37 @@ const getters = {
             return '';
         }
     },
+    module(state) {
+        switch(state.currentRegionType) {
+            case 'district':
+                return 'districts';
+            case 'city':
+                return 'cities';
+            case 'ggd':
+                return 'ggds';
+            case 'safety-region':
+                return 'safetyRegions';
+            case 'province':
+                return 'provinces';
+            case 'country':
+                return 'countries';
+        }
+    },
     currentRegion(state, getters, rootState, rootGetters) {
-        let city = state.currentCity;
-        if (city) {
+        let region = rootState[rootState.maps.current.module].current;
+        if (region) {
             switch(state.currentRegionType) {
+                case 'district':
                 case 'city':
-                    return city;
+                    return region;
                 case 'ggd':
-                    return rootGetters['ggds/getItemByProperty']('ggd_code', city.ggd_code, true);
-                case 'sr':
-                    return rootGetters['safetyRegions/getItemByProperty']('safetyRegion_code', city.safetyRegion_code, true);
+                    return rootGetters['ggds/getItemByProperty']('ggd_code', region.ggd_code, true);
+                case 'safety-region':
+                    return rootGetters['safetyRegions/getItemByProperty']('safetyRegion_code', region.safetyRegion_code, true);
+                case 'province':
+                    return rootGetters['provinces/getItemByProperty']('province_code', region.province_code, true);
                 case 'country':
-                    return rootGetters['countries/getItemById'](city.country_id);
+                return rootGetters['countries/getItemById'](region.country_id);
             }
         } else {
             return null;
@@ -60,26 +79,34 @@ const getters = {
     },
     regions(state, getters, rootState, rootGetters) {
         switch(state.currentRegionType) {
+            case 'district':
+                return rootState.districts.all;
             case 'city':
                 return rootState.cities.all;
             case 'ggd':
                 return rootState.ggds.all;
-            case 'sr':
+            case 'safety-region':
                 return rootState.safetyRegions.all;
+            case 'province':
+                return rootState.provinces.all;
             case 'country':
                 return rootState.countries.all;
         }
     },
-    typeLabel(state) {
+    typeLabel: (state) => (plural = true) => {
         switch(state.currentRegionType) {
+            case 'district':
+                return plural ? "Stadsdelen" : "Stadsdeel";
             case 'city':
-                return 'gemeentes';
+                return plural ? "Gemeentes" : "Gemeente";
             case 'ggd':
-                return 'ggds';
-            case 'sr':
-                return "veiligheidsregio's";
+                return plural ? "GGD'en" : "GGD";
+            case 'safety-region':
+                return plural ? "Veiligheidsregio's" : "Veiligheidsregio";
+            case 'province':
+                return plural ? "Provincies" : "Provincie";
             case 'country':
-                return "landen";
+                return plural ? "Landen" : "Land";
         }
     }
 };

@@ -34,7 +34,7 @@
                 return 1;
             },
             typeLabel() {
-                return this.$store.getters['ui/typeLabel'];
+                return this.$store.getters['ui/typeLabel'](true).toLowerCase();
             },
             signalingSystem() {
                 return this.$store.state.signalingSystems.current;

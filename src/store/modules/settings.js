@@ -7,7 +7,7 @@ const state = {
     mapRatio: 0.89,
     step: 10,
     weeks: 5, // weeks
-    historyLength: 70,
+    historyLength: 0,
     currentDateOffset: 0,
     gradient: true,
     ageDistributionAbsolute: false

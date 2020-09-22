@@ -4,14 +4,26 @@
         components: {},
         props: {},
         computed: {
-            currentCity() {
-                return this.$store.state.ui.currentCity;
+            currentRegion() {
+                return this.$store.state.ui.currentRegion;
             },
             routePath() {
                 return window.location.href.split('#')[0];
             },
+            currentMap() {
+                return this.$store.state.maps.current;
+            },
             query() {
-                return this.currentCity ? '?city=' + encodeURI(this.currentCity.title) : ''
+                let query = '?';
+                query += this.currentMap ? ('map=' + encodeURI(this.currentMap.title)) : '';
+                if (this.currentRegion) {
+                    if (this.currentMap) {
+                        query += '&';
+                    }
+                    query += this.currentRegion ? ('region=' + encodeURI(this.currentRegion.title)) : '';
+                }
+                //console.log(this.currentRegion, query);
+                return query;
             },
             url() {
                 return this.routePath + '#/' + this.query;

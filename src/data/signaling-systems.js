@@ -134,12 +134,20 @@ let signalingSystems = [
                     variant3: '#9e9ac8'
                 }
             }, {
-                n: Infinity,
+                n: 100,
                 color: {
                     regular: 'rgb(255,0,0)',
                     colorblind1: '#fc8d62',
                     colorblind2: '#e31a1c',
                     variant3: '#6a51a3'
+                }
+            }, {
+                n: Infinity,
+                color: {
+                    regular: 'rgb(40,40,40)',
+                    colorblind1: 'rgb(40,40,40)',
+                    colorblind2: 'rgb(40,40,40)',
+                    variant3: 'rgb(40,40,40)'
                 }
             }
         ]

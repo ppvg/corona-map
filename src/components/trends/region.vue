@@ -13,11 +13,15 @@
                 required: true
             }
         },
-        computed: {},
+        computed: {
+            currentMap() {
+                return this.$store.state.maps.current;
+            }
+        },
         methods: {
             selectRegion() {
-                if (this.region.regionType === 'city') {
-                    this.$store.commit('ui/updateProperty', {key: 'currentCity', value: this.region});
+                if (this.region.regionType === 'city' || this.region.regionType === 'district') {
+                    this.$store.commit(this.currentMap.module + '/setCurrent', this.region);
                 }
                 this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
             }

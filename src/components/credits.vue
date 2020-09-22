@@ -52,6 +52,17 @@
                                 https://github.com/mzelst/covid-19/blob/master/data/municipality-totals.csv
                             </div>
                         </div>
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Wekelijkse publicatie GGD Amsterdam
+                            </div>
+                            <div class="source__value-who">
+                                GGD Amsterdam
+                            </div>
+                            <div class="source__value-link">
+                                https://www.ggd.amsterdam.nl/coronavirus/situatie-regio-amsterdam-amstelland/
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="source__row">
@@ -110,11 +121,22 @@
 
                             </div>
                         </div>
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Inwoners stadsdelen Amsterdam
+                            </div>
+                            <div class="source__value-who">
+                                Kerncijfers Amsterdam 2018
+                            </div>
+                            <div class="source__value-link">
+                                http://82.94.199.215/pdf/2018_kerncijfers.pdf
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="source__row">
                     <div class="source__subject">
-                        Geo data voor gemeentegrenzen
+                        Geo data
                     </div>
                     <div class="source__value">
                         <div class="source__value-row">
@@ -126,6 +148,28 @@
                             </div>
                             <div class="source__value-link">
                                 https://hub.arcgis.com/datasets/e1f0dd70abcb4fceabbc43412e43ad4b_0
+                            </div>
+                        </div>
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Geo data GGD regios's
+                            </div>
+                            <div class="source__value-who">
+                                Cartomap
+                            </div>
+                            <div class="source__value-link">
+                                https://github.com/cartomap/nl
+                            </div>
+                        </div>
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Geo data Amsterdam
+                            </div>
+                            <div class="source__value-who">
+                                Amsterdam.nl
+                            </div>
+                            <div class="source__value-link">
+                                https://maps.amsterdam.nl/open_geodata/geojson.php?KAARTLAAG=GEBIED_STADSDELEN_EXWATER&THEMA=gebiedsindeling
                             </div>
                         </div>
                     </div>
@@ -154,13 +198,12 @@
 
     .credits {
         position: fixed;
-        left: 20px;
-        top: 20px;
-        width: calc(100% - 40px);
-        height: calc(100% - 40px);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
         background: #fff;
         z-index: 10;
-        box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
         overflow: auto;
         font-size: 12px;
 

@@ -7,13 +7,16 @@
             currentDateOffset() {
                 return this.$store.state.settings.currentDateOffset;
             },
-            cities() {
-                return this.$store.state.cities.all;
+            currentMap() {
+                return this.$store.state.maps.current;
+            },
+            regions() {
+                return this.$store.state[this.currentMap.module].all;
             },
             n() {
                 let n = 0;
-                for (let city of this.cities) {
-                    n += city.increaseDay;
+                for (let region of this.regions) {
+                    n += region.increaseDay;
                 }
                 return n;
             }

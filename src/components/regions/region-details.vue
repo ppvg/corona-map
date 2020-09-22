@@ -1,24 +1,25 @@
 <script>
-    import testGraph from "./tests/test-graph";
+    import positiveTests from "./tests/positive-tests";
     import sewageTreatmentPlants from "../sewage-treatment-plants/sewage-treatment-plants";
     import ageDistributionGraph from "./case-characteristics/age-distribution-graph";
-    import regionTypePicker from "./region-type/region-type-picker";
     import _Region from "@/classes/_Region";
     import loader from "@/components/elements/loader";
     import ageDistributionGraphNormalised from "./case-characteristics/age-distribution-graph-normalised/age-distribution-graph-normalised";
-    import AgeDistributionTools
-        from "./case-characteristics/age-distribution-graph-normalised/age-distribution-tools";
+    import ageDistributionTools from "./case-characteristics/age-distribution-graph-normalised/age-distribution-tools";
+    import regionRelations from "./region-type/region-relations";
+    import AdministeredTests from "./tests/administered-tests";
 
     export default {
         name: 'region-details',
         components: {
-            AgeDistributionTools,
+            AdministeredTests,
+            regionRelations,
+            ageDistributionTools,
             ageDistributionGraphNormalised,
             loader,
-            regionTypePicker,
             ageDistributionGraph,
             sewageTreatmentPlants,
-            testGraph
+            positiveTests
         },
         props: {
             region: {
@@ -27,8 +28,8 @@
             }
         },
         computed: {
-            city() {
-                return this.$store.state.ui.currentCity;
+            regionOfFocus() {
+                return this.$store.getters['ui/currentRegion'];
             },
             period1() {
                 let start, end, total;
@@ -59,6 +60,18 @@
             },
             date() {
                 return this.$store.getters['ui/dateString'];
+            },
+            hasDays() {
+                return this.$store.state.maps.current.settings.testDataInterval === 1;
+            },
+            hasSewageTreatmentPlants() {
+                return this.$store.state.maps.current.settings.hasSewageTreatmentPlants;
+            },
+            hasAgeGroups() {
+                return this.$store.state.maps.current.settings.hasAgeGroups;
+            },
+            currentMap() {
+                return this.$store.state.maps.current;
             }
         },
         methods: {
@@ -83,41 +96,42 @@
                 :style="{'background': region.color}"
                 class="dot"></div>
             <div class="region-details__title">
-                {{region.title}}
+                {{regionOfFocus.title}}
+                <div v-if="regionOfFocus.regionType === 'sr'">
+                    {{region.safetyRegion_code}}
+                </div>
             </div>
         </div>
         <div class="region-details__info">
             <div class="region-details__section">
-                <region-type-picker
-                    :city="city"/>
+                <region-relations
+                    :region="region"/>
+            </div>
+
+            <div class="region-details__section">
+                <div class="region-details__section-header">
+                    Testen GGD
+                </div>
+                <positive-tests
+                    :region="regionOfFocus"/>
+
+                <administered-tests
+                    v-if="currentMap.settings.hasAdministeredTests"
+                    :region="regionOfFocus"/>
             </div>
             <div
-                v-if="(region.regionType === 'ggd') && caseDataRequested"
-                class="region-details__section">
+                    v-if="hasAgeGroups && (regionOfFocus.regionType === 'ggd') && caseDataRequested"
+                    class="region-details__section">
                 <div class="region-details__section-header">
                     Leeftijdsverdeling (beta)
                 </div>
                 <div class="age-distribution-graph__container">
                     <age-distribution-graph-normalised
-                        v-if="caseDataLoaded"
-                        :region="region"/>
+                            v-if="caseDataLoaded"
+                            :region="regionOfFocus"/>
                     <loader v-else/>
                 </div>
                 <age-distribution-tools/>
-            </div>
-            <div class="region-details__section">
-                <div class="region-details__section-header">
-                    Testen GGD
-                </div>
-                <test-graph :region="region"/>
-            </div>
-            <div
-                v-if="region.regionType === 'city'"
-                class="region-details__section">
-                <div class="region-details__row">
-                    <sewage-treatment-plants
-                        :city="region"/>
-                </div>
             </div>
             <div class="region-details__section">
                 <div class="region-details__row">
@@ -125,25 +139,25 @@
                         Inwoners
                     </div>
                     <div class="region-details__value">
-                        {{region.getTotalPopulation()}}
+                        {{regionOfFocus.getTotalPopulation()}}
                     </div>
                 </div>
             </div>
             <div class="region-details__section">
-                <div class="region-details__row">
+                <div v-if="hasDays" class="region-details__row">
                     <div class="region-details__label">
                         Toename vandaag
                     </div>
                     <div class="region-details__value">
-                        {{format(region.getTotalIncreaseDay())}}
+                        {{format(regionOfFocus.getTotalIncreaseDay())}}
                     </div>
                 </div>
-                <div class="region-details__row">
+                <div v-if="hasDays" class="region-details__row">
                     <div class="region-details__label">
                         Relatieve toename vandaag (per 100 dzd inw)
                     </div>
                     <div class="region-details__value">
-                        {{format(Math.round(region.getTotalRelativeIncreasDay()))}}
+                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreasDay()))}}
                     </div>
                 </div>
                 <div class="region-details__row">
@@ -151,7 +165,7 @@
                         Toename laatste 7 dagen
                     </div>
                     <div class="region-details__value">
-                        {{format(region.getTotalIncreaseWeek())}}
+                        {{format(regionOfFocus.getTotalIncreaseWeek())}}
                     </div>
                 </div>
                 <div class="region-details__row">
@@ -159,8 +173,16 @@
                         Relatieve toename laatste 7 dagen (per 100 dzd inw)
                     </div>
                     <div class="region-details__value">
-                        {{format(Math.round(region.getTotalRelativeIncreaseWeek()))}}
+                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreaseWeek()))}}
                     </div>
+                </div>
+            </div>
+            <div
+                    v-if="hasSewageTreatmentPlants"
+                    class="region-details__section">
+                <div class="region-details__row">
+                    <sewage-treatment-plants
+                            :region="regionOfFocus"/>
                 </div>
             </div>
         </div>
