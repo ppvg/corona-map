@@ -16,6 +16,9 @@
         computed: {
             currentMap() {
                 return this.$store.state.maps.current;
+            },
+            isCurrent() {
+                return this.region === this.$store.state[this.currentMap.module].current;
             }
         },
         methods: {
@@ -33,6 +36,7 @@
 <template>
     <div
         @click="selectRegion()"
+        :class="{'region--current': isCurrent}"
         class="region">
         <swatch :threshold="region.getThreshold()"/>
 
@@ -71,9 +75,14 @@
         align-items: center;
         margin-right: 4px;
         cursor: pointer;
+        border-bottom: 1px solid transparent;
 
         &:last-child {
             margin-right: 0;
+        }
+
+        &.region--current {
+            border-bottom: 1px solid #000;
         }
     }
 </style>

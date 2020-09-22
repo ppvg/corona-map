@@ -1,17 +1,17 @@
 <script>
-    import city from "@/components/trends/city";
+    import region from "@/components/trends/region";
 
     export default {
         name: 'cities-with-sewage-treatment-plant',
         components: {
-            city
+            region
         },
         props: {},
         computed: {
-            cities() {
+            regions() {
                 return this.$store.state.cities.all.filter(city => {
                     return this.$store.state.sewageTreatmentPlants.all.filter(s => {
-                        return s.city_code === city.municipality_code;
+                        return s.city_code === city.identifier;
                     }).length > 0;
                 })
             }
@@ -28,9 +28,9 @@
         </div>
         <div class="section__body">
             <div class="cities__list">
-                <city
-                    v-for="city in cities"
-                    :city="city"/>
+                <region
+                    v-for="region in regions"
+                    :region="region"/>
             </div>
         </div>
     </div>
