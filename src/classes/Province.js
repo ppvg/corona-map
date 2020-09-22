@@ -16,7 +16,7 @@ class Province extends _Region{
         this.title = title;
         this.paths = paths.map(path => new Path(path));
         this.report = report;
-        this.hasPaths = true;
+        this.country_id = 1;
     }
 }
 

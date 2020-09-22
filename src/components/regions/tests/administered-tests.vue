@@ -25,6 +25,7 @@
                 this.drawMaxLine();
                 if (this.getDays().length > 0) {
                     this.drawLine();
+                    this.drawValues();
                 }
                 this.drawDates();
             },
@@ -42,8 +43,7 @@
                 history = this.region.getTotalReport().history;
 
                 const getY = (day) => {
-                    let percentage = 100 * day.positiveTests / day.administeredTests;
-                    return this.getY(percentage);
+                    return this.getY(this.getPercentage(day));
                 };
 
                 ctx.beginPath();
@@ -61,6 +61,37 @@
                 ctx.stroke();
                 ctx.closePath();
             },
+            drawValues() {
+                let days, ctx, index;
+                index = 0;
+                days = this.getDays();
+                ctx = this.ctx;
+
+                ctx.font = '10px Arial';
+                for (let day of days) {
+                    let percentage, x, y, string;
+                    percentage = this.getPercentage(day);
+                    x = this.getX(day);
+                    y = this.getY(percentage);
+                    string = percentage.toFixed(1) + '%';
+                    if (index === 0) {
+                        ctx.textAlign = 'left';
+                    } else {
+                        ctx.textAlign = 'center';
+                    }
+                    ctx.fillStyle = '#000';
+                    ctx.fillText(string, x, (y - 10));
+                    ctx.fillStyle = '#fff';
+                    ctx.beginPath();
+                    ctx.arc(x, y, 2, 0, (Math.PI * 2), false);
+                    ctx.stroke();
+                    ctx.fill();
+                    index++;
+                }
+            },
+            getPercentage(day) {
+                return 100 * day.positiveTests / day.administeredTests;
+            },
             getY(percentage) {
                 let maxPercentage, value, height;
                 maxPercentage = 50;
@@ -69,16 +100,22 @@
                 return (this.height - this.paddingBottom) - (value * height);
             },
             drawMaxLine() {
-                let ctx, y;
+                let ctx, y, normValue, normColor, normString;
+                normString = 'WHO richtlijn';
+                normValue = 5;
+                normColor = 'red';
                 ctx = this.ctx;
                 ctx.lineWidth = 1;
-                ctx.strokeStyle = 'red';
-                y = this.getY(5);
+                ctx.strokeStyle = normColor;
+                ctx.textAlign = 'left';
+                y = this.getY(normValue);
                 ctx.beginPath();
                 ctx.moveTo(0, y);
                 ctx.lineTo(this.width, y);
                 ctx.stroke();
                 ctx.closePath();
+                ctx.fillStyle = normColor;
+                ctx.fillText(normString, (this.width + 6), (y + 4));
             }
         },
         mounted() {
@@ -123,7 +160,7 @@
         </div>
         <canvas
                 :id="'administered-tests-' + region.id"
-                :width="width"
+                :width="canvasWidth"
                 :height="height"></canvas>
     </div>
 </template>
@@ -139,7 +176,6 @@
         }
 
         canvas {
-            background: #eee;
         }
     }
 </style>

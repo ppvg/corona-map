@@ -17,6 +17,9 @@
             paddingBottom() {
                 return 20;
             },
+            paddingRight() {
+                return 80;
+            },
             currentMap() {
                 return this.$store.state.maps.current;
             },
@@ -29,6 +32,9 @@
             },
             width() {
                 return this.length * this.step;
+            },
+            canvasWidth() {
+                return this.width + this.paddingRight;
             },
             length() {
                 return this.weeks * 7;
@@ -57,7 +63,7 @@
         methods: {
             clear() {
                 let ctx = this.ctx;
-                ctx.clearRect(0, 0, this.width, this.height);
+                ctx.clearRect(0, 0, this.canvasWidth, this.height);
                 // ctx.rect(0, (this.height - this.paddingBottom), this.width, (this.height - this.paddingBottom));
                 // ctx.fillStyle = '#fff';
                 // ctx.fill();

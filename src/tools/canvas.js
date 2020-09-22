@@ -1,3 +1,5 @@
+import store from '@/store/store';
+
 const addBackground = function(ctx, width, height) {
     ctx.rect(0, 0, width, height);
     ctx.fillStyle = '#fff';
@@ -13,17 +15,25 @@ const draw = function(ctx, regionContainers, settings) {
     }
 };
 
-const drawRegionContainer = function(ctx, regionContainer, settings) {
-    ctx.fillStyle = regionContainer.color;
-    if (regionContainer.hasPaths) {
-        drawRegion(ctx, regionContainer, settings);
-    } else {
-        settings.hideStroke = true;
-        for (let region of regionContainer.getRegions()) {
-            drawRegion(ctx, region, settings);
-        }
-    }
+const drawRegionContainer = function(ctx, parent, settings) {
+    let currentMap, regionType, pathsOriginSetting, pathsOrigin, children;
 
+    currentMap = store.state.maps.current;
+    regionType = parent.regionType;
+
+    ctx.fillStyle = parent.color;
+
+    pathsOriginSetting = currentMap.settings.pathOrigins.find(region => region.type === regionType);
+    if (pathsOriginSetting) {
+        pathsOrigin = pathsOriginSetting.paths;
+    } else {
+        pathsOrigin = 'self';
+    }
+    children = parent.getRegionsForPaths(pathsOrigin);
+    settings.hideStroke = true;
+    for (let child of children) {
+        drawRegion(ctx, child, settings);
+    }
 };
 
 const drawRegion = function(ctx, region, settings) {

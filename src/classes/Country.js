@@ -14,7 +14,6 @@ class Country extends _Region {
         this.title = title;
         this.report = report;
         this.paths = paths.map(path => new Path(path));
-        this.hasPaths = false;
     }
 }
 

@@ -101,7 +101,7 @@
     <div class="positive-tests">
         <canvas
             :id="'positive-tests-' + region.id"
-            :width="width"
+            :width="canvasWidth"
             :height="height"></canvas>
     </div>
 </template>
@@ -114,7 +114,6 @@
         margin-bottom: 12px;
 
         canvas {
-            background: #eee;
         }
     }
 </style>

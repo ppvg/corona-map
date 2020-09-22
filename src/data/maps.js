@@ -5,8 +5,13 @@ const maps = [
         module: 'cities',
         regionLabel: 'gemeentes',
         settings: {
-            showRelations: true,
             regionTypes: ['city','ggd', 'safety-region', 'province', 'country'],
+            pathOrigins: [
+                {
+                    type: 'country',
+                    paths: 'city'
+                }
+            ],
             hasAgeGroups: true,
             hasTests: true,
             hasAdministeredTests: false,
@@ -32,9 +37,13 @@ const maps = [
         module: 'districts',
         title: 'Amsterdam',
         settings: {
-            //regionTypes: ['district','ggd'],
-            showRelations: false,
-            regionTypes: ['district'],
+            regionTypes: ['district', 'ggd'],
+            pathOrigins: [
+                {
+                    type: 'ggd',
+                    paths: 'district'
+                }
+            ],
             hasAgeGroups: false,
             hasTests: true,
             hasAdministeredTests: true,

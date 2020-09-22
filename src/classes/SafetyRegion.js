@@ -15,7 +15,6 @@ class SafetyRegion extends _Region {
         this.safetyRegion_code = safetyRegion_code;
         this.title = title;
         this.paths = paths.map(path => new Path(path));
-        this.hasPaths = true;
         this.report = report;
     }
 }

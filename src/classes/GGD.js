@@ -18,7 +18,6 @@ class GGD extends _Region{
         this.paths = paths.map(path => new Path(path));
         this.report = report;
         this.ageGroupReport = ageGroupReport;
-        this.hasPaths = true;
     }
 }
 

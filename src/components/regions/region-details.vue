@@ -67,11 +67,11 @@
             hasSewageTreatmentPlants() {
                 return this.$store.state.maps.current.settings.hasSewageTreatmentPlants;
             },
+            hasAgeGroups() {
+                return this.$store.state.maps.current.settings.hasAgeGroups;
+            },
             currentMap() {
                 return this.$store.state.maps.current;
-            },
-            showRelations() {
-                return this.currentMap.settings.showRelations;
             }
         },
         methods: {
@@ -105,7 +105,6 @@
         <div class="region-details__info">
             <div class="region-details__section">
                 <region-relations
-                    v-if="showRelations"
                     :region="region"/>
             </div>
 
@@ -121,7 +120,7 @@
                     :region="region"/>
             </div>
             <div
-                    v-if="(regionOfFocus.regionType === 'ggd') && caseDataRequested"
+                    v-if="hasAgeGroups && (regionOfFocus.regionType === 'ggd') && caseDataRequested"
                     class="region-details__section">
                 <div class="region-details__section-header">
                     Leeftijdsverdeling (beta)

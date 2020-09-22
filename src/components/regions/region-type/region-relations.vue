@@ -14,12 +14,22 @@
             }
         },
         computed: {
+            currentMap() {
+                return this.$store.state.maps.current;
+            },
             types() {
-                let region, store;
+                let region, store, levels;
                 region = this.region;
                 store = this.$store;
-                return [
+                levels = [
                     {
+                        label: 'Stadsdeel',
+                        showRegion: true,
+                        getRegion() {
+                            return region;
+                        },
+                        tag: 'district'
+                    }, {
                         label: 'Gemeente',
                         showRegion: true,
                         getRegion() {
@@ -59,7 +69,10 @@
                         },
                         tag: 'country'
                     }
-                ]
+                ];
+                return levels.filter(level => {
+                    return this.currentMap.settings.regionTypes.indexOf(level.tag) > -1;
+                })
             }
         },
         methods: {}

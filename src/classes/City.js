@@ -31,7 +31,6 @@ class City extends _RegionWithTestData {
         this.paths = paths.map(path => new Path(path));
         this.ageGroups = ageGroups;
         this.report = report;
-        this.hasPaths = true;
     }
 
 
