@@ -2,8 +2,47 @@
     export default {
         name: 'test-graph-mixin',
         components: {},
-        props: {},
+        props: {
+            weeks: {
+                type: Number,
+                required: true
+            },
+            height: {
+                type: Number,
+                required: false,
+                default: 220
+            },
+            zoom: {
+                type: Number,
+                required: false,
+                default: 3
+            },
+            thresholds: {
+                type: Boolean,
+                required: false,
+                default: true
+            },
+            paddingBottom: {
+                type: Number,
+                required: false,
+                default: 20
+            },
+            paddingRight: {
+                type: Number,
+                required: false,
+                default: 80
+            }
+        },
+        data() {
+            let id = Math.round(Math.random() * 1000000);
+            return {
+                id
+            }
+        },
         computed: {
+            canvas() {
+                return document.getElementById('canvas-' + this.id);
+            },
             ctx() {
                 return this.canvas.getContext('2d');
             },
@@ -11,22 +50,10 @@
             offset() {
                 return this.$store.state.settings.currentDateOffset;
             },
-            weeks() {
-                return this.$store.state.settings.weeks;
-            },
-            paddingBottom() {
-                return 20;
-            },
-            paddingRight() {
-                return 80;
-            },
             currentMap() {
                 return this.$store.state.maps.current;
             },
             // dimensions
-            height() {
-                return 220;
-            },
             step() {
                 return this.$store.state.settings.step;
             },
@@ -50,9 +77,6 @@
             //         return day.offset <= this.min && day.offset >= this.max;
             //     })
             // },
-            zoom() {
-                return 3;
-            },
             isColorblind() {
                 return this.colorSet === 'colorblind1';
             },

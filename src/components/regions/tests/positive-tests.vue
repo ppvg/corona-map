@@ -13,9 +13,6 @@
             }
         },
         computed: {
-            canvas() {
-                return document.getElementById('positive-tests-' + this.region.id);
-            },
             colorSet() {
                 return this.$store.state.ui.color;
             },
@@ -29,12 +26,17 @@
         methods: {
             redraw() {
                 this.clear();
-                this.drawThresholds();
-                this.drawGrid();
+                if (this.thresholds) {
+                    this.drawThresholds();
+                    this.drawGrid();
+                }
+
                 if (this.getDays().length > 0) {
                     this.drawTrendLine();
                 }
-                this.drawDates();
+                if (this.thresholds) {
+                    this.drawDates();
+                }
             },
             drawThresholds() {
                 let lastY, ctx, thresholds;
@@ -100,7 +102,7 @@
 <template>
     <div class="positive-tests">
         <canvas
-            :id="'positive-tests-' + region.id"
+            :id="'canvas-' + id"
             :width="canvasWidth"
             :height="height"></canvas>
     </div>

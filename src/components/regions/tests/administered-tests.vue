@@ -12,11 +12,7 @@
                 required: true
             }
         },
-        computed: {
-            canvas() {
-                return document.getElementById('administered-tests-' + this.region.id);
-            }
-        },
+        computed: {},
         methods: {
             redraw() {
                 this.clear();
@@ -159,7 +155,7 @@
             Percentage positieve tests
         </div>
         <canvas
-                :id="'administered-tests-' + region.id"
+                :id="'canvas-' + id"
                 :width="canvasWidth"
                 :height="height"></canvas>
     </div>

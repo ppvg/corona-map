@@ -42,11 +42,12 @@
         :class="{'panel--active': showTrends}"
         class="trends panel">
         <div v-if="show">
+            
             <threshold-regions/>
             <red-regions/>
             <changed-status-regions/>
-<!--  pas op, deze werkt niet met RIVM signaling system           -->
-<!--            <new-infection-cities/>-->
+  pas op, deze werkt niet met RIVM signaling system
+            <new-infection-cities/>
             <cities-with-sewage-treatment-plant v-if="isAdmin"/>
         </div>
 

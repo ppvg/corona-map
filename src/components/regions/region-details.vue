@@ -8,10 +8,12 @@
     import ageDistributionTools from "./case-characteristics/age-distribution-graph-normalised/age-distribution-tools";
     import regionRelations from "./region-type/region-relations";
     import AdministeredTests from "./tests/administered-tests";
+    import RegionTrend from "./region-trend";
 
     export default {
         name: 'region-details',
         components: {
+            RegionTrend,
             AdministeredTests,
             regionRelations,
             ageDistributionTools,
@@ -28,6 +30,9 @@
             }
         },
         computed: {
+            showTrend() {
+                return this.$store.state.signalingSystems.current.title === 'WHO';
+            },
             regionOfFocus() {
                 return this.$store.getters['ui/currentRegion'];
             },
@@ -72,6 +77,9 @@
             },
             currentMap() {
                 return this.$store.state.maps.current;
+            },
+            weeks() {
+                return this.$store.state.settings.weeks;
             }
         },
         methods: {
@@ -104,6 +112,11 @@
         </div>
         <div class="region-details__info">
             <div class="region-details__section">
+                <region-trend
+                    v-if="showTrend"
+                    :region="regionOfFocus"/>
+            </div>
+            <div class="region-details__section">
                 <region-relations
                     :region="region"/>
             </div>
@@ -113,11 +126,13 @@
                     Testen GGD
                 </div>
                 <positive-tests
-                    :region="regionOfFocus"/>
+                    :region="regionOfFocus"
+                    :weeks="weeks"/>
 
                 <administered-tests
                     v-if="currentMap.settings.hasAdministeredTests"
-                    :region="regionOfFocus"/>
+                    :region="regionOfFocus"
+                    :weeks="weeks"/>
             </div>
             <div
                     v-if="hasAgeGroups && (regionOfFocus.regionType === 'ggd') && caseDataRequested"
