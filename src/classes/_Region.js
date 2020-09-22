@@ -148,6 +148,9 @@ class _Region {
                     report.history.push(copy)
                 } else {
                     report.history[dayCounter].positiveTests += copy.positiveTests;
+                    if (report.history[dayCounter].administeredTests) {
+                        report.history[dayCounter].administeredTests += copy.administeredTests;
+                    }
                 }
                 dayCounter++;
             }

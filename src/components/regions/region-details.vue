@@ -117,7 +117,7 @@
 
                 <administered-tests
                     v-if="currentMap.settings.hasAdministeredTests"
-                    :region="region"/>
+                    :region="regionOfFocus"/>
             </div>
             <div
                     v-if="hasAgeGroups && (regionOfFocus.regionType === 'ggd') && caseDataRequested"

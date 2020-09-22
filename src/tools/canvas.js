@@ -26,11 +26,11 @@ const drawRegionContainer = function(ctx, parent, settings) {
     pathsOriginSetting = currentMap.settings.pathOrigins.find(region => region.type === regionType);
     if (pathsOriginSetting) {
         pathsOrigin = pathsOriginSetting.paths;
+        settings.hideStroke = true;
     } else {
         pathsOrigin = 'self';
     }
     children = parent.getRegionsForPaths(pathsOrigin);
-    settings.hideStroke = true;
     for (let child of children) {
         drawRegion(ctx, child, settings);
     }
