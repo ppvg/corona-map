@@ -132,6 +132,17 @@
                                 http://82.94.199.215/pdf/2018_kerncijfers.pdf
                             </div>
                         </div>
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Inwoners stadsdelen Den Haag
+                            </div>
+                            <div class="source__value-who">
+                                Wikipedia (betere bron nodig)
+                            </div>
+                            <div class="source__value-link">
+                                https://nl.wikipedia.org/wiki/Portaal:Den_Haag/Stadsdelen
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="source__row">
@@ -152,7 +163,7 @@
                         </div>
                         <div class="source__value-row">
                             <div class="source__value-what">
-                                Geo data GGD regios's
+                                Geo data GGD regio's
                             </div>
                             <div class="source__value-who">
                                 Cartomap
@@ -170,6 +181,28 @@
                             </div>
                             <div class="source__value-link">
                                 https://maps.amsterdam.nl/open_geodata/geojson.php?KAARTLAAG=GEBIED_STADSDELEN_EXWATER&THEMA=gebiedsindeling
+                            </div>
+                        </div>
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Geo data Den Haag
+                            </div>
+                            <div class="source__value-who">
+                                ckan.dataplatform
+                            </div>
+                            <div class="source__value-link">
+                                https://ckan.dataplatform.nl/dataset/stadsdelen/resource/3de9bdcb-c949-4440-a731-f5238aaa089c
+                            </div>
+                        </div>
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Conversie RD naar WGS
+                            </div>
+                            <div class="source__value-who">
+                                thomasvnl
+                            </div>
+                            <div class="source__value-link">
+                                https://github.com/thomasvnl/rd-to-wgs84/blob/master/conversions.py
                             </div>
                         </div>
                     </div>

@@ -63,6 +63,38 @@ const maps = [
             ageGroups: 'data/cities-population-agegroup.csv',
             sewageTreatmentPlants: (window.config.sewageDataUrl + 'sewage-measurements-connected-to-city-codes.json')
         }
+    }, {
+        id: 2,
+        regionType: 'District',
+        module: 'districts',
+        title: 'Den Haag',
+        settings: {
+            regionTypes: ['district', 'ggd'],
+            pathOrigins: [
+                {
+                    type: 'ggd',
+                    paths: 'district'
+                }
+            ],
+            hasAgeGroups: false,
+            hasTests: true,
+            hasAdministeredTests: true,
+            hasSewageTreatmentPlants: false,
+            testDataCumulative: false,
+            testDataInterval: 7,
+            map: {
+                latitude: 52.05,
+                longitude: 4.34,
+                stretch: 0.62,
+                zoom: 3.2
+            }
+        },
+        url: {
+            tests: 'data/maps/den-haag/tests-den-haag.csv',
+            regions: 'data/maps/den-haag/den-haag.json',
+            ageGroups: 'data/cities-population-agegroup.csv',
+            sewageTreatmentPlants: (window.config.sewageDataUrl + 'sewage-measurements-connected-to-city-codes.json')
+        }
     }
 ];
 
