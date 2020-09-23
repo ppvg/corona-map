@@ -45,9 +45,8 @@
             
             <threshold-regions/>
             <red-regions/>
-            <changed-status-regions/>
-  pas op, deze werkt niet met RIVM signaling system
-            <new-infection-cities/>
+<!--            <changed-status-regions/>-->
+<!--            <new-infection-cities/>-->
             <cities-with-sewage-treatment-plant v-if="isAdmin"/>
         </div>
 

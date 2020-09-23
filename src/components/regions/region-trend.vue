@@ -17,7 +17,7 @@
                 verdicts: [
                     {
                         id: 1,
-                        title: 'Veilig (indien BCO actief blijft)'
+                        title: 'Stabiel'
                     }, {
                         id: 2,
                         title: 'Waakzaam'
@@ -49,31 +49,39 @@
         },
         computed: {
             verdict() {
-                if (this.thresholdIndex === 0) {
-                    return this.verdicts[0];
-                } else if (
-                    (this.thresholdIndex < 3 && this.citySize < 3)
-                ) {
-                    return this.verdicts[1];
-                } else if (
-                    (this.thresholdIndex === 3 && this.citySize === 1) ||
-                    (this.thresholdIndex === 4 && this.citySize === 1) ||
-                    (this.thresholdIndex === 3 && this.citySize > 1)
-                ) {
-                    return this.verdicts[2];
-                } else if (this.thresholdIndex === 4 && this.change === 0) {
-                    if (this.citySize === 3) {
-                        return this.verdicts[4];
-                    } else {
-                        return this.verdicts[3];
-                    }
-                } else if (
-                    (this.thresholdIndex === 5 && this.citySize === 1) ||
-                    (this.thresholdIndex === 4 && this.citySize > 1)
-                ) {
-                    return this.verdicts[3];
-                } else {
-                    return this.verdicts[5];
+                switch (this.thresholdIndex) {
+                    case 0:
+                        return this.verdicts[0];
+                    case 1:
+                        return this.verdicts[1];
+                    case 2:
+                        if (this.citySize === 3) {
+                            return this.verdicts[2];
+                        } else {
+                            return this.verdicts[1];
+                        }
+                    case 3:
+                        if (this.citySize === 3) {
+                            return this.verdicts[3];
+                        } else {
+                            return this.verdicts[2];
+                        }
+                    case 4:
+                        switch (this.change) {
+                            case 0:
+                                if (this.citySize === 3) {
+                                    return this.verdicts[4];
+                                } else {
+                                    return this.verdicts[3];
+                                }
+                            // stijgend of dalend
+                            default:
+                                if (this.citySize === 3) {
+                                    return this.verdicts[3];
+                                } else {
+                                    return this.verdicts[2];
+                                }
+                        }
                 }
             },
             citySize() {
@@ -112,21 +120,27 @@
 
 <template>
     <div class="region-trend">
-        <div class="region-trend__positive-tests">
-            <positive-tests
-                    :region="region"
-                    :weeks="1"
-                    :height="50"
-                    :zoom="0.75"
-                    :thresholds="false"
-                    :padding-bottom="0"
-                    :padding-right="0"/>
+        <div class="region-trend__container">
+            <div class="region-trend__positive-tests">
+                <positive-tests
+                        :region="region"
+                        :weeks="2"
+                        :height="50"
+                        :zoom="0.75"
+                        :thresholds="false"
+                        :padding-bottom="0"
+                        :padding-right="0"/>
+            </div>
+
+            <div class="region-trend__verdict">
+                {{verdict.title}}
+                <div class="region-trend__note">
+                    Deze kwalificatie is nog experimenteel
+                </div>
+            </div>
         </div>
 
 
-        <div class="region-trend__verdict">
-            {{verdict.title}}
-        </div>
     </div>
 </template>
 
@@ -135,16 +149,31 @@
     @import '@/styles/variables.scss';
 
     .region-trend {
-        display: flex;
 
-        .region-trend__positive-tests {
-            background: #ddd;
-            margin-bottom: 8px;
-            margin-right: 8px;
+        .region-trend__container {
+            display: flex;
 
-            .positive-tests {
+            .region-trend__positive-tests {
+                background: #ddd;
+                margin-bottom: 8px;
+                margin-right: 12px;
 
+                .positive-tests {
+
+                }
             }
+
+            .region-trend__verdict {
+                font-weight: 700;
+                line-height: 1.2;
+            }
+        }
+
+        .region-trend__note {
+            margin-top:3px;
+            font-size: 11px;
+            font-style: italic;
+            font-weight: 400;
         }
     }
 </style>

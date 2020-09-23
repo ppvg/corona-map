@@ -99,23 +99,25 @@
     <div
         :class="{'panel--active': showDetails}"
         class="region-details panel">
-        <div class="region-details__header">
-            <div
-                :style="{'background': region.color}"
-                class="dot"></div>
-            <div class="region-details__title">
-                {{regionOfFocus.title}}
-                <div v-if="regionOfFocus.regionType === 'sr'">
-                    {{region.safetyRegion_code}}
+        <div class="region-card">
+            <div class="region-details__header">
+                <div
+                    :style="{'background': regionOfFocus.color}"
+                    class="dot"></div>
+                <div class="region-details__title">
+                    {{regionOfFocus.title}}
+                    <div v-if="regionOfFocus.regionType === 'sr'">
+                        {{region.safetyRegion_code}}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="region-details__info">
-            <div class="region-details__section">
-                <region-trend
+
+            <region-trend
                     v-if="showTrend"
                     :region="regionOfFocus"/>
-            </div>
+        </div>
+
+        <div class="region-details__info">
             <div class="region-details__section">
                 <region-relations
                     :region="region"/>
@@ -212,18 +214,25 @@
         font-size: 15px;
         position: relative;
 
-        .region-details__header {
-            font-weight: 700;
-            font-size: 20px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
+        .region-card {
+            padding: 12px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+            border-radius: 4px;
 
-            .dot {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                margin-right: 10px;
+            .region-details__header {
+                font-weight: 700;
+                font-size: 20px;
+                margin-bottom: 12px;
+                display: flex;
+                align-items: center;
+
+                .dot {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
             }
         }
 
