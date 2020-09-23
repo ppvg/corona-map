@@ -93,7 +93,7 @@
             download() {
                 let downloadLink;
                 downloadLink = document.createElement('a');
-                downloadLink.setAttribute('download', 'rode-' + this.typeLabel + '-' + this.dateStringdashes + '.png');
+                downloadLink.setAttribute('download', 'zwarte-' + this.typeLabel + '-' + this.dateStringdashes + '.png');
                 this.canvas.toBlob(function(blob) {
                     let url = URL.createObjectURL(blob);
                     downloadLink.setAttribute('href', url);
