@@ -1,7 +1,7 @@
 <script>
-    import dateString from "./elements/date-string";
+    import dateString from "@/components/elements/date-string";
     import MenuButton from "./menu-button";
-    import totalInfections from "./elements/total-infections";
+    import totalInfections from "@/components/elements/total-infections";
 
     export default {
         name: 'header-menu',

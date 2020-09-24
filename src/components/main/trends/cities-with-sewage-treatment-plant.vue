@@ -1,5 +1,5 @@
 <script>
-    import region from "@/components/trends/region";
+    import region from "@/components/main/trends/region";
 
     export default {
         name: 'cities-with-sewage-treatment-plant',

@@ -1,5 +1,5 @@
 <script>
-    import city from "@/components/trends/city";
+    import city from "@/components/main/trends/city";
     import swatch from "@/components/elements/swatch";
 
     export default {

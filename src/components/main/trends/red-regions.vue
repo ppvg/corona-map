@@ -1,5 +1,5 @@
 <script>
-    import region from "@/components/trends/region";
+    import region from "@/components/main/trends/region";
     import downloadRedRegions from "./download-red-regions";
 
     export default {
