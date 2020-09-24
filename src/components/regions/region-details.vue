@@ -123,19 +123,6 @@
                     :region="region"/>
             </div>
 
-            <div class="region-details__section">
-                <div class="region-details__section-header">
-                    Testen GGD
-                </div>
-                <positive-tests
-                    :region="regionOfFocus"
-                    :weeks="weeks"/>
-
-                <administered-tests
-                    v-if="currentMap.settings.hasAdministeredTests"
-                    :region="regionOfFocus"
-                    :weeks="weeks"/>
-            </div>
             <div
                     v-if="hasAgeGroups && (regionOfFocus.regionType === 'ggd') && caseDataRequested"
                     class="region-details__section">
@@ -194,6 +181,21 @@
                     </div>
                 </div>
             </div>
+
+            <div class="region-details__section">
+                <div class="region-details__section-header">
+                    Testen GGD
+                </div>
+                <positive-tests
+                        :region="regionOfFocus"
+                        :weeks="weeks"/>
+
+                <administered-tests
+                        v-if="currentMap.settings.hasAdministeredTests"
+                        :region="regionOfFocus"
+                        :weeks="weeks"/>
+            </div>
+
             <div
                     v-if="hasSewageTreatmentPlants"
                     class="region-details__section">
