@@ -47,9 +47,9 @@
             <red-regions/>
 <!--            <changed-status-regions/>-->
 <!--            <new-infection-cities/>-->
-            <cities-with-sewage-treatment-plant v-if="isAdmin"/>
-        </div>
 
+        </div>
+        <cities-with-sewage-treatment-plant v-if="isAdmin"/>
     </div>
 </template>
 

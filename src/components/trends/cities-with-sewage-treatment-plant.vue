@@ -7,13 +7,34 @@
             region
         },
         props: {},
+        data() {
+            return {
+                dateOffsetMin: 7,
+                dateOffsetMax: 7
+            }
+        },
         computed: {
             regions() {
                 return this.$store.state.cities.all.filter(city => {
-                    return this.$store.state.sewageTreatmentPlants.all.filter(s => {
+                    let sewageTreatmentPlants, sewageTreatmentPlantsMatchingDate;
+                    sewageTreatmentPlants = this.$store.state.sewageTreatmentPlants.all.filter(s => {
                         return s.city_code === city.identifier;
-                    }).length > 0;
-                })
+                    });
+                    sewageTreatmentPlantsMatchingDate = sewageTreatmentPlants.filter(s => {
+                        return s.measurements.filter(measurement => {
+                            return measurement.dateOffset <= this.overallOffset + this.dateOffsetMin && measurement.dateOffset >= this.overallOffset - this.dateOffsetMax;
+                        }).length > 0;
+                    });
+                    return sewageTreatmentPlantsMatchingDate.length > 0;
+                }).sort((a,b) => (a.getRelativeIncreaseWeek() > b.getRelativeIncreaseWeek()) ? -1 : ((b.getRelativeIncreaseWeek() > a.getRelativeIncreaseWeek()) ? 1 : 0));
+            },
+            overallOffset: {
+                get() {
+                    return this.$store.state.settings.currentDateOffset;
+                },
+                set(value) {
+                    this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: Number(value)});
+                }
             }
         },
         methods: {}
@@ -24,7 +45,27 @@
 <template>
     <div class="section cities-with-sewage-treatment-plant">
         <div class="section__header">
-            Gemeentes met een rioolmeting
+            Gemeentes met een rioolmeting tussen
+        </div>
+        <div class="section__body">
+            <p>
+                Algeheel dagen terug in de tijd
+                <input
+                        type="number"
+                        v-model="overallOffset"><br>
+                (160 is ongeveer maart/april)
+            </p>
+            <p>
+                Toon gemeentes met een meting:<br>
+                <input
+                    type="number"
+                    v-model="dateOffsetMin">
+                Dagen ervoor<br>
+                <input
+                    type="number"
+                    v-model="dateOffsetMax">
+                Dagen erna
+            </p>
         </div>
         <div class="section__body">
             <div class="cities__list">
@@ -42,5 +83,9 @@
 
     .cities-with-sewage-treatment-plant {
 
+        input {
+            width: 50px;
+            padding: 4px;
+        }
     }
 </style>

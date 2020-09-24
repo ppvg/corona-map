@@ -9,6 +9,7 @@ const state = {
     hoverValue: '',
     currentRegionType: '',
     today: null,
+    todayInMs: null,
     credits: false,
     embedPopup: false,
     menu: 'map',
