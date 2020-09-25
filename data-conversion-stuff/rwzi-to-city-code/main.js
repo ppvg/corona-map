@@ -31,19 +31,35 @@ const getCityByPostalCode = function(postalCode) {
     }
 };
 
+const getCapacity = function(measurementent) {
+    let title = measurementent.RWZI_AWZI_name.toLowerCase();
+    // console.log(measurementent.RWZI_AWZI_code);
+    for (let rwzi of window.rwzis) {
+        //console.log(rwzi.code);
+        if (rwzi.title.toLowerCase().indexOf(title) > -1) {
+            return rwzi.capacity;
+        }
+    }
+    console.log('not found ', measurementent.RWZI_AWZI_name);
+    return 0;
+};
+
 $.getJSON(url, function(measurements) {
+    //measurements = measurements.slice(0,20);
     for (let measurementent of measurements) {
-        let sewerageArea_code, postalCode, city_code, district_code;
+        let sewerageArea_code, postalCode, city_code, district_code, capacity;
         postalCode = measurementent.Postal_code;
         sewerageArea_code = measurementent.RWZI_AWZI_code;
 
         if (!sewerageDict[sewerageArea_code]) {
             city_code = getCityByPostalCode(postalCode);
             district_code = getDistrictCode(measurementent);
+            capacity = getCapacity(measurementent);
             sewerageDict[sewerageArea_code] = {
                 sewerageArea_code,
                 city_code,
                 district_code,
+                capacity,
                 name: measurementent.RWZI_AWZI_name,
                 security_region_code: measurementent.Security_region_code,
                 security_region_name: measurementent.Security_region_name,
@@ -61,6 +77,7 @@ $.getJSON(url, function(measurements) {
         let sewerage = sewerageDict[key];
         sewerageAreas.push(sewerage);
     }
+    //console.log(sewerageAreas);
     console.log(JSON.stringify(sewerageAreas));
 });
 
