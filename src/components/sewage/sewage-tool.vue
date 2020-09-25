@@ -19,7 +19,7 @@
                     start: 14,
                     end: 0,
                     calibration: 30,
-                    population: 150000,
+                    population: 0,
                     search: ''
                 }
             }

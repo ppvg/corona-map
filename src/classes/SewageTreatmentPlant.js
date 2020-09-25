@@ -8,6 +8,7 @@ class SewageTreatmentPlant {
         district_code = '',
         securityRegion_code = '',
         securityRegion_name = '',
+        capacity = 0,
         measurements = []
     }) {
         this.sewageTreatementPlant_id = sewageTreatementPlant_id;
@@ -16,6 +17,7 @@ class SewageTreatmentPlant {
         this.district_code = district_code;
         this.securityRegion_code = securityRegion_code;
         this.securityRegion_name = securityRegion_name;
+        this.capacity = capacity;
         this.measurements = measurements.map(m => new Measurement(m));
     }
 }

@@ -48,17 +48,27 @@
                 return Math.round(7 * 100000 * n / population / l);
             },
             sewageAverage() {
-                let totalValue = 0;
+                return this.getSewageAverage(false);
+            },
+            sewageAverageCorrected() {
+                return this.getSewageAverage(true);
+            }
+        },
+        methods: {
+            getSewageAverage(corrected) {
+                let totalValue, totalCapacity;
+                totalValue = 0;
+                totalCapacity = 0;
                 if (this.cities.length === 0) {
                     return 0;
                 }
                 for (let city of this.cities) {
-                    let sewages, valueForCity;
+                    let sewages, totalValueForCity, valueForCity, capacity;
                     sewages = this.$store.state.sewageTreatmentPlants.all.filter(s => {
                         return s.city_code === city.identifier;
                     });
                     if (sewages.length > 0) {
-                        valueForCity = 0;
+                        totalValueForCity = 0;
                         for (let sewage of sewages) {
                             let measurements, valueForSewage;
                             measurements = sewage.measurements.filter(measurement => {
@@ -67,17 +77,32 @@
                             if (measurements.length > 0) {
                                 // todo add correction for sewage size
                                 valueForSewage = measurements.reduce((a, b) => a + b, 0) / measurements.length;
-                                valueForCity += valueForSewage;
+                                totalValueForCity += valueForSewage;
+
+                                if (corrected) {
+                                    capacity = sewage.capacity;
+                                    if (capacity === 0) {
+                                        capacity = 50000;
+                                    }
+                                    totalCapacity += capacity;
+                                    totalValue += capacity * valueForSewage;
+                                }
                             }
                         }
-                        totalValue += (valueForCity / sewages.length);
+                        valueForCity = totalValueForCity / sewages.length;
+                        if (!corrected) {
+                            totalValue += valueForCity;
+                        }
                     }
-
                 }
-                return Math.round(totalValue / this.cities.length);
+                if (corrected) {
+                    return Math.round(totalValue / totalCapacity);
+                } else {
+                    return Math.round(totalValue / this.cities.length);
+                }
+
             }
-        },
-        methods: {}
+        }
     }
 </script>
 
@@ -91,8 +116,9 @@
             <b>Positieve testen</b><br>
             Gemiddeld per 7 dagen<br>
             {{positiveTestsAverage}}<br><br>
-            <b>Rioolmetingen</b> (nog niet gecorrigeerd op grootte RWZI)<br>
-            Gemiddeld {{sewageAverage}} RNA/ml
+            <b>Rioolmetingen</b> <br>
+            Gemiddeld {{sewageAverage}} RNA/ml<br>
+            Gemiddeld {{sewageAverageCorrected}} RNA/ml (gecorrigeerd)
         </div>
     </div>
 </template>

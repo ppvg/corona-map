@@ -49,7 +49,6 @@
                 return measurement.value / this.settings.calibration;
             },
             getLeft(measurement) {
-                //console.log(measurement);
                 return measurement.offset * (this.settings.width + this.settings.margin);
             }
         }
@@ -60,11 +59,11 @@
 <template>
     <div class="sewage-city-sewage">
         <div
-                :style="{
-                    'width': width + 'px',
-                    'height': maxHeight + 'px'
-                }"
-                class="sewage-city-sewage__graph">
+            :style="{
+                'width': width + 'px',
+                'height': maxHeight + 'px'
+            }"
+            class="sewage-city-sewage__graph">
             <div
                 v-for="measurement in measurements"
                 :style="{
@@ -78,9 +77,8 @@
             </div>
         </div>
         <div class="sewage-city-sewage__title">
-            <b>Rioolmetingen</b><br>
-            {{sewage.name}}<br>
-            Gemiddeld {{average}} RNA/ml
+            <b>Rioolmetingen {{sewage.name}}</b><br>
+            Capaciteit: {{sewage.capacity}}
         </div>
     </div>
 </template>
