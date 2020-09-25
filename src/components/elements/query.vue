@@ -40,7 +40,9 @@
         },
         watch: {
             query: function () {
-                this.updateQuery();
+                if (this.$route.name !== 'riool') {
+                    this.updateQuery();
+                }
             }
         }
     }

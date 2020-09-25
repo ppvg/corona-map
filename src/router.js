@@ -13,7 +13,7 @@ const routes = [
         component: main
     }, {
         path: "/riool",
-        name: "sewageTools",
+        name: "riool",
         component: sewageTools,
     }
 ];

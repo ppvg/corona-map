@@ -1,7 +1,10 @@
 <script>
+    import sewageTool from "./sewage-tool";
     export default {
         name: 'sewage-tools',
-        components: {},
+        components: {
+            sewageTool
+        },
         props: {},
         computed: {},
         methods: {}
@@ -11,7 +14,7 @@
 
 <template>
     <div class="sewage-tools">
-        sewage-tools
+       <sewage-tool/>
     </div>
 </template>
 
@@ -20,6 +23,7 @@
     @import '@/styles/variables.scss';
 
     .sewage-tools {
-
+        height: 100%;
+        overflow: auto;
     }
 </style>

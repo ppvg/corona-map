@@ -37,7 +37,11 @@ const getters = {
         today = state.today;
         if (today) {
             dateOfFocus = sub(today, {days: offset});
-            return format(dateOfFocus, dateFormat, {locale: nl} );
+            if (dateFormat === false) {
+                return dateOfFocus;
+            } else {
+                return format(dateOfFocus, dateFormat, {locale: nl} );
+            }
         } else {
             return '';
         }
