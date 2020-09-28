@@ -125,7 +125,7 @@ class _Region {
     }
 
     getTotalRelativeIncreasDay(offset) {
-        let increase = this.getTotalIncreaseDay(offset);
+        let increase = this.getTotalIncreaseDay(0, offset);
         return 100000 * increase / this.getTotalPopulation();
     }
 
