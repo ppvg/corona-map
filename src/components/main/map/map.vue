@@ -16,7 +16,26 @@
             TimeSlider,
             mapTools
         },
-        props: {},
+        props: {
+            showTools: {
+                type: Boolean,
+                required: true
+            },
+            showLegend: {
+                type: Boolean,
+                required: true
+            },
+            offset: {
+                type: Number,
+                required: true
+            }
+        },
+        data() {
+            let id = Math.round(Math.random() * 1000000);
+            return {
+                id
+            }
+        },
         computed: {
             width() {
                 return this.$store.state.settings.canvasWidth;
@@ -34,13 +53,10 @@
                 return this.$store.state[this.currentMap.module].all;
             },
             canvas() {
-                return document.getElementById('main-canvas');
+                return document.getElementById('canvas-' + this.id);
             },
             ctx() {
                 return this.canvas.getContext('2d');
-            },
-            offset() {
-                return this.$store.state.settings.currentDateOffset;
             },
             currentRegionType() {
                 return this.$store.state.ui.currentRegionType
@@ -155,7 +171,7 @@
                     zoom: this.$store.state.settings.zoom,
                     fill: true
                 };
-                canvasTools.draw(this.ctx, this.containerRegions, settings);
+                canvasTools.draw(this.ctx, this.containerRegions, settings, this.offset);
             },
             clear() {
                 this.ctx.clearRect(0, 0, this.width, this.height);
@@ -198,14 +214,17 @@
 
 <template>
     <div class="map">
-        <canvas id="main-canvas"></canvas>
+        <canvas :id="'canvas-' + id"></canvas>
         <pointer-canvas
             :width="width"
             :height="height"/>
-        <map-tools/>
-        <time-slider/>
-        <embed-button/>
-        <download-image/>
+        <map-tools
+            :show-tools="showTools"
+            :show-legend="showLegend"/>
+
+        <time-slider v-if="showTools"/>
+        <embed-button v-if="showTools"/>
+        <download-image v-if="showTools"/>
     </div>
 </template>
 

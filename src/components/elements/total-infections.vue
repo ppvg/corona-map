@@ -2,11 +2,13 @@
     export default {
         name: 'total-infections',
         components: {},
-        props: {},
+        props: {
+            offset: {
+                type: Number,
+                required: true
+            }
+        },
         computed: {
-            currentDateOffset() {
-                return this.$store.state.settings.currentDateOffset;
-            },
             currentMap() {
                 return this.$store.state.maps.current;
             },
@@ -16,7 +18,7 @@
             n() {
                 let n = 0;
                 for (let region of this.regions) {
-                    n += region.increaseDay;
+                    n += region.getIncreaseDay(0, this.offset);
                 }
                 return n;
             },

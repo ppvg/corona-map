@@ -51,7 +51,7 @@
         },
         watch: {
             query: function () {
-                if (this.$route.name !== 'riool') {
+                if (this.$route.name !== 'riool' && this.$route.name !== 'vergelijk') {
                     this.updateQuery();
                 }
             }

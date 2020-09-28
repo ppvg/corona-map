@@ -11,11 +11,19 @@
             menuButton,
             Datepicker
         },
-        props: {},
+        props: {
+            offset: {
+                type: Number,
+                required: true
+            },
+            editable: {
+                type: Boolean,
+                required: true
+            }
+        },
         data() {
-            let offset = this.$store.state.settings.currentDateOffset;
             return {
-                date: dateTools.getDateByOffset(offset)
+                date: dateTools.getDateByOffset(this.offset)
             }
         },
         computed: {
@@ -43,11 +51,8 @@
                 return this.$store.state.maps.current ? this.$store.state.maps.current.title : '';
             },
             dateString() {
-                return this.$store.getters['ui/dateString']('EE dd MMM')
-            },
-            currentDateOffset() {
-                return this.$store.state.settings.currentDateOffset;
-            },
+                return this.$store.getters['ui/getDateByOffset'](this.offset, 'EE dd MMM')
+            }
         },
         methods: {
             updateOffset(value) {
@@ -55,11 +60,11 @@
                 this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: offset});
             },
             updateDatePicker() {
-                this.date = dateTools.getDateByOffset(this.currentDateOffset);
+                this.date = dateTools.getDateByOffset(this.offset);
             }
         },
         watch: {
-            currentDateOffset: {
+            offset: {
                 handler: function() {
                     this.updateDatePicker();
                 }
@@ -79,10 +84,16 @@
             <div class="title__sub">
                 <div class="date-string">
                     <datepicker
+                        v-if="editable"
                         :value="date"
                         @input="updateOffset"/>
+                    <div v-else>
+                        {{dateString}}
+                    </div>
                 </div>
-                <total-infections v-if="hasTests"/>
+                <total-infections
+                    v-if="hasTests"
+                    :offset="offset"/>
             </div>
         </div>
 

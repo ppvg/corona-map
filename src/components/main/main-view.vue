@@ -42,6 +42,9 @@
             },
             currentMap() {
                 return this.$store.state.maps.current;
+            },
+            offset() {
+                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {
@@ -55,7 +58,9 @@
 
 <template>
     <div class="main-view">
-        <header-menu/>
+        <header-menu
+            :offset="offset"
+            :editable="true"/>
 
         <div class="content">
 
@@ -65,7 +70,10 @@
                     class="map-container panel">
                 <search-regions/>
                 <region-type-picker/>
-                <map-tests/>
+                <map-tests
+                    :show-tools="true"
+                    :show-legend="true"
+                    :offset="offset"/>
             </div>
 
             <trends/>
