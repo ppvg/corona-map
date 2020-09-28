@@ -42,7 +42,6 @@
         :class="{'panel--active': showTrends}"
         class="trends panel">
         <div v-if="show">
-            
             <threshold-regions/>
             <red-regions/>
 <!--            <changed-status-regions/>-->

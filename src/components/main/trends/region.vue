@@ -11,6 +11,10 @@
             region: {
                 type: _Region,
                 required: true
+            },
+            offset: {
+                type: Number,
+                required: true
             }
         },
         computed: {
@@ -38,7 +42,7 @@
         @click="selectRegion()"
         :class="{'region--current': isCurrent}"
         class="region">
-        <swatch :threshold="region.getThreshold()"/>
+        <swatch :threshold="region.getThreshold(0, offset)"/>
 
         <div class="region__title">
             {{region.title}}
