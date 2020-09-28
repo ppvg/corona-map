@@ -28,7 +28,7 @@
         data() {
             let date, offset;
             date = new Date(this.dateString);
-            offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, date.getTime());
+            offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, date.getTime()) / this.$store.state.maps.current.settings.testDataInterval;
             return {
                 date,
                 offset
@@ -43,16 +43,28 @@
             },
             isAtStart() {
                 return this.offset === this.historyLength;
+            },
+            currentMap() {
+                return this.$store.state.maps.current;
+            },
+            disabledDates() {
+                if (this.currentMap.settings.testDataInterval === 1) {
+                    return null;
+                } else {
+                    return {
+                        days: [1,2,3,4,5,6]
+                    }
+                }
             }
         },
         methods: {
             updateOffset(value) {
-                this.offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, value.getTime());
+                this.offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, value.getTime()) / this.currentMap.settings.testDataInterval;
                 this.updateQuery();
             },
             move(value) {
                 this.offset -= value;
-                this.date = dateTools.getDateByOffset(this.offset);
+                this.date = dateTools.getDateByOffset((this.offset * this.currentMap.settings.testDataInterval));
                 this.updateQuery();
             },
             updateQuery() {
@@ -78,6 +90,7 @@
             <div class="compare__tools">
                 <datepicker
                     :value="date"
+                    :disabled-dates="disabledDates"
                     @input="updateOffset"/>
                 <div
                     v-if="!isAtStart"

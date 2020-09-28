@@ -21,6 +21,9 @@
         computed: {
             routePath() {
                 return window.location.href.split('#')[0];
+            },
+            currentMap() {
+                return this.$store.state.maps.current;
             }
         },
         methods: {
@@ -44,9 +47,9 @@
             },
             updateQuery() {
                 let url, date1, date2;
-                date1 = dateTools.formatDate( dateTools.getDateByOffset(this.offsetAdministration['1']));
-                date2 = dateTools.formatDate( dateTools.getDateByOffset(this.offsetAdministration['2']));
-                url = this.routePath + '#/vergelijk?date1=' + date1 + '&date2=' + date2;
+                date1 = dateTools.formatDate( dateTools.getDateByOffset(this.offsetAdministration['1'] * this.currentMap.settings.testDataInterval));
+                date2 = dateTools.formatDate( dateTools.getDateByOffset(this.offsetAdministration['2'] * this.currentMap.settings.testDataInterval));
+                url = this.routePath + '#/vergelijk?map=' + encodeURI(this.currentMap.title) + '&date1=' + date1 + '&date2=' + date2;
                 history.pushState(
                     {},
                     null,

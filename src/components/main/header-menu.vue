@@ -51,7 +51,7 @@
                 return this.$store.state.maps.current ? this.$store.state.maps.current.title : '';
             },
             dateString() {
-                return this.$store.getters['ui/getDateByOffset'](this.offset, 'EE dd MMM')
+                return this.$store.getters['ui/getDateByOffset']((this.offset * this.currentMap.settings.testDataInterval), 'EE dd MMM')
             }
         },
         methods: {
