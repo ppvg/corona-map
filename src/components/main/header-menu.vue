@@ -34,6 +34,9 @@
             },
             mapTitle() {
                 return this.$store.state.maps.current ? this.$store.state.maps.current.title : '';
+            },
+            perWeek() {
+                return this.currentMap.settings.testDataInterval === 7;
             }
         },
         methods: {}
@@ -44,10 +47,19 @@
 <template>
     <div class="header-menu">
         <div class="title">
-            <h1>
-                Corona status {{mapTitle}} <date-string/>
+            <div class="title__main">
+                Corona status {{mapTitle}}
+            </div>
+
+            <div class="title__sub">
+                <date-string/>
                 <total-infections v-if="hasTests"/>
-            </h1>
+                <div
+                        v-if="perWeek"
+                        class="title__small">
+                    (per 7 dagen)
+                </div>
+            </div>
         </div>
 
         <div class="menu">
@@ -73,12 +85,35 @@
             height: 100%;
             display: flex;
             align-items: center;
+            justify-content: center;
 
-            h1 {
+            .title__main {
                 font-size: 24px;
-                text-align: center;
-                margin: 0;
-                width: 100%;
+                font-weight: 700;
+                margin-right: 10px;
+            }
+
+             .title__sub {
+                font-size: 20px;
+                display: flex;
+
+                .date-string {
+                    width: 116px;
+                    display: block;
+                    white-space: nowrap;
+                }
+
+                .total-infections {
+                    background: #ddd;
+                    padding: 2px 5px;
+                    border-radius: 2px;
+                }
+
+                .title__small {
+                    font-size: 12px;
+                    margin-top: -2px;
+                    margin-left: 4px;
+                }
             }
         }
 

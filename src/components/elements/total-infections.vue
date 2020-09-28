@@ -27,9 +27,9 @@
 
 
 <template>
-    <span class="total-infections">
-        (+{{n}})
-    </span>
+    <div class="total-infections">
+        +{{n}}
+    </div>
 </template>
 
 

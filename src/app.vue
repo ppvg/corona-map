@@ -210,21 +210,23 @@
                 };
 
                 for (let dateKey of this.dateKeys) {
+                    let positiveTests, administeredTests, day;
+                    day = {
+                        // ms: new Date(dateKey.dateString).getTime(),
+                        // date: dateKey.dateString,
+                        offset: dateKey.offset,
+                        positiveTests: null,
+                        administeredTests: null
+                    };
                     if (data[dateKey.positiveTestsKey]) {
-                        let positiveTests, administeredTests, day;
                         positiveTests = Number(data[dateKey.positiveTestsKey]);
-                        day = {
-                            // ms: new Date(dateKey.dateString).getTime(),
-                            // date: dateKey.dateString,
-                            offset: dateKey.offset,
-                            positiveTests
-                        };
+                        day.positiveTests = positiveTests;
                         if (this.currentMap.settings.hasAdministeredTests) {
                             administeredTests = Number(data[dateKey.administeredTestsKey]);
                             day.administeredTests = administeredTests;
                         }
-                        incidents.push(day);
                     }
+                    incidents.push(day);
                 }
                 if (this.currentMap.settings.testDataCumulative) {
                     for (let i = 0, l = incidents.length; i < l; i++) {
@@ -241,6 +243,7 @@
                 } else {
                     report.history = incidents;
                 }
+
                 key = data.Municipality_code;
                 if (this.$store.state[this.currentMap.module].dict[key]) {
                     region = this.$store.state[this.currentMap.module].dict[key];
