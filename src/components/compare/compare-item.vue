@@ -12,15 +12,26 @@
             Datepicker
         },
         props: {
+            dateString: {
+                type: String,
+                required: true
+            },
             showLegend: {
                 type: Boolean,
+                required: true
+            },
+            i: {
+                type: Number,
                 required: true
             }
         },
         data() {
+            let date, offset;
+            date = new Date(this.dateString);
+            offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, date.getTime());
             return {
-                date: dateTools.getDateByOffset(0),
-                offset: 0
+                date,
+                offset
             }
         },
         computed: {
@@ -37,11 +48,20 @@
         methods: {
             updateOffset(value) {
                 this.offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, value.getTime());
+                this.updateQuery();
             },
             move(value) {
                 this.offset -= value;
                 this.date = dateTools.getDateByOffset(this.offset);
+                this.updateQuery();
+            },
+            updateQuery() {
+                this.$parent.administrateOffset(this.i, this.offset);
+                this.$parent.updateQuery();
             }
+        },
+        mounted() {
+            this.$parent.administrateOffset(this.i, this.offset);
         }
     }
 </script>
