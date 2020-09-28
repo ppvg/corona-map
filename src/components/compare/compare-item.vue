@@ -49,7 +49,9 @@
             },
             disabledDates() {
                 if (this.currentMap.settings.testDataInterval === 1) {
-                    return null;
+                    return {
+                        days: []
+                    };
                 } else {
                     return {
                         days: [1,2,3,4,5,6]
