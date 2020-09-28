@@ -183,7 +183,11 @@ class _Region {
     }
 
     getColor(offset) {
-        return thresholdTools.thresholdToColor(this.getThreshold(0, offset), this.getTotalRelativeIncreaseWeek(offset));
+        if (store.state.maps.current.settings.hasTests) {
+            return thresholdTools.thresholdToColor(this.getThreshold(0, offset), this.getTotalRelativeIncreaseWeek(offset));
+        } else {
+            return '#ddd';
+        }
     }
 
 

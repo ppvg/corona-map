@@ -161,7 +161,7 @@
                 </div>
                 <div v-if="hasDays" class="region-details__row">
                     <div class="region-details__label">
-                        Relatieve toename vandaag (per 100 dzd inw)
+                        Relatieve toename vandaag (per 100.000 inw)
                     </div>
                     <div class="region-details__value">
                         {{format(Math.round(regionOfFocus.getTotalRelativeIncreasDay(offset)))}}
@@ -177,7 +177,7 @@
                 </div>
                 <div class="region-details__row">
                     <div class="region-details__label">
-                        Relatieve toename laatste 7 dagen (per 100 dzd inw)
+                        Relatieve toename laatste 7 dagen (per 100.000 inw)
                     </div>
                     <div class="region-details__value">
                         {{format(Math.round(regionOfFocus.getTotalRelativeIncreaseWeek(offset)))}}

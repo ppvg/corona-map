@@ -45,7 +45,7 @@
                 if (map) {
                     this.$store.commit('maps/setCurrent', map);
                 } else {
-                    this.$store.commit('maps/setCurrent', this.$store.state.maps.all[0]);
+                    this.$store.commit('maps/setCurrent', this.$store.state.maps.all[3]);
                 }
                 this.$store.commit('ui/updateProperty', {key: 'currentRegionType', value: this.currentMap.settings.regionTypes[0]});
                 this.loadData();
@@ -101,10 +101,24 @@
                 return new Promise((resolve, reject) => {
                     d3.csv(this.currentMap.url.tests)
                         .then((data) => {
-                            this.getDate(data.columns);
-                            for (let item of data) {
-                                this.addTests(item);
+                            let adapter;
+                            if (this.currentMap.settings.testAdapter) {
+                                adapter = this.currentMap.settings.testAdapter;
+                            } else {
+                                adapter = {
+                                    titleKey: 'Municipality_code',
+                                    positiveTestsKey: 'Total_reported.',
+                                    findColumn: function(column) {
+                                        return column.indexOf('Total_reported.') > -1;
+                                    }
+                                }
                             }
+
+                            this.getDate(data.columns, adapter);
+                            for (let item of data) {
+                                this.addTests(item, adapter);
+                            }
+
                             resolve();
                         })
                         .catch((error) => {
@@ -113,6 +127,7 @@
                 })
             },
             loadAgeGroupsForCities() {
+                console.log("!");
                 return new Promise((resolve, reject) => {
                     d3.csv(this.currentMap.url.ageGroups)
                         .then((result) => {
@@ -162,17 +177,21 @@
                     this.$store.commit('ui/updateProperty', {key: 'admin', value: true});
                 }
             },
-            getDate(columns) {
+            getDate(columns, adapter) {
                 let dates, today, first, last, totalLengthOfTestHistory;
                 dates = [];
 
                 for (let column of columns) {
-                    if (column.indexOf('Total_reported.') > -1) {
+                    if (adapter.findColumn(column)) {
                         let dateString, date;
-                        dateString = column.split('Total_reported.')[1];
+                        if (adapter.positiveTestsKey.length > 0) {
+                            dateString = column.split(adapter.positiveTestsKey)[1];
+                        } else {
+                            dateString = column;
+                        }
                         dates.push({
                             positiveTestsKey: column,
-                            administeredTestsKey: ('Total_administered.' + dateString),
+                            administeredTestsKey: (adapter.positiveTestsKey + dateString),
                             dateString,
                             ms: new Date(dateString).getTime()
                         });
@@ -201,7 +220,7 @@
                 this.$store.commit('settings/updateProperty', {key: 'historyLength', value: totalLengthOfTestHistory});
                 this.dateKeys = dates;
             },
-            addTests(data) {
+            addTests(data, adapter) {
                 let key, region, report, incidents;
                 incidents = [];
                 const convertToNumber = function(value) {
@@ -252,13 +271,15 @@
                     report.history = incidents;
                 }
 
-                key = data.Municipality_code;
+                key = data[adapter.titleKey];
                 if (this.$store.state[this.currentMap.module].dict[key]) {
                     region = this.$store.state[this.currentMap.module].dict[key];
                     this.$store.commit(this.currentMap.module + '/updatePropertyOfItem', {item: region, property: 'report', value: report});
-                    this.$store.commit(this.currentMap.module + '/updatePropertyOfItem', {item: region, property: 'population', value: convertToNumber(data.population)})
+                    if (!this.currentMap.settings.generalInfoHasPopulation) {
+                        this.$store.commit(this.currentMap.module + '/updatePropertyOfItem', {item: region, property: 'population', value: convertToNumber(data.population)});
+                    }
                 } else {
-                    console.log('not found ' + key);
+                    //console.log('not found ' + key);
                 }
             }
         },

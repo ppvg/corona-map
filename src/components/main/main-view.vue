@@ -34,6 +34,9 @@
             showMap() {
                 return this.$store.state.ui.menu === 'map';
             },
+            showTrends() {
+                return this.currentMap.settings.hasTests;
+            },
             showRegion() {
                 return this.currentRegion;
             },
@@ -76,7 +79,7 @@
                     :offset="offset"/>
             </div>
 
-            <trends/>
+            <trends v-if="showTrends"/>
             <region-details
                     v-if="showRegion"
                     :region="currentRegion"/>
