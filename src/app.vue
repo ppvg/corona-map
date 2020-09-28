@@ -45,7 +45,7 @@
                 if (map) {
                     this.$store.commit('maps/setCurrent', map);
                 } else {
-                    this.$store.commit('maps/setCurrent', this.$store.state.maps.all[3]);
+                    this.$store.commit('maps/setCurrent', this.$store.state.maps.all[0]);
                 }
                 this.$store.commit('ui/updateProperty', {key: 'currentRegionType', value: this.currentMap.settings.regionTypes[0]});
                 this.loadData();
