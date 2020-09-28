@@ -23,7 +23,7 @@
                 return this.$store.state.settings.historyLength;
             },
             date() {
-                return this.$store.getters['ui/dateString'];
+                return this.$store.getters['ui/dateString']();
             }
         },
         methods: {}

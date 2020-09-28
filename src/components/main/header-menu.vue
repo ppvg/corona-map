@@ -1,14 +1,12 @@
 <script>
-    import dateString from "@/components/elements/date-string";
-    import MenuButton from "./menu-button";
+    import menuButton from "./menu-button";
     import totalInfections from "@/components/elements/total-infections";
 
     export default {
         name: 'header-menu',
         components: {
             totalInfections,
-            MenuButton,
-            dateString
+            menuButton
         },
         props: {},
         computed: {
@@ -37,6 +35,9 @@
             },
             perWeek() {
                 return this.currentMap.settings.testDataInterval === 7;
+            },
+            dateString() {
+                return this.$store.getters['ui/dateString']('EE dd MMM')
             }
         },
         methods: {}
@@ -52,11 +53,15 @@
             </div>
 
             <div class="title__sub">
-                <date-string/>
-                <total-infections v-if="hasTests"/>
+                <div class="date-string">
+                    {{dateString}}
+                </div>
+                <div class="total-infections-container">
+                    <total-infections v-if="hasTests"/>
+                </div>
                 <div
-                        v-if="perWeek"
-                        class="title__small">
+                    v-if="perWeek"
+                    class="title__small">
                     (per 7 dagen)
                 </div>
             </div>
@@ -101,13 +106,24 @@
                     width: 116px;
                     display: block;
                     white-space: nowrap;
+                    margin-top: 2px;
+                    font-family: $monospace;
                 }
 
-                .total-infections {
-                    background: #ddd;
-                    padding: 2px 5px;
-                    border-radius: 2px;
+                .total-infections-container {
+                    width: 80px;
+
+                    .total-infections {
+                        padding: 2px 8px;
+                        border-radius: 2px;
+                        font-family: $monospace;
+                        display: inline-block;
+                        transition: all 0.1s ease;
+                        background: rgb(252, 203, 3);
+                    }
                 }
+
+
 
                 .title__small {
                     font-size: 12px;

@@ -11,7 +11,7 @@
                 return this.$store.getters['ui/regions'];
             },
             dateString() {
-                return this.$store.getters['ui/dateString'];
+                return this.$store.getters['ui/dateString']();
             },
             dateStringdashes() {
                 return this.dateString.replace(/\s/g , "-");

@@ -21,13 +21,13 @@ const state = {
 
 const getters = {
     ..._base.getters,
-    dateString(state, getters, rootState, rootGetters) {
+    dateString: (state, getters, rootState, rootGetters) => (dateFormat = 'EE d MMM') => {
         let today, offset, dateOfFocus;
         today = state.today;
         if (today) {
             offset = rootState.settings.currentDateOffset * rootState.maps.current.settings.testDataInterval;
             dateOfFocus = sub(today, {days: offset});
-            return format(dateOfFocus, 'EE d MMM', {locale: nl} );
+            return format(dateOfFocus, dateFormat, {locale: nl} );
         } else {
             return '';
         }

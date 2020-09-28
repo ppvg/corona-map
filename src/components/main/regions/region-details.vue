@@ -64,7 +64,7 @@
                 return this.$store.state.ui.caseDataRequested;
             },
             date() {
-                return this.$store.getters['ui/dateString'];
+                return this.$store.getters['ui/dateString']();
             },
             hasDays() {
                 return this.$store.state.maps.current.settings.testDataInterval === 1;
@@ -261,7 +261,7 @@
 
                 .region-details__value {
                     font-weight: 700;
-                    font-family: Courier;
+                    font-family: $monospace;
                     font-size: 20px;
                     text-align: right;
                     width: calc(100% - 200px);
