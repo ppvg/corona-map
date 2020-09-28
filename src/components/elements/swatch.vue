@@ -4,13 +4,16 @@
         components: {},
         props: {
             threshold: {
-                type: Object,
+                type: Object | null,
                 required: true
             }
         },
         computed: {
-            color() {
+            systemColor() {
                 return this.$store.state.ui.color;
+            },
+            color() {
+                return this.threshold ? this.threshold.color[this.systemColor] : '#ddd';
             }
         },
         methods: {}
@@ -20,7 +23,7 @@
 
 <template>
     <div
-        :style="{'background-color': threshold.color[color]}"
+        :style="{'background-color': color}"
         class="swatch"></div>
 </template>
 

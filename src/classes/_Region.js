@@ -114,7 +114,12 @@ class _Region {
         increase = 0;
         cities = this.getRegions();
         for (let city of cities) {
-            increase += city.getIncreaseWeek(delta);
+            let thisIncrease = city.getIncreaseWeek(delta);
+            if (thisIncrease === null) {
+                return null;
+            } else {
+                increase += thisIncrease;
+            }
         }
         return increase;
     }
@@ -170,6 +175,9 @@ class _Region {
             cases = this.getTotalIncreaseDay(delta);
         } else if (signalingSystem.days === 7) {
             cases = this.getTotalIncreaseWeek(delta);
+            if (cases === null) {
+                return null;
+            }
         }
         return thresholdTools.getThreshold(cases, this.getTotalPopulation(), signalingSystem.days);
     }

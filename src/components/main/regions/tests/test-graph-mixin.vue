@@ -146,7 +146,7 @@
 
                 }
                 days = report.history.filter(day => {
-                    return day.offset <= this.min && day.offset >= this.max;
+                    return day.positiveTests !== null && day.offset <= this.min && day.offset >= this.max;
                 });
                 return days;
             },

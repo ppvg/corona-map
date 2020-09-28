@@ -46,8 +46,6 @@ class _RegionWithTestData extends _Region{
         return stringTool.titleForSorting(this.title);
     }
 
-
-
     get hasNewInfection() {
         return this.getIncreaseWeek() > 0 && this.getIncreaseWeek(7) === 0
     }

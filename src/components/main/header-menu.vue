@@ -1,14 +1,22 @@
 <script>
     import menuButton from "./menu-button";
     import totalInfections from "@/components/elements/total-infections";
+    import Datepicker from 'vuejs-datepicker';
+    import dateTools from '@/tools/date';
 
     export default {
         name: 'header-menu',
         components: {
             totalInfections,
-            menuButton
+            menuButton,
+            Datepicker
         },
         props: {},
+        data() {
+            return {
+                date: this.$store.state.ui.today
+            }
+        },
         computed: {
             buttons() {
                 return [
@@ -35,9 +43,27 @@
             },
             dateString() {
                 return this.$store.getters['ui/dateString']('EE dd MMM')
+            },
+            currentDateOffset() {
+                return this.$store.state.settings.currentDateOffset;
+            },
+        },
+        methods: {
+            updateOffset(value) {
+                let offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, value.getTime());
+                this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: offset});
+            },
+            updateDatePicker() {
+                this.date = dateTools.getDateByOffset(this.currentDateOffset);
             }
         },
-        methods: {}
+        watch: {
+            currentDateOffset: {
+                handler: function() {
+                    this.updateDatePicker();
+                }
+            }
+        }
     }
 </script>
 
@@ -51,7 +77,9 @@
 
             <div class="title__sub">
                 <div class="date-string">
-                    {{dateString}}
+                    <datepicker
+                        :value="date"
+                        @input="updateOffset"/>
                 </div>
                 <total-infections v-if="hasTests"/>
             </div>
@@ -93,11 +121,17 @@
                 display: flex;
 
                 .date-string {
-                    width: 116px;
                     display: block;
-                    white-space: nowrap;
+                    //white-space: nowrap;
                     margin-top: 2px;
                     font-family: $monospace;
+
+                    input {
+                        width: 120px;
+                        background: transparent;
+                        padding: 0;
+                        font-size: inherit;
+                    }
                 }
 
                 .total-infections {
