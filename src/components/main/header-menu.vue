@@ -33,9 +33,6 @@
             mapTitle() {
                 return this.$store.state.maps.current ? this.$store.state.maps.current.title : '';
             },
-            perWeek() {
-                return this.currentMap.settings.testDataInterval === 7;
-            },
             dateString() {
                 return this.$store.getters['ui/dateString']('EE dd MMM')
             }
@@ -56,14 +53,7 @@
                 <div class="date-string">
                     {{dateString}}
                 </div>
-                <div class="total-infections-container">
-                    <total-infections v-if="hasTests"/>
-                </div>
-                <div
-                    v-if="perWeek"
-                    class="title__small">
-                    (per 7 dagen)
-                </div>
+                <total-infections v-if="hasTests"/>
             </div>
         </div>
 
@@ -110,25 +100,19 @@
                     font-family: $monospace;
                 }
 
-                .total-infections-container {
+                .total-infections {
                     width: 80px;
+                    display: flex;
 
-                    .total-infections {
+                    .total-infections__n {
                         padding: 2px 8px;
                         border-radius: 2px;
                         font-family: $monospace;
                         display: inline-block;
                         transition: all 0.1s ease;
                         background: rgb(252, 203, 3);
+                        display: flex;
                     }
-                }
-
-
-
-                .title__small {
-                    font-size: 12px;
-                    margin-top: -2px;
-                    margin-left: 4px;
                 }
             }
         }

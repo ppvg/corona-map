@@ -19,6 +19,9 @@
                     n += region.increaseDay;
                 }
                 return n;
+            },
+            perWeek() {
+                return this.currentMap.settings.testDataInterval === 7;
             }
         },
         methods: {}
@@ -28,7 +31,14 @@
 
 <template>
     <div class="total-infections">
-        +{{n}}
+        <div class="total-infections__n">
+            +{{n}}
+        </div>
+        <div
+            v-if="perWeek"
+            class="total-infections__interval">
+            (per 7 dagen)
+        </div>
     </div>
 </template>
 
@@ -38,5 +48,11 @@
 
     .total-infections {
 
+        .total-infections__interval {
+            font-size: 12px;
+            margin-top: -2px;
+            margin-left: 4px;
+            white-space: nowrap;
+        }
     }
 </style>
