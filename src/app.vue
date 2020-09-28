@@ -2,6 +2,7 @@
     import * as d3 from 'd3';
     import $ from 'jquery';
     import query from '@/components/elements/query'
+    import dateTools from '@/tools/date';
 
     // data
     import maps from '@/data/maps';
@@ -63,7 +64,6 @@
                 $.getJSON(this.currentMap.url.regions, (regions) => {
                     let promises = [];
                     this.$store.commit(this.currentMap.module + '/init', regions);
-                    this.readQuery();
                     if (this.currentMap.settings.hasTests) {
                         promises.push(this.loadTests);
                     }
@@ -74,16 +74,19 @@
                         promises.push(this.loadSewageTreatmentPlants);
                     }
                     if (promises.length === 0) {
+                        this.readQuery();
                         this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
                     } else {
                         Promise.all(promises.map(p => p()))
                             .then((result) => {
+                                this.readQuery();
                                 this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
                             })
                             .catch(error => {
                                 console.error(error)
                             });
                     }
+
                 });
             },
             loadSewageTreatmentPlants() {
@@ -142,13 +145,18 @@
             },
 
             readQuery() {
-                let region, string;
+                let region, string, date, offset;
                 if (this.$route.query.region) {
                     string = decodeURI(this.$route.query.region);
                     region = this.$store.getters[this.currentMap.module + '/getItemByProperty']('title', string, true);
                     if (region) {
                         this.$store.commit(this.currentMap.module + '/setCurrent', region);
                     }
+                }
+                if (this.$route.query.date) {
+                    date = new Date(this.$route.query.date);
+                    offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, date.getTime());
+                    this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: offset});
                 }
                 if (this.$route.query.admin) {
                     this.$store.commit('ui/updateProperty', {key: 'admin', value: true});

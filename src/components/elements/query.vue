@@ -1,17 +1,26 @@
 <script>
+    import dateTools from '@/tools/date';
+
     export default {
         name: 'query',
         components: {},
         props: {},
         computed: {
+            currentMap() {
+                return this.$store.state.maps.current;
+            },
             currentRegion() {
-                return this.$store.state.ui.currentRegion;
+                return this.currentMap && this.$store.state[this.currentMap.module].current;
             },
             routePath() {
                 return window.location.href.split('#')[0];
             },
-            currentMap() {
-                return this.$store.state.maps.current;
+            offset() {
+                return this.$store.state.settings.currentDateOffset;
+            },
+            date() {
+                let date = dateTools.getDateByOffset(this.offset);
+                return dateTools.formatDate(date);
             },
             query() {
                 let query = '?';
@@ -22,12 +31,14 @@
                     }
                     query += this.currentRegion ? ('region=' + encodeURI(this.currentRegion.title)) : '';
                 }
-                //console.log(this.currentRegion, query);
+                if (this.offset > 0) {
+                    query += '&date=' + this.date;
+                }
                 return query;
             },
             url() {
                 return this.routePath + '#/' + this.query;
-            },
+            }
         },
         methods: {
             updateQuery() {

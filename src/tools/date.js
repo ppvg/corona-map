@@ -9,8 +9,7 @@ const getDateOffset = function(dateBase, date1) {
 };
 
 const getDateByOffset = function(offset) {
-    let today, dateOfFocus;
-    today = store.state.ui.todayInMs;
+    let today = store.state.ui.todayInMs;
     if (today) {
         return new Date(today - (offset * dayLength));
     } else {
@@ -18,7 +17,16 @@ const getDateByOffset = function(offset) {
     }
 };
 
+const formatDate = function(date, dateFormat = 'yyyy-MM-dd') {
+    if (date) {
+        return format(date, dateFormat, {locale: nl} );
+    } else {
+        return '';
+    }
+};
+
 export default {
     getDateOffset,
-    getDateByOffset
+    getDateByOffset,
+    formatDate
 }

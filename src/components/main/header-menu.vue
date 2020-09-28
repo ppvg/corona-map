@@ -13,8 +13,9 @@
         },
         props: {},
         data() {
+            let offset = this.$store.state.settings.currentDateOffset;
             return {
-                date: this.$store.state.ui.today
+                date: dateTools.getDateByOffset(offset)
             }
         },
         computed: {
@@ -113,7 +114,7 @@
             .title__main {
                 font-size: 24px;
                 font-weight: 700;
-                margin-right: 10px;
+                margin-right: 6px;
             }
 
              .title__sub {
@@ -122,15 +123,19 @@
 
                 .date-string {
                     display: block;
-                    //white-space: nowrap;
                     margin-top: 2px;
                     font-family: $monospace;
 
                     input {
                         width: 120px;
                         background: transparent;
-                        padding: 0;
+                        padding: 3px;
                         font-size: inherit;
+                        cursor: pointer;
+
+                        &:hover {
+                            background: #ddd;
+                        }
                     }
                 }
 
