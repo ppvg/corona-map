@@ -65,7 +65,7 @@
                 this.updateQuery();
             },
             updateQuery() {
-                // todo
+                this.$parent.updateQuery();
             }
         }
     }

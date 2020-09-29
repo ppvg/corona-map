@@ -54,9 +54,6 @@
                     offset: offset2
                 }));
             },
-            // administrateOffset(i, offset) {
-            //     this.offsetAdministration[i] = offset;
-            // },
             updateQuery() {
                 let url, date1, date2;
                 date1 = dateTools.formatDate( dateTools.getDateByOffset(this.views[0].offset * this.currentMap.settings.testDataInterval));
@@ -71,17 +68,7 @@
         },
         mounted() {
             this.getDates();
-        },
-        offset1: {
-            handler: function() {
-                this.updateQuery();
-            }
-        },
-        offset2: {
-            handler: function() {
-                this.updateQuery();
-            }
-        },
+        }
     }
 </script>
 
