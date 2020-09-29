@@ -1,8 +1,14 @@
 <script>
+    import View from "@/classes/View";
+
     export default {
         name: 'age-distribution-header',
         components: {},
         props: {
+            view: {
+                type: View,
+                required: true
+            },
             weeks: {
                 type: Array,
                 required: true
@@ -11,9 +17,6 @@
         computed: {
             width() {
                 return 7 * this.$store.state.settings.step;
-            },
-            currentDateOffset() {
-                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {
@@ -21,10 +24,10 @@
                 let date1, date2, format1, format2, string;
                 format1 = 'd';
                 format2 = 'd MMM';
-                date1 = this.$store.getters['ui/getDateByOffset']((week * 7 + 6 + this.currentDateOffset), format1);
-                date2 = this.$store.getters['ui/getDateByOffset']((week * 7 + this.currentDateOffset), format2);
+                date1 = this.$store.getters['ui/getDateByOffset']((week * 7 + 6 + this.view.offset), format1);
+                date2 = this.$store.getters['ui/getDateByOffset']((week * 7 + this.view.offset), format2);
                 string = date1 + ' - ' + date2;
-                if (this.currentDateOffset < 3 && week === 0) {
+                if (this.view.offset < 3 && week === 0) {
                     string += ' *';
                 }
                 return string;

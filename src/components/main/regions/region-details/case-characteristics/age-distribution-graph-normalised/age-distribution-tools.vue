@@ -1,12 +1,16 @@
 <script>
+    import View from "@/classes/View";
+
     export default {
         name: 'age-distribution-tools',
         components: {},
-        props: {},
+        props: {
+            view: {
+                type: View,
+                required: true
+            }
+        },
         computed: {
-            currentDateOffset() {
-                return this.$store.state.settings.currentDateOffset;
-            },
             ageDistributionAbsolute: {
                 get() {
                     return this.$store.state.settings.ageDistributionAbsolute;
@@ -23,12 +27,12 @@
                 }
             },
             showException() {
-                return this.currentDateOffset < 3;
+                return this.view.offset < 3;
             }
         },
         methods: {
             move(x) {
-                this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: (this.currentDateOffset + x)});
+                this.view.offset += x;
             }
         }
     }
@@ -62,13 +66,13 @@
                 <img src="assets/img/tools/7xback.svg">
             </div>
             <div
-                v-if="currentDateOffset > 6"
+                v-if="view.offset > 6"
                 @click="move(-7)"
                 class="icon-button">
                 <img src="assets/img/tools/7xforward.svg">
             </div>
             <div
-                v-if="currentDateOffset > 0"
+                v-if="view.offset > 0"
                 @click="move(-1)"
                 class="icon-button">
                 <img src="assets/img/tools/forward.svg">

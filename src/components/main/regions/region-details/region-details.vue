@@ -107,10 +107,12 @@
                 <div class="age-distribution-graph__container">
                     <age-distribution-graph-normalised
                         v-if="caseDataLoaded"
+                        :view="view"
                         :region="regionOfFocus"/>
                     <loader v-else/>
                 </div>
-                <age-distribution-tools/>
+                <age-distribution-tools
+                    :view="view"/>
             </div>
 
             <region-details-numbers
