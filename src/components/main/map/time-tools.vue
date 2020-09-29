@@ -1,8 +1,15 @@
 <script>
+    import View from '@/classes/View';
+
     export default {
         name: 'time-tools',
         components: {},
-        props: {},
+        props: {
+            view: {
+                type: View,
+                required: true
+            }
+        },
         data() {
             return {
                 timer: null
@@ -13,10 +20,10 @@
                 return this.$store.state.settings.historyLength;
             },
             isAtEnd() {
-                return this.$store.state.settings.currentDateOffset === 0;
+                return this.view.offset === 0;
             },
             isAtStart() {
-                return this.$store.state.settings.currentDateOffset === this.historyLength;
+                return this.view.offset === this.historyLength;
             },
             isPlaying() {
                 return this.$store.state.ui.isPlaying;
@@ -24,20 +31,20 @@
         },
         methods: {
             rewind() {
-                this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: this.historyLength});
+                this.view.offset = this.historyLength;
             },
             play() {
                 this.$store.commit('ui/updateProperty', {key: 'isPlaying', value: true});
                 this.timer = setInterval(() => {
-                    if (this.$store.state.settings.currentDateOffset > 0) {
-                        this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: (this.$store.state.settings.currentDateOffset -1)});
+                    if (this.view.offset > 0) {
+                        this.view.offset -= 1
                     } else {
                         this.stop();
                     }
                 }, 200)
             },
             move(value) {
-                this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: (this.$store.state.settings.currentDateOffset - value)});
+                this.view.offset -= value
             },
             stop() {
                 this.$store.commit('ui/updateProperty', {key: 'isPlaying', value: false});

@@ -224,7 +224,10 @@
             :show-tools="showTools"
             :show-legend="showLegend"/>
 
-        <time-slider v-if="showTools"/>
+        <time-slider
+            v-if="showTools"
+            :view="view"/>
+
         <embed-button v-if="showTools"/>
         <download-image v-if="showTools"/>
     </div>

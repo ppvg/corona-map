@@ -76,7 +76,7 @@
     <div class="compare-item">
         <div class="compare__header">
             <header-menu
-                :offset="view.offset"
+                :view="view"
                 :editable="false"/>
         </div>
         <div class="compare__body">

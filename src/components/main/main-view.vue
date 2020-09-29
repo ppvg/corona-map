@@ -65,7 +65,7 @@
 <template>
     <div class="main-view">
         <header-menu
-            :offset="offset"
+            :view="view"
             :editable="true"/>
 
         <div class="content">

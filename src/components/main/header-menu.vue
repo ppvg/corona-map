@@ -3,6 +3,7 @@
     import totalInfections from "@/components/elements/total-infections";
     import Datepicker from 'vuejs-datepicker';
     import dateTools from '@/tools/date';
+    import View from "@/classes/View";
 
     export default {
         name: 'header-menu',
@@ -12,8 +13,8 @@
             Datepicker
         },
         props: {
-            offset: {
-                type: Number,
+            view: {
+                type: View,
                 required: true
             },
             editable: {
@@ -23,7 +24,7 @@
         },
         data() {
             return {
-                date: dateTools.getDateByOffset(this.offset)
+                date: dateTools.getDateByOffset(this.view.offset)
             }
         },
         computed: {
@@ -51,23 +52,26 @@
                 return this.$store.state.maps.current ? this.$store.state.maps.current.title : '';
             },
             dateString() {
-                return this.$store.getters['ui/getDateByOffset']((this.offset * this.currentMap.settings.testDataInterval), 'EE dd MMM')
+                return this.$store.getters['ui/getDateByOffset']((this.view.offset * this.currentMap.settings.testDataInterval), 'EE dd MMM')
+            },
+            offset() {
+                return this.view.offset;
             }
         },
         methods: {
             updateOffset(value) {
-                let offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, value.getTime());
-                this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: offset});
+                this.view.offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, value.getTime());
             },
             updateDatePicker() {
-                this.date = dateTools.getDateByOffset(this.offset);
+                this.date = dateTools.getDateByOffset(this.view.offset);
             }
         },
         watch: {
             offset: {
                 handler: function() {
                     this.updateDatePicker();
-                }
+                },
+                deep: true
             }
         }
     }
@@ -93,7 +97,7 @@
                 </div>
                 <total-infections
                     v-if="hasTests"
-                    :offset="offset"/>
+                    :view="view"/>
             </div>
         </div>
 

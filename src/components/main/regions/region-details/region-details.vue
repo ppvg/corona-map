@@ -122,8 +122,9 @@
                     Testen GGD
                 </div>
                 <positive-tests
-                        :region="regionOfFocus"
-                        :weeks="weeks"/>
+                    :view="view"
+                    :region="regionOfFocus"
+                    :weeks="weeks"/>
 
                 <administered-tests
                         v-if="currentMap.settings.hasAdministeredTests"
