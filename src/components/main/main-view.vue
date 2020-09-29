@@ -99,7 +99,8 @@
                     :class="{'panel--active': showMap}"
                     class="map-container panel">
                 <search-regions/>
-                <region-type-picker/>
+                <region-type-picker
+                    :view="view"/>
                 <map-tests
                     :view="view"
                     :show-tools="true"

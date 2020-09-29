@@ -41,7 +41,7 @@
         },
         computed: {
             showTrend() {
-                return this.$store.state.signalingSystems.current.title === 'WHO' && this.currentMap.settings.testDataInterval * this.$store.state.settings.historyLength >= 14 ;
+                return this.$store.state.signalingSystems.current.title === 'WHO' && this.currentMap.settings.testDataInterval === 1 ;
             },
             regionOfFocus() {
                 return this.$store.getters['ui/getRegionOfFocus'](this.region);
@@ -95,6 +95,7 @@
         <div class="region-details__info">
             <div class="region-details__section">
                 <region-relations
+                    :view="view"
                     :region="region"/>
             </div>
 

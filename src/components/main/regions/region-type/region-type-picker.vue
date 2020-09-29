@@ -1,11 +1,17 @@
 <script>
-    import City from "@/classes/City";
     import regionType from "./region-type";
+    import View from "@/classes/View";
 
     export default {
         name: 'region-type-picker',
         components: {
             regionType
+        },
+        props: {
+            view: {
+                type: View,
+                required: true
+            }
         },
         computed: {
             currentMap() {
@@ -60,6 +66,7 @@
     <div class="region-type-picker">
         <region-type
             v-for="type in types"
+            :view="view"
             :type="type"
             :n="types.length"/>
     </div>

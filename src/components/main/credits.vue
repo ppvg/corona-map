@@ -54,13 +54,24 @@
                         </div>
                         <div class="source__value-row">
                             <div class="source__value-what">
-                                Wekelijkse publicatie GGD Amsterdam
+                                Cijfers Amsterdam
                             </div>
                             <div class="source__value-who">
                                 GGD Amsterdam
                             </div>
                             <div class="source__value-link">
                                 https://www.ggd.amsterdam.nl/coronavirus/situatie-regio-amsterdam-amstelland/
+                            </div>
+                        </div>
+                        <div class="source__value-row">
+                            <div class="source__value-what">
+                                Cijfers Europa
+                            </div>
+                            <div class="source__value-who">
+                                <a href="https://twitter.com/datagraver" target="_blank">@datagraver</a>
+                            </div>
+                            <div class="source__value-link">
+                                http://datagraver.com/corona/data/cases.csv
                             </div>
                         </div>
                     </div>

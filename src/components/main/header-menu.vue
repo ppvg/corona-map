@@ -58,7 +58,6 @@
                 return this.view.offset;
             },
             isMainPage() {
-                console.log(this.$route.name);
                 return this.$route.name === 'main';
             }
         },

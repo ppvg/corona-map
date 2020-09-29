@@ -46,7 +46,7 @@
                 return this.$store.getters['ui/typeLabel'](true).toLowerCase();
             },
             offset() {
-                return this.$store.state.settings.currentDateOffset;
+                return this.view.offset;
             }
         },
         methods: {

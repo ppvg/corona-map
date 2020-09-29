@@ -28,7 +28,7 @@
                 return this.$store.state.ui.menu === 'trends';
             },
             show() {
-                return this.$store.state.settings.currentDateOffset < 2;
+                return this.view.offset < 2;
             },
             isAdmin() {
                 return this.$store.state.ui.admin;

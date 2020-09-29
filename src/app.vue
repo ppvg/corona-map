@@ -84,7 +84,6 @@
                                 console.error(error)
                             });
                     }
-
                 });
             },
             loadSewageTreatmentPlants() {
@@ -106,6 +105,7 @@
                                 adapter = {
                                     titleKey: 'Municipality_code',
                                     positiveTestsKey: 'Total_reported.',
+                                    administeredTestsKey: 'Total_administered.',
                                     findColumn: function(column) {
                                         return column.indexOf('Total_reported.') > -1;
                                     }
@@ -158,7 +158,6 @@
             getDate(columns, adapter) {
                 let dates, today, first, last, totalLengthOfTestHistory;
                 dates = [];
-
                 for (let column of columns) {
                     if (adapter.findColumn(column)) {
                         let dateString, date;
@@ -169,7 +168,7 @@
                         }
                         dates.push({
                             positiveTestsKey: column,
-                            administeredTestsKey: (adapter.positiveTestsKey + dateString),
+                            administeredTestsKey: (adapter.administeredTestsKey + dateString),
                             dateString,
                             ms: new Date(dateString).getTime()
                         });

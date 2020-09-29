@@ -1,7 +1,7 @@
 <script>
     import swatch from "@/components/elements/swatch";
     import * as d3 from "d3";
-
+    import View from "@/classes/View";
 
     export default {
         name: 'region-type',
@@ -9,6 +9,10 @@
             swatch
         },
         props: {
+            view: {
+                type: View,
+                required: true
+            },
             type: {
                 type: Object,
                 required: true
@@ -35,9 +39,6 @@
                 } else {
                     return 'calc(100% / ' + this.n + ')';
                 }
-            },
-            offset() {
-                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {
@@ -138,7 +139,7 @@
             v-if="type.showRegion"
             class="region-type__region">
             <swatch
-                    :threshold="type.getRegion().getThreshold(0, offset)"/>
+                :threshold="type.getRegion().getThreshold(0, view.offset)"/>
             <div class="region-type__value">
                 {{type.getRegion().title}}
             </div>
