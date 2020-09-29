@@ -1,6 +1,7 @@
 <script>
     import compareItem from "./compare-item";
     import dateTools from '@/tools/date';
+    import View from '@/classes/View';
 
     export default {
         name: 'compare',
@@ -10,12 +11,7 @@
         props: {},
         data(){
             return {
-                date1: null,
-                date2: null,
-                offsetAdministration: {
-                    '1': null,
-                    '2': null
-                }
+                views: []
             }
         },
         computed: {
@@ -28,34 +24,44 @@
         },
         methods: {
             getDates() {
-                let today, fourWeeksBack;
-                today = dateTools.formatDate(this.$store.state.ui.today);
-                fourWeeksBack = dateTools.formatDate( dateTools.getDateByOffset(28));
+                let date1, date2, offset1, offset2, today, fourWeeksBack;
+                today = this.$store.state.ui.today;
+                fourWeeksBack = dateTools.getDateByOffset(28);
                 if (this.$route.query.date1) {
-                    this.date1 = this.$route.query.date1;
+                    date1 = new Date(this.$route.query.date1);
                 } else {
-                    this.date1 = fourWeeksBack;
+                    date1 = fourWeeksBack;
                 }
                 if (this.$route.query.date2) {
-                    this.date2 = this.$route.query.date2;
+                    date2 = new Date(this.$route.query.date2);
                 } else {
-                    this.date2 = today;
+                    date2 = today;
                 }
+                offset1 = dateTools.getDateOffset(this.$store.state.ui.todayInMs, date1.getTime()) / this.$store.state.maps.current.settings.testDataInterval;
+                offset2 = dateTools.getDateOffset(this.$store.state.ui.todayInMs, date2.getTime()) / this.$store.state.maps.current.settings.testDataInterval;
+                this.views.push(new View ({
+                    id: 1,
+                    offset: offset1
+                }));
+                this.views.push(new View ({
+                    id: 1,
+                    offset: offset2
+                }));
             },
-            administrateOffset(i, offset) {
-                this.offsetAdministration[i] = offset;
-            },
-            updateQuery() {
-                let url, date1, date2;
-                date1 = dateTools.formatDate( dateTools.getDateByOffset(this.offsetAdministration['1'] * this.currentMap.settings.testDataInterval));
-                date2 = dateTools.formatDate( dateTools.getDateByOffset(this.offsetAdministration['2'] * this.currentMap.settings.testDataInterval));
-                url = this.routePath + '#/vergelijk?map=' + encodeURI(this.currentMap.title) + '&date1=' + date1 + '&date2=' + date2;
-                history.pushState(
-                    {},
-                    null,
-                    url
-                );
-            }
+            // administrateOffset(i, offset) {
+            //     this.offsetAdministration[i] = offset;
+            // },
+            // updateQuery() {
+            //     let url, date1, date2;
+            //     date1 = dateTools.formatDate( dateTools.getDateByOffset(this.offsetAdministration['1'] * this.currentMap.settings.testDataInterval));
+            //     date2 = dateTools.formatDate( dateTools.getDateByOffset(this.offsetAdministration['2'] * this.currentMap.settings.testDataInterval));
+            //     url = this.routePath + '#/vergelijk?map=' + encodeURI(this.currentMap.title) + '&date1=' + date1 + '&date2=' + date2;
+            //     history.pushState(
+            //         {},
+            //         null,
+            //         url
+            //     );
+            // }
         },
         mounted() {
             this.getDates();
@@ -68,15 +74,9 @@
     <div class="compare">
         <div class="compare__items">
             <compare-item
-                v-if="date1"
-                :show-legend="true"
-                :date-string="date1"
-                :i="1"/>
-            <compare-item
-                v-if="date2"
-                :show-legend="false"
-                :date-string="date2"
-                :i="2"/>
+                v-for="(view, index) in views"
+                :view="view"
+                :show-legend="index === 0"/>
         </div>
     </div>
 </template>

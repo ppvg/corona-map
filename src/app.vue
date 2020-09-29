@@ -127,7 +127,6 @@
                 })
             },
             loadAgeGroupsForCities() {
-                console.log("!");
                 return new Promise((resolve, reject) => {
                     d3.csv(this.currentMap.url.ageGroups)
                         .then((result) => {
