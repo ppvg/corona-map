@@ -8,12 +8,12 @@
     import ageDistributionTools from "./case-characteristics/age-distribution-graph-normalised/age-distribution-tools";
     import regionRelations from "./region-type/region-relations";
     import AdministeredTests from "./tests/administered-tests";
-    import RegionTrend from "./region-trend";
+    import regionTrend from "./region-trend";
 
     export default {
         name: 'region-details',
         components: {
-            RegionTrend,
+            regionTrend,
             AdministeredTests,
             regionRelations,
             ageDistributionTools,
@@ -31,7 +31,7 @@
         },
         computed: {
             showTrend() {
-                return this.$store.state.signalingSystems.current.title === 'WHO' && this.currentMap.settings.testDataInterval * this.$store.state.historyLength >= 14 ;
+                return this.$store.state.signalingSystems.current.title === 'WHO' && this.currentMap.settings.testDataInterval * this.$store.state.settings.historyLength >= 14 ;
             },
             regionOfFocus() {
                 return this.$store.getters['ui/currentRegion'];
@@ -64,7 +64,7 @@
                 return this.$store.state.ui.caseDataRequested;
             },
             date() {
-                return this.$store.getters['ui/dateString'];
+                return this.$store.getters['ui/dateString']();
             },
             hasDays() {
                 return this.$store.state.maps.current.settings.testDataInterval === 1;
@@ -80,6 +80,9 @@
             },
             weeks() {
                 return this.$store.state.settings.weeks;
+            },
+            offset() {
+                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {
@@ -124,15 +127,15 @@
             </div>
 
             <div
-                    v-if="hasAgeGroups && (regionOfFocus.regionType === 'ggd') && caseDataRequested"
-                    class="region-details__section">
+                v-if="hasAgeGroups && (regionOfFocus.regionType === 'ggd') && caseDataRequested"
+                class="region-details__section">
                 <div class="region-details__section-header">
                     Leeftijdsverdeling (beta)
                 </div>
                 <div class="age-distribution-graph__container">
                     <age-distribution-graph-normalised
-                            v-if="caseDataLoaded"
-                            :region="regionOfFocus"/>
+                        v-if="caseDataLoaded"
+                        :region="regionOfFocus"/>
                     <loader v-else/>
                 </div>
                 <age-distribution-tools/>
@@ -153,7 +156,7 @@
                         Toename vandaag
                     </div>
                     <div class="region-details__value">
-                        {{format(regionOfFocus.getTotalIncreaseDay())}}
+                        {{format(regionOfFocus.getTotalIncreaseDay(0, offset))}}
                     </div>
                 </div>
                 <div v-if="hasDays" class="region-details__row">
@@ -161,7 +164,7 @@
                         Relatieve toename vandaag (per 100 dzd inw)
                     </div>
                     <div class="region-details__value">
-                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreasDay()))}}
+                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreasDay(offset)))}}
                     </div>
                 </div>
                 <div class="region-details__row">
@@ -169,7 +172,7 @@
                         Toename laatste 7 dagen
                     </div>
                     <div class="region-details__value">
-                        {{format(regionOfFocus.getTotalIncreaseWeek())}}
+                        {{format(regionOfFocus.getTotalIncreaseWeek(0, offset))}}
                     </div>
                 </div>
                 <div class="region-details__row">
@@ -177,7 +180,7 @@
                         Relatieve toename laatste 7 dagen (per 100 dzd inw)
                     </div>
                     <div class="region-details__value">
-                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreaseWeek()))}}
+                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreaseWeek(offset)))}}
                     </div>
                 </div>
             </div>
@@ -261,7 +264,7 @@
 
                 .region-details__value {
                     font-weight: 700;
-                    font-family: Courier;
+                    font-family: $monospace;
                     font-size: 20px;
                     text-align: right;
                     width: calc(100% - 200px);

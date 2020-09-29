@@ -13,7 +13,16 @@
             signalingSystemPicker,
             colorSetPicker
         },
-        props: {},
+        props: {
+            showTools: {
+                type: Boolean,
+                required: true
+            },
+            showLegend: {
+                type: Boolean,
+                required: true
+            }
+        },
         computed: {
             colorSetting() {
                 return this.$store.state.ui.color;
@@ -33,10 +42,10 @@
 
 <template>
     <div class="map-tools">
-        <map-legend/>
-        <color-set-picker/>
-        <signaling-system-picker/>
-        <gradient-toggle/>
+        <map-legend v-if="showLegend"/>
+        <color-set-picker v-if="showTools"/>
+        <signaling-system-picker v-if="showTools"/>
+        <gradient-toggle v-if="showTools"/>
     </div>
 </template>
 

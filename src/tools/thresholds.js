@@ -83,13 +83,16 @@ const thresholdToColor = function(threshold, cases) {
         if (!store.state.settings.gradient) {
             return threshold.color[store.state.ui.color];
         } else {
-            if (!_prevThreshold(threshold) || !_nextThreshold(threshold)) {
+            let prev, next;
+            prev = _prevThreshold(threshold);
+            next = _nextThreshold(threshold);
+            if (!prev || !next) {
                 return threshold.color[store.state.ui.color];
             } else {
                 let colormap, maxOfNextColor, ratio;
                 maxOfNextColor = 0.65;
-                ratio = maxOfNextColor * (cases - _prevThreshold(threshold).n) / (threshold.n - _prevThreshold(threshold).n);
-                colormap = interpolate([threshold.color[store.state.ui.color], _nextThreshold(threshold).color[store.state.ui.color]]);
+                ratio = maxOfNextColor * (cases - prev.n) / (threshold.n - prev.n);
+                colormap = interpolate([threshold.color[store.state.ui.color], next.color[store.state.ui.color]]);
                 return colormap(ratio);
             }
         }

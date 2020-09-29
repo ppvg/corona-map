@@ -1,5 +1,5 @@
 <script>
-    import city from "@/components/trends/city";
+    import city from "@/components/main/trends/city";
     import swatch from "@/components/elements/swatch";
 
     export default {
@@ -17,15 +17,18 @@
             },
             typeLabel() {
                 return this.$store.getters['ui/typeLabel'](true).toLowerCase();
+            },
+            offset() {
+                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {
             getRegions(threshold) {
                 let regions = this.$store.getters['ui/regions'];
                 return regions.filter(region => {
-                    return region.getThreshold() === threshold;
-                }).sort((a,b) => (a.getTotalRelativeIncreaseWeek() < b.getTotalRelativeIncreaseWeek()) ? 1 : ((b.getTotalRelativeIncreaseWeek() < a.getTotalRelativeIncreaseWeek()) ? -1 : 0));
-            },
+                    return region.getThreshold(0, this.offset) === threshold;
+                }).sort((a,b) => (a.getTotalRelativeIncreaseWeek(this.offset) < b.getTotalRelativeIncreaseWeek(this.offset)) ? 1 : ((b.getTotalRelativeIncreaseWeek(this.offset) < a.getTotalRelativeIncreaseWeek(this.offset)) ? -1 : 0));
+            }
         }
     }
 </script>

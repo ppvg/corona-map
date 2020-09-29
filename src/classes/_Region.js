@@ -99,34 +99,39 @@ class _Region {
         return population;
     }
 
-    getTotalIncreaseDay(delta) {
+    getTotalIncreaseDay(delta, offset) {
         let increase, cities;
         increase = 0;
         cities = this.getRegions();
         for (let city of cities) {
-            increase += city.getIncreaseDay(delta);
+            increase += city.getIncreaseDay(delta, offset);
         }
         return increase;
     }
 
-    getTotalIncreaseWeek(delta) {
+    getTotalIncreaseWeek(delta, offset) {
         let increase, cities;
         increase = 0;
         cities = this.getRegions();
         for (let city of cities) {
-            increase += city.getIncreaseWeek(delta);
+            let thisIncrease = city.getIncreaseWeek(delta, offset);
+            if (thisIncrease === null) {
+                return null;
+            } else {
+                increase += thisIncrease;
+            }
         }
         return increase;
     }
 
-    getTotalRelativeIncreasDay() {
-        let increase = this.getTotalIncreaseDay();
+    getTotalRelativeIncreasDay(offset) {
+        let increase = this.getTotalIncreaseDay(0, offset);
         return 100000 * increase / this.getTotalPopulation();
     }
 
-    getTotalRelativeIncreaseWeek() {
+    getTotalRelativeIncreaseWeek(offset) {
         if (store.state.maps.current.settings.hasTests) {
-            let increase = this.getTotalIncreaseWeek();
+            let increase = this.getTotalIncreaseWeek(0, offset);
             return 100000 * increase / this.getTotalPopulation();
         } else {
             return 0;
@@ -163,19 +168,22 @@ class _Region {
         return this.getThreshold(1) !== this.getThreshold(0);
     }
 
-    getThreshold(delta = 0) {
+    getThreshold(delta = 0, offset) {
         let cases, signalingSystem;
         signalingSystem = store.state.signalingSystems.current;
         if (signalingSystem.days === 1) {
-            cases = this.getTotalIncreaseDay(delta);
+            cases = this.getTotalIncreaseDay(delta, offset);
         } else if (signalingSystem.days === 7) {
-            cases = this.getTotalIncreaseWeek(delta);
+            cases = this.getTotalIncreaseWeek(delta, offset);
+            if (cases === null) {
+                return null;
+            }
         }
         return thresholdTools.getThreshold(cases, this.getTotalPopulation(), signalingSystem.days);
     }
 
-    get color() {
-        return thresholdTools.thresholdToColor(this.getThreshold(), this.getTotalRelativeIncreaseWeek());
+    getColor(offset) {
+        return thresholdTools.thresholdToColor(this.getThreshold(0, offset), this.getTotalRelativeIncreaseWeek(offset));
     }
 
 

@@ -1,6 +1,8 @@
 <script>
     import * as d3 from 'd3';
     import $ from 'jquery';
+    import query from '@/components/elements/query'
+    import dateTools from '@/tools/date';
 
     // data
     import maps from '@/data/maps';
@@ -11,28 +13,12 @@
     import ageGroups from '@/data/age-groups';
     import signalingSystems from '@/data/signaling-systems';
 
-    import mapTests from "./components/map/map";
-    import searchRegions from "./components/regions/search/search-regions";
-    import credits from "./components/credits";
-    import query from '@/components/elements/query';
-    import headerMenu from "./components/header-menu";
-    import trends from "./components/trends/trends";
-    import regionDetails from "./components/regions/region-details";
-    import embedPopup from "./components/embed/embed-popup";
-    import regionTypePicker from "./components/regions/region-type/region-type-picker";
+
 
 
     export default {
         name: 'app',
         components: {
-            regionTypePicker,
-            embedPopup,
-            trends,
-            headerMenu,
-            credits,
-            searchRegions,
-            mapTests,
-            regionDetails
         },
         props: {},
         mixins: [query],
@@ -44,27 +30,6 @@
         computed: {
             dataLoaded() {
                 return this.$store.state.dataLoaded;
-            },
-            width() {
-                return this.$store.state.settings.canvasWidth + 20;
-            },
-            showCredits() {
-                return this.$store.state.ui.credits;
-            },
-            showEmbedPopup() {
-                return this.$store.state.ui.embedPopup;
-            },
-            showMap() {
-                return this.$store.state.ui.menu === 'map';
-            },
-            showRegion() {
-                return this.currentRegion;
-            },
-            currentRegion() {
-                return this.currentMap && this.$store.state[this.currentMap.module].current;
-            },
-            currentMap() {
-                return this.$store.state.maps.current;
             }
         },
         methods: {
@@ -99,7 +64,6 @@
                 $.getJSON(this.currentMap.url.regions, (regions) => {
                     let promises = [];
                     this.$store.commit(this.currentMap.module + '/init', regions);
-                    this.readQuery();
                     if (this.currentMap.settings.hasTests) {
                         promises.push(this.loadTests);
                     }
@@ -110,16 +74,19 @@
                         promises.push(this.loadSewageTreatmentPlants);
                     }
                     if (promises.length === 0) {
+                        this.readQuery();
                         this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
                     } else {
                         Promise.all(promises.map(p => p()))
                             .then((result) => {
+                                this.readQuery();
                                 this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
                             })
                             .catch(error => {
                                 console.error(error)
                             });
                     }
+
                 });
             },
             loadSewageTreatmentPlants() {
@@ -178,13 +145,18 @@
             },
 
             readQuery() {
-                let region, string;
+                let region, string, date, offset;
                 if (this.$route.query.region) {
                     string = decodeURI(this.$route.query.region);
                     region = this.$store.getters[this.currentMap.module + '/getItemByProperty']('title', string, true);
                     if (region) {
                         this.$store.commit(this.currentMap.module + '/setCurrent', region);
                     }
+                }
+                if (this.$route.query.date) {
+                    date = new Date(this.$route.query.date);
+                    offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, date.getTime());
+                    this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: offset});
                 }
                 if (this.$route.query.admin) {
                     this.$store.commit('ui/updateProperty', {key: 'admin', value: true});
@@ -224,6 +196,7 @@
                     totalLengthOfTestHistory -= 7;
                 }
                 totalLengthOfTestHistory /= this.currentMap.settings.testDataInterval;
+                this.$store.commit('ui/updateProperty', {key: 'todayInMs', value: today.getTime()});
                 this.$store.commit('ui/updateProperty', {key: 'today', value: today});
                 this.$store.commit('settings/updateProperty', {key: 'historyLength', value: totalLengthOfTestHistory});
                 this.dateKeys = dates;
@@ -245,21 +218,23 @@
                 };
 
                 for (let dateKey of this.dateKeys) {
+                    let positiveTests, administeredTests, day;
+                    day = {
+                        // ms: new Date(dateKey.dateString).getTime(),
+                        // date: dateKey.dateString,
+                        offset: dateKey.offset,
+                        positiveTests: null,
+                        administeredTests: null
+                    };
                     if (data[dateKey.positiveTestsKey]) {
-                        let positiveTests, administeredTests, day;
                         positiveTests = Number(data[dateKey.positiveTestsKey]);
-                        day = {
-                            // ms: new Date(dateKey.dateString).getTime(),
-                            // date: dateKey.dateString,
-                            offset: dateKey.offset,
-                            positiveTests
-                        };
+                        day.positiveTests = positiveTests;
                         if (this.currentMap.settings.hasAdministeredTests) {
                             administeredTests = Number(data[dateKey.administeredTestsKey]);
                             day.administeredTests = administeredTests;
                         }
-                        incidents.push(day);
                     }
+                    incidents.push(day);
                 }
                 if (this.currentMap.settings.testDataCumulative) {
                     for (let i = 0, l = incidents.length; i < l; i++) {
@@ -276,6 +251,7 @@
                 } else {
                     report.history = incidents;
                 }
+
                 key = data.Municipality_code;
                 if (this.$store.state[this.currentMap.module].dict[key]) {
                     region = this.$store.state[this.currentMap.module].dict[key];
@@ -284,9 +260,6 @@
                 } else {
                     console.log('not found ' + key);
                 }
-            },
-            openCredits() {
-                this.$store.commit('ui/updateProperty', {key: 'credits', value: true});
             }
         },
         mounted() {
@@ -298,41 +271,7 @@
 
 <template>
     <div class="app">
-        <header-menu v-if="dataLoaded"/>
-
-        <div
-            v-if="dataLoaded"
-            class="content">
-
-            <div
-                :style="{'width': width + 'px'}"
-                :class="{'panel--active': showMap}"
-                class="map-container panel">
-                <search-regions v-if="dataLoaded"/>
-                <region-type-picker/>
-                <map-tests v-if="dataLoaded"/>
-            </div>
-
-            <trends/>
-            <region-details
-                v-if="showRegion"
-                :region="currentRegion"/>
-            <div
-                v-else
-                class="region-details region-details--mobile">
-                Kies eerst een gemeente op de kaart.
-            </div>
-        </div>
-
-        <credits v-if="showCredits"/>
-
-        <embed-popup v-if="showEmbedPopup"/>
-
-        <div
-            @click="openCredits()"
-            class="open-credits">
-            Credits
-        </div>
+        <router-view v-if="dataLoaded"/>
     </div>
 </template>
 
@@ -348,69 +287,5 @@
         top: 0;
         width: 100%;
         height: 100%;
-
-        .header-menu {
-            height: 48px;
-        }
-
-        .content {
-            display: flex;
-            height: calc(100% - 48px);
-
-            .map-container {
-
-                .cities-panel {
-                    height: 40px;
-                }
-
-                .region-type-picker-2 {
-                    margin-bottom: 6px;
-                }
-
-                .map {
-                    height: calc(100% - 76px);
-                }
-            }
-
-            .trends {
-                width: 300px;
-            }
-
-            .region-details {
-                // 7 * 70 + 32 + scrollbar
-                width: 540px;
-            }
-
-            .region-details--mobile {
-                padding: 20px;
-                display: none;
-            }
-        }
-
-        .open-credits {
-            position: fixed;
-            right: 10px;
-            bottom: 6px;
-            cursor: pointer;
-            text-decoration: underline;
-            text-align: right;
-        }
-
-        @include mobile() {
-
-            .header-menu {
-                height: 64px;
-            }
-
-            .content {
-                display: block;
-                position: relative;
-                height: calc(100% - 64px);
-
-                .region-details--mobile {
-                    display: block;
-                }
-            }
-        }
     }
 </style>

@@ -1,0 +1,90 @@
+<script>
+    import City from "@/classes/City";
+
+    export default {
+        name: 'sewage-city-positive-tests',
+        components: {},
+        props: {
+            city: {
+                type: City,
+                required: true
+            },
+            settings: {
+                type: Object,
+                required: true
+            }
+        },
+        computed: {
+            positiveTests() {
+                return this.city.report.history.filter(day => {
+                    return day.offset <= this.settings.start && day.offset >= this.settings.end;
+                }).map(d => {
+                    return this.getRelative(d.positiveTests);
+                })
+            },
+            maxHeight() {
+                return Math.max(...this.positiveTests) + 10;
+            },
+            average() {
+                return Math.round(7 * this.positiveTests.reduce((a, b) => a + b, 0) / this.positiveTests.length);
+            }
+        },
+        methods: {
+            getRelative(value) {
+                return 100000 * value / this.city.population;
+            }
+        }
+    }
+</script>
+
+
+<template>
+    <div class="sewage-city-positive-tests">
+        <div
+            :style="{'height': maxHeight + 'px'}"
+            class="sewage-city-positive-tests__graph">
+            <div
+                v-for="positiveTest in positiveTests"
+                :style="{
+                    'height': positiveTest + 'px',
+                    'width': settings.width + 'px',
+                    'margin-right': settings.margin + 'px'
+                }"
+                :title="Math.round(positiveTest)"
+                class="sewage-city-positive-test__bar">
+            </div>
+        </div>
+
+        <div class="sewage-city-positive-tests__average">
+            <b>Positieve testen</b><br>
+            Gemiddeld per 7 dagen<br>
+            {{average}}
+        </div>
+    </div>
+</template>
+
+
+<style lang="scss">
+    @import '@/styles/variables.scss';
+
+    .sewage-city-positive-tests {
+        display: flex;
+        margin-bottom: 2px;
+
+        .sewage-city-positive-tests__graph {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            min-height: 60px;
+            border-bottom: 1px solid #000;
+
+            .sewage-city-positive-test__bar {
+                background: red;
+            }
+        }
+
+        .sewage-city-positive-tests__average {
+            padding: 4px;
+        }
+    }
+</style>

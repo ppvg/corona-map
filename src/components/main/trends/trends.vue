@@ -42,14 +42,13 @@
         :class="{'panel--active': showTrends}"
         class="trends panel">
         <div v-if="show">
-            
             <threshold-regions/>
             <red-regions/>
 <!--            <changed-status-regions/>-->
 <!--            <new-infection-cities/>-->
-            <cities-with-sewage-treatment-plant v-if="isAdmin"/>
-        </div>
 
+        </div>
+        <cities-with-sewage-treatment-plant v-if="isAdmin"/>
     </div>
 </template>
 

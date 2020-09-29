@@ -98,7 +98,7 @@
                 return thresholdTool.getThresholds();
             },
             threshold() {
-                return this.region.getThreshold();
+                return this.region.getThreshold(0, this.offset);
             },
             thresholdIndex() {
                 return this.thresholds.indexOf(this.threshold);
@@ -111,6 +111,9 @@
             },
             background() {
                 return this.region.color;
+            },
+            offset() {
+                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {}
@@ -123,13 +126,13 @@
         <div class="region-trend__container">
             <div class="region-trend__positive-tests">
                 <positive-tests
-                        :region="region"
-                        :weeks="2"
-                        :height="50"
-                        :zoom="0.75"
-                        :thresholds="false"
-                        :padding-bottom="0"
-                        :padding-right="0"/>
+                    :region="region"
+                    :weeks="2"
+                    :height="50"
+                    :zoom="0.75"
+                    :thresholds="false"
+                    :padding-bottom="0"
+                    :padding-right="0"/>
             </div>
 
             <div class="region-trend__verdict">
@@ -139,8 +142,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 </template>
 

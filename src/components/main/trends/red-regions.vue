@@ -1,5 +1,5 @@
 <script>
-    import region from "@/components/trends/region";
+    import region from "@/components/main/trends/region";
     import downloadRedRegions from "./download-red-regions";
 
     export default {
@@ -21,12 +21,12 @@
                 thresholds = this.signalingSystem.thresholds;
                 regions = this.$store.getters['ui/regions'];
                 return regions.filter(region => {
-                    return region.getThreshold() === thresholds[thresholds.length - 1];
+                    return region.getThreshold(0, this.offset) === thresholds[thresholds.length - 1];
                 }).sort((a,b) => {
                     if (this.signalingSystem.days === 1){
-                        return (a.getTotalRelativeIncreasDay() < b.getTotalRelativeIncreasDay()) ? 1 : ((b.getTotalRelativeIncreasDay() < a.getTotalRelativeIncreasDay()) ? -1 : 0)
+                        return (a.getTotalRelativeIncreasDay(this.offset) < b.getTotalRelativeIncreasDay(this.offset)) ? 1 : ((b.getTotalRelativeIncreasDay(this.offset) < a.getTotalRelativeIncreasDay(this.offset)) ? -1 : 0)
                     } else {
-                        return (a.getTotalRelativeIncreaseWeek() < b.getTotalRelativeIncreaseWeek()) ? 1 : ((b.getTotalRelativeIncreaseWeek() < a.getTotalRelativeIncreaseWeek()) ? -1 : 0)
+                        return (a.getTotalRelativeIncreaseWeek(this.offset) < b.getTotalRelativeIncreaseWeek(this.offset)) ? 1 : ((b.getTotalRelativeIncreaseWeek(this.offset) < a.getTotalRelativeIncreaseWeek(this.offset)) ? -1 : 0)
                     }
                 });
             },
@@ -38,14 +38,17 @@
             },
             typeLabel() {
                 return this.$store.getters['ui/typeLabel'](true).toLowerCase();
+            },
+            offset() {
+                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {
             getIndicator(region) {
                 if (this.signalingSystem.days === 1) {
-                    return region.getTotalRelativeIncreasDay();
+                    return region.getTotalRelativeIncreasDay(this.offset);
                 } else if (this.signalingSystem.days === 7) {
-                    return region.getTotalRelativeIncreaseWeek();
+                    return region.getTotalRelativeIncreaseWeek(this.offset);
                 }
             }
         }
@@ -64,7 +67,9 @@
                 <div
                     v-for="region in redRegions"
                     class="region__container">
-                    <region :region="region"/>
+                    <region
+                        :region="region"
+                        :offset="offset"/>
                     <div class="region__info">
                         ({{Math.round(getIndicator(region))}})
                     </div>

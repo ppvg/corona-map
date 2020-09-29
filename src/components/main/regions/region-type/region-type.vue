@@ -35,6 +35,9 @@
                 } else {
                     return 'calc(100% / ' + this.n + ')';
                 }
+            },
+            offset() {
+                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {
@@ -135,7 +138,7 @@
             v-if="type.showRegion"
             class="region-type__region">
             <swatch
-                    :threshold="type.getRegion().getThreshold()"/>
+                    :threshold="type.getRegion().getThreshold(0, offset)"/>
             <div class="region-type__value">
                 {{type.getRegion().title}}
             </div>

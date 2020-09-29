@@ -1,5 +1,5 @@
 <script>
-    import city from "@/components/trends/city";
+    import city from "@/components/main/trends/city";
 
     export default {
         name: 'new-infection-cities',

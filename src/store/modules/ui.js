@@ -9,6 +9,7 @@ const state = {
     hoverValue: '',
     currentRegionType: '',
     today: null,
+    todayInMs: null,
     credits: false,
     embedPopup: false,
     menu: 'map',
@@ -20,13 +21,13 @@ const state = {
 
 const getters = {
     ..._base.getters,
-    dateString(state, getters, rootState, rootGetters) {
+    dateString: (state, getters, rootState, rootGetters) => (dateFormat = 'EE d MMM') => {
         let today, offset, dateOfFocus;
         today = state.today;
         if (today) {
             offset = rootState.settings.currentDateOffset * rootState.maps.current.settings.testDataInterval;
             dateOfFocus = sub(today, {days: offset});
-            return format(dateOfFocus, 'EE d MMM', {locale: nl} );
+            return format(dateOfFocus, dateFormat, {locale: nl} );
         } else {
             return '';
         }
@@ -36,7 +37,11 @@ const getters = {
         today = state.today;
         if (today) {
             dateOfFocus = sub(today, {days: offset});
-            return format(dateOfFocus, dateFormat, {locale: nl} );
+            if (dateFormat === false) {
+                return dateOfFocus;
+            } else {
+                return format(dateOfFocus, dateFormat, {locale: nl} );
+            }
         } else {
             return '';
         }
