@@ -188,6 +188,21 @@
             }
         }
 
+        @include mobile() {
 
+            .compare__body {
+
+                .compare__map {
+
+                    .map {
+                        width: 100%;
+                    }
+
+                    .region-details__container {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 </style>

@@ -56,6 +56,10 @@
             },
             offset() {
                 return this.view.offset;
+            },
+            isMainPage() {
+                console.log(this.$route.name);
+                return this.$route.name === 'main';
             }
         },
         methods: {
@@ -101,7 +105,9 @@
             </div>
         </div>
 
-        <div class="menu">
+        <div
+            v-if="isMainPage"
+            class="menu">
             <menu-button
                 v-for="button in buttons"
                 :button="button"/>
@@ -125,6 +131,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 8px;
 
             .title__main {
                 font-size: 24px;
@@ -140,6 +147,8 @@
                     display: block;
                     margin-top: 2px;
                     font-family: $monospace;
+                    white-space: nowrap;
+                    margin-right: 4px;
 
                     input {
                         width: 120px;
@@ -179,11 +188,48 @@
         @include mobile() {
 
             .title {
-                height: 32px;
-                border-bottom: 1px solid #aaa;
 
-                h1 {
+                .title__main {
+                    font-size: 16px;
+                    line-height: 1.2;
+                    margin-right: 6px;
+                }
+
+                .title__sub {
                     font-size: 14px;
+
+                    .date-string {
+                        display: block;
+                        margin-top: 2px;
+                        font-family: $monospace;
+
+                        input {
+                            width: 120px;
+                            background: transparent;
+                            padding: 3px;
+                            font-size: inherit;
+                            cursor: pointer;
+
+                            &:hover {
+                                background: #ddd;
+                            }
+                        }
+                    }
+
+                    .total-infections {
+                        width: 80px;
+                        display: flex;
+
+                        .total-infections__n {
+                            padding: 2px 8px;
+                            border-radius: 2px;
+                            font-family: $monospace;
+                            display: inline-block;
+                            transition: all 0.1s ease;
+                            background: rgb(252, 203, 3);
+                            display: flex;
+                        }
+                    }
                 }
             }
 
