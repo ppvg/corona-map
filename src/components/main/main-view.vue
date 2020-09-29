@@ -8,6 +8,8 @@
     import embedPopup from "./embed/embed-popup";
     import regionTypePicker from "./regions/region-type/region-type-picker";
     import View from "@/classes/View";
+    import query from '@/components/elements/query'
+    import dateTools from '@/tools/date';
 
     export default {
         name: 'main-view',
@@ -22,6 +24,7 @@
             regionDetails
         },
         props: {},
+        mixins: [query],
         data() {
             return {
                 view: new View({id: 1})
@@ -56,7 +59,28 @@
         methods: {
             openCredits() {
                 this.$store.commit('ui/updateProperty', {key: 'credits', value: true});
+            },
+            readQuery() {
+                let region, string, date, offset;
+                if (this.$route.query.region) {
+                    string = decodeURI(this.$route.query.region);
+                    region = this.$store.getters[this.currentMap.module + '/getItemByProperty']('title', string, true);
+                    if (region) {
+                        this.view.currentRegion = region;
+                    }
+                }
+                if (this.$route.query.date) {
+                    date = new Date(this.$route.query.date);
+                    offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, date.getTime());
+                    this.view.offset = offset;
+                }
+                if (this.$route.query.admin) {
+                    this.$store.commit('ui/updateProperty', {key: 'admin', value: true});
+                }
             }
+        },
+        mounted() {
+            this.readQuery();
         }
     }
 </script>

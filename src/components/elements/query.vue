@@ -10,16 +10,13 @@
                 return this.$store.state.maps.current;
             },
             currentRegion() {
-                return this.currentMap && this.$store.state[this.currentMap.module].current;
+                return this.view.currentRegion;
             },
             routePath() {
                 return window.location.href.split('#')[0];
             },
-            offset() {
-                return this.$store.state.settings.currentDateOffset;
-            },
             date() {
-                let date = dateTools.getDateByOffset(this.offset);
+                let date = dateTools.getDateByOffset(this.view.offset);
                 return dateTools.formatDate(date);
             },
             query() {
@@ -31,7 +28,7 @@
                     }
                     query += this.currentRegion ? ('region=' + encodeURI(this.currentRegion.title)) : '';
                 }
-                if (this.offset > 0) {
+                if (this.view.offset > 0) {
                     query += '&date=' + this.date;
                 }
                 return query;
