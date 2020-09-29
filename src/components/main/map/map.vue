@@ -152,7 +152,8 @@
                 }, false);
             },
             getRegionForPoint(x, y) {
-                for (let region of this.regions) {
+                let reversed = this.regions.slice().reverse();
+                for (let region of reversed) {
                     for (let path of region.paths) {
                         if (this.ctx.isPointInPath(path.storedPaths['map'], x, y)) {
                             return region;

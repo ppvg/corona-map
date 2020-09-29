@@ -102,6 +102,41 @@ const maps = [
         id: 4,
         regionType: 'District',
         module: 'districts',
+        title: 'NL DE',
+        settings: {
+            regionTypes: ['district'],
+            pathOrigins: [],
+            hasAgeGroups: false,
+            hasTests: true,
+            hasAdministeredTests: false,
+            hasSewageTreatmentPlants: false,
+            testDataCumulative: true,
+            testDataInterval: 1,
+            generalInfoHasPopulation: true,
+            testAdapter: {
+                titleKey: 'Land/regio',
+                positiveTestsKey: '',
+                findColumn: function(column) {
+                    return column.indexOf('20') > -1;
+                }
+            },
+            map: {
+                latitude: 51.29,
+                longitude: 10.16,
+                stretch: 0.62,
+                zoom: 0.1
+            }
+        },
+        url: {
+            tests: 'data/maps/europa/cases.csv',
+            regions: 'data/maps/nl-de/nl-de.json',
+            ageGroups: '',
+            sewageTreatmentPlants: ''
+        }
+    }, {
+        id: 5,
+        regionType: 'District',
+        module: 'districts',
         title: 'Europa',
         settings: {
             regionTypes: ['district'],
