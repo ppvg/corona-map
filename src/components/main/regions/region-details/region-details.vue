@@ -1,20 +1,24 @@
 <script>
-    import positiveTests from "./tests/positive-tests";
-    import sewageTreatmentPlants from "../sewage-treatment-plants/sewage-treatment-plants";
-    import ageDistributionGraph from "./case-characteristics/age-distribution-graph";
     import _Region from "@/classes/_Region";
-    import loader from "@/components/elements/loader";
+    import View from "@/classes/View";
+
+    import positiveTests from "./tests/positive-tests";
+    import sewageTreatmentPlants from "./sewage-treatment-plants/sewage-treatment-plants";
+    import ageDistributionGraph from "./case-characteristics/age-distribution-graph";
     import ageDistributionGraphNormalised from "./case-characteristics/age-distribution-graph-normalised/age-distribution-graph-normalised";
     import ageDistributionTools from "./case-characteristics/age-distribution-graph-normalised/age-distribution-tools";
-    import regionRelations from "./region-type/region-relations";
-    import AdministeredTests from "./tests/administered-tests";
+    import regionRelations from "./../region-type/region-relations";
+    import administeredTests from "./tests/administered-tests";
     import regionTrend from "./region-trend";
+    import regionDetailsHead from "./region-details-head";
+    import loader from "@/components/elements/loader";
 
     export default {
         name: 'region-details',
         components: {
+            regionDetailsHead,
             regionTrend,
-            AdministeredTests,
+            administeredTests,
             regionRelations,
             ageDistributionTools,
             ageDistributionGraphNormalised,
@@ -24,6 +28,10 @@
             positiveTests
         },
         props: {
+            view: {
+                type: View,
+                required: true
+            },
             region: {
                 type: _Region,
                 required: true
@@ -34,25 +42,7 @@
                 return this.$store.state.signalingSystems.current.title === 'WHO' && this.currentMap.settings.testDataInterval * this.$store.state.settings.historyLength >= 14 ;
             },
             regionOfFocus() {
-                return this.$store.getters['ui/currentRegion'];
-            },
-            period1() {
-                let start, end, total;
-                total = 0;
-                start = 0; end = 7;
-                for (let i = start, l = end; i < l; i++){
-                    total += this.city.report.history[i];
-                }
-                return total;
-            },
-            period2() {
-                let start, end, total;
-                total = 0;
-                start = 7; end = 14;
-                for (let i = start, l = end; i < l; i++){
-                    total += this.city.report.history[i];
-                }
-                return total;
+                return this.$store.getters['ui/getRegionOfFocus'](this.region);
             },
             showDetails() {
                 return this.$store.state.ui.menu === 'city';
@@ -80,9 +70,6 @@
             },
             weeks() {
                 return this.$store.state.settings.weeks;
-            },
-            offset() {
-                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {
@@ -103,21 +90,15 @@
         :class="{'panel--active': showDetails}"
         class="region-details panel">
         <div class="region-card">
-            <div class="region-details__header">
-                <div
-                    :style="{'background': regionOfFocus.color}"
-                    class="dot"></div>
-                <div class="region-details__title">
-                    {{regionOfFocus.title}}
-                    <div v-if="regionOfFocus.regionType === 'sr'">
-                        {{region.safetyRegion_code}}
-                    </div>
-                </div>
-            </div>
+            <region-details-head
+                    :view="view"
+                    :region="regionOfFocus"/>
 
             <region-trend
-                    v-if="showTrend"
-                    :region="regionOfFocus"/>
+                v-if="showTrend"
+                :view="view"
+                :region="regionOfFocus"
+                :show-verdict="true"/>
         </div>
 
         <div class="region-details__info">
@@ -156,7 +137,7 @@
                         Toename vandaag
                     </div>
                     <div class="region-details__value">
-                        {{format(regionOfFocus.getTotalIncreaseDay(0, offset))}}
+                        {{format(regionOfFocus.getTotalIncreaseDay(0, view.offset))}}
                     </div>
                 </div>
                 <div v-if="hasDays" class="region-details__row">
@@ -164,7 +145,7 @@
                         Relatieve toename vandaag (per 100.000 inw)
                     </div>
                     <div class="region-details__value">
-                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreasDay(offset)))}}
+                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreasDay(view.offset)))}}
                     </div>
                 </div>
                 <div class="region-details__row">
@@ -172,7 +153,7 @@
                         Toename laatste 7 dagen
                     </div>
                     <div class="region-details__value">
-                        {{format(regionOfFocus.getTotalIncreaseWeek(0, offset))}}
+                        {{format(regionOfFocus.getTotalIncreaseWeek(0, view.offset))}}
                     </div>
                 </div>
                 <div class="region-details__row">
@@ -180,7 +161,7 @@
                         Relatieve toename laatste 7 dagen (per 100.000 inw)
                     </div>
                     <div class="region-details__value">
-                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreaseWeek(offset)))}}
+                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreaseWeek(view.offset)))}}
                     </div>
                 </div>
             </div>
@@ -224,21 +205,6 @@
             box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
             margin-bottom: 20px;
             border-radius: 4px;
-
-            .region-details__header {
-                font-weight: 700;
-                font-size: 20px;
-                margin-bottom: 12px;
-                display: flex;
-                align-items: center;
-
-                .dot {
-                    width: 12px;
-                    height: 12px;
-                    border-radius: 50%;
-                    margin-right: 10px;
-                }
-            }
         }
 
         .region-details__info {
@@ -251,11 +217,14 @@
                     font-weight: 700;
                     margin-bottom: 4px;
                 }
+
+                &:last-child {
+                    border-bottom: 0;
+                }
             }
 
             .region-details__row {
                 display: flex;
-                //align-items: center;
                 padding: 2px 0;
 
                 .region-details__label {

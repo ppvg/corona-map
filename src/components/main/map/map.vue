@@ -6,6 +6,7 @@
     import PointerCanvas from "./pointer-canvas";
     import embedButton from "./embed-button";
     import $ from 'jquery';
+    import View from "@/classes/View";
 
     export default {
         name: 'map-tests',
@@ -25,8 +26,8 @@
                 type: Boolean,
                 required: true
             },
-            offset: {
-                type: Number,
+            view: {
+                type: View,
                 required: true
             }
         },
@@ -128,12 +129,12 @@
                     y = event.offsetY;
                     region = this.getRegionForPoint(x, y);
                     if (region) {
-                        this.$store.commit(this.currentMap.module + '/setCurrent', region);
+                        this.view.currentRegion = region;
                         this.$store.commit('ui/updateProperty', {key: 'menu', value: 'city'});
                         this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
                         this.$store.commit('ui/updateProperty', {key: 'hoverValue', value: ''});
                     } else {
-                        this.$store.commit(this.currentMap.module + '/setCurrent', null);
+                        this.view.currentRegion = region;
                     }
                 }, false);
             },
@@ -171,7 +172,7 @@
                     zoom: this.$store.state.settings.zoom,
                     fill: true
                 };
-                canvasTools.draw(this.ctx, this.containerRegions, settings, this.offset);
+                canvasTools.draw(this.ctx, this.containerRegions, settings, this.view.offset);
             },
             clear() {
                 this.ctx.clearRect(0, 0, this.width, this.height);
@@ -182,10 +183,11 @@
 
         },
         watch: {
-            offset: {
+            view: {
                 handler: function() {
                     this.draw();
-                }
+                },
+                deep: true
             },
             currentRegionType: {
                 handler: function() {

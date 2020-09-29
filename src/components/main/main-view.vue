@@ -4,7 +4,7 @@
     import credits from "./credits";
     import headerMenu from "./header-menu";
     import trends from "./trends/trends";
-    import regionDetails from "./regions/region-details";
+    import regionDetails from "./regions/region-details/region-details";
     import embedPopup from "./embed/embed-popup";
     import regionTypePicker from "./regions/region-type/region-type-picker";
 
