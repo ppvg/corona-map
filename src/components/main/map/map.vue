@@ -218,6 +218,7 @@
     <div class="map">
         <canvas :id="'canvas-' + id"></canvas>
         <pointer-canvas
+            :view="view"
             :width="width"
             :height="height"/>
         <map-tools
