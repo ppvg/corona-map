@@ -1,8 +1,14 @@
 <script>
+    import View from "@/classes/View";
+
     export default {
         name: 'test-graph-mixin',
         components: {},
         props: {
+            view: {
+                type: View,
+                required: true
+            },
             weeks: {
                 type: Number,
                 required: true
@@ -48,7 +54,7 @@
             },
             // settings
             offset() {
-                return this.$store.state.settings.currentDateOffset;
+                return this.view.offset;
             },
             currentMap() {
                 return this.$store.state.maps.current;

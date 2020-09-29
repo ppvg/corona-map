@@ -1,10 +1,12 @@
 <script>
+    import View from "@/classes/View";
+
     export default {
         name: 'total-infections',
         components: {},
         props: {
-            offset: {
-                type: Number,
+            view: {
+                type: View,
                 required: true
             }
         },
@@ -18,7 +20,7 @@
             n() {
                 let n = 0;
                 for (let region of this.regions) {
-                    n += region.getIncreaseDay(0, this.offset);
+                    n += region.getIncreaseDay(0, this.view.offset);
                 }
                 return n;
             },

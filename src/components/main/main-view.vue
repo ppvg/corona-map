@@ -4,9 +4,12 @@
     import credits from "./credits";
     import headerMenu from "./header-menu";
     import trends from "./trends/trends";
-    import regionDetails from "./regions/region-details";
+    import regionDetails from "./regions/region-details/region-details";
     import embedPopup from "./embed/embed-popup";
     import regionTypePicker from "./regions/region-type/region-type-picker";
+    import View from "@/classes/View";
+    import query from '@/components/elements/query'
+    import dateTools from '@/tools/date';
 
     export default {
         name: 'main-view',
@@ -21,6 +24,12 @@
             regionDetails
         },
         props: {},
+        mixins: [query],
+        data() {
+            return {
+                view: new View({id: 1})
+            }
+        },
         computed: {
             width() {
                 return this.$store.state.settings.canvasWidth + 20;
@@ -37,11 +46,8 @@
             showTrends() {
                 return this.currentMap.settings.hasTests;
             },
-            showRegion() {
-                return this.currentRegion;
-            },
             currentRegion() {
-                return this.currentMap && this.$store.state[this.currentMap.module].current;
+                return this.view.currentRegion;
             },
             currentMap() {
                 return this.$store.state.maps.current;
@@ -53,7 +59,28 @@
         methods: {
             openCredits() {
                 this.$store.commit('ui/updateProperty', {key: 'credits', value: true});
+            },
+            readQuery() {
+                let region, string, date, offset;
+                if (this.$route.query.region) {
+                    string = decodeURI(this.$route.query.region);
+                    region = this.$store.getters[this.currentMap.module + '/getItemByProperty']('title', string, true);
+                    if (region) {
+                        this.view.currentRegion = region;
+                    }
+                }
+                if (this.$route.query.date) {
+                    date = new Date(this.$route.query.date);
+                    offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, date.getTime());
+                    this.view.offset = offset;
+                }
+                if (this.$route.query.admin) {
+                    this.$store.commit('ui/updateProperty', {key: 'admin', value: true});
+                }
             }
+        },
+        mounted() {
+            this.readQuery();
         }
     }
 </script>
@@ -62,7 +89,7 @@
 <template>
     <div class="main-view">
         <header-menu
-            :offset="offset"
+            :view="view"
             :editable="true"/>
 
         <div class="content">
@@ -72,20 +99,26 @@
                     :class="{'panel--active': showMap}"
                     class="map-container panel">
                 <search-regions/>
-                <region-type-picker/>
+                <region-type-picker
+                    :view="view"/>
                 <map-tests
+                    :view="view"
                     :show-tools="true"
                     :show-legend="true"
                     :offset="offset"/>
             </div>
 
-            <trends v-if="showTrends"/>
+            <trends
+                v-if="showTrends"
+                :view="view"/>
+
             <region-details
-                    v-if="showRegion"
-                    :region="currentRegion"/>
+                v-if="currentRegion"
+                :view="view"
+                :region="currentRegion"/>
             <div
-                    v-else
-                    class="region-details region-details--mobile">
+                v-else
+                class="region-details region-details--mobile">
                 Kies eerst een gemeente op de kaart.
             </div>
         </div>

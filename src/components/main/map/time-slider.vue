@@ -1,29 +1,35 @@
 <script>
     import VueSlider from 'vue-slider-component'
     import 'vue-slider-component/theme/default.css'
-    import TimeTools from "./time-tools";
+    import timeTools from "./time-tools";
+    import View from '@/classes/View';
 
     export default {
         name: 'time-slider',
         components: {
-            TimeTools,
+            timeTools,
             VueSlider
         },
-        props: {},
+        props: {
+            view: {
+                type: View,
+                required: true
+            }
+        },
         computed: {
-            currentDateOffset: {
+            reversedOffset: {
                 get() {
-                    return this.historyLength - this.$store.state.settings.currentDateOffset;
+                    return this.historyLength - this.view.offset;
                 },
                 set(value) {
-                    this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: (this.historyLength - value)});
+                    this.view.offset = (this.historyLength - value)
                 }
             },
             historyLength() {
                 return this.$store.state.settings.historyLength;
             },
             date() {
-                return this.$store.getters['ui/dateString']();
+                return this.$store.getters['ui/getDateByOffset'](this.view.offset);
             }
         },
         methods: {}
@@ -36,7 +42,7 @@
 
         <div class="vue-slider__container">
             <vue-slider
-                v-model="currentDateOffset"
+                v-model="reversedOffset"
                 :min="0"
                 :max="historyLength"
                 :interval="1"
@@ -44,7 +50,8 @@
                 :duration="0"/>
         </div>
 
-        <time-tools/>
+        <time-tools
+            :view="view"/>
     </div>
 </template>
 

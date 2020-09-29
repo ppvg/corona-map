@@ -1,5 +1,6 @@
 <script>
     import _Region from "@/classes/_Region";
+    import View from "@/classes/View";
     import PositiveTests from "./tests/positive-tests";
     import thresholdTool from "@/tools/thresholds";
 
@@ -7,8 +8,16 @@
         name: 'region-trend',
         components: {PositiveTests},
         props: {
+            view: {
+                type: View,
+                required: true
+            },
             region: {
                 type: _Region,
+                required: true
+            },
+            showVerdict: {
+                type: Boolean,
                 required: true
             }
         },
@@ -98,7 +107,7 @@
                 return thresholdTool.getThresholds();
             },
             threshold() {
-                return this.region.getThreshold(0, this.offset);
+                return this.region.getThreshold(0, this.view.offset);
             },
             thresholdIndex() {
                 return this.thresholds.indexOf(this.threshold);
@@ -111,9 +120,6 @@
             },
             background() {
                 return this.region.color;
-            },
-            offset() {
-                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {}
@@ -126,6 +132,7 @@
         <div class="region-trend__container">
             <div class="region-trend__positive-tests">
                 <positive-tests
+                    :view="view"
                     :region="region"
                     :weeks="2"
                     :height="50"
@@ -135,7 +142,9 @@
                     :padding-right="0"/>
             </div>
 
-            <div class="region-trend__verdict">
+            <div
+                v-if="showVerdict"
+                class="region-trend__verdict">
                 {{verdict.title}}
                 <div class="region-trend__note">
                     Deze kwalificatie is nog experimenteel

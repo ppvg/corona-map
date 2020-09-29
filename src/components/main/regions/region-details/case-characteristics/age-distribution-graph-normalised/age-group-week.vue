@@ -2,11 +2,16 @@
     import GGD from "@/classes/GGD";
     import Country from "@/classes/Country";
     import thresholdTools from "@/tools/thresholds";
+    import View from "@/classes/View";
 
     export default {
         name: 'age-group-week',
         components: {},
         props: {
+            view: {
+                type: View,
+                required: true
+            },
             region: {
                 type: GGD | Country,
                 required: true
@@ -28,13 +33,10 @@
             width() {
                 return 7 * this.$store.state.settings.step;
             },
-            currentDateOffset() {
-                return this.$store.state.settings.currentDateOffset;
-            },
             cases() {
                 let cases, offset, start;
                 cases = 0;
-                offset = (this.week * 7) + this.currentDateOffset;
+                offset = (this.week * 7) + this.view.offset;
                 start = this.region.ageGroupReport.length - 1 - offset;
                 for (let i = start; i > start - 7; i--) {
                     let date, day, ageGroup;

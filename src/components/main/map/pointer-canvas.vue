@@ -1,10 +1,15 @@
 <script>
     import canvasTools from '@/tools/canvas';
+    import View from "@/classes/View";
 
     export default {
         name: 'pointer-canvas',
         components: {},
         props: {
+            view: {
+                type: View,
+                required: true
+            },
             width: {
                 type: Number,
                 required: true
@@ -16,7 +21,7 @@
         },
         computed: {
             canvas() {
-                return document.getElementById('pointer-canvas');
+                return document.getElementById('pointer-canvas-' + this.id);
             },
             ctx() {
                 return this.canvas.getContext('2d');
@@ -28,8 +33,14 @@
                 return this.$store.state.maps.current;
             },
             currentRegion() {
-                return this.$store.getters['ui/currentRegion'];
-            },
+                return this.view.currentRegion;
+            }
+        },
+        data() {
+            let id = Math.round(Math.random() * 1000000);
+            return {
+                id
+            }
         },
         methods: {
             showCurrentRegion() {
@@ -45,7 +56,7 @@
                 this.clear();
                 if (this.currentRegion) {
                     this.ctx.strokeStyle = '#000';
-                    canvasTools.drawRegionContainer(this.ctx, this.currentRegion, settings);
+                    canvasTools.drawRegionContainer(this.ctx, this.currentRegion, settings, this.view.offset);
                 }
             },
             clear() {
@@ -64,7 +75,8 @@
 
 <template>
     <canvas
-        id="pointer-canvas"
+        :id="'pointer-canvas-' + id"
+        class="pointer-canvas"
         :width="width"
         :height="height"></canvas>
 </template>
@@ -73,7 +85,7 @@
 <style lang="scss">
     @import '@/styles/variables.scss';
 
-    #pointer-canvas {
+    .pointer-canvas {
         pointer-events: none;
     }
 </style>

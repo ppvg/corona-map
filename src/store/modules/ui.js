@@ -62,8 +62,7 @@ const getters = {
                 return 'countries';
         }
     },
-    currentRegion(state, getters, rootState, rootGetters) {
-        let region = rootState[rootState.maps.current.module].current;
+    getRegionOfFocus:(state, getters, rootState, rootGetters) => (region) => {
         if (region) {
             switch(state.currentRegionType) {
                 case 'district':

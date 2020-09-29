@@ -1,8 +1,6 @@
 <script>
     import * as d3 from 'd3';
     import $ from 'jquery';
-    import query from '@/components/elements/query'
-    import dateTools from '@/tools/date';
 
     // data
     import maps from '@/data/maps';
@@ -21,7 +19,6 @@
         components: {
         },
         props: {},
-        mixins: [query],
         data() {
             return {
                 dateKeys: null
@@ -30,6 +27,9 @@
         computed: {
             dataLoaded() {
                 return this.$store.state.dataLoaded;
+            },
+            currentMap() {
+                return this.$store.state.maps.current;
             }
         },
         methods: {
@@ -74,19 +74,16 @@
                         promises.push(this.loadSewageTreatmentPlants);
                     }
                     if (promises.length === 0) {
-                        this.readQuery();
                         this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
                     } else {
                         Promise.all(promises.map(p => p()))
                             .then((result) => {
-                                this.readQuery();
                                 this.$store.commit('updateProperty', {key: 'dataLoaded', value: true});
                             })
                             .catch(error => {
                                 console.error(error)
                             });
                     }
-
                 });
             },
             loadSewageTreatmentPlants() {
@@ -108,6 +105,7 @@
                                 adapter = {
                                     titleKey: 'Municipality_code',
                                     positiveTestsKey: 'Total_reported.',
+                                    administeredTestsKey: 'Total_administered.',
                                     findColumn: function(column) {
                                         return column.indexOf('Total_reported.') > -1;
                                     }
@@ -127,7 +125,6 @@
                 })
             },
             loadAgeGroupsForCities() {
-                console.log("!");
                 return new Promise((resolve, reject) => {
                     d3.csv(this.currentMap.url.ageGroups)
                         .then((result) => {
@@ -158,29 +155,9 @@
                         });
                 });
             },
-
-            readQuery() {
-                let region, string, date, offset;
-                if (this.$route.query.region) {
-                    string = decodeURI(this.$route.query.region);
-                    region = this.$store.getters[this.currentMap.module + '/getItemByProperty']('title', string, true);
-                    if (region) {
-                        this.$store.commit(this.currentMap.module + '/setCurrent', region);
-                    }
-                }
-                if (this.$route.query.date) {
-                    date = new Date(this.$route.query.date);
-                    offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, date.getTime());
-                    this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: offset});
-                }
-                if (this.$route.query.admin) {
-                    this.$store.commit('ui/updateProperty', {key: 'admin', value: true});
-                }
-            },
             getDate(columns, adapter) {
                 let dates, today, first, last, totalLengthOfTestHistory;
                 dates = [];
-
                 for (let column of columns) {
                     if (adapter.findColumn(column)) {
                         let dateString, date;
@@ -191,7 +168,7 @@
                         }
                         dates.push({
                             positiveTestsKey: column,
-                            administeredTestsKey: (adapter.positiveTestsKey + dateString),
+                            administeredTestsKey: (adapter.administeredTestsKey + dateString),
                             dateString,
                             ms: new Date(dateString).getTime()
                         });

@@ -2,11 +2,16 @@
     import GGD from "@/classes/GGD";
     import Country from "@/classes/Country";
     import AgeGroupWeek from "./age-group-week";
+    import View from "@/classes/View";
 
     export default {
         name: 'age-group',
         components: {AgeGroupWeek},
         props: {
+            view: {
+                type: View,
+                required: true
+            },
             region: {
                 type: GGD | Country,
                 required: true
@@ -21,9 +26,6 @@
             }
         },
         computed: {
-            currentDateOffset() {
-                return this.$store.state.settings.currentDateOffset
-            },
             population() {
                 let population = 0;
                 for (let city of this.region.getRegions()) {
@@ -39,10 +41,10 @@
             },
             opacityCover() {
                 let uncertainDays = 3;
-                if (this.currentDateOffset > uncertainDays) {
+                if (this.view.offset > uncertainDays) {
                     return 0;
                 } else {
-                    return 100 - (this.currentDateOffset * (100 / uncertainDays))
+                    return 100 - (this.view.offset * (100 / uncertainDays))
                 }
             }
         },
@@ -56,6 +58,7 @@
         <div class="age-group__weeks">
             <age-group-week
                 v-for="week in weeks"
+                :view="view"
                 :week="week"
                 :age-group="ageGroup"
                 :region="region"
