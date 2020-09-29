@@ -1,4 +1,5 @@
 <script>
+    import View from "@/classes/View";
     import _Region from "@/classes/_Region";
     import swatch from "@/components/elements/swatch";
 
@@ -12,8 +13,8 @@
                 type: _Region,
                 required: true
             },
-            offset: {
-                type: Number,
+            view: {
+                type: View,
                 required: true
             }
         },
@@ -28,7 +29,7 @@
         methods: {
             selectRegion() {
                 if (this.region.regionType === 'city' || this.region.regionType === 'district') {
-                    this.$store.commit(this.currentMap.module + '/setCurrent', this.region);
+                    this.view.currentRegion = this.region;
                 }
                 this.$store.commit('ui/updateProperty', {key: 'searchValue', value: ''});
             }
@@ -42,7 +43,7 @@
         @click="selectRegion()"
         :class="{'region--current': isCurrent}"
         class="region">
-        <swatch :threshold="region.getThreshold(0, offset)"/>
+        <swatch :threshold="region.getThreshold(0, view.offset)"/>
 
         <div class="region__title">
             {{region.title}}

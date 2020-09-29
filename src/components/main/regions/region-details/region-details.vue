@@ -12,10 +12,12 @@
     import regionTrend from "./region-trend";
     import regionDetailsHead from "./region-details-head";
     import loader from "@/components/elements/loader";
+    import regionDetailsNumbers from "./region-details-numbers";
 
     export default {
         name: 'region-details',
         components: {
+            regionDetailsNumbers,
             regionDetailsHead,
             regionTrend,
             administeredTests,
@@ -56,9 +58,6 @@
             date() {
                 return this.$store.getters['ui/dateString']();
             },
-            hasDays() {
-                return this.$store.state.maps.current.settings.testDataInterval === 1;
-            },
             hasSewageTreatmentPlants() {
                 return this.$store.state.maps.current.settings.hasSewageTreatmentPlants;
             },
@@ -72,15 +71,7 @@
                 return this.$store.state.settings.weeks;
             }
         },
-        methods: {
-            format(value) {
-                if (value > 0) {
-                    return '+' + value;
-                } else {
-                    return value;
-                }
-            }
-        }
+        methods: {}
     }
 </script>
 
@@ -91,8 +82,8 @@
         class="region-details panel">
         <div class="region-card">
             <region-details-head
-                    :view="view"
-                    :region="regionOfFocus"/>
+                :view="view"
+                :region="regionOfFocus"/>
 
             <region-trend
                 v-if="showTrend"
@@ -121,50 +112,10 @@
                 </div>
                 <age-distribution-tools/>
             </div>
-            <div class="region-details__section">
-                <div class="region-details__row">
-                    <div class="region-details__label">
-                        Inwoners
-                    </div>
-                    <div class="region-details__value">
-                        {{regionOfFocus.getTotalPopulation()}}
-                    </div>
-                </div>
-            </div>
-            <div class="region-details__section">
-                <div v-if="hasDays" class="region-details__row">
-                    <div class="region-details__label">
-                        Toename vandaag
-                    </div>
-                    <div class="region-details__value">
-                        {{format(regionOfFocus.getTotalIncreaseDay(0, view.offset))}}
-                    </div>
-                </div>
-                <div v-if="hasDays" class="region-details__row">
-                    <div class="region-details__label">
-                        Relatieve toename vandaag (per 100.000 inw)
-                    </div>
-                    <div class="region-details__value">
-                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreasDay(view.offset)))}}
-                    </div>
-                </div>
-                <div class="region-details__row">
-                    <div class="region-details__label">
-                        Toename laatste 7 dagen
-                    </div>
-                    <div class="region-details__value">
-                        {{format(regionOfFocus.getTotalIncreaseWeek(0, view.offset))}}
-                    </div>
-                </div>
-                <div class="region-details__row">
-                    <div class="region-details__label">
-                        Relatieve toename laatste 7 dagen (per 100.000 inw)
-                    </div>
-                    <div class="region-details__value">
-                        {{format(Math.round(regionOfFocus.getTotalRelativeIncreaseWeek(view.offset)))}}
-                    </div>
-                </div>
-            </div>
+
+            <region-details-numbers
+                :view="view"
+                :region="regionOfFocus"/>
 
             <div class="region-details__section">
                 <div class="region-details__section-header">

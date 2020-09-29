@@ -1,4 +1,5 @@
 <script>
+    import View from "@/classes/View";
     import region from "@/components/main/trends/region";
     import downloadRedRegions from "./download-red-regions";
 
@@ -8,7 +9,12 @@
             downloadRedRegions,
             region
         },
-        props: {},
+        props: {
+            view: {
+                type: View,
+                required: true
+            }
+        },
         computed: {
             signalingSystem() {
                 return this.$store.state.signalingSystems.current;
@@ -68,8 +74,8 @@
                     v-for="region in redRegions"
                     class="region__container">
                     <region
-                        :region="region"
-                        :offset="offset"/>
+                        :view="view"
+                        :region="region"/>
                     <div class="region__info">
                         ({{Math.round(getIndicator(region))}})
                     </div>

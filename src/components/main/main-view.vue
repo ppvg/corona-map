@@ -7,6 +7,7 @@
     import regionDetails from "./regions/region-details/region-details";
     import embedPopup from "./embed/embed-popup";
     import regionTypePicker from "./regions/region-type/region-type-picker";
+    import View from "@/classes/View";
 
     export default {
         name: 'main-view',
@@ -21,6 +22,11 @@
             regionDetails
         },
         props: {},
+        data() {
+            return {
+                view: new View({id: 1})
+            }
+        },
         computed: {
             width() {
                 return this.$store.state.settings.canvasWidth + 20;
@@ -37,11 +43,8 @@
             showTrends() {
                 return this.currentMap.settings.hasTests;
             },
-            showRegion() {
-                return this.currentRegion;
-            },
             currentRegion() {
-                return this.currentMap && this.$store.state[this.currentMap.module].current;
+                return this.view.currentRegion;
             },
             currentMap() {
                 return this.$store.state.maps.current;
@@ -74,18 +77,23 @@
                 <search-regions/>
                 <region-type-picker/>
                 <map-tests
+                    :view="view"
                     :show-tools="true"
                     :show-legend="true"
                     :offset="offset"/>
             </div>
 
-            <trends v-if="showTrends"/>
+            <trends
+                v-if="showTrends"
+                :view="view"/>
+
             <region-details
-                    v-if="showRegion"
-                    :region="currentRegion"/>
+                v-if="currentRegion"
+                :view="view"
+                :region="currentRegion"/>
             <div
-                    v-else
-                    class="region-details region-details--mobile">
+                v-else
+                class="region-details region-details--mobile">
                 Kies eerst een gemeente op de kaart.
             </div>
         </div>

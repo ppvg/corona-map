@@ -1,7 +1,6 @@
 <script>
-    import newInfectionCities from "./new-infection-cities";
+    import View from "@/classes/View";
     import redRegions from "./red-regions";
-    import changedStatusRegions from "./changed-status-regions";
     import thresholdRegions from "./threshold-regions";
     import thresholdTools from '@/tools/thresholds';
     import citiesWithSewageTreatmentPlant from "./cities-with-sewage-treatment-plant";
@@ -11,11 +10,14 @@
         components: {
             citiesWithSewageTreatmentPlant,
             thresholdRegions,
-            newInfectionCities,
             redRegions,
-            changedStatusRegions
         },
-        props: {},
+        props: {
+            view: {
+                type: View,
+                required: true
+            }
+        },
         data() {
             return {
                 thresholds: thresholdTools.getThresholds()
@@ -42,13 +44,14 @@
         :class="{'panel--active': showTrends}"
         class="trends panel">
         <div v-if="show">
-            <threshold-regions/>
-            <red-regions/>
-<!--            <changed-status-regions/>-->
-<!--            <new-infection-cities/>-->
-
+            <threshold-regions
+                :view="view"/>
+            <red-regions
+                :view="view"/>
         </div>
-        <cities-with-sewage-treatment-plant v-if="isAdmin"/>
+        <cities-with-sewage-treatment-plant
+            v-if="isAdmin"
+            :view="view"/>
     </div>
 </template>
 
