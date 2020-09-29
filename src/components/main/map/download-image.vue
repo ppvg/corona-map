@@ -21,6 +21,9 @@
             },
             currentMap() {
                 return this.$store.state.maps.current;
+            },
+            offset() {
+                return this.$store.state.settings.currentDateOffset;
             }
         },
         methods: {
@@ -53,7 +56,7 @@
                     this.addDate(ctx);
                     this.addLegend(ctx);
                     this.addRedCities(ctx);
-                    canvasTools.draw(ctx, this.regions, settings);
+                    canvasTools.draw(ctx, this.regions, settings, this.offset);
                     this.addCreator(ctx, width, height);
 
                     downloadLink.setAttribute('download', 'corona-status-' + this.dateStringdashes + '.png');
