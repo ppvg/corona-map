@@ -230,7 +230,9 @@
             :view="view"/>
 
         <embed-button v-if="showTools"/>
-        <download-image v-if="showTools"/>
+        <download-image
+            v-if="showTools"
+            :view="view"/>
     </div>
 </template>
 

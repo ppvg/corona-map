@@ -171,6 +171,7 @@
                     right: 10px;
                     top: 10px;
                     width: 200px;
+                    z-index: 1;
 
                     .region-details__row {
                         display: block;

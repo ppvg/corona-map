@@ -162,6 +162,7 @@
             box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
             margin-bottom: 20px;
             border-radius: 4px;
+            background: #fff;
         }
 
         .region-details__info {
