@@ -128,6 +128,7 @@
 
                 <administered-tests
                         v-if="currentMap.settings.hasAdministeredTests"
+                        :view="view"
                         :region="regionOfFocus"
                         :weeks="weeks"/>
             </div>
@@ -137,7 +138,8 @@
                     class="region-details__section">
                 <div class="region-details__row">
                     <sewage-treatment-plants
-                            :region="regionOfFocus"/>
+                        :view="view"
+                        :region="regionOfFocus"/>
                 </div>
             </div>
         </div>

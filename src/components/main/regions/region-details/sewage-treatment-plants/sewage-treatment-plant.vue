@@ -1,6 +1,7 @@
 <script>
     import SewageTreatmentPlant from "@/classes/SewageTreatmentPlant";
     import rnaLevelsGraph from "./rna-levels-graph";
+    import View from "@/classes/View";
 
     export default {
         name: 'sewage-treatment-plant',
@@ -8,6 +9,10 @@
             rnaLevelsGraph
         },
         props: {
+            view: {
+                type: View,
+                required: true
+            },
             sewageTreatmentPlant: {
                 type: SewageTreatmentPlant,
                 required: true
@@ -26,6 +31,7 @@
         </div>
         <div class="sewage-treatment-plant__graph">
             <rna-levels-graph
+                :view="view"
                 :sewage-treatment-plant="sewageTreatmentPlant"/>
         </div>
     </div>
