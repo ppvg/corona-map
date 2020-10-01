@@ -1,4 +1,5 @@
 <script>
+    import View from "@/classes/View";
     import region from "@/components/main/trends/region";
 
     export default {
@@ -6,7 +7,12 @@
         components: {
             region
         },
-        props: {},
+        props: {
+            view: {
+                type: View,
+                required: true
+            }
+        },
         data() {
             return {
                 dateOffsetMin: 7,
@@ -51,8 +57,8 @@
             <p>
                 Algeheel dagen terug in de tijd
                 <input
-                        type="number"
-                        v-model="overallOffset"><br>
+                    type="number"
+                    v-model="overallOffset"><br>
                 (160 is ongeveer maart/april)
             </p>
             <p>
@@ -71,6 +77,7 @@
             <div class="cities__list">
                 <region
                     v-for="region in regions"
+                    :view="view"
                     :region="region"/>
             </div>
         </div>

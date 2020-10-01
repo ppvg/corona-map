@@ -1,6 +1,7 @@
 <script>
     import sewageTreatmentPlant from "./sewage-treatment-plant";
     import _Region from "@/classes/_Region";
+    import View from "@/classes/View";
 
     export default {
         name: 'sewage-treatment-plants',
@@ -8,6 +9,10 @@
             sewageTreatmentPlant
         },
         props: {
+            view: {
+                type: View,
+                required: true
+            },
             region: {
                 type: _Region,
                 required: true
@@ -34,6 +39,7 @@
         <div class="sewage-treatment-plants__list">
             <sewage-treatment-plant
                 v-for="sewageTreatmentPlant in sewageTreatmentPlants"
+                :view="view"
                 :sewage-treatment-plant="sewageTreatmentPlant"/>
         </div>
 

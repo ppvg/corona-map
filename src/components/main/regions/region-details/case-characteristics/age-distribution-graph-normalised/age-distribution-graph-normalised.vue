@@ -1,5 +1,6 @@
 <script>
     import GGD from "@/classes/GGD";
+    import View from "@/classes/View";
     import Country from "@/classes/Country";
     import ageGroups from "@/data/age-groups";
     import ageGroup from "./age-group";
@@ -17,6 +18,10 @@
             }
         },
         props: {
+            view: {
+                type: View,
+                required: true
+            },
             region: {
                 type: GGD | Country,
                 required: true
@@ -35,9 +40,11 @@
 <template>
     <div class="age-distribution-graph-normalised">
         <age-distribution-header
+            :view="view"
             :weeks="weeks"/>
         <age-group
             v-for="ageGroup in ageGroups"
+            :view="view"
             :age-group="ageGroup"
             :region="region"
             :weeks="weeks"/>

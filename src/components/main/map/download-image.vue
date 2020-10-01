@@ -1,17 +1,23 @@
 <script>
     import canvasTools from '@/tools/canvas';
     import thresholdTools from '@/tools/thresholds';
+    import View from "@/classes/View";
 
     export default {
         name: 'download-image',
         components: {},
-        props: {},
+        props: {
+            view: {
+                type: View,
+                required: true
+            }
+        },
         computed: {
             regions() {
                 return this.$store.getters['ui/regions'];
             },
             dateString() {
-                return this.$store.getters['ui/dateString']();
+                return this.$store.getters['ui/getDateByOffset'](this.view.offset);
             },
             dateStringdashes() {
                 return this.dateString.replace(/\s/g , "-");
@@ -53,10 +59,10 @@
                     this.addDate(ctx);
                     this.addLegend(ctx);
                     this.addRedCities(ctx);
-                    canvasTools.draw(ctx, this.regions, settings);
+                    canvasTools.draw(ctx, this.regions, settings, this.view.offset);
                     this.addCreator(ctx, width, height);
 
-                    downloadLink.setAttribute('download', 'corona-status-' + this.dateStringdashes + '.png');
+                    downloadLink.setAttribute('download', 'corona-status-' + this.dateStringdashes + 'png');
                     canvas.toBlob(function(blob) {
                         let url = URL.createObjectURL(blob);
                         downloadLink.setAttribute('href', url);

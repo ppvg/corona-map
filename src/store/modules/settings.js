@@ -8,7 +8,7 @@ const state = {
     step: 10,
     weeks: 5, // weeks
     historyLength: 0,
-    currentDateOffset: 0,
+    // currentDateOffset: 0,
     gradient: true,
     ageDistributionAbsolute: false
 };

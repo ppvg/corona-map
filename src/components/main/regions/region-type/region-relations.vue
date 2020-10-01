@@ -1,6 +1,7 @@
 <script>
     import regionType from './region-type';
     import _Region from "@/classes/_Region";
+    import View from "@/classes/View";
 
     export default {
         name: 'region-relations',
@@ -8,6 +9,10 @@
             regionType
         },
         props: {
+            view: {
+                type: View,
+                required: true
+            },
             region: {
                 type: _Region,
                 required: true
@@ -84,6 +89,7 @@
     <div class="region-relations">
         <region-type
             v-for="type in types"
+            :view="view"
             :type="type"/>
     </div>
 </template>

@@ -3,35 +3,30 @@
     import Datepicker from 'vuejs-datepicker';
     import dateTools from '@/tools/date';
     import headerMenu from "@/components/main/header-menu";
+    import View from "@/classes/View";
+    import regionDetailsShort from "@/components/main/regions/region-details/region-details-short";
 
     export default {
         name: 'compare-item',
         components: {
+            regionDetailsShort,
             headerMenu,
             mapTests,
             Datepicker
         },
         props: {
-            dateString: {
-                type: String,
+            view: {
+                type: View,
                 required: true
             },
             showLegend: {
                 type: Boolean,
                 required: true
-            },
-            i: {
-                type: Number,
-                required: true
             }
         },
         data() {
-            let date, offset;
-            date = new Date(this.dateString);
-            offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, date.getTime()) / this.$store.state.maps.current.settings.testDataInterval;
             return {
-                date,
-                offset
+                date: dateTools.getDateByOffset(this.view.offset),
             }
         },
         computed: {
@@ -39,10 +34,10 @@
                 return this.$store.state.settings.historyLength;
             },
             isAtEnd() {
-                return this.offset === 0;
+                return this.view.offset === 0;
             },
             isAtStart() {
-                return this.offset === this.historyLength;
+                return this.view.offset === this.historyLength;
             },
             currentMap() {
                 return this.$store.state.maps.current;
@@ -61,21 +56,17 @@
         },
         methods: {
             updateOffset(value) {
-                this.offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, value.getTime()) / this.currentMap.settings.testDataInterval;
+                this.view.offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, value.getTime()) / this.currentMap.settings.testDataInterval;
                 this.updateQuery();
             },
             move(value) {
-                this.offset -= value;
-                this.date = dateTools.getDateByOffset((this.offset * this.currentMap.settings.testDataInterval));
+                this.view.offset -= value;
+                this.date = dateTools.getDateByOffset((this.view.offset * this.currentMap.settings.testDataInterval));
                 this.updateQuery();
             },
             updateQuery() {
-                this.$parent.administrateOffset(this.i, this.offset);
                 this.$parent.updateQuery();
             }
-        },
-        mounted() {
-            this.$parent.administrateOffset(this.i, this.offset);
         }
     }
 </script>
@@ -85,7 +76,7 @@
     <div class="compare-item">
         <div class="compare__header">
             <header-menu
-                :offset="offset"
+                :view="view"
                 :editable="false"/>
         </div>
         <div class="compare__body">
@@ -107,10 +98,21 @@
                     <img src="assets/img/tools/forward.svg">
                 </div>
             </div>
-            <map-tests
-                :show-tools="false"
-                :show-legend="showLegend"
-                :offset="offset"/>
+            <div class="compare__map">
+                <div
+                    v-if="view.currentRegion"
+                    class="region-details__container">
+                    <region-details-short
+                        :view="view"
+                        :region="view.currentRegion"/>
+                </div>
+
+                <map-tests
+                    :show-tools="false"
+                    :show-legend="showLegend"
+                    :view="view"/>
+            </div>
+
         </div>
     </div>
 </template>
@@ -136,12 +138,13 @@
 
         .compare__body {
             height: calc(100% - 48px);
-            padding: 8px;
 
             .compare__tools {
-                height: 48px;
+                height: 56px;
                 display: flex;
                 align-items: center;
+                border-bottom: 1px solid #ddd;
+                padding: 0 8px;
 
 
                 input {
@@ -153,12 +156,54 @@
                 }
             }
 
-            .map {
-                height: calc(100% - 48px);
+            .compare__map {
+                height: calc(100% - 56px);
                 padding: 8px;
+                position: relative;
+
+                .map {
+                    height: 100%;
+                    width: 80%;
+                }
+
+                .region-details__container {
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                    width: 200px;
+                    z-index: 1;
+
+                    .region-details__row {
+                        display: block;
+
+                        .region-details__label {
+                            width: 100%;
+                        }
+
+                        .region-details__value {
+                            width: 100%;
+                            text-align: left;
+                        }
+                    }
+                }
             }
         }
 
+        @include mobile() {
 
+            .compare__body {
+
+                .compare__map {
+
+                    .map {
+                        width: 100%;
+                    }
+
+                    .region-details__container {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 </style>

@@ -18,6 +18,7 @@ const maps = [
             hasSewageTreatmentPlants: true,
             testDataCumulative: true,
             testDataInterval: 1,
+            generalInfoHasPopulation: false,
             map: {
                 latitude: 52.15,
                 longitude: 5.34,
@@ -50,6 +51,7 @@ const maps = [
             hasSewageTreatmentPlants: true,
             testDataCumulative: false,
             testDataInterval: 7,
+            generalInfoHasPopulation: false,
             map: {
                 latitude: 52.32,
                 longitude: 4.86,
@@ -64,7 +66,7 @@ const maps = [
             sewageTreatmentPlants: (window.config.sewageDataUrl + 'sewage-measurements-connected-to-city-codes.json')
         }
     }, {
-        id: 2,
+        id: 3,
         regionType: 'District',
         module: 'districts',
         title: 'Den Haag',
@@ -82,6 +84,7 @@ const maps = [
             hasSewageTreatmentPlants: false,
             testDataCumulative: false,
             testDataInterval: 7,
+            generalInfoHasPopulation: false,
             map: {
                 latitude: 52.05,
                 longitude: 4.34,
@@ -94,6 +97,76 @@ const maps = [
             regions: 'data/maps/den-haag/den-haag.json',
             ageGroups: '',
             sewageTreatmentPlants: (window.config.sewageDataUrl + 'sewage-measurements-connected-to-city-codes.json')
+        }
+    }, {
+        id: 4,
+        regionType: 'District',
+        module: 'districts',
+        title: 'NL DE',
+        settings: {
+            regionTypes: ['district'],
+            pathOrigins: [],
+            hasAgeGroups: false,
+            hasTests: true,
+            hasAdministeredTests: false,
+            hasSewageTreatmentPlants: false,
+            testDataCumulative: true,
+            testDataInterval: 1,
+            generalInfoHasPopulation: true,
+            testAdapter: {
+                titleKey: 'Land/regio',
+                positiveTestsKey: '',
+                findColumn: function(column) {
+                    return column.indexOf('20') > -1;
+                }
+            },
+            map: {
+                latitude: 51.29,
+                longitude: 10.16,
+                stretch: 0.62,
+                zoom: 0.1
+            }
+        },
+        url: {
+            tests: 'data/maps/europa/cases.csv',
+            regions: 'data/maps/nl-de/nl-de.json',
+            ageGroups: '',
+            sewageTreatmentPlants: ''
+        }
+    }, {
+        id: 5,
+        regionType: 'District',
+        module: 'districts',
+        title: 'Europa',
+        settings: {
+            regionTypes: ['district'],
+            pathOrigins: [],
+            hasAgeGroups: false,
+            hasTests: true,
+            hasAdministeredTests: false,
+            hasSewageTreatmentPlants: false,
+            testDataCumulative: true,
+            testDataInterval: 1,
+            generalInfoHasPopulation: true,
+            testAdapter: {
+                titleKey: 'Land/regio',
+                positiveTestsKey: '',
+                findColumn: function(column) {
+                    return column.indexOf('20') > -1;
+                }
+            },
+            map: {
+                latitude: 51.29,
+                longitude: 10.16,
+                stretch: 0.62,
+                zoom: 0.1
+            }
+        },
+        url: {
+            tests: 'data/maps/europa/cases.csv',
+            regions: 'data/maps/europa/europa.json',
+            ageGroups: '',
+            sewageTreatmentPlants: ''
         }
     }
 ];

@@ -2,12 +2,16 @@
     import SewageTreatmentPlant from '@/classes/SewageTreatmentPlant';
     import * as d3 from 'd3';
     import {format, sub} from 'date-fns'
-    import {nl} from "date-fns/locale";
+    import View from "@/classes/View";
 
     export default {
         name: 'rna-levels-graph',
         components: {},
         props: {
+            view: {
+                type: View,
+                required: true
+            },
             sewageTreatmentPlant: {
                 type: SewageTreatmentPlant,
                 required: true
@@ -31,8 +35,8 @@
             weeks() {
                 return this.$store.state.settings.weeks;
             },
-            currentDateOffset() {
-                return this.$store.state.settings.currentDateOffset;
+            offset() {
+                return this.view.offset;
             },
             width() {
                 return this.weeks * 7 * this.step;
@@ -80,7 +84,7 @@
                 return this.endDateInMs - (7 * this.weeks * this.msPerDay)
             },
             endDateInMs() {
-                return this.todayInMs - (this.currentDateOffset * this.msPerDay)
+                return this.todayInMs - (this.offset * this.msPerDay)
             },
             startDate() {
                 return format(new Date(this.startDateInMs), 'EEEE d MMMM' );
@@ -220,7 +224,7 @@
                     })
                 }
             },
-            currentDateOffset: {
+            offset: {
                 handler: function(newValue) {
                     setTimeout(() => {
                         this.draw();

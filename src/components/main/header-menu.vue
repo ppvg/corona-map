@@ -3,6 +3,7 @@
     import totalInfections from "@/components/elements/total-infections";
     import Datepicker from 'vuejs-datepicker';
     import dateTools from '@/tools/date';
+    import View from "@/classes/View";
 
     export default {
         name: 'header-menu',
@@ -12,8 +13,8 @@
             Datepicker
         },
         props: {
-            offset: {
-                type: Number,
+            view: {
+                type: View,
                 required: true
             },
             editable: {
@@ -23,7 +24,7 @@
         },
         data() {
             return {
-                date: dateTools.getDateByOffset(this.offset)
+                date: dateTools.getDateByOffset(this.view.offset)
             }
         },
         computed: {
@@ -51,23 +52,29 @@
                 return this.$store.state.maps.current ? this.$store.state.maps.current.title : '';
             },
             dateString() {
-                return this.$store.getters['ui/getDateByOffset']((this.offset * this.currentMap.settings.testDataInterval), 'EE dd MMM')
+                return this.$store.getters['ui/getDateByOffset']((this.view.offset * this.currentMap.settings.testDataInterval), 'EE dd MMM')
+            },
+            offset() {
+                return this.view.offset;
+            },
+            isMainPage() {
+                return this.$route.name === 'main';
             }
         },
         methods: {
             updateOffset(value) {
-                let offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, value.getTime());
-                this.$store.commit('settings/updateProperty', {key: 'currentDateOffset', value: offset});
+                this.view.offset = dateTools.getDateOffset(this.$store.state.ui.todayInMs, value.getTime());
             },
             updateDatePicker() {
-                this.date = dateTools.getDateByOffset(this.offset);
+                this.date = dateTools.getDateByOffset(this.view.offset);
             }
         },
         watch: {
             offset: {
                 handler: function() {
                     this.updateDatePicker();
-                }
+                },
+                deep: true
             }
         }
     }
@@ -93,11 +100,13 @@
                 </div>
                 <total-infections
                     v-if="hasTests"
-                    :offset="offset"/>
+                    :view="view"/>
             </div>
         </div>
 
-        <div class="menu">
+        <div
+            v-if="isMainPage"
+            class="menu">
             <menu-button
                 v-for="button in buttons"
                 :button="button"/>
@@ -121,6 +130,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 8px;
 
             .title__main {
                 font-size: 24px;
@@ -136,6 +146,8 @@
                     display: block;
                     margin-top: 2px;
                     font-family: $monospace;
+                    white-space: nowrap;
+                    margin-right: 4px;
 
                     input {
                         width: 120px;
@@ -175,11 +187,48 @@
         @include mobile() {
 
             .title {
-                height: 32px;
-                border-bottom: 1px solid #aaa;
 
-                h1 {
+                .title__main {
+                    font-size: 16px;
+                    line-height: 1.2;
+                    margin-right: 6px;
+                }
+
+                .title__sub {
                     font-size: 14px;
+
+                    .date-string {
+                        display: block;
+                        margin-top: 2px;
+                        font-family: $monospace;
+
+                        input {
+                            width: 120px;
+                            background: transparent;
+                            padding: 3px;
+                            font-size: inherit;
+                            cursor: pointer;
+
+                            &:hover {
+                                background: #ddd;
+                            }
+                        }
+                    }
+
+                    .total-infections {
+                        width: 80px;
+                        display: flex;
+
+                        .total-infections__n {
+                            padding: 2px 8px;
+                            border-radius: 2px;
+                            font-family: $monospace;
+                            display: inline-block;
+                            transition: all 0.1s ease;
+                            background: rgb(252, 203, 3);
+                            display: flex;
+                        }
+                    }
                 }
             }
 
